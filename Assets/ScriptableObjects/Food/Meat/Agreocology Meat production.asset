@@ -31,7 +31,7 @@ MonoBehaviour:
     waste: 0
     approval: 10
     population: 0
-    money: 0
+    money: 2
     pollution: 50
     bees: 0
     naturalCapital: 0

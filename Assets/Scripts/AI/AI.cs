@@ -296,9 +296,10 @@ public class AI : MonoBehaviour
 
     public void FindNextUpgradeGoal()
     {
+        if (foundAllUpgrades) return;
         if (upgradeGoalCount >= behaviour.upgradeGoals.Length)
         {
-            foundAllUpgrades = false;
+            foundAllUpgrades = true;
             print("All Upgrades Found");
         }
         else
