@@ -332,3 +332,59 @@ Received Import Request.
 Start importing Assets/3d Models/StockAssets/Samurai Files using Guid(d751f4f1e52f8254585c982aea7562d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a018410b766ecec398c67252bc2ef77') in 0.017356 seconds
   Import took 0.022875 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 0.622680 seconds.
+  path: Assets/3d Models/StockAssets/Samurai Files/FBX
+  artifactKey: Guid(69fc9f67b9c4013479e498c0bcc86446) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d Models/StockAssets/Samurai Files/FBX using Guid(69fc9f67b9c4013479e498c0bcc86446) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a270efb92d54b0b7e2838a4bfee0fc64') in 0.001780 seconds
+  Import took 0.007263 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.813479 seconds.
+  path: Assets/3d Models/StockAssets/Samurai Files/Characters
+  artifactKey: Guid(9f25e91119119664db7f83d82103a82c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d Models/StockAssets/Samurai Files/Characters using Guid(9f25e91119119664db7f83d82103a82c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '735f3e358f846f42cfd25b649acc664b') in 0.001704 seconds
+  Import took 0.007214 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.391304 seconds.
+  path: Assets/3d Models/StockAssets/Samurai Files/OBJ
+  artifactKey: Guid(290475d5495bded40b24157ba20b0495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d Models/StockAssets/Samurai Files/OBJ using Guid(290475d5495bded40b24157ba20b0495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd4f6b2aee01c74dc26b05fb7e2949f0') in 0.002436 seconds
+  Import took 0.009106 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 38.983914 seconds.
+  path: Assets/3d Models/StockAssets/City Files/Characters/Characters_Unreal_01.mb
+  artifactKey: Guid(37ee9955c45b8324c9edc5e62e5521a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d Models/StockAssets/City Files/Characters/Characters_Unreal_01.mb using Guid(37ee9955c45b8324c9edc5e62e5521a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b19cfd98ef58f8553db4b3d4326ae046') in 0.003578 seconds
+  Import took 0.009022 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 57.384359 seconds.
+  path: Assets/3d Models/StockAssets/City Files/Characters/SK_Character_BusinessMan_Shirt.fbx
+  artifactKey: Guid(702d120a7dfcc654096d9ba03ed9a527) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d Models/StockAssets/City Files/Characters/SK_Character_BusinessMan_Shirt.fbx using Guid(702d120a7dfcc654096d9ba03ed9a527) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7932235705a196992cbcfa1f253aee6') in 0.119193 seconds
+  Import took 0.124747 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 45.609355 seconds.
+  path: Assets/3d Models/StockAssets/Lowpoly paper boats/mesh
+  artifactKey: Guid(6e778c740ed32414990584711fc7acb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d Models/StockAssets/Lowpoly paper boats/mesh using Guid(6e778c740ed32414990584711fc7acb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc3e58ef0551fb9a90080fe73bfdc5ea') in 0.002003 seconds
+  Import took 0.007477 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.027190 seconds.
+  path: Assets/3d Models/StockAssets/Lowpoly paper boats/mesh/Materials
+  artifactKey: Guid(28f8d1a34fa62fc4dbdea5fba57b5ca9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3d Models/StockAssets/Lowpoly paper boats/mesh/Materials using Guid(28f8d1a34fa62fc4dbdea5fba57b5ca9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a242188b6348f0079c825dab6d5664cf') in 0.001842 seconds
+  Import took 0.006942 seconds .
+
