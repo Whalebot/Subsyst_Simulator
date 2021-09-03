@@ -1,0 +1,980 @@
+fileFormatVersion: 2
+guid: 3d379100514ea40af8ab99aebc058e8f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6329802245601025592
+    second: s3-hex-sust
+  - first:
+      213: -5749386936414955298
+    second: s3-hex-agri
+  - first:
+      213: -4479057901471888679
+    second: s3-hex-meat
+  - first:
+      213: -4812569173460885379
+    second: s3-hex-mon
+  - first:
+      213: -5195493655192734319
+    second: s3-hex-button-empty
+  - first:
+      213: 201334505852527881
+    second: s3-hex-button-hover
+  - first:
+      213: -4038658056687817918
+    second: s3-hex-button-select
+  - first:
+      213: 5549532279456953149
+    second: s3-hex-info-food
+  - first:
+      213: -9165483656774619609
+    second: s3-hex-info-energy
+  - first:
+      213: 286307957836988409
+    second: s3-hex-info-waste
+  - first:
+      213: -4301761366088221669
+    second: s3-square-info-food
+  - first:
+      213: -7402875345356674929
+    second: s3-square-info-energy
+  - first:
+      213: -5251453033495748260
+    second: s3-square-info-waste
+  - first:
+      213: 4053511596084912326
+    second: s3-square-info-whiteish
+  - first:
+      213: -8847322986398806200
+    second: s3-square-info-sust1
+  - first:
+      213: -1363881653566193486
+    second: s3-square-info-sust2
+  - first:
+      213: -5748585469175696220
+    second: s3-square-info-agri1
+  - first:
+      213: 3586965008405072352
+    second: s3-square-info-agri2
+  - first:
+      213: -6470076304921658348
+    second: s3-square-info-meat1
+  - first:
+      213: -3154751125642918066
+    second: s3-square-info-meat2
+  - first:
+      213: 482566063104121337
+    second: s3-square-info-mon1
+  - first:
+      213: 7047493797374216116
+    second: s3-square-info-mon2
+  - first:
+      213: 4407984456234347605
+    second: s3-arrow
+  - first:
+      213: -7349813049253646713
+    second: s3-biogas
+  - first:
+      213: 5142467727822384265
+    second: s3-plus-insects
+  - first:
+      213: 8668581585100221883
+    second: s3-plus-algae
+  - first:
+      213: 3139603412284592896
+    second: s3-agroecology
+  - first:
+      213: -1083895292143506343
+    second: s3-small-Prod
+  - first:
+      213: -1948063099816179388
+    second: s3-small-upg
+  - first:
+      213: 1343534584604321245
+    second: s3-ind-prod
+  - first:
+      213: -2095807966755346622
+    second: s3-ind-upg
+  - first:
+      213: 6329225505663939561
+    second: s3-ai1
+  - first:
+      213: 4296926482618416212
+    second: s3-ai2
+  - first:
+      213: -9117550177454500713
+    second: s3-ai3
+  - first:
+      213: 2564620467700244183
+    second: s3-ai4
+  - first:
+      213: -2132931123422380001
+    second: s3-NewLogo
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: s3-hex-sust
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 2031
+        width: 234
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c12b74f4660828a0800000000000000
+      internalID: -6329802245601025592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-hex-agri
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 2031
+        width: 235
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed817bafa031630b0800000000000000
+      internalID: -5749386936414955298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-hex-meat
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 2031
+        width: 234
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da8c56d19037d1c0800000000000000
+      internalID: -4479057901471888679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-hex-mon
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 2031
+        width: 235
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d706ed6b5d1563db0800000000000000
+      internalID: -4812569173460885379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-hex-button-empty
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1814
+        width: 233
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195f0792c06e5e7b0800000000000000
+      internalID: -5195493655192734319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-hex-button-hover
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 1814
+        width: 233
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9056e569aa84bc200800000000000000
+      internalID: 201334505852527881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-hex-button-select
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 1814
+        width: 234
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24b6ad925edc3f7c0800000000000000
+      internalID: -4038658056687817918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-hex-info-food
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 1814
+        width: 239
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d33789a9436e30d40800000000000000
+      internalID: 5549532279456953149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-hex-info-energy
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1814
+        width: 237
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72eec4bcc29adc080800000000000000
+      internalID: -9165483656774619609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-hex-info-waste
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1814
+        width: 237
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ffbd3b129b29f300800000000000000
+      internalID: 286307957836988409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-square-info-food
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1660
+        width: 131
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1cffc944d21d44c0800000000000000
+      internalID: -4301761366088221669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-square-info-energy
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1660
+        width: 131
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88a4837814b34990800000000000000
+      internalID: -7402875345356674929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-square-info-waste
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 1660
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51a6d71a471f17b0800000000000000
+      internalID: -5251453033495748260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-square-info-whiteish
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1660
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c06199f157f04830800000000000000
+      internalID: 4053511596084912326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-square-info-sust1
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1660
+        width: 130
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f0d867e9ef73580800000000000000
+      internalID: -8847322986398806200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-square-info-sust2
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 1660
+        width: 130
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b0c38bbcd4821de0800000000000000
+      internalID: -1363881653566193486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-square-info-agri1
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 1660
+        width: 133
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a47fcc19fbe830b0800000000000000
+      internalID: -5748585469175696220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-square-info-agri2
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 1660
+        width: 131
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e98dbbaba577c130800000000000000
+      internalID: 3586965008405072352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-square-info-meat1
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 1660
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41cf87f61eba536a0800000000000000
+      internalID: -6470076304921658348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-square-info-meat2
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 1660
+        width: 130
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e474a49d0921834d0800000000000000
+      internalID: -3154751125642918066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-square-info-mon1
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 1660
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9daf3174b62b600800000000000000
+      internalID: 482566063104121337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-square-info-mon2
+      rect:
+        serializedVersion: 2
+        x: 1829
+        y: 1660
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b7424df44abdc160800000000000000
+      internalID: 7047493797374216116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-arrow
+      rect:
+        serializedVersion: 2
+        x: 1989
+        y: 1660
+        width: 117
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55caa49228e4c2d30800000000000000
+      internalID: 4407984456234347605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-biogas
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1459
+        width: 160
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ea4b109f7300a90800000000000000
+      internalID: -7349813049253646713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-plus-insects
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1464
+        width: 182
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c63c90727bd5740800000000000000
+      internalID: 5142467727822384265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-plus-algae
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1455
+        width: 151
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd2466060dfc4870800000000000000
+      internalID: 8668581585100221883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-agroecology
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 1446
+        width: 174
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003d3dc4bac129b20800000000000000
+      internalID: 3139603412284592896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-small-Prod
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1452
+        width: 161
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c611a79fa35f0f0800000000000000
+      internalID: -1083895292143506343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-small-upg
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 1437
+        width: 205
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44909679ee617f4e0800000000000000
+      internalID: -1948063099816179388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-ind-prod
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 1456
+        width: 156
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5eaca169135a210800000000000000
+      internalID: 1343534584604321245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-ind-upg
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 1456
+        width: 209
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2472d1022c13ae2e0800000000000000
+      internalID: -2095807966755346622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-ai1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1187
+        width: 245
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3f070501de5d750800000000000000
+      internalID: 6329225505663939561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-ai2
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 1218
+        width: 193
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 42, y: 43, z: 44, w: 43}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c707eaedfb1ab30800000000000000
+      internalID: 4296926482618416212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-ai3
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 1187
+        width: 246
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7945603ab64f77180800000000000000
+      internalID: -9117550177454500713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-ai4
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 1226
+        width: 175
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 30, y: 32, z: 31, w: 31}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de18f83abc579320800000000000000
+      internalID: 2564620467700244183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s3-NewLogo
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1
+        width: 1893
+        height: 641
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10c80aa17e4662e0800000000000000
+      internalID: -2132931123422380001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1987c93a4b6d9410c95cb2e358f08b21
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

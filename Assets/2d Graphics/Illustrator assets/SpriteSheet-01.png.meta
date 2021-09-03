@@ -1,0 +1,1964 @@
+fileFormatVersion: 2
+guid: 09e2a133fb05c984b818fca226acb5fd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6065518131221797296
+    second: s-icon-global
+  - first:
+      213: -6354357139275367252
+    second: s-icon-approval
+  - first:
+      213: 6463030287287212358
+    second: s-icon-pollution
+  - first:
+      213: -402032366529129785
+    second: s-icon-energy
+  - first:
+      213: -1405473015832164837
+    second: s-icon-economy
+  - first:
+      213: -7313363641839472800
+    second: s-icon-food
+  - first:
+      213: 2074514824800363442
+    second: s-icon-waste
+  - first:
+      213: 320461229336288266
+    second: s-icon-population
+  - first:
+      213: 752764359228617389
+    second: s-lvl-Spark
+  - first:
+      213: 488323819218987728
+    second: s-tut-Pointer
+  - first:
+      213: 4016788435155695142
+    second: s-icon-cogB
+  - first:
+      213: -2634903716527389359
+    second: s-icon-cogS
+  - first:
+      213: 8588604270395097070
+    second: s-tut-div
+  - first:
+      213: -6771481550921367919
+    second: s-tut-button
+  - first:
+      213: 7603243540588812005
+    second: s-tab-shiny
+  - first:
+      213: -367812647703266817
+    second: s-tab-container
+  - first:
+      213: 4515814434476980630
+    second: s-tab-liquid
+  - first:
+      213: -8729510065958143272
+    second: s-tab-button
+  - first:
+      213: -4447716108597171675
+    second: s-universal-div
+  - first:
+      213: 936091260779691965
+    second: s-button-on
+  - first:
+      213: -5686881380051364499
+    second: s-button-off
+  - first:
+      213: -54720415585587805
+    second: s-upgrade-buttonWHi
+  - first:
+      213: 6278983363727102590
+    second: s-upgrade-buttonWLo
+  - first:
+      213: 3566357206898930723
+    second: s-upgrade-buttonGLo
+  - first:
+      213: -8788295617070648518
+    second: s-tab-buttonArrow
+  - first:
+      213: 3159668907126892469
+    second: s-universal-divLimb
+  - first:
+      213: -6736172443525766800
+    second: s-universal-closeButton
+  - first:
+      213: 6968332229118304683
+    second: s-descriptor-div
+  - first:
+      213: 1832062640862016423
+    second: s-locator-mark
+  - first:
+      213: -1720488298462280071
+    second: s-icon-lock
+  - first:
+      213: -2549469815093862182
+    second: s-sign-plus
+  - first:
+      213: -7109798846927278625
+    second: s-sign-minus
+  - first:
+      213: 3333312906079694946
+    second: s-tab-pleca2px
+  - first:
+      213: 1198224773941751781
+    second: s-universal-scroller
+  - first:
+      213: 8623126970664243124
+    second: s-tradeOff-pleca4px
+  - first:
+      213: 6605110067597982803
+    second: s-descriptor-pleca2px
+  - first:
+      213: -1156091026209341598
+    second: s-upgrade-pleca4px
+  - first:
+      213: -7201669509863426027
+    second: s-locator-hexagonCont
+  - first:
+      213: 8493065357370424816
+    second: s-icon-Check
+  - first:
+      213: 2483669880407342750
+    second: s-locator-mark-food
+  - first:
+      213: -2534137275368203624
+    second: s-locator-mark-energy
+  - first:
+      213: 3789919664305935995
+    second: s-locator-mark-waste
+  - first:
+      213: -418001369416452276
+    second: s-locator-mark-policies
+  - first:
+      213: 3748284145478675390
+    second: s-locator-hexagonCont-food
+  - first:
+      213: -1380660672245498265
+    second: s-locator-hexagonCont-energy
+  - first:
+      213: 9106187637022773766
+    second: s-locator-hexagonCont-waste
+  - first:
+      213: -2674998983272394355
+    second: s-locator-hexagonCont-policies
+  - first:
+      213: 7654852715309038130
+    second: s-tab-buttonArrow-W
+  - first:
+      213: -4716210905121665936
+    second: s-icon-info
+  - first:
+      213: 4951438001866773748
+    second: s-icon-warning1
+  - first:
+      213: 7872813431579966130
+    second: s-icon-warning2
+  - first:
+      213: -1536149105291909296
+    second: s-icon-fuels
+  - first:
+      213: 395721690634276038
+    second: s-icon-fish
+  - first:
+      213: -6489871653820508041
+    second: s-icon-materials
+  - first:
+      213: -2865678973810129570
+    second: s-icon-cattleAndPoultry
+  - first:
+      213: -6724815555555351529
+    second: s-icon-insects
+  - first:
+      213: 2741983223664328557
+    second: s-icon-veggies
+  - first:
+      213: 2306574165339229938
+    second: s-icon-algae
+  - first:
+      213: -8366478267618207366
+    second: kl1
+  - first:
+      213: 4412244940905412932
+    second: kl2
+  - first:
+      213: -718298783799855419
+    second: kl3
+  - first:
+      213: -2477923384320756851
+    second: kl4
+  - first:
+      213: 3327640486650495355
+    second: kl5
+  - first:
+      213: -4570277763735216338
+    second: kl6
+  - first:
+      213: 8368177248363304065
+    second: kl7
+  - first:
+      213: 7920975848562963061
+    second: TutorialArrowSprite
+  - first:
+      213: -6108672385785827975
+    second: s-ClickCircle
+  - first:
+      213: -3928908116492378323
+    second: s-icon-naturCapit
+  - first:
+      213: 5460116476361767292
+    second: s-icon-bees
+  - first:
+      213: -8311611579731980990
+    second: kl8-happy
+  - first:
+      213: 319709104293898368
+    second: kl9-sad
+  - first:
+      213: -6973292256131031039
+    second: s-Pulse
+  - first:
+      213: -3126532487748934890
+    second: t-open Hand
+  - first:
+      213: 392463195998118999
+    second: t-closed hand
+  - first:
+      213: -457537771825008182
+    second: kl10-ClockPivot
+  - first:
+      213: -2642693219532605073
+    second: kl11-ClockChain
+  - first:
+      213: -3525974496619619572
+    second: s-tut-arrowTxt
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: s-icon-global
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 2032
+        width: 207
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f6535c02acb954a8ce416b435cc058
+      internalID: 6065518131221797296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-approval
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 2039
+        width: 169
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f1d1657848e824ea78ad79fbb23c19
+      internalID: -6354357139275367252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-pollution
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 2039
+        width: 198
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf4db2a388c0cb44b741395c5ff7565
+      internalID: 6463030287287212358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-energy
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 2026
+        width: 139
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57795bac19efdba41aa2ff37e442811b
+      internalID: -402032366529129785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-economy
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 2028
+        width: 189
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbace00670b92a743b6a4a8c49623312
+      internalID: -1405473015832164837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-food
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 2024
+        width: 186
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad59e5fdb75e754aad4e3667e090114
+      internalID: -7313363641839472800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-waste
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 2028
+        width: 200
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c79efd9ec2df164e922771536aaaffd
+      internalID: 2074514824800363442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-population
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 2030
+        width: 173
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0822484e847f33140bdadb1a458588c8
+      internalID: 320461229336288266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-lvl-Spark
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1692
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab1ec95b802480444a28be0831e8c3e3
+      internalID: 752764359228617389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-tut-Pointer
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1698
+        width: 220
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296a6b26eb043304f98e7277bc7e8753
+      internalID: 488323819218987728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-cogB
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 1804
+        width: 187
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b3b362a538b044c9a66f343c11b414
+      internalID: 4016788435155695142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-cogS
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 1837
+        width: 152
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65ba01df86807041b6eecd5f2012e6d
+      internalID: -2634903716527389359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-tut-div
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1496
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 19, y: 19, z: 19, w: 19}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6450db99fa3fcb64183f51a3bf43199c
+      internalID: 8588604270395097070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-tut-button
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1496
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 19, y: 19, z: 19, w: 19}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa52665984e297042b576cab4f07dc73
+      internalID: -6771481550921367919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-tab-shiny
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 1569
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05fb8aa64e3a4c45ac6f4c55bb5fb54
+      internalID: 7603243540588812005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-tab-container
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1497
+        width: 138
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e04e10e904742749a5257c9ece1e826
+      internalID: -367812647703266817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-tab-liquid
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 1515
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 9, y: 9, z: 9, w: 9}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573f178aa74730b46b5467f78c4c7493
+      internalID: 4515814434476980630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-tab-button
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 1502
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeda8493b63263c4ea6d799ea5713b45
+      internalID: -8729510065958143272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-universal-div
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1297
+        width: 139
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9936d5a5d6474574eaea90a5aac97f88
+      internalID: -4447716108597171675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-button-on
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1297
+        width: 140
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d778d416a355ee840a6c72ef311ead4a
+      internalID: 936091260779691965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-button-off
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 1297
+        width: 139
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a97941a76a796d4f8859adc5feaec2e
+      internalID: -5686881380051364499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-upgrade-buttonWHi
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1297
+        width: 139
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8c206bbf2553304ea0f9428f21d6b4c
+      internalID: -54720415585587805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-upgrade-buttonWLo
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 1297
+        width: 140
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e2b6660c08b1a40854a20812a95b6a
+      internalID: 6278983363727102590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-upgrade-buttonGLo
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 1296
+        width: 139
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b16b8816b04ac34586fc60c5e30429f
+      internalID: 3566357206898930723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-tab-buttonArrow
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 1191
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9d51860e9bf424b908757737c0b75e
+      internalID: -8788295617070648518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-universal-divLimb
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 1136
+        width: 69
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ce493badf5ada44bedbde88d0f8fd9
+      internalID: 3159668907126892469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-universal-closeButton
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 1127
+        width: 109
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 19, y: 19, z: 19, w: 19}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81b2e03cfa932be4a8d13c9b45faece7
+      internalID: -6736172443525766800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-descriptor-div
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1110
+        width: 139
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 18, z: 18, w: 18}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4577d929f2d8fe4697a859ca1aefdf6
+      internalID: 6968332229118304683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-locator-mark
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 675
+        width: 314
+        height: 398
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99eca5d30e9f31b4181b827821250d39
+      internalID: 1832062640862016423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-lock
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 883
+        width: 182
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9381937e938fafc458c9b7fcb2c1da70
+      internalID: -1720488298462280071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-sign-plus
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 793
+        width: 64
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11a474a8cc4d4641a30bec58a4c63ca
+      internalID: -2549469815093862182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-sign-minus
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 745
+        width: 66
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707ad40f81458e5419e9b50bdca91c3d
+      internalID: -7109798846927278625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-tab-pleca2px
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 611
+        width: 474
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4737acb2f755b5c41bc4d04174a9db80
+      internalID: 3333312906079694946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-universal-scroller
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 589
+        width: 73
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 19, y: 19, z: 19, w: 19}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d6e6ae7bb2475448877b887b4798900
+      internalID: 1198224773941751781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-tradeOff-pleca4px
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 556
+        width: 617
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a42512b2a8cacd4e9d759490ce6a565
+      internalID: 8623126970664243124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-descriptor-pleca2px
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 508
+        width: 587
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fddcd74a9eb4ddc47bbab6a988eaddda
+      internalID: 6605110067597982803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-upgrade-pleca4px
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 464
+        width: 1338
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeeff7c88c2550949859c2c22e1f0346
+      internalID: -1156091026209341598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-locator-hexagonCont
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 834
+        width: 207
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce1bd3f8b5c4564ab7a42a7dfab860e
+      internalID: -7201669509863426027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-Check
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 1878
+        width: 80
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fabf7958bf7dda34295e5e0f23616c7f
+      internalID: 8493065357370424816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-locator-mark-food
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 853
+        width: 277
+        height: 398
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b479c71061c5547bd20ae752e59931
+      internalID: 2483669880407342750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-locator-mark-energy
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 853
+        width: 277
+        height: 398
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc41085f78e66444ba644735e15f06e
+      internalID: -2534137275368203624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-locator-mark-waste
+      rect:
+        serializedVersion: 2
+        x: 1506
+        y: 853
+        width: 277
+        height: 398
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ad9e3f73dea2d4ea900cf78bf8aaed
+      internalID: 3789919664305935995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-locator-mark-policies
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 853
+        width: 277
+        height: 398
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987610b5bdfafe04bb4bb582dd9da02c
+      internalID: -418001369416452276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-locator-hexagonCont-food
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 614
+        width: 207
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f977629815b464ea381e80180e9871
+      internalID: 3748284145478675390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-locator-hexagonCont-energy
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 614
+        width: 207
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c7646441a554f4fb5f3a277db54421
+      internalID: -1380660672245498265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-locator-hexagonCont-waste
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 614
+        width: 207
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d96c6dced7ed654ebfb2e6dd0f59f0e
+      internalID: 9106187637022773766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-locator-hexagonCont-policies
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 614
+        width: 207
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3eb49a4e0609d44907281e45deade6
+      internalID: -2674998983272394355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-tab-buttonArrow-W
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 1129
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 735e337e68a03b649bd9f155190f6250
+      internalID: 7654852715309038130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-info
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 1825
+        width: 203
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c38d2d4064df0042a6eebac43442c26
+      internalID: -4716210905121665936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-warning1
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 1825
+        width: 204
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 302ea3fdb1e98ba4cae721cc24e6da64
+      internalID: 4951438001866773748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-warning2
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 1825
+        width: 204
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a76df0133083084a931ddb507841bb8
+      internalID: 7872813431579966130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-fuels
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 1605
+        width: 143
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c05c2cf537222848af7bc9773522294
+      internalID: -1536149105291909296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-fish
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 1604
+        width: 177
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6540cb9cdfa59ef4dbba14e8bf5f9be0
+      internalID: 395721690634276038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-materials
+      rect:
+        serializedVersion: 2
+        x: 1993
+        y: 1618
+        width: 173
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8fe668807cc064d9bee5ace3a3da5b
+      internalID: -6489871653820508041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-cattleAndPoultry
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 2030
+        width: 156
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83dde1c83d919fb40893c9ee56c0f161
+      internalID: -2865678973810129570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-insects
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 2047
+        width: 202
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6116cf4faa2fb546a07326e0948678c
+      internalID: -6724815555555351529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-veggies
+      rect:
+        serializedVersion: 2
+        x: 1781
+        y: 1823
+        width: 132
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: becfed400d13bd5489d6c87bcf72c784
+      internalID: 2741983223664328557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-algae
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1824
+        width: 158
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c63b60956871a44bbc82f4f39458c6
+      internalID: 2306574165339229938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kl1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 231
+        width: 203
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ff7ba476ca7914d9d9880c1854dce3
+      internalID: -8366478267618207366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kl2
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 231
+        width: 203
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c22fb20454957141b0c3b356edd0325
+      internalID: 4412244940905412932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kl3
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 231
+        width: 203
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 293876111476f0e4bbdbfd235442aa4e
+      internalID: -718298783799855419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kl4
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 231
+        width: 203
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a51b1f5c42855e468b1bd38149928f9
+      internalID: -2477923384320756851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kl5
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 231
+        width: 203
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4506d3e666be0df43b6276459bc92e14
+      internalID: 3327640486650495355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kl6
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 231
+        width: 203
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d8423141fe7e74db52f3a45516a86f
+      internalID: -4570277763735216338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kl7
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 231
+        width: 203
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa3b625cf5f2c74097f89b755683c3a
+      internalID: 8368177248363304065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TutorialArrowSprite
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 1305
+        width: 299
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d55239521e4f341ae00ba253ac1e34
+      internalID: 7920975848562963061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-ClickCircle
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 1630
+        width: 205
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b891f692de1224443b12242a87e61f9f
+      internalID: -6108672385785827975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-naturCapit
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 1601
+        width: 192
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b101d444f2e8f499515cbd8f1c3bc9
+      internalID: -3928908116492378323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-icon-bees
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 1356
+        width: 225
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977cbb2c20d66fd4795b6631acc01a67
+      internalID: 5460116476361767292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kl8-happy
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 231
+        width: 203
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7edd0cba99c07524ea6559cadc5ba59e
+      internalID: -8311611579731980990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kl9-sad
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 231
+        width: 203
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7053b7286204cf341b3f3e2b7e838813
+      internalID: 319709104293898368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-Pulse
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 2
+        width: 254
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6be5bfe9ea5de9642802b57cace85460
+      internalID: -6973292256131031039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: t-open Hand
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 65
+        width: 116
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42bdc0f76e9b58b438b84dfafc19bbef
+      internalID: -3126532487748934890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: t-closed hand
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 65
+        width: 116
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20eb3d958b93e5c4c92fe67c5b3c42db
+      internalID: 392463195998118999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kl10-ClockPivot
+      rect:
+        serializedVersion: 2
+        x: 2049
+        y: 402
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7441b2131a7c8034195fabdd2b788a8d
+      internalID: -457537771825008182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kl11-ClockChain
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 363
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4d6f1bc3fa6e09478c05ac7c164fa7d
+      internalID: -2642693219532605073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: s-tut-arrowTxt
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 51
+        width: 503
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b96e170e8311fc0800000000000000
+      internalID: -3525974496619619572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a5a80dc9b33d5824bbf25987c2030421
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

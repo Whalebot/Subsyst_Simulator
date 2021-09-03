@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aae83ff58ee6254e8d55bbd725dcda3, type: 3}
+  m_Name: Waste Production (Agreocology)
+  m_EditorClassIdentifier: 
+  cost:
+    energy: 90
+    food: 0
+    waste: 0
+    foodShortage: 0
+    approval: 0
+    population: 0
+    money: 0
+    pollution: 0
+    bees: 0
+    naturalCapital: 0
+  result:
+    energy: 0
+    food: 0
+    waste: 110
+    foodShortage: 0
+    approval: 6
+    population: 0
+    money: 120
+    pollution: -110
+    bees: 0
+    naturalCapital: 0
+  costMultiplier: 1.5
+  dependantUpgrade: {fileID: 11400000, guid: 2772cd411af7f644a8a405b755d71f9c, type: 2}
+  productionMethod: 1
