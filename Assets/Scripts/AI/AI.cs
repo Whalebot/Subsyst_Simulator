@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 
 public class AI : MonoBehaviour
 {
+    public static AI Instance;
     public bool isAIActive;
 
     public bool showAIActions;
@@ -21,6 +22,12 @@ public class AI : MonoBehaviour
     public AICursor cursorScript;
     public Camera mainCam;
     public bool turboAI;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

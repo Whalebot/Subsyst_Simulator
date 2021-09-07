@@ -29,7 +29,7 @@ MonoBehaviour:
     energy: 0
     food: 0
     waste: 90
-    approval: 6
+    approval: 0
     population: 0
     money: 240
     pollution: 0

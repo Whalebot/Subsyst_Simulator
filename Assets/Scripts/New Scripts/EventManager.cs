@@ -19,6 +19,7 @@ public class EventManager : MonoBehaviour
     public List<GameEventSO> allGameEvents;
     public List<GameEventSO> pendingGameEvents;
     public List<GameEventSO> triggeredGameEvents;
+    public Ressources populationUpkeep;
 
     private void Awake()
     {
@@ -68,32 +69,41 @@ public class EventManager : MonoBehaviour
 
     public void FeedPopulation()
     {
-        int tempFood = gameManager.Food;
+        int tempFood = Mathf.Clamp(gameManager.Food, -gameManager.Population, gameManager.Population);
 
         tempFood -= gameManager.Population;
         //Enough food to feed the population
         if (tempFood >= 0)
         {
             //Player receives money for each fed person
-            gameManager.Money += gameManager.Population;
+            gameManager.Money += gameManager.Population - (gameManager.Population - gameManager.Approval);
             gameManager.Food -= gameManager.Population;
             gameManager.Pollution += gameManager.Population;
+            gameManager.Approval = gameManager.Population;
             fedPopulation?.Invoke();
-            growthCounter++;
+            if (gameManager.Food > gameManager.Population * 1.5F)
+                growthCounter++;
+
+            //populationUpkeep.approval = gameManager.Population;
         }
         //Not enough food to feed the population
         else
         {
             //Player receives money for each fed person
-            gameManager.Money += (tempFood + gameManager.Population);
+            gameManager.Money += (tempFood + gameManager.Population - (gameManager.Population - gameManager.Approval));
             gameManager.Food = 0;
             //Unfed population loses approval
-            gameManager.Approval += tempFood;
+            gameManager.Approval -= tempFood;
 
             gameManager.Pollution += gameManager.Population;
             starvedPopulation?.Invoke();
             growthCounter--;
         }
+
+        populationUpkeep.money = gameManager.Population - (gameManager.Population - gameManager.Approval);
+        populationUpkeep.food = gameManager.Population;
+        populationUpkeep.pollution = gameManager.Population;
+        populationUpkeep.approval = tempFood;
 
         if (growthCounter > growthThreshold) PopulationIncrease();
         else if (growthCounter < -growthThreshold) PopulationDecrease();

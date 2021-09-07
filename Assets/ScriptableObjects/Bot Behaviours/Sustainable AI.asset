@@ -27,17 +27,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
   - {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
   - {fileID: 11400000, guid: c4c3efee7729f3e4aa4cefd41c4fc193, type: 2}
-  - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
-  - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
   - {fileID: 11400000, guid: 6202019a9dd7b4a45a8e6e39511187e4, type: 2}
   - {fileID: 11400000, guid: d7ff885891fdb2844ae5bf791e30b3eb, type: 2}
   - {fileID: 11400000, guid: da39fc340be69f042993a9e148f09c19, type: 2}
   bannedActions: []
   preferredMoneyProduction:
+  - {fileID: 11400000, guid: 2772cd411af7f644a8a405b755d71f9c, type: 2}
+  - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
   - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}
   preferredFoodProduction:
+  - {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
   - {fileID: 11400000, guid: 1f5809531eb4fdb40b275d90ee467d07, type: 2}
   preferredEnergyProduction:
+  - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
   - {fileID: 11400000, guid: c73380a01f7d6394bb4462001de7b1af, type: 2}
   preferredWasteProduction:
+  - {fileID: 11400000, guid: 2772cd411af7f644a8a405b755d71f9c, type: 2}
   - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}

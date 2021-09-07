@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
         set
         {
             ressources.food = value;
+            if (value <= 0) ressources.food = 0;
         }
     }
     public int Waste
@@ -58,7 +59,9 @@ public class GameManager : MonoBehaviour
         }
         set
         {
+
             ressources.approval = value;
+            if (value > Population) ressources.approval = Population;
         }
     }
     public int Population
@@ -210,6 +213,7 @@ public class GameManager : MonoBehaviour
                 if ((int)defInfo1[i].GetValue(obj) < 0) defInfo1[i].SetValue(obj, (int)0);
             }
         }
+        r.approval = Mathf.Clamp(r.approval, -Population, Population);
     }
     public void AddRessources(Ressources r)
     {
@@ -243,6 +247,7 @@ public class GameManager : MonoBehaviour
                     defInfo1[i].SetValue(obj, defInfo2[i].GetValue(obj2));
             }
         }
+        r.approval = Mathf.Clamp(r.approval, -Population, Population);
     }
     public void AddRessources(Ressources r, Ressources r2)
     {
@@ -268,13 +273,8 @@ public class GameManager : MonoBehaviour
             {
                 defInfo1[i].SetValue(obj, (float)var1 + (float)var2);
             }
-            else if (var1 is bool)
-            {
-                //SET VALUES
-                if ((bool)var2)
-                    defInfo1[i].SetValue(obj, defInfo2[i].GetValue(obj2));
-            }
         }
+     
     }
     public void SubtractRessources(Ressources r, Ressources r2)
     {
@@ -350,6 +350,7 @@ public class GameManager : MonoBehaviour
                     defInfo1[i].SetValue(obj, defInfo2[i].GetValue(obj2));
             }
         }
+        r.approval = Mathf.Clamp(r.approval, -Population, Population);
     }
     public void SetRessources(Ressources r, Ressources r2)
     {

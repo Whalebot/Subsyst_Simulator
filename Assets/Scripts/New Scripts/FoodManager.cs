@@ -9,6 +9,8 @@ public class FoodManager : BaseFacility
     public float foodMultiplier = 1;
     public List<ProductionSO> productionTypes;
     public List<ProductionSO> unlockedAutomaticProductionTypes;
+    public Ressources upkeep;
+    public Ressources income;
 
     private void Awake()
     {
@@ -102,8 +104,14 @@ public class FoodManager : BaseFacility
     public override void AdvanceGameState()
     {
         base.AdvanceGameState();
+        upkeep = new Ressources();
+        income = new Ressources();
         foreach (var item in unlockedAutomaticProductionTypes)
         {
+            Ressources cost = UpgradeManager.Instance.CheckCost(item);
+            Ressources result = UpgradeManager.Instance.CheckResult(item);
+            GameManager.Instance.SubtractRessources(upkeep, cost);
+            GameManager.Instance.AddRessources(income, result);
             ExecuteAutomaticProduction(item);
         }
     }

@@ -27,7 +27,7 @@ public class NewsPanelSwiper : MonoBehaviour
     public void NewsPanelInner()
     {
         LeanTween.moveLocalY(gameObject, distanceUp, speed).setEase(curve);
-        
+
     }
 
     public void NewsPanelOuter()
@@ -36,18 +36,16 @@ public class NewsPanelSwiper : MonoBehaviour
 
         if (needsRender == true)
         {
-            if (noNotificationGO.activeInHierarchy == true)
-            {
-                StartCoroutine(AutoClosePanelCoroutine());
-            }
+
+            StartCoroutine(AutoClosePanelCoroutine());
         }
     }
 
     IEnumerator AutoClosePanelCoroutine()
-        {
-            
-            yield return new WaitForSeconds(autoCloseWaitTime);
-            NewsPanelInner();
-        }
+    {
 
+        yield return new WaitForSeconds(autoCloseWaitTime);
+        NewsPanelInner();
     }
+
+}

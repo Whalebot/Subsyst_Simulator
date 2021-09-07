@@ -80,7 +80,7 @@ public class ActionButton : Interactable
 
     public override void ExecuteAction()
     {
-
+        if (action != null) Telemetry.Instance.StartCoroutine(Telemetry.Instance.Post(action));
         if (action.GetType() == typeof(UpgradeSO))
         {
             //UpgradeSO a = (UpgradeSO)action;
