@@ -1631,3 +1631,4 @@ Received Import Request.
 Start importing Assets/ScriptableObjects/Waste/Waste Production (Small Scale).asset using Guid(758fab8e0fd4e454aa188adee9719c44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd9140aa3dd156041ba4aa9079c17ba1') in 0.023887 seconds
   Import took 0.033556 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
