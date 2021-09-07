@@ -9,11 +9,13 @@ public class UpgradeEventSO : GameEventSO
 {
     public UpgradeSO upgrade;
     public int threshold;
-    public Ressources resourceMultiplier;
+    public int RNG;
+    public GameEventSO triggerEvent;
     public override bool CheckRequirements()
     {
         if (UpgradeManager.Instance.CheckUpgradeNumber(upgrade) > threshold)
         {
+            Debug.Log("Upgrade Event");
             return true;
         }
         else return false;
@@ -22,6 +24,12 @@ public class UpgradeEventSO : GameEventSO
     public override void ExecuteEvent()
     {
         base.ExecuteEvent();
+        int val = Random.Range(0, 100);
+        if (val > RNG) {
+            triggerEvent.ExecuteEvent();
+            EventManager.Instance.triggeredGameEvents.Add(this);
+            EventManager.Instance.pendingGameEvents.Remove(this);
+        }
 
     }
 }

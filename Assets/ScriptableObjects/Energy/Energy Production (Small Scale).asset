@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aae83ff58ee6254e8d55bbd725dcda3, type: 3}
   m_Name: Energy Production (Small Scale)
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: Smallscale Oil Production
+  description: Smallscale oil burning
   icon: {fileID: 0}
   cost:
     energy: 0
@@ -32,7 +32,7 @@ MonoBehaviour:
     approval: 0
     population: 0
     money: 0
-    pollution: 0
+    pollution: 2
     bees: 0
     naturalCapital: 0
   costMultiplier: 1.5

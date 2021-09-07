@@ -12,15 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595b023ce6848764786ee100a98a3e4e, type: 3}
   m_Name: Industrial Oil Event Start
   m_EditorClassIdentifier: 
-  upgrade: {fileID: 11400000, guid: 3183e04d06678a74fa089cf67352704b, type: 2}
+  upgrade: {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
   threshold: 5
-  resourceMultiplier:
-    energy: 0
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
+  RNG: 50
+  triggerEvent: {fileID: 11400000, guid: c4aa91f8b99d2364190e58e6a262c468, type: 2}

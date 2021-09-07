@@ -21,15 +21,6 @@ public class CameraManager : MonoBehaviour
     {
 
     }
-    private void OnMouseDown()
-    {
-
-    }
-
-    private void OnMouseUp()
-    {
-
-    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) { mouseButtonHeld = !CursorScript.Instance.foundInteractable; }

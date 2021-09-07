@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f69cb48177137a4ab9e103333dff303, type: 3}
   m_Name: Upgrade Energy Smallscale
   m_EditorClassIdentifier: 
+  title: Smallscale Oil Infrastructure
+  description: 
+  icon: {fileID: 0}
   cost:
     energy: 0
     food: 0
     waste: 0
-    foodShortage: 0
     approval: 0
     population: 0
     money: 50
@@ -27,7 +29,6 @@ MonoBehaviour:
     energy: 0
     food: 0
     waste: 0
-    foodShortage: 0
     approval: 0
     population: 0
     money: 0

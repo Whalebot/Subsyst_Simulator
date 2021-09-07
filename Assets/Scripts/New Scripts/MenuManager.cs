@@ -50,24 +50,22 @@ public class MenuManager : MonoBehaviour
                     else
                         upgradeManager.UnlockAction(item.GetComponent<ActionButton>().action);
                 }
-               
+
             }
         }
     }
 
-    //public Vector3 FindButtonPosition(ActionSO a)
-    //{
+    public void ReplaceAction(ActionSO oldAction, ActionSO newAction)
+    {
+        foreach (var item in interactables)
+        {
+            if (item.action == oldAction)
+            {
+                item.action = newAction;
+            }
+        }
 
-    //    if (a.GetType() == typeof(ProductionSO))
-    //    {
-    //        ProductionSO p = 
-    //    }
-    //    else { 
-
-    //    }
-
-
-    // }
+    }
 
     public void DisplayDescriptionWindow(ActionSO a)
     {

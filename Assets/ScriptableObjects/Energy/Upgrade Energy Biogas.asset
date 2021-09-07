@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f69cb48177137a4ab9e103333dff303, type: 3}
   m_Name: Upgrade Energy Biogas
   m_EditorClassIdentifier: 
+  title: Covert to biogas
+  description: 
+  icon: {fileID: 0}
   cost:
     energy: 0
     food: 0
     waste: 0
-    foodShortage: 0
     approval: 0
     population: 0
-    money: 520
+    money: 1
     pollution: 0
     bees: 0
     naturalCapital: 0
@@ -27,7 +29,6 @@ MonoBehaviour:
     energy: 0
     food: 0
     waste: 0
-    foodShortage: 0
     approval: 0
     population: 0
     money: 0
@@ -37,4 +38,4 @@ MonoBehaviour:
   costMultiplier: 1.5
   dependantUpgrade: {fileID: 0}
   upgradeLimit: 1
-  unlockedProduction: {fileID: 11400000, guid: 10752a6a52865f24383e097f887f32f3, type: 2}
+  unlockedProduction: {fileID: 0}

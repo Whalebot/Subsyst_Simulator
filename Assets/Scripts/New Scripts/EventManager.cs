@@ -16,6 +16,7 @@ public class EventManager : MonoBehaviour
     public GameEvent fedPopulation;
     public GameEvent starvedPopulation;
 
+    public List<GameEventSO> allGameEvents;
     public List<GameEventSO> pendingGameEvents;
     public List<GameEventSO> triggeredGameEvents;
 
@@ -38,9 +39,19 @@ public class EventManager : MonoBehaviour
 
     }
 
-    public void CheckGameEvents() {
+    public void CheckGameEvents()
+    {
+        foreach (var item in allGameEvents)
+        {
+            if (item.CheckRequirements())
+            {
+                item.ExecuteEvent();
+            }
+        }
+
         //If requirements fullfilled, execute stuff
-        if (gameManager.Pollution > gameManager.NaturalCapital) {
+        if (gameManager.Pollution > gameManager.NaturalCapital)
+        {
             gameManager.NaturalCapital--;
         }
 
@@ -49,7 +60,8 @@ public class EventManager : MonoBehaviour
             gameManager.Bees--;
         }
 
-        if (gameManager.Bees < 500) {
+        if (gameManager.Bees < 500)
+        {
             gameManager.Food--;
         }
     }

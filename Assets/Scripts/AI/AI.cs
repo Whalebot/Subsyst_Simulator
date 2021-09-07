@@ -279,7 +279,8 @@ public class AI : MonoBehaviour
 
     IEnumerator SimulateClick(GameObject g)
     {
-        cursorScript.PerformClick();
+        if (cursorScript.gameObject.activeInHierarchy)
+            cursorScript.PerformClick();
         var pointer = new PointerEventData(EventSystem.current);
         ExecuteEvents.Execute(g, pointer, ExecuteEvents.pointerEnterHandler);
         ExecuteEvents.Execute(g, pointer, ExecuteEvents.pointerDownHandler);

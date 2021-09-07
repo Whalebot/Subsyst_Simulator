@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96e3ab9adbc3dd49aacfb4a2b57e51f, type: 3}
+  m_Name: Replace Biogas with Oil
+  m_EditorClassIdentifier: 
+  oldActions:
+  - {fileID: 11400000, guid: e19ddb8e55c2121499b119e03dabe9c1, type: 2}
+  - {fileID: 11400000, guid: d122cd4db2b4a00469397f6b727dc706, type: 2}
+  - {fileID: 11400000, guid: e19ddb8e55c2121499b119e03dabe9c1, type: 2}
+  - {fileID: 11400000, guid: d122cd4db2b4a00469397f6b727dc706, type: 2}
+  newActions:
+  - {fileID: 11400000, guid: c73380a01f7d6394bb4462001de7b1af, type: 2}
+  - {fileID: 11400000, guid: d933f9ea056b579438893c13f704b405, type: 2}
+  - {fileID: 11400000, guid: 5eb34ce009ca0ad4cac745ae20b504bf, type: 2}
+  - {fileID: 11400000, guid: 71a26cabfe0e6b841a3aef31c3d3736d, type: 2}

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ActionSwitch : Interactable
 {
-
+    public GameEventSO toggleOffEvent;
     public SwitchState state;
     public UpgradeSO requiredUpgrade;
     public GameObject activateObject;
@@ -72,11 +72,18 @@ public class ActionSwitch : Interactable
         state = SwitchState.Activated;
         activateObject.SetActive(true);
         deactiveObject.SetActive(false);
-
-        FoodManager.Instance.RemoveAllAutomaticProduction((ProductionSO)action);
-        for (int i = 0; i < UpgradeManager.Instance.CheckUpgradeNumber(requiredUpgrade); i++)
+        if (action.GetType() == typeof(ProductionSO))
         {
-            FoodManager.Instance.AddAutomaticProduction((ProductionSO)action);
+            FoodManager.Instance.RemoveAllAutomaticProduction((ProductionSO)action);
+            for (int i = 0; i < UpgradeManager.Instance.CheckUpgradeNumber(requiredUpgrade); i++)
+            {
+                FoodManager.Instance.AddAutomaticProduction((ProductionSO)action);
+            }
+        }
+        else if (action.GetType() == typeof(EventActionSO))
+        {
+            EventActionSO eventAction = (EventActionSO)action;
+            eventAction.eventSO.ExecuteEvent();
         }
     }
 
@@ -85,9 +92,17 @@ public class ActionSwitch : Interactable
         state = SwitchState.Deactivated;
         activateObject.SetActive(false);
         deactiveObject.SetActive(true);
-        for (int i = 0; i < UpgradeManager.Instance.CheckUpgradeNumber(requiredUpgrade); i++)
+        if (action.GetType() == typeof(ProductionSO))
         {
-            FoodManager.Instance.RemoveAutomaticProduction((ProductionSO)action);
+            for (int i = 0; i < UpgradeManager.Instance.CheckUpgradeNumber(requiredUpgrade); i++)
+            {
+                FoodManager.Instance.RemoveAutomaticProduction((ProductionSO)action);
+            }
+        }
+        else if (action.GetType() == typeof(EventActionSO))
+        {
+
+            toggleOffEvent.ExecuteEvent();
         }
     }
 

@@ -29,29 +29,29 @@ public class UpgradeManager : MonoBehaviour
 
     }
 
-    [Button]
-    void LoadProduction()
-    {
-        string[] assetNames = AssetDatabase.FindAssets("t:ProductionSO", new[] { "Assets/ScriptableObjects" });
+    //[Button]
+    //void LoadProduction()
+    //{
+    //    string[] assetNames = AssetDatabase.FindAssets("t:ProductionSO", new[] { "Assets/ScriptableObjects" });
 
 
-        foreach (string SOName in assetNames)
-        {
-            var SOpath = AssetDatabase.GUIDToAssetPath(SOName);
-            var item = AssetDatabase.LoadAssetAtPath<ProductionSO>(SOpath);
-            allProduction.Add(item);
-        }
+    //    foreach (string SOName in assetNames)
+    //    {
+    //        var SOpath = AssetDatabase.GUIDToAssetPath(SOName);
+    //        var item = AssetDatabase.LoadAssetAtPath<ProductionSO>(SOpath);
+    //        allProduction.Add(item);
+    //    }
 
-        string[] assetNames2 = AssetDatabase.FindAssets("t:UpgradeSO", new[] { "Assets/ScriptableObjects" });
+    //    string[] assetNames2 = AssetDatabase.FindAssets("t:UpgradeSO", new[] { "Assets/ScriptableObjects" });
 
 
-        foreach (string SOName in assetNames2)
-        {
-            var SOpath = AssetDatabase.GUIDToAssetPath(SOName);
-            var item = AssetDatabase.LoadAssetAtPath<UpgradeSO>(SOpath);
-            allUpgrades.Add(item);
-        }
-    }
+    //    foreach (string SOName in assetNames2)
+    //    {
+    //        var SOpath = AssetDatabase.GUIDToAssetPath(SOName);
+    //        var item = AssetDatabase.LoadAssetAtPath<UpgradeSO>(SOpath);
+    //        allUpgrades.Add(item);
+    //    }
+    //}
 
 
     public int CheckUpgradeNumber(UpgradeSO p)

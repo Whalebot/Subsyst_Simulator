@@ -16,7 +16,7 @@ MonoBehaviour:
   description: 
   icon: {fileID: 0}
   cost:
-    energy: 0
+    energy: 20
     food: 0
     waste: 0
     approval: 0
@@ -26,12 +26,12 @@ MonoBehaviour:
     bees: 0
     naturalCapital: 0
   result:
-    energy: 10
+    energy: 0
     food: 0
-    waste: 20
-    approval: 40
+    waste: 10
+    approval: 4
     population: 0
-    money: 30
+    money: 20
     pollution: 0
     bees: 0
     naturalCapital: 0
