@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595b023ce6848764786ee100a98a3e4e, type: 3}
+  m_Name: Industrial Algae Event Warning
+  m_EditorClassIdentifier: 
+  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  title: Instability in the Oil Industry
+  description: The oil industry has started to look stable. Further investment into
+    the industry might lead to a huge burst in the economy.
+  buttonText: Continue
+  thresholdCounter: 0
+  type: 0
+  upgrade: {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
+  threshold: 5
+  RNG: 100
+  triggerEvent: {fileID: 11400000, guid: d3a2a460181d8bf40a3a2225449cd118, type: 2}
