@@ -21,18 +21,18 @@ MonoBehaviour:
     waste: 0
     approval: 0
     population: 0
-    money: 50
+    money: 0
     pollution: 0
     bees: 0
     naturalCapital: 0
   result:
     energy: 0
-    food: 75
+    food: 20
     waste: 0
     approval: 0
     population: 0
     money: 0
-    pollution: 10
+    pollution: -40
     bees: 0
     naturalCapital: 0
   costMultiplier: 1.5

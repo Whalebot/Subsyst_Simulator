@@ -12,26 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aae83ff58ee6254e8d55bbd725dcda3, type: 3}
   m_Name: Agreocology Vegetable Production
   m_EditorClassIdentifier: 
-  productionMethod: 2
+  title: 
+  description: 
+  icon: {fileID: 0}
   cost:
-    energy: 5
+    energy: 10
     food: 0
     waste: 0
-    foodShortage: 0
     approval: 0
     population: 0
-    money: 10
+    money: 0
     pollution: 0
     bees: 0
     naturalCapital: 0
   result:
     energy: 0
-    food: 100
+    food: 80
     waste: 0
-    foodShortage: 0
-    approval: 5
+    approval: 0
     population: 0
     money: 0
-    pollution: 25
+    pollution: 20
     bees: 0
     naturalCapital: 0
+  costMultiplier: 1.5
+  dependantUpgrade: {fileID: 0}
+  productionMethod: 2

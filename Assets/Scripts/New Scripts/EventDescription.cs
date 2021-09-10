@@ -6,15 +6,20 @@ using UnityEngine.UI;
 
 public class EventDescription : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameEventSO eventSO;
+    public Image image;              
+    public TextMeshProUGUI titleText;
+    public TextMeshProUGUI descriptionText;
+    public TextMeshProUGUI buttonText;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+
+    public void DisplayEvent(GameEventSO SO) {
+        eventSO = SO;
+        image.sprite = SO.image;
+        titleText.text = SO.title;
+        descriptionText.text = SO.description;
+        buttonText.text = SO.buttonText;
+
     }
 }

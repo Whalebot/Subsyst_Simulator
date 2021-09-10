@@ -10,9 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 595b023ce6848764786ee100a98a3e4e, type: 3}
-  m_Name: Industrial Oil Event Start
+  m_Name: Industrial Oil Event Trigger
   m_EditorClassIdentifier: 
+  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  title: Oil market crashed
+  description: The oil industry could not keep up with the demand and the prices
+    have increased dramatically.
+  buttonText: Continue
+  thresholdCounter: 0
+  type: 1
   upgrade: {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
-  threshold: 5
+  threshold: 6
   RNG: 50
   triggerEvent: {fileID: 11400000, guid: c4aa91f8b99d2364190e58e6a262c468, type: 2}

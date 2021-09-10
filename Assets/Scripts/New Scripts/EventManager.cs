@@ -20,6 +20,8 @@ public class EventManager : MonoBehaviour
     public List<GameEventSO> pendingGameEvents;
     public List<GameEventSO> triggeredGameEvents;
     public Ressources populationUpkeep;
+    public EventDescription eventDescription;
+    public List<GameEventSO> eventQueue;
 
     private void Awake()
     {
@@ -30,9 +32,14 @@ public class EventManager : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         timeManager = TimeManager.Instance;
+        foreach (var item in allGameEvents)
+        {
+            item.thresholdCounter = 0;
+        }
+
         timeManager.advanceGameEvent += FeedPopulation;
         timeManager.advanceGameEvent += CheckGameEvents;
-        timeManager.advanceTimeEvent+= UpdateUpkeep;
+        timeManager.advanceTimeEvent += UpdateUpkeep;
     }
 
     // Update is called once per frame
@@ -43,12 +50,27 @@ public class EventManager : MonoBehaviour
 
     public void CheckGameEvents()
     {
-        foreach (var item in allGameEvents)
+        eventQueue.Clear();
+
+        foreach (var item in pendingGameEvents)
         {
             if (item.CheckRequirements())
             {
-                item.ExecuteEvent();
+                eventQueue.Add(item);
+                eventDescription.gameObject.SetActive(true);
+                eventDescription.DisplayEvent(item);
+
+
             }
+        }
+
+        foreach (var item in eventQueue)
+        {
+
+
+            pendingGameEvents.Remove(item);
+            gameManager.PauseGame();
+            item.ExecuteEvent();
         }
 
         //If requirements fullfilled, execute stuff
@@ -106,7 +128,8 @@ public class EventManager : MonoBehaviour
         else if (growthCounter < -growthThreshold) PopulationDecrease();
     }
 
-    void UpdateUpkeep() {
+    void UpdateUpkeep()
+    {
         populationUpkeep.money = gameManager.Population - (gameManager.Population - gameManager.Approval);
         populationUpkeep.food = gameManager.Population;
         populationUpkeep.pollution = gameManager.Population;

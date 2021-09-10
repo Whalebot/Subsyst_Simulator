@@ -8,15 +8,28 @@ using UnityEngine;
 public class UpgradeEventSO : GameEventSO
 {
     public UpgradeSO upgrade;
+
+
     public int threshold;
     public int RNG;
     public GameEventSO triggerEvent;
     public override bool CheckRequirements()
     {
-        if (UpgradeManager.Instance.CheckUpgradeNumber(upgrade) > threshold)
+        if (UpgradeManager.Instance.CheckUpgradeNumber(upgrade) > threshold + thresholdCounter)
         {
-           // Debug.Log("Upgrade Event");
-            return true;
+            int val = Random.Range(0, 100);
+            if (val < RNG)
+            {
+                thresholdCounter = 0;
+                return true;
+            }
+            else
+            {
+                thresholdCounter++;
+
+                return false;
+
+            }
         }
         else return false;
     }
@@ -24,12 +37,15 @@ public class UpgradeEventSO : GameEventSO
     public override void ExecuteEvent()
     {
         base.ExecuteEvent();
-        int val = Random.Range(0, 100);
-        if (val > RNG) {
-            triggerEvent.ExecuteEvent();
-            EventManager.Instance.triggeredGameEvents.Add(this);
-            EventManager.Instance.pendingGameEvents.Remove(this);
+
+        if (type == EventType.AddToPending)
+        {
+            EventManager.Instance.pendingGameEvents.Add(triggerEvent);
+            triggerEvent.thresholdCounter = UpgradeManager.Instance.CheckUpgradeNumber(upgrade) - threshold;
         }
+        else
+            triggerEvent.ExecuteEvent();
+
 
     }
 }

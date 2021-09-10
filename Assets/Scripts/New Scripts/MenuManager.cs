@@ -38,6 +38,7 @@ public class MenuManager : MonoBehaviour
     [Button]
     public void FindAllInteractables()
     {
+        interactables = new Interactable[0];
         interactables = (Interactable[])GameObject.FindObjectsOfType<Interactable>(true);
         foreach (var item in interactables)
         {
