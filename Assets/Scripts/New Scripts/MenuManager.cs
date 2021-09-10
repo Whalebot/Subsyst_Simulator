@@ -27,6 +27,7 @@ public class MenuManager : MonoBehaviour
     public Interactable[] interactables;
     public UpgradeManager upgradeManager;
     public DescriptionWindow productionDescriptionWindow;
+    public DescriptionWindow upgradeDescriptionWindow;
 
     // Start is called before the first frame update
     void Awake()
@@ -74,14 +75,18 @@ public class MenuManager : MonoBehaviour
         {
             productionDescriptionWindow.gameObject.SetActive(true);
             productionDescriptionWindow.UpdateDescription((ProductionSO)a);
-
-
+        }
+        else if (a.GetType() == typeof(UpgradeSO))
+        {
+            upgradeDescriptionWindow.gameObject.SetActive(true);
+            upgradeDescriptionWindow.UpdateDescription((UpgradeSO)a);
         }
     }
     public void HideDescriptionWindow()
     {
 
         productionDescriptionWindow.gameObject.SetActive(false);
+        upgradeDescriptionWindow.gameObject.SetActive(false);
 
     }
     public Interactable FindInteractable(ActionSO a)

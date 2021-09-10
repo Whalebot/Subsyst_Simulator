@@ -7,6 +7,7 @@ using UnityEngine;
 public class AIBehaviour : ScriptableObject
 {
     public int populationGoal;
+    public bool sustainable;
     public UpgradeSO[] upgradeGoals;
     public ActionSO[] bannedActions;
     public ActionSO[] preferredMoneyProduction;

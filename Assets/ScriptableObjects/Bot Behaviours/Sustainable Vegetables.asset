@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Sustainable Vegetables
   m_EditorClassIdentifier: 
   populationGoal: 2
+  sustainable: 1
   upgradeGoals:
   - {fileID: 11400000, guid: f773bbdc1fca40f40b2c2ac04429f643, type: 2}
   - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
@@ -26,13 +27,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
   - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
   - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
+  - {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}
+  - {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}
   - {fileID: 11400000, guid: c4c3efee7729f3e4aa4cefd41c4fc193, type: 2}
-  - {fileID: 11400000, guid: 6202019a9dd7b4a45a8e6e39511187e4, type: 2}
+  - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
+  - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
+  - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
+  - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
+  - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
   - {fileID: 11400000, guid: da39fc340be69f042993a9e148f09c19, type: 2}
   bannedActions: []
   preferredMoneyProduction:
-  - {fileID: 11400000, guid: 2772cd411af7f644a8a405b755d71f9c, type: 2}
-  - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
   - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}
   preferredFoodProduction:
   - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
@@ -41,5 +46,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
   - {fileID: 11400000, guid: c73380a01f7d6394bb4462001de7b1af, type: 2}
   preferredWasteProduction:
-  - {fileID: 11400000, guid: 2772cd411af7f644a8a405b755d71f9c, type: 2}
+  - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
   - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}

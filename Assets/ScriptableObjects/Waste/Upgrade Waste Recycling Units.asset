@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f69cb48177137a4ab9e103333dff303, type: 3}
   m_Name: Upgrade Waste Recycling Units
   m_EditorClassIdentifier: 
+  title: 
+  description: 
+  icon: {fileID: 0}
   cost:
     energy: 0
     food: 0
     waste: 0
-    foodShortage: 0
     approval: 0
     population: 0
-    money: 500
+    money: 100
     pollution: 0
     bees: 0
     naturalCapital: 0
@@ -27,7 +29,6 @@ MonoBehaviour:
     energy: 0
     food: 0
     waste: 0
-    foodShortage: 0
     approval: 0
     population: 0
     money: 0

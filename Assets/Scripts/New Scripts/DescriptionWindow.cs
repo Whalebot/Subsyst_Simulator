@@ -89,6 +89,43 @@ public class DescriptionWindow : MonoBehaviour
         StartCoroutine("SetDirty");
     }
 
+    public void UpdateDescription(UpgradeSO p)
+    {
+        action = p;
+        if (action.icon != null)
+            iconImage.sprite = action.icon;
+        else iconImage.gameObject.SetActive(false);
+
+        titleText.text = action.title;
+        descriptionText.text = action.description;
+
+        costMoney.SetActive(action.cost.money != 0);
+        costFood.SetActive(action.cost.food != 0);
+        costEnergy.SetActive(action.cost.energy != 0);
+        costWaste.SetActive(action.cost.waste != 0);
+
+        resultMoney.SetActive(action.result.money != 0);
+        resultFood.SetActive(action.result.food != 0);
+        resultEnergy.SetActive(action.result.energy != 0);
+        resultWaste.SetActive(action.result.waste != 0);
+        resultPollution.SetActive(action.result.pollution != 0);
+
+        Ressources temp = UpgradeManager.Instance.CheckCost(action);
+        costMoneyText.text = "" + temp.money;
+        costFoodText.text = "" + temp.food;
+        costEnergyText.text = "" + temp.energy;
+        costWasteText.text = "" + temp.waste;
+
+        Ressources tempResult = UpgradeManager.Instance.CheckResult(action);
+        resultMoneyText.text = "" + tempResult.money;
+        resultFoodText.text = "" + tempResult.food;
+        resultEnergyText.text = "" + tempResult.energy;
+        resultWasteText.text = "" + tempResult.waste;
+        resultPollutionText.text = "" + tempResult.pollution;
+
+        StartCoroutine("SetDirty");
+    }
+
     IEnumerator SetDirty()
     {
         sizeFitter.enabled = false;

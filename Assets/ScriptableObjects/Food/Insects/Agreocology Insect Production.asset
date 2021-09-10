@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aae83ff58ee6254e8d55bbd725dcda3, type: 3}
   m_Name: Agreocology Insect Production
   m_EditorClassIdentifier: 
-  productionMethod: 2
+  title: 
+  description: 
+  icon: {fileID: 0}
   cost:
     energy: 0
     food: 0
     waste: 0
-    foodShortage: 0
     approval: 0
     population: 0
     money: 50
@@ -28,10 +29,12 @@ MonoBehaviour:
     energy: 0
     food: 50
     waste: 0
-    foodShortage: 0
     approval: 0
     population: 0
     money: 0
     pollution: 10
     bees: 0
     naturalCapital: 0
+  costMultiplier: 1.5
+  dependantUpgrade: {fileID: 11400000, guid: 61cdad8ff14d5df4eb02bdfc5ed70740, type: 2}
+  productionMethod: 2

@@ -20,6 +20,7 @@ public class FoodManager : BaseFacility
     // Start is called before the first frame update
     void Start()
     {
+        TimeManager.Instance.advanceTimeEvent+= UpdateUpkeep;
         TimeManager.Instance.advanceGameEvent += AdvanceGameState;
     }
 
@@ -101,17 +102,30 @@ public class FoodManager : BaseFacility
     //        return 
     //}
 
-    public override void AdvanceGameState()
-    {
-        base.AdvanceGameState();
+    public Ressources Upkeep() {
         upkeep = new Ressources();
         income = new Ressources();
         foreach (var item in unlockedAutomaticProductionTypes)
         {
             Ressources cost = UpgradeManager.Instance.CheckCost(item);
             Ressources result = UpgradeManager.Instance.CheckResult(item);
-            GameManager.Instance.SubtractRessources(upkeep, cost);
+            GameManager.Instance.AddRessources(upkeep, cost);
             GameManager.Instance.AddRessources(income, result);
+        }
+        GameManager.Instance.AddRessources(upkeep, EventManager.Instance.populationUpkeep);
+
+        return upkeep;
+    }
+
+    public void UpdateUpkeep() {
+        Upkeep();
+    }
+
+    public override void AdvanceGameState()
+    {
+        base.AdvanceGameState();
+        foreach (var item in unlockedAutomaticProductionTypes)
+        {
             ExecuteAutomaticProduction(item);
         }
     }

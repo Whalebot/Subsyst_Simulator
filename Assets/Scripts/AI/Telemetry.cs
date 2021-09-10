@@ -41,7 +41,6 @@ public class Telemetry : MonoBehaviour
         form.AddField("entry.408889876", "Bob");
         form.AddField("entry.92589871", guid.ToString());
         form.AddField("entry.1657388280", action.name.ToString());
-        print(FormatTime(Time.time));
         form.AddField("entry.1999334966", FormatTime(Time.time));
         if (AI.Instance.isAIActive)
             form.AddField("entry.1351457628", AI.Instance.behaviour.name.ToString());
@@ -70,7 +69,7 @@ public class Telemetry : MonoBehaviour
         }
         else
         {
-            Debug.Log("Form upload complete!");
+         //   Debug.Log("Form upload complete!");
         }
     }
 

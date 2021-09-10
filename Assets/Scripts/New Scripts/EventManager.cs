@@ -32,6 +32,7 @@ public class EventManager : MonoBehaviour
         timeManager = TimeManager.Instance;
         timeManager.advanceGameEvent += FeedPopulation;
         timeManager.advanceGameEvent += CheckGameEvents;
+        timeManager.advanceTimeEvent+= UpdateUpkeep;
     }
 
     // Update is called once per frame
@@ -100,13 +101,16 @@ public class EventManager : MonoBehaviour
             growthCounter--;
         }
 
-        populationUpkeep.money = gameManager.Population - (gameManager.Population - gameManager.Approval);
-        populationUpkeep.food = gameManager.Population;
-        populationUpkeep.pollution = gameManager.Population;
-        populationUpkeep.approval = tempFood;
 
         if (growthCounter > growthThreshold) PopulationIncrease();
         else if (growthCounter < -growthThreshold) PopulationDecrease();
+    }
+
+    void UpdateUpkeep() {
+        populationUpkeep.money = gameManager.Population - (gameManager.Population - gameManager.Approval);
+        populationUpkeep.food = gameManager.Population;
+        populationUpkeep.pollution = gameManager.Population;
+
     }
 
     public void PopulationIncrease()

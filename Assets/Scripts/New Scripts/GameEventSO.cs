@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameEventSO : ScriptableObject
 {
+    public string title;
+    public string description;
+    public string buttonText;
     // Start is called before the first frame update
     void Start()
     {

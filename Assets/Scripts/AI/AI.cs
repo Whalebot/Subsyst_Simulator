@@ -54,6 +54,17 @@ public class AI : MonoBehaviour
     {
         if (!isAIActive) return;
 
+        //If sustainable, check you can afford upkeep before trying to upgrade
+        if (behaviour.sustainable)
+        {
+            //Returns true if player can't afford upkeep
+            if (CheckAutomaticUpkeep())
+            {
+                MoveCursorToNextAction();
+                return;
+            }
+        }
+
         //If population is smaller than goal, prioritize food
         if (GameManager.Instance.Population < behaviour.populationGoal)
         {
@@ -75,7 +86,12 @@ public class AI : MonoBehaviour
                 }
             }
         }
-        if (foundAllUpgrades) return;
+        if (foundAllUpgrades)
+        {
+            CheckAutomaticUpkeep();
+            MoveCursorToNextAction();
+            return;
+        }
 
         Ressources tempCost = UpgradeManager.Instance.CheckCost(upgradeGoal);
         //Check if AI can afford next upgrade, if yes, next action is buying the upgrade.
@@ -98,6 +114,73 @@ public class AI : MonoBehaviour
         {
             FindNextUpgradeGoal();
         }
+    }
+
+    public bool CheckAutomaticUpkeep()
+    {
+        bool[] temp = GameManager.Instance.FindMissingRessources(FoodManager.Instance.Upkeep());
+        ActionSO tempAction = (ActionSO)ScriptableObject.CreateInstance("ActionSO");
+
+        for (int i = 0; i < 9; i++)
+        {
+            if (!temp[i]) continue;
+            switch (i)
+            {
+                case 0:
+                    for (int j = 0; j < behaviour.preferredEnergyProduction.Length; j++)
+                    {
+                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredEnergyProduction[j]))
+                        {
+                            tempAction = behaviour.preferredEnergyProduction[j];
+                            break;
+                        }
+                    }
+                    break;
+                case 1:
+                    for (int j = 0; j < behaviour.preferredFoodProduction.Length; j++)
+                    {
+                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredFoodProduction[j]))
+                        {
+                            tempAction = behaviour.preferredFoodProduction[j];
+                            break;
+                        }
+                    }
+                    break;
+                case 2:
+                    for (int j = 0; j < behaviour.preferredWasteProduction.Length; j++)
+                    {
+                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredWasteProduction[j]))
+                        {
+                            tempAction = behaviour.preferredWasteProduction[j];
+                            break;
+                        }
+                    }
+                    break;
+                case 5:
+                    for (int j = 0; j < behaviour.preferredMoneyProduction.Length; j++)
+                    {
+                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredMoneyProduction[j]))
+                        {
+                            tempAction = behaviour.preferredMoneyProduction[j];
+                            break;
+                        }
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+            Ressources productionCost = UpgradeManager.Instance.CheckCost(tempAction);
+
+            if (GameManager.Instance.CheckRessources(productionCost))
+            {
+                print("Can't afford upkeep, trying to: " + tempAction);
+                nextAction = tempAction;
+                return true;
+            }
+        }
+        print("Can afford upkeep");
+        return false;
     }
 
     public void FindProductionMethods(ActionSO a)
@@ -169,7 +252,6 @@ public class AI : MonoBehaviour
         }
 
         FindProductionMethodsNoLoop(tempAction);
-
     }
 
     public void FindProductionMethodsNoLoop(ActionSO a)
@@ -308,6 +390,7 @@ public class AI : MonoBehaviour
         if (upgradeGoalCount >= behaviour.upgradeGoals.Length)
         {
             foundAllUpgrades = true;
+            upgradeGoal = null;
             print("All Upgrades Found");
         }
         else

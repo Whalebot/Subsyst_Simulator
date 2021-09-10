@@ -15,7 +15,7 @@ public class UpgradeEventSO : GameEventSO
     {
         if (UpgradeManager.Instance.CheckUpgradeNumber(upgrade) > threshold)
         {
-            Debug.Log("Upgrade Event");
+           // Debug.Log("Upgrade Event");
             return true;
         }
         else return false;

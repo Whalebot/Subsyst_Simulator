@@ -37,5 +37,5 @@ MonoBehaviour:
     naturalCapital: 0
   costMultiplier: 1.5
   dependantUpgrade: {fileID: 11400000}
-  upgradeLimit: 1
+  upgradeLimit: 7
   unlockedProduction: {fileID: 11400000, guid: bb67da4c2dc22ac4285d929a62d6ce9f, type: 2}
