@@ -43,10 +43,13 @@ public class AI : MonoBehaviour
         cursorScript.gameObject.SetActive(isAIActive);
     }
 
-    private void FixedUpdate()
-    {
-        //if (turboAI)
-        //    CalculateNextAction();
+    public void SelectAI(int i) {
+        if (i == -1) {
+            isAIActive = false;
+            return;
+        }
+        behaviour = bots[i];
+        isAIActive = true;
     }
 
     [Button]
@@ -123,6 +126,7 @@ public class AI : MonoBehaviour
 
         for (int i = 0; i < 9; i++)
         {
+            bool found = false;
             if (!temp[i]) continue;
             switch (i)
             {
@@ -131,6 +135,7 @@ public class AI : MonoBehaviour
                     {
                         if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredEnergyProduction[j]))
                         {
+                            found = true;
                             tempAction = behaviour.preferredEnergyProduction[j];
                             break;
                         }
@@ -141,6 +146,7 @@ public class AI : MonoBehaviour
                     {
                         if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredFoodProduction[j]))
                         {
+                            found = true;
                             tempAction = behaviour.preferredFoodProduction[j];
                             break;
                         }
@@ -151,6 +157,7 @@ public class AI : MonoBehaviour
                     {
                         if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredWasteProduction[j]))
                         {
+                            found = true;
                             tempAction = behaviour.preferredWasteProduction[j];
                             break;
                         }
@@ -161,6 +168,7 @@ public class AI : MonoBehaviour
                     {
                         if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredMoneyProduction[j]))
                         {
+                            found = true;
                             tempAction = behaviour.preferredMoneyProduction[j];
                             break;
                         }
@@ -168,18 +176,29 @@ public class AI : MonoBehaviour
                     break;
 
                 default:
+
                     break;
             }
-            Ressources productionCost = UpgradeManager.Instance.CheckCost(tempAction);
-
-            if (GameManager.Instance.CheckRessources(productionCost))
+            if (found)
             {
-                print("Can't afford upkeep, trying to: " + tempAction);
-                nextAction = tempAction;
-                return true;
+                Ressources productionCost = UpgradeManager.Instance.CheckCost(tempAction);
+
+                if (GameManager.Instance.CheckRessources(productionCost))
+                {
+                    print("Can't afford upkeep, trying to: " + tempAction);
+                    nextAction = tempAction;
+                    return false;
+                }
             }
+            else
+            {
+                print("Can't afford upkeep, waiting");
+                return true;
+
+            }
+
         }
-        print("Can afford upkeep");
+     //   print("Can afford upkeep");
         return false;
     }
 
@@ -398,7 +417,6 @@ public class AI : MonoBehaviour
             upgradeGoal = behaviour.upgradeGoals[upgradeGoalCount];
             upgradeGoalCount++;
         }
-
     }
 
     public void CalculateOptimalProductionMethod()

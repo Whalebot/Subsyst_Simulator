@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595b023ce6848764786ee100a98a3e4e, type: 3}
   m_Name: Industrial Oil Event Warning
   m_EditorClassIdentifier: 
+  showInPaper: 1
   image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   title: Instability in the Oil Industry
   description: The oil industry has started to look stable. Further investment into

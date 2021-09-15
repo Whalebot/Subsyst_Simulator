@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f69cb48177137a4ab9e103333dff303, type: 3}
   m_Name: Upgrade Meat (Circular)
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: Circular Meat Upgrade
+  description: Invest in the infrastructure for Circular Meat Production
   icon: {fileID: -2865678973810129570, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   cost:
     energy: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Algae Production (Industrial)
   m_EditorClassIdentifier: 
   title: Industrial Algae Prodcution
-  description: 
+  description: Industrial Algae Prodcution
   icon: {fileID: 2306574165339229938, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   cost:
     energy: 2

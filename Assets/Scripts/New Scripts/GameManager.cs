@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    public static bool gameStart;
     public static bool paused;
     public bool disableGraphics;
     [TabGroup("Ressources")]
@@ -124,10 +126,15 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        paused = false;
+        gameStart = false;
+        paused = true;
         SetStartRessources();
     }
 
+    public void StartGame() {
+        gameStart = true;
+        paused = false;
+    }
 
     public void PauseGame()
     {
@@ -385,7 +392,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public void ReloadScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
 
 [System.Serializable]

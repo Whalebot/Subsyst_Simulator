@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameEventSO : ScriptableObject
 {
+    public bool showInPaper;
     public Sprite image;
     public string title;
     public string description;

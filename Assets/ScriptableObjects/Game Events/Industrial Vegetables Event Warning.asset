@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595b023ce6848764786ee100a98a3e4e, type: 3}
   m_Name: Industrial Vegetables Event Warning
   m_EditorClassIdentifier: 
+  showInPaper: 1
   image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  title: Instability in the Oil Industry
-  description: The oil industry has started to look stable. Further investment into
-    the industry might lead to a huge burst in the economy.
+  title: The soil is dying
+  description: Scientists have found that the local soil has rapidly been degraded
+    due to overfarming. Further agriculture might do unrecoverable damage to the
+    soil.
   buttonText: Continue
   thresholdCounter: 0
   type: 0
-  upgrade: {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
+  upgrade: {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
   threshold: 5
   RNG: 100
   triggerEvent: {fileID: 11400000, guid: d3a2a460181d8bf40a3a2225449cd118, type: 2}

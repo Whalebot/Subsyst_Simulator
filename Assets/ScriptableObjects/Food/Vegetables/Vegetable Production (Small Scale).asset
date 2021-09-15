@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aae83ff58ee6254e8d55bbd725dcda3, type: 3}
   m_Name: Vegetable Production (Small Scale)
   m_EditorClassIdentifier: 
-  title: Smallscale Vegetable Production
-  description: Harvesting locally grown vegetables
+  title: Small Scale Vegetable Production
+  description: Small Scale Vegetable Production
   icon: {fileID: 2741983223664328557, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   cost:
     energy: 2

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f69cb48177137a4ab9e103333dff303, type: 3}
   m_Name: Plus Algae (Circular)
   m_EditorClassIdentifier: 
-  title: Industrial Algae Ponds+
-  description: 
+  title: Circular Algae Ponds+
+  description: Upgrade the output of your Circular Algae Ponds
   icon: {fileID: 8668581585100221883, guid: 3d379100514ea40af8ab99aebc058e8f, type: 3}
   cost:
     energy: 0
@@ -21,7 +21,7 @@ MonoBehaviour:
     waste: 0
     approval: 0
     population: 0
-    money: 7
+    money: 20
     pollution: 0
     bees: 0
     naturalCapital: 0

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f69cb48177137a4ab9e103333dff303, type: 3}
   m_Name: Upgrade Insects (Small Scale)
   m_EditorClassIdentifier: 
-  title: Cricket Breeding
-  description: 
-  icon: {fileID: 0}
+  title: Small Scale Insect Upgrade
+  description: Invest in the infrastructure for Small Scale Insect Production
+  icon: {fileID: -6724815555555351529, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   cost:
     energy: 0
     food: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Upgrade Energy (Biogas)
   m_EditorClassIdentifier: 
   title: Covert to biogas
-  description: 
+  description: 'Invest in the infrastructure for Biogas Production '
   icon: {fileID: 0}
   cost:
     energy: 0

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f69cb48177137a4ab9e103333dff303, type: 3}
   m_Name: Plus Meat (Industrial)
   m_EditorClassIdentifier: 
-  title: Meat Super-Processing
-  description: High automated industrial production of meat.
+  title: Industrial Meat Production
+  description: Upgrade the output of your Industrial Meat Production
   icon: {fileID: -2865678973810129570, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   cost:
     energy: 0

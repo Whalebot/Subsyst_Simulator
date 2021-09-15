@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Smallscale Biogas Production
   description: Locally produced biogas using waste
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 2b3c20caf3fa1604fa92b9166d6711f5, type: 3}
   cost:
     energy: 0
     food: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
     bees: 0
     naturalCapital: 0
   result:
-    energy: 2
+    energy: 3
     food: 0
     waste: 0
     approval: 0

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Vegetable Production (Industrial)
   m_EditorClassIdentifier: 
   title: Industrial Vegetable Production
-  description: Very big farms
-  icon: {fileID: 0}
+  description: Industrial Vegetable Production
+  icon: {fileID: 2741983223664328557, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   cost:
     energy: 2
     food: 0

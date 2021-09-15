@@ -23,6 +23,7 @@ public class CameraManager : MonoBehaviour
     }
     void Update()
     {
+        if (!GameManager.gameStart) return;
         if (Input.GetMouseButtonDown(0)) { mouseButtonHeld = !CursorScript.Instance.foundInteractable; }
         if (Input.GetMouseButtonUp(0)) mouseButtonHeld = false;
 

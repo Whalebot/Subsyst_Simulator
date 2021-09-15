@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using TMPro;
 
 public class Telemetry : MonoBehaviour
 {
     public static Telemetry Instance;
-    //    // Start is called before the first frame update
-    //    Amount[] amountItems;
+    public static string userName;
+    public static string institutionName;
     public string urlstring = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfpV516KAQCSc08pYkUMQ8CP7xDp-QhsReSVJEzdPVt2izV4A/formResponse";
     public System.DateTime counter;
     System.Guid guid;
-    //    private string userName = "";
-    //    private string insittutionName = "";
-
+    public GameObject nameWindow;
+    public TextMeshProUGUI userNameText;
+    public TextMeshProUGUI institutionNameText;
     private void Awake()
     {
         Instance = this;
@@ -21,6 +22,20 @@ public class Telemetry : MonoBehaviour
 
     void Start()
     {
+
+        if (userName == null)
+        {
+            nameWindow.SetActive(true);
+        }
+        if (userName != "")
+        {
+            userNameText.text = userName;
+        }
+        if (institutionName != "")
+        {
+            institutionNameText.text = institutionName;
+        }
+
         guid = System.Guid.NewGuid();
         float total_time = (float)(System.DateTime.Now - counter).TotalSeconds;
         counter = System.DateTime.Now;
@@ -33,12 +48,23 @@ public class Telemetry : MonoBehaviour
         //StartCoroutine(Post());
     }
 
+    public void SetName(string s)
+    {
+        userName = s;
+    }
+    public void SetInstitution(string s)
+    {
+        institutionName = s;
+    }
     public IEnumerator Post(ActionSO action)
     {
         float total_time = (float)(System.DateTime.Now - counter).TotalSeconds;
         //print(total_time.ToString());
         WWWForm form = new WWWForm();
-        form.AddField("entry.408889876", "Bob");
+        if (userName!= null)
+            form.AddField("entry.408889876", userName);
+        if(institutionName != null)
+        form.AddField("entry.1183520150", institutionName);
         form.AddField("entry.92589871", guid.ToString());
         form.AddField("entry.1657388280", action.name.ToString());
         form.AddField("entry.1999334966", FormatTime(Time.time));
@@ -69,7 +95,7 @@ public class Telemetry : MonoBehaviour
         }
         else
         {
-         //   Debug.Log("Form upload complete!");
+            //   Debug.Log("Form upload complete!");
         }
     }
 

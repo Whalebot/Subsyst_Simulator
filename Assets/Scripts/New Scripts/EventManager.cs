@@ -23,6 +23,8 @@ public class EventManager : MonoBehaviour
     public EventDescription eventDescription;
     public List<GameEventSO> eventQueue;
 
+    public GameObject paper;
+
     private void Awake()
     {
         Instance = this;
@@ -56,20 +58,24 @@ public class EventManager : MonoBehaviour
         {
             if (item.CheckRequirements())
             {
+                if (item.showInPaper) {
+                    NewsManager.Instance.ActivateNotification();
+                    NewsManager.Instance.SpawnNews(item);
+                }
+                else
+                {
+                    eventDescription.gameObject.SetActive(true);
+                    eventDescription.DisplayEvent(item);
+                    gameManager.PauseGame();
+                }
                 eventQueue.Add(item);
-                eventDescription.gameObject.SetActive(true);
-                eventDescription.DisplayEvent(item);
-
-
             }
         }
 
         foreach (var item in eventQueue)
         {
-
-
             pendingGameEvents.Remove(item);
-            gameManager.PauseGame();
+            //gameManager.PauseGame();
             item.ExecuteEvent();
         }
 

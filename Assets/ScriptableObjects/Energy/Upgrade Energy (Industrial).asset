@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Upgrade Energy (Industrial)
   m_EditorClassIdentifier: 
   title: Industrial Oil Infrastructure
-  description: 
+  description: 'Invest in the infrastructure for Industrial Energy Production '
   icon: {fileID: 0}
   cost:
     energy: 0
