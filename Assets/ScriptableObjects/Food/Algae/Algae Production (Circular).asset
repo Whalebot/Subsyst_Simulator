@@ -27,12 +27,12 @@ MonoBehaviour:
     naturalCapital: 0
   result:
     energy: 0
-    food: 5
-    waste: 0
+    food: 10
+    waste: -4
     approval: 0
     population: 0
     money: 0
-    pollution: -10
+    pollution: -20
     bees: 0
     naturalCapital: 0
   costMultiplier: 1.5

@@ -16,6 +16,8 @@ public class Telemetry : MonoBehaviour
     public GameObject nameWindow;
     public TextMeshProUGUI userNameText;
     public TextMeshProUGUI institutionNameText;
+    public bool sendTelemetry;
+    public bool sendHeatmap = true;
     private void Awake()
     {
         Instance = this;

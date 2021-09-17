@@ -13,7 +13,7 @@ public class AI : MonoBehaviour
     public bool showAIActions;
 
     [InlineEditor] public AIBehaviour behaviour;
-    int upgradeGoalCount;
+    public int upgradeGoalCount;
     public UpgradeSO upgradeGoal;
     public bool foundAllUpgrades;
     public ActionSO nextAction;
@@ -22,7 +22,8 @@ public class AI : MonoBehaviour
     public AICursor cursorScript;
     public Camera mainCam;
     public bool turboAI;
-
+    public int overshoot = 5;
+    public int overshootCounter = 0;
     private void Awake()
     {
         Instance = this;
@@ -33,7 +34,6 @@ public class AI : MonoBehaviour
     {
         TimeManager.Instance.advanceTimeEvent += CalculateNextAction;
         UpgradeManager.Instance.upgradeEvent += CheckUpgrade;
-        FindNextUpgradeGoal();
     }
 
 
@@ -43,13 +43,17 @@ public class AI : MonoBehaviour
         cursorScript.gameObject.SetActive(isAIActive);
     }
 
-    public void SelectAI(int i) {
-        if (i == -1) {
+    public void SelectAI(int i)
+    {
+        if (i == -1)
+        {
             isAIActive = false;
             return;
         }
         behaviour = bots[i];
         isAIActive = true;
+        upgradeGoalCount = 0;
+        FindNextUpgradeGoal();
     }
 
     [Button]
@@ -57,12 +61,20 @@ public class AI : MonoBehaviour
     {
         if (!isAIActive) return;
 
+        if (overshootCounter > 0)
+        {
+            overshootCounter--;
+            MoveCursorToNextAction();
+            return;
+        }
+
         //If sustainable, check you can afford upkeep before trying to upgrade
         if (behaviour.sustainable)
         {
             //Returns true if player can't afford upkeep
             if (CheckAutomaticUpkeep())
             {
+                print("Can't afford upkeep");
                 MoveCursorToNextAction();
                 return;
             }
@@ -100,11 +112,13 @@ public class AI : MonoBehaviour
         //Check if AI can afford next upgrade, if yes, next action is buying the upgrade.
         if (GameManager.Instance.CheckRessources(tempCost))
         {
+            print("Can afford upgrade");
             nextAction = upgradeGoal;
         }
         //Check what ressources the AI is missing
         else
         {
+            print("Can't afford upgrade, look for shit");
             FindProductionMethods(upgradeGoal);
         }
 
@@ -124,6 +138,178 @@ public class AI : MonoBehaviour
         bool[] temp = GameManager.Instance.FindMissingRessources(FoodManager.Instance.Upkeep());
         ActionSO tempAction = (ActionSO)ScriptableObject.CreateInstance("ActionSO");
 
+        for (int i = 0; i < 9; i++)
+        {
+            bool found = false;
+            if (!temp[i]) continue;
+            switch (i)
+            {
+                case 0:
+                    print("Missing Energy for upkeep");
+                    for (int j = 0; j < behaviour.preferredEnergyProduction.Length; j++)
+                    {
+                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredEnergyProduction[j]))
+                        {
+                            found = true;
+                            tempAction = behaviour.preferredEnergyProduction[j];
+                            break;
+                        }
+                    }
+                    break;
+                case 1:
+                    print("Missing Food for upkeep");
+                    for (int j = 0; j < behaviour.preferredFoodProduction.Length; j++)
+                    {
+                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredFoodProduction[j]))
+                        {
+                            found = true;
+                            tempAction = behaviour.preferredFoodProduction[j];
+                            break;
+                        }
+                    }
+                    break;
+                case 2:
+                    print("Missing Waste for upkeep");
+                    for (int j = 0; j < behaviour.preferredWasteProduction.Length; j++)
+                    {
+                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredWasteProduction[j]))
+                        {
+                            found = true;
+                            tempAction = behaviour.preferredWasteProduction[j];
+                            break;
+                        }
+                    }
+                    break;
+                case 5:
+                    print("Missing Money for upkeep");
+                    for (int j = 0; j < behaviour.preferredMoneyProduction.Length; j++)
+                    {
+                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredMoneyProduction[j]))
+                        {
+                            found = true;
+                            tempAction = behaviour.preferredMoneyProduction[j];
+                            break;
+                        }
+                    }
+                    break;
+
+                default:
+                    print("Missing something for upkeep");
+                    break;
+            }
+            if (found)
+            {
+                Ressources productionCost = UpgradeManager.Instance.CheckCost(tempAction);
+
+                if (GameManager.Instance.CheckRessources(productionCost))
+                {
+                    print("Can't afford upkeep, trying to: " + tempAction);
+                    nextAction = tempAction;
+                    if (tempAction.GetType() == typeof(ProductionSO)) overshootCounter = overshoot;
+                    return true;
+                }
+                else
+                {
+                    FindProductionMethodsNoLoop(tempAction);
+                    return true;
+                }
+            }
+        }
+        // print("Can afford upkeep");
+        return false;
+    }
+
+    public void FindProductionMethods(ActionSO a)
+    {
+        Ressources tempCost = UpgradeManager.Instance.CheckCost(a);
+        bool[] temp = GameManager.Instance.FindMissingRessources(tempCost);
+
+        ActionSO tempAction = (ActionSO)ScriptableObject.CreateInstance("ActionSO");
+
+        for (int i = 0; i < 9; i++)
+        {
+            bool found = false;
+
+            if (!temp[i]) continue;
+            switch (i)
+            {
+                case 0:
+                    for (int j = 0; j < behaviour.preferredEnergyProduction.Length; j++)
+                    {
+                        print("Looking for energy");
+                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredEnergyProduction[j]))
+                        {
+                            found = true;
+                            tempAction = behaviour.preferredEnergyProduction[j];
+                            break;
+                        }
+                    }
+                    break;
+                case 1:
+                    for (int j = 0; j < behaviour.preferredFoodProduction.Length; j++)
+                    {
+                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredFoodProduction[j]))
+                        {
+                            found = true;
+                            tempAction = behaviour.preferredFoodProduction[j];
+                            break;
+                        }
+                    }
+                    break;
+                case 2:
+                    for (int j = 0; j < behaviour.preferredWasteProduction.Length; j++)
+                    {
+                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredWasteProduction[j]))
+                        {
+                            found = true;
+                            tempAction = behaviour.preferredWasteProduction[j];
+                            break;
+                        }
+                    }
+                    break;
+                case 5:
+                    for (int j = 0; j < behaviour.preferredMoneyProduction.Length; j++)
+                    {
+                        print("Looking for money");
+                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredMoneyProduction[j]))
+                        {
+                            found = true;
+                            tempAction = behaviour.preferredMoneyProduction[j];
+                            break;
+                        }
+                    }
+                    break;
+
+                default:
+                    print("Missing something for production");
+                    break;
+            }
+            if (found)
+            {
+                Ressources productionCost = UpgradeManager.Instance.CheckCost(tempAction);
+                print("Found missing production: " + tempAction);
+                if (GameManager.Instance.CheckRessources(productionCost))
+                {
+                    nextAction = tempAction;
+                    if (tempAction.GetType() == typeof(ProductionSO)) overshootCounter = overshoot;
+
+                    return;
+                }
+                else {
+                    print("Looking for shit to: " + tempAction);
+                    FindProductionMethodsNoLoop(tempAction); 
+                }
+            }
+        }
+    }
+
+    public void FindProductionMethodsNoLoop(ActionSO a)
+    {
+        Ressources tempCost = UpgradeManager.Instance.CheckCost(a);
+        bool[] temp = GameManager.Instance.FindMissingRessources(tempCost);
+
+        ActionSO tempAction = (ActionSO)ScriptableObject.CreateInstance("ActionSO");
+        bool missing = false;
         for (int i = 0; i < 9; i++)
         {
             bool found = false;
@@ -176,176 +362,39 @@ public class AI : MonoBehaviour
                     break;
 
                 default:
-
+                    print("Missing something for production");
                     break;
             }
+
             if (found)
             {
+                missing = true;
                 Ressources productionCost = UpgradeManager.Instance.CheckCost(tempAction);
 
                 if (GameManager.Instance.CheckRessources(productionCost))
                 {
-                    print("Can't afford upkeep, trying to: " + tempAction);
                     nextAction = tempAction;
-                    return false;
+                    if (tempAction.GetType() == typeof(ProductionSO)) overshootCounter = overshoot;
+
+                    return;
                 }
             }
-            else
-            {
-                print("Can't afford upkeep, waiting");
-                return true;
-
-            }
-
         }
-     //   print("Can afford upkeep");
-        return false;
-    }
-
-    public void FindProductionMethods(ActionSO a)
-    {
-        Ressources tempCost = UpgradeManager.Instance.CheckCost(a);
-        bool[] temp = GameManager.Instance.FindMissingRessources(tempCost);
-
-        ActionSO tempAction = (ActionSO)ScriptableObject.CreateInstance("ActionSO");
-
-        for (int i = 0; i < 9; i++)
+        if (missing)
         {
-            if (!temp[i]) continue;
-            switch (i)
-            {
-                case 0:
-                    for (int j = 0; j < behaviour.preferredEnergyProduction.Length; j++)
-                    {
-                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredEnergyProduction[j]))
-                        {
-                            tempAction = behaviour.preferredEnergyProduction[j];
-                            break;
-                        }
-                    }
-                    break;
-                case 1:
-                    //    print("Find food");
-                    for (int j = 0; j < behaviour.preferredFoodProduction.Length; j++)
-                    {
-                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredFoodProduction[j]))
-                        {
-                            tempAction = behaviour.preferredFoodProduction[j];
-                            break;
-                        }
-                    }
-                    break;
-                case 2:
-                    //  print("Find waste");
-                    for (int j = 0; j < behaviour.preferredWasteProduction.Length; j++)
-                    {
-                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredWasteProduction[j]))
-                        {
-                            tempAction = behaviour.preferredWasteProduction[j];
-                            break;
-                        }
-                    }
-                    break;
-                case 5:
-                    //    print("Find money");
-                    for (int j = 0; j < behaviour.preferredMoneyProduction.Length; j++)
-                    {
-                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredMoneyProduction[j]))
-                        {
-                            tempAction = behaviour.preferredMoneyProduction[j];
-                            break;
-                        }
-                    }
-                    break;
-
-                default:
-                    break;
-            }
-            Ressources productionCost = UpgradeManager.Instance.CheckCost(tempAction);
-
-            if (GameManager.Instance.CheckRessources(productionCost))
-            {
-                nextAction = tempAction;
-                return;
-            }
+            nextAction = null;
+            print("Wait");
         }
-
-        FindProductionMethodsNoLoop(tempAction);
-    }
-
-    public void FindProductionMethodsNoLoop(ActionSO a)
-    {
-        Ressources tempCost = UpgradeManager.Instance.CheckCost(a);
-        bool[] temp = GameManager.Instance.FindMissingRessources(tempCost);
-
-        ActionSO tempAction = (ActionSO)ScriptableObject.CreateInstance("ActionSO");
-
-
-        for (int i = 0; i < 9; i++)
-        {
-            if (!temp[i]) continue;
-            switch (i)
-            {
-                case 0:
-                    for (int j = 0; j < behaviour.preferredEnergyProduction.Length; j++)
-                    {
-                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredEnergyProduction[j]))
-                        {
-                            tempAction = behaviour.preferredEnergyProduction[j];
-                            break;
-                        }
-                    }
-                    break;
-                case 1:
-                    //    print("Find food");
-                    for (int j = 0; j < behaviour.preferredFoodProduction.Length; j++)
-                    {
-                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredFoodProduction[j]))
-                        {
-                            tempAction = behaviour.preferredFoodProduction[j];
-                            break;
-                        }
-                    }
-                    break;
-                case 2:
-                    //  print("Find waste");
-                    for (int j = 0; j < behaviour.preferredWasteProduction.Length; j++)
-                    {
-                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredWasteProduction[j]))
-                        {
-                            tempAction = behaviour.preferredWasteProduction[j];
-                            break;
-                        }
-                    }
-                    break;
-                case 5:
-                    //    print("Find money");
-                    for (int j = 0; j < behaviour.preferredMoneyProduction.Length; j++)
-                    {
-                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredMoneyProduction[j]))
-                        {
-                            tempAction = behaviour.preferredMoneyProduction[j];
-                            break;
-                        }
-                    }
-                    break;
-
-                default:
-                    break;
-            }
-            Ressources productionCost = UpgradeManager.Instance.CheckCost(tempAction);
-            if (GameManager.Instance.CheckRessources(productionCost))
-            {
-                nextAction = tempAction;
-                return;
-            }
-        }
-        print("Bot Stuck");
     }
 
     [Button]
     public void MoveCursorToNextAction()
     {
+        if (nextAction == null)
+        {
+            print("Bot is waiting");
+            return;
+        }
         Interactable temp = MenuManager.Instance.FindInteractable(nextAction);
         if (!showAIActions)
             temp.ExecuteAction();

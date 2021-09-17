@@ -12,44 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8895b9c39e3d06a49a8e95e758abf39d, type: 3}
   m_Name: Agriculture AI
   m_EditorClassIdentifier: 
+  upgradeStep: 0
   populationGoal: 1000
   sustainable: 1
   upgradeGoals:
   - {fileID: 11400000, guid: f773bbdc1fca40f40b2c2ac04429f643, type: 2}
   - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
-  - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
-  - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
-  - {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}
   - {fileID: 11400000, guid: 3183e04d06678a74fa089cf67352704b, type: 2}
   - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
   - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
   - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
+  - {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}
   - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
   - {fileID: 11400000, guid: c4c3efee7729f3e4aa4cefd41c4fc193, type: 2}
   - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
   - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
   - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
-  - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
-  - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
-  - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
-  - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
-  - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
-  - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
-  - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
-  - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
-  - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
-  - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
-  - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
-  - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
-  - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
-  - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
-  - {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
-  - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
-  - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
-  - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
-  - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
-  - {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
-  bannedActions: []
   preferredMoneyProduction:
   - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}
   preferredFoodProduction:

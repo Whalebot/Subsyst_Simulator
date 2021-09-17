@@ -18,6 +18,7 @@ public class ColorScript : MonoBehaviour
     public Color wasteColor;
     public GameManager gameManager;
     public float pollutionMultiplier;
+    public float pollutionClamp;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,13 +44,14 @@ public class ColorScript : MonoBehaviour
         float foodRatio = (float)food / sum;
         float energyRatio = (float)energy / sum;
         float wasteRatio = (float)waste / sum;
-        float pollutionRatio = (float)pollution / sum;
+        float ressourceRatio = Mathf.Clamp(sum / 1000, 0, 1);
+        float pollutionRatio = Mathf.Clamp((float)pollution / 5000, 0, pollutionClamp);
 
         //print("Sum: " + sum + " Food Ratio: " + foodRatio);
 
-       // mixedColor = ((foodRatio * foodColor) + (energyRatio * energyColor) + (wasteRatio * wasteColor));
-
-        mixedColor = ((foodRatio * foodColor) + (energyRatio * energyColor) + (wasteRatio * wasteColor)) * ((1 - pollutionRatio * pollutionMultiplier));
+        // mixedColor = ((foodRatio * foodColor) + (energyRatio * energyColor) + (wasteRatio * wasteColor));
+        //mixedColor = ((foodRatio * foodColor) + (energyRatio * energyColor) + (wasteRatio * wasteColor)) * ((1 - pollutionRatio * pollutionMultiplier));
+        mixedColor = (mainColor * (1 - ressourceRatio)) + (((foodRatio * foodColor) + (energyRatio * energyColor) + (wasteRatio * wasteColor)) * (ressourceRatio)) * (1 - pollutionRatio * pollutionMultiplier);
         if (mixColors)
         {
             mat.color = mixedColor;

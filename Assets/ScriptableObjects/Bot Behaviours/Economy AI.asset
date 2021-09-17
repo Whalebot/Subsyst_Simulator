@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8895b9c39e3d06a49a8e95e758abf39d, type: 3}
   m_Name: Economy AI
   m_EditorClassIdentifier: 
+  upgradeStep: 0
   populationGoal: 1
   sustainable: 0
   upgradeGoals:
@@ -32,8 +33,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
   - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
   - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
-  bannedActions: []
   preferredMoneyProduction:
+  - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
   - {fileID: 11400000, guid: 7e58ff45a29fd3c448d485882d315ede, type: 2}
   preferredFoodProduction:
   - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}

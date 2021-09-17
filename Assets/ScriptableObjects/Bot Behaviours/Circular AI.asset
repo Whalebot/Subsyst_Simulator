@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8895b9c39e3d06a49a8e95e758abf39d, type: 3}
   m_Name: Circular AI
   m_EditorClassIdentifier: 
+  upgradeStep: 0
   populationGoal: 100
   sustainable: 1
   upgradeGoals:
@@ -21,11 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 31bccbdd6740b364fba4596e8d5a8797, type: 2}
   - {fileID: 11400000, guid: 31bccbdd6740b364fba4596e8d5a8797, type: 2}
   - {fileID: 11400000, guid: 31bccbdd6740b364fba4596e8d5a8797, type: 2}
-  - {fileID: 11400000, guid: 31bccbdd6740b364fba4596e8d5a8797, type: 2}
   - {fileID: 11400000, guid: f7ed384e695f1e24fa25ba5009428e62, type: 2}
-  - {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
-  - {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
-  - {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
   - {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
   - {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
   - {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
@@ -36,11 +33,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 287e31a4315b8f840b9c2cd409b70931, type: 2}
   - {fileID: 11400000, guid: 287e31a4315b8f840b9c2cd409b70931, type: 2}
   - {fileID: 11400000, guid: 287e31a4315b8f840b9c2cd409b70931, type: 2}
-  bannedActions: []
   preferredMoneyProduction:
   - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}
   preferredFoodProduction:
-  - {fileID: 11400000, guid: 287e31a4315b8f840b9c2cd409b70931, type: 2}
   - {fileID: 11400000, guid: d983ee66420e1c2428743db6753c3158, type: 2}
   preferredEnergyProduction:
   - {fileID: 11400000, guid: c73380a01f7d6394bb4462001de7b1af, type: 2}

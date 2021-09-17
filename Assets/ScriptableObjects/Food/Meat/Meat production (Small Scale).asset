@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Small Scale Meat Production
   icon: {fileID: -2865678973810129570, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   cost:
-    energy: 3
+    energy: 2
     food: 0
     waste: 0
     approval: 0
