@@ -7,6 +7,10 @@ public class ColorScript : MonoBehaviour
     Renderer rend;
     Material mat;
     public bool mixColors;
+    public int food;
+    public int energy;
+    public int waste;
+    public int pollution;
     public Color mainColor;
     public Color mixedColor;
     public Color foodColor;
@@ -25,30 +29,38 @@ public class ColorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mixColors)
-        {
-            CalculateMainColor();
-            mat.color = mixedColor;
-        }
-        else
-            mat.color = mainColor;
+        food = gameManager.Food;
+        energy = gameManager.Energy;
+        waste = gameManager.Waste;
+        pollution = gameManager.Pollution;
+        CalculateMainColor();
+
     }
 
     void CalculateMainColor()
     {
-        int sum = gameManager.Food + gameManager.Energy + gameManager.Waste;
-        float foodRatio = (float)gameManager.Food / sum;
-        float energyRatio = (float)gameManager.Energy / sum;
-        float wasteRatio = (float)gameManager.Waste / sum;
-        float pollutionRatio = (float)gameManager.Pollution / sum;
+        float sum = food + energy + waste;
+        float foodRatio = (float)food / sum;
+        float energyRatio = (float)energy / sum;
+        float wasteRatio = (float)waste / sum;
+        float pollutionRatio = (float)pollution / sum;
 
         //print("Sum: " + sum + " Food Ratio: " + foodRatio);
 
+       // mixedColor = ((foodRatio * foodColor) + (energyRatio * energyColor) + (wasteRatio * wasteColor));
+
         mixedColor = ((foodRatio * foodColor) + (energyRatio * energyColor) + (wasteRatio * wasteColor)) * ((1 - pollutionRatio * pollutionMultiplier));
+        if (mixColors)
+        {
+            mat.color = mixedColor;
+        }
+        else mat.color = mainColor;
     }
 
     private void OnValidate()
     {
+        rend = GetComponent<Renderer>();
+        mat = rend.sharedMaterial;
         CalculateMainColor();
     }
 }
