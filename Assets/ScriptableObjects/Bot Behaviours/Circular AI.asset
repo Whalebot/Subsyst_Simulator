@@ -15,9 +15,9 @@ MonoBehaviour:
   populationGoal: 100
   sustainable: 1
   upgradeGoals:
-  - {fileID: 11400000, guid: 270710c48904ac94c8b6c935f3d36569, type: 2}
-  - {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
-  - {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
+  - {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}
+  - {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}
+  - {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}
   - {fileID: 11400000, guid: f7ed384e695f1e24fa25ba5009428e62, type: 2}
   - {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
   - {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
