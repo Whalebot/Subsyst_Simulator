@@ -15,22 +15,23 @@ MonoBehaviour:
   populationGoal: 100
   sustainable: 1
   upgradeGoals:
-  - {fileID: 11400000, guid: 270710c48904ac94c8b6c935f3d36569, type: 2}
-  - {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
-  - {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
+  - {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}
+  - {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}
+  - {fileID: 11400000, guid: a50f8bd97c79d014fb09dfc763502173, type: 2}
+  - {fileID: 11400000, guid: 31bccbdd6740b364fba4596e8d5a8797, type: 2}
+  - {fileID: 11400000, guid: 31bccbdd6740b364fba4596e8d5a8797, type: 2}
+  - {fileID: 11400000, guid: 31bccbdd6740b364fba4596e8d5a8797, type: 2}
+  - {fileID: 11400000, guid: 31bccbdd6740b364fba4596e8d5a8797, type: 2}
   - {fileID: 11400000, guid: f7ed384e695f1e24fa25ba5009428e62, type: 2}
   - {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
   - {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
-  - {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
   - {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
   - {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
   - {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
   - {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
-  - {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
-  - {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
-  - {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
-  - {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
   - {fileID: 11400000, guid: d7ff885891fdb2844ae5bf791e30b3eb, type: 2}
+  - {fileID: 11400000, guid: 287e31a4315b8f840b9c2cd409b70931, type: 2}
+  - {fileID: 11400000, guid: 287e31a4315b8f840b9c2cd409b70931, type: 2}
   - {fileID: 11400000, guid: 287e31a4315b8f840b9c2cd409b70931, type: 2}
   - {fileID: 11400000, guid: 287e31a4315b8f840b9c2cd409b70931, type: 2}
   - {fileID: 11400000, guid: 287e31a4315b8f840b9c2cd409b70931, type: 2}
@@ -40,7 +41,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}
   preferredFoodProduction:
   - {fileID: 11400000, guid: 287e31a4315b8f840b9c2cd409b70931, type: 2}
-  - {fileID: 11400000, guid: 1f5809531eb4fdb40b275d90ee467d07, type: 2}
+  - {fileID: 11400000, guid: d983ee66420e1c2428743db6753c3158, type: 2}
   preferredEnergyProduction:
   - {fileID: 11400000, guid: c73380a01f7d6394bb4462001de7b1af, type: 2}
   preferredWasteProduction:

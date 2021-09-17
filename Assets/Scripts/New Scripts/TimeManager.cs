@@ -16,7 +16,13 @@ public class TimeManager : MonoBehaviour
     public int time;
     public int framesPerTime;
     int frameCounter;
-
+    bool day10;
+    bool day25;
+    bool day50;
+    bool day75;
+    bool day100;
+    bool day150;
+    bool day200;
 
     [FoldoutGroup("Time Slider")] public Slider timeSlider;
     [FoldoutGroup("Time Slider")] public TextMeshProUGUI timeText;
@@ -70,7 +76,23 @@ public class TimeManager : MonoBehaviour
             day++;
             time = 0;
             advanceGameEvent?.Invoke();
+            SendHeatmapData();
         }
         advanceTimeEvent?.Invoke();
+    }
+
+    public void SendHeatmapData()
+    {
+        switch (day)
+        {
+            case 200: if (!day200) { day200 = true; StartCoroutine(Telemetry.Instance.HeatMap()); } break;
+            case 150: if (!day150) { day150 = true; StartCoroutine(Telemetry.Instance.HeatMap()); } break;
+            case 100: if (!day100) { day100 = true; StartCoroutine(Telemetry.Instance.HeatMap()); } break;
+            case 75: if (!day75) { day75 = true; StartCoroutine(Telemetry.Instance.HeatMap()); } break;
+            case 50: if (!day50) { day50 = true; StartCoroutine(Telemetry.Instance.HeatMap()); } break;
+            case 25: if (!day25) { day25 = true; StartCoroutine(Telemetry.Instance.HeatMap()); } break;
+            case 10: if (!day10) { day10 = true; StartCoroutine(Telemetry.Instance.HeatMap()); } break;
+            default: break;
+        }
     }
 }

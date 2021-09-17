@@ -10,6 +10,7 @@ public class Telemetry : MonoBehaviour
     public static string userName;
     public static string institutionName;
     public string urlstring = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfpV516KAQCSc08pYkUMQ8CP7xDp-QhsReSVJEzdPVt2izV4A/formResponse";
+    public string heatmapUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSen6o8O6qNBp9K-XITU4K009scwCUhOptLbD51abzRO5OFAKQ/formResponse";
     public System.DateTime counter;
     System.Guid guid;
     public GameObject nameWindow;
@@ -76,6 +77,7 @@ public class Telemetry : MonoBehaviour
         form.AddField("entry.1466101548", GameManager.Instance.Energy.ToString());
         form.AddField("entry.163088709", GameManager.Instance.Waste.ToString());
         form.AddField("entry.1142277469", GameManager.Instance.Pollution.ToString());
+        form.AddField("entry.47387135", GameManager.Instance.Population.ToString());
         form.AddField("entry.229207896", GameManager.Instance.Money.ToString());
         form.AddField("entry.1543673192", GameManager.Instance.Approval.ToString());
         form.AddField("entry.601553515", GameManager.Instance.NaturalCapital.ToString());
@@ -98,6 +100,40 @@ public class Telemetry : MonoBehaviour
             //   Debug.Log("Form upload complete!");
         }
     }
+
+    public IEnumerator HeatMap()
+    {
+        float total_time = (float)(System.DateTime.Now - counter).TotalSeconds;
+        //print(total_time.ToString());
+        WWWForm form = new WWWForm();
+
+
+        if (AI.Instance.isAIActive)
+            form.AddField("entry.438076918", AI.Instance.behaviour.name.ToString());
+
+        form.AddField("entry.44896187", TimeManager.Instance.day.ToString());
+        form.AddField("entry.861894681", GameManager.Instance.Food.ToString());
+        form.AddField("entry.1263841730", GameManager.Instance.Energy.ToString());
+        form.AddField("entry.442568512", GameManager.Instance.Waste.ToString());
+        form.AddField("entry.1405152660", GameManager.Instance.Population.ToString());
+        form.AddField("entry.1076304569", GameManager.Instance.Money.ToString());
+        form.AddField("entry.10329600", GameManager.Instance.Pollution.ToString());
+
+
+        byte[] data = form.data;
+        UnityWebRequest www = UnityWebRequest.Post(heatmapUrl, form);
+        yield return www.SendWebRequest();
+
+        if (www.result != UnityWebRequest.Result.Success)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            //   Debug.Log("Form upload complete!");
+        }
+    }
+
 
     public string FormatTime(float time)
     {
