@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeStep: 0
   populationGoal: 100
+  maxPollution: 5000
   sustainable: 1
   upgradeGoals:
   - {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}

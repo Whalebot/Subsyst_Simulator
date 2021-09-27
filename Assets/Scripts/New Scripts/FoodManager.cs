@@ -75,6 +75,13 @@ public class FoodManager : BaseFacility
         return upgradeNumber;
     }
 
+    public void ReplaceAction(ActionSO oldActions, ActionSO newActions) {
+        if (unlockedAutomaticProductionTypes.Contains((ProductionSO)oldActions)) {
+            unlockedAutomaticProductionTypes.Remove((ProductionSO)oldActions);
+            unlockedAutomaticProductionTypes.Add((ProductionSO)newActions);
+        }
+    }
+
     public void RemoveAllAutomaticProduction(ProductionSO p)
     {
         int a = CheckProductionNumber(p);

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7036822a91ee204c8460db7b896dbef, type: 3}
+  m_Name: Warning High Pollution
+  m_EditorClassIdentifier: 
+  showInPaper: 1
+  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  title: Loss of Natural Capital
+  description: Vast amount of pollution has started to ruin the natural capital.
+    Damage is unrecoverable and will further harm the ecosystem.
+  buttonText: Continue
+  thresholdCounter: 0
+  type: 1
+  positiveThresholds:
+    energy: 0
+    food: 0
+    waste: 0
+    approval: 0
+    population: 0
+    money: 0
+    pollution: 3500
+    bees: 0
+    naturalCapital: 0
+  negativeThresholds:
+    energy: 0
+    food: 0
+    waste: 0
+    approval: 0
+    population: 0
+    money: 0
+    pollution: 0
+    bees: 0
+    naturalCapital: 0
+  triggerEvent: {fileID: 0}

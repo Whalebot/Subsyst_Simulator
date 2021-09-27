@@ -9,6 +9,10 @@ using UnityEditor;
 public class UpgradeManager : MonoBehaviour
 {
     public static UpgradeManager Instance { get; private set; }
+
+    public enum UpgradeScaling { Multiplication, Additive }
+    public UpgradeScaling upgradeScaling;
+
     public List<UpgradeSO> allUpgrades;
     public List<ProductionSO> allProduction;
     public List<ProductionSO> availableProduction;
@@ -70,7 +74,9 @@ public class UpgradeManager : MonoBehaviour
         GameManager.Instance.SetRessources(p.cost, temp);
         for (int i = 0; i < upgradeNumber; i++)
         {
-            GameManager.Instance.MultiplyRessources(temp, p.costMultiplier);
+            if (upgradeScaling == UpgradeScaling.Multiplication)
+                GameManager.Instance.MultiplyRessources(temp, p.costMultiplier);
+            else GameManager.Instance.AddRessources(temp, p.cost);
         }
         return temp;
     }
@@ -81,7 +87,9 @@ public class UpgradeManager : MonoBehaviour
         GameManager.Instance.SetRessources(p.result, temp);
         for (int i = 0; i < upgradeNumber; i++)
         {
-            GameManager.Instance.MultiplyRessources(temp, p.costMultiplier);
+            if (upgradeScaling == UpgradeScaling.Multiplication)
+                GameManager.Instance.MultiplyRessources(temp, p.costMultiplier);
+            else GameManager.Instance.AddRessources(temp, p.result);
         }
         return temp;
     }
@@ -89,13 +97,14 @@ public class UpgradeManager : MonoBehaviour
     public void UnlockAction(ActionSO p)
     {
         unlockedActions.Add(p);
-        if (p.GetType() == typeof(UpgradeSO)) {
+        if (p.GetType() == typeof(UpgradeSO))
+        {
 
-          
+
         }
         else if (p.GetType() == typeof(ProductionSO))
         {
-           
+
         }
 
 

@@ -44,14 +44,14 @@ public class TimeManager : MonoBehaviour
     {
 
         timeSlider.value = 60 - framesPerTime;
-        timeText.text = "" + (int)timeSlider.value;
+        timeText.text = 1 + (float)((timeSlider.value) / framesPerTime) + "x";
     }
 
     public void SetGameSpeed()
     {
 
         framesPerTime = 60 - (int)timeSlider.value;
-        timeText.text = "" + (int)timeSlider.value;
+        timeText.text = 1 + (float)((timeSlider.value) / framesPerTime) + "x";
     }
 
     // Update is called once per frame

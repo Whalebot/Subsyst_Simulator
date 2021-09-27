@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595b023ce6848764786ee100a98a3e4e, type: 3}
+  m_Name: Industrial Insects Event Trigger
+  m_EditorClassIdentifier: 
+  showInPaper: 0
+  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  title: Oil market crashed
+  description: The oil industry could not keep up with the demand and the prices
+    have increased dramatically.
+  buttonText: Continue
+  thresholdCounter: 0
+  type: 1
+  upgrade: {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
+  threshold: 6
+  RNG: 50
+  triggerEvent: {fileID: 11400000, guid: 287823639b3b0a942b75f2954518b25c, type: 2}

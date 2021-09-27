@@ -12,7 +12,7 @@ public class GameEventSO : ScriptableObject
     public string buttonText;
     public int thresholdCounter = 0;
     public EventType type;
-    public enum EventType { AddToPending, ExecuteInstantly}
+    public enum EventType { AddToPending, ExecuteInstantly, DoNotShow}
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class GameEventSO : ScriptableObject
         return false;
     }
 
-    public virtual void ExecuteEvent() { 
-    
+    public virtual void ExecuteEvent() {
+      
     }
 }

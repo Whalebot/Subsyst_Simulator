@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Economy AI
   m_EditorClassIdentifier: 
   upgradeStep: 0
-  populationGoal: 1
+  populationGoal: 10000000
   sustainable: 0
   upgradeGoals:
   - {fileID: 11400000, guid: 27df7f4d92b8af642a5c2b534d5e7f9f, type: 2}
+  - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
+  - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
   - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
   - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
   - {fileID: 11400000, guid: 3183e04d06678a74fa089cf67352704b, type: 2}
@@ -25,7 +27,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
   - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
   - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
+  - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
   - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
+  - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
+  - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
   - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
   - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
   - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
@@ -33,6 +38,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
   - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
   - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
+  - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
+  - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
+  - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
+  - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
+  - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
+  - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
+  - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
+  - {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
   preferredMoneyProduction:
   - {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
   - {fileID: 11400000, guid: 7e58ff45a29fd3c448d485882d315ede, type: 2}

@@ -21,12 +21,12 @@ MonoBehaviour:
     waste: 0
     approval: 0
     population: 0
-    money: 2
+    money: 4
     pollution: 0
     bees: 0
     naturalCapital: 0
   result:
-    energy: 2
+    energy: 3
     food: 0
     waste: 0
     approval: 0

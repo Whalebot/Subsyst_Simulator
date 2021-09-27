@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96e3ab9adbc3dd49aacfb4a2b57e51f, type: 3}
+  m_Name: Replace Algae with Cataclysm Algae
+  m_EditorClassIdentifier: 
+  showInPaper: 0
+  image: {fileID: 2306574165339229938, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  title: Algae Cataclysm
+  description: 
+  buttonText: 
+  thresholdCounter: 0
+  type: 2
+  oldActions:
+  - {fileID: 11400000, guid: 1f5809531eb4fdb40b275d90ee467d07, type: 2}
+  - {fileID: 11400000, guid: ba54b8a4aeb57484a87b622671da571d, type: 2}
+  newActions:
+  - {fileID: 11400000, guid: 027874ecbba5b7842bfc8e65ffe0d3f5, type: 2}
+  - {fileID: 11400000, guid: 61643c61742555c4cbe3342133f7f371, type: 2}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EventManager : MonoBehaviour
 {
     public static EventManager Instance { get; private set; }
+    public bool enableEvents;
     GameManager gameManager;
     TimeManager timeManager;
     public int growthThreshold;
@@ -15,6 +16,8 @@ public class EventManager : MonoBehaviour
     public GameEvent populationShrink;
     public GameEvent fedPopulation;
     public GameEvent starvedPopulation;
+    public delegate void CataclysmEvent(GameEventSO p);
+    public CataclysmEvent cataclysmTrigger;
 
     public List<GameEventSO> allGameEvents;
     public List<GameEventSO> pendingGameEvents;
@@ -44,25 +47,22 @@ public class EventManager : MonoBehaviour
         timeManager.advanceTimeEvent += UpdateUpkeep;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void CheckGameEvents()
     {
+        if (!enableEvents) return;
         eventQueue.Clear();
 
         foreach (var item in pendingGameEvents)
         {
             if (item.CheckRequirements())
             {
-                if (item.showInPaper) {
+                if (item.showInPaper)
+                {
                     NewsManager.Instance.ActivateNotification();
                     NewsManager.Instance.SpawnNews(item);
                 }
-                else
+                else if(item.type != GameEventSO.EventType.DoNotShow)
                 {
                     eventDescription.gameObject.SetActive(true);
                     eventDescription.DisplayEvent(item);
@@ -76,23 +76,26 @@ public class EventManager : MonoBehaviour
         {
             pendingGameEvents.Remove(item);
             //gameManager.PauseGame();
+            if (cataclysmTrigger != null) cataclysmTrigger.Invoke(item);
             item.ExecuteEvent();
+            if (Telemetry.Instance.sendTelemetry)
+                StartCoroutine(Telemetry.Instance.PostEvent(item));
         }
 
         //If requirements fullfilled, execute stuff
-        if (gameManager.Pollution > gameManager.NaturalCapital)
+        if (gameManager.Pollution > 5000)
         {
-            gameManager.NaturalCapital--;
+            gameManager.NaturalCapital -= gameManager.Pollution/5000;
         }
 
-        if (gameManager.NaturalCapital < gameManager.Bees)
+        if (gameManager.NaturalCapital < 1000)
         {
-            gameManager.Bees--;
+            gameManager.Bees -= 1500 / Mathf.Clamp(gameManager.NaturalCapital, 15, 1500);
         }
 
         if (gameManager.Bees < 500)
         {
-            gameManager.Food--;
+            gameManager.Food = gameManager.Food/2;
         }
     }
 
@@ -134,6 +137,7 @@ public class EventManager : MonoBehaviour
         else if (growthCounter < -growthThreshold) PopulationDecrease();
     }
 
+    //Updates the values for the upkeep that the events/population requires
     void UpdateUpkeep()
     {
         populationUpkeep.money = gameManager.Population - (gameManager.Population - gameManager.Approval);

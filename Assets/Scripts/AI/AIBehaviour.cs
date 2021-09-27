@@ -10,6 +10,7 @@ public class AIBehaviour : ScriptableObject
     public int upgradeStep;
     [Header("Settings")]
     public int populationGoal;
+    public int maxPollution;
     public bool sustainable;
     public UpgradeSO[] upgradeGoals;
     public ActionSO[] preferredMoneyProduction;

@@ -250,6 +250,8 @@ MonoBehaviour:
   toggle: 0
   toggleObject: {fileID: 3652252972124703177}
   sizeFitter: {fileID: 0}
+  sizeFitter2: {fileID: 0}
+  layoutGroup: {fileID: 0}
 --- !u!114 &108240865396839889
 MonoBehaviour:
   m_ObjectHideFlags: 0

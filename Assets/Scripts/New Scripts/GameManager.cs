@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
         set
         {
             ressources.bees = value;
+            if (value <= 0) ressources.bees = 0;
         }
     }
     public int NaturalCapital
@@ -119,6 +120,7 @@ public class GameManager : MonoBehaviour
         set
         {
             ressources.naturalCapital = value;
+            if (value <= 0) ressources.naturalCapital = 0;
         }
     }
 
@@ -131,7 +133,8 @@ public class GameManager : MonoBehaviour
         SetStartRessources();
     }
 
-    public void StartGame() {
+    public void StartGame()
+    {
         gameStart = true;
         paused = false;
     }
@@ -151,6 +154,33 @@ public class GameManager : MonoBehaviour
     {
         SetRessources(startRessources);
     }
+
+    public bool CheckMissingRessources(Ressources r)
+    {
+        //Compare incoming ressources with available ressources and return true/false depending on whether the player has enough ressources.
+
+        FieldInfo[] defInfo1 = ressources.GetType().GetFields();
+        FieldInfo[] defInfo2 = r.GetType().GetFields();
+
+        bool foundLackOfRessources = false;
+
+        for (int i = 0; i < defInfo1.Length; i++)
+        {
+            object obj = ressources;
+            object obj2 = r;
+
+            object var1 = defInfo1[i].GetValue(obj);
+            object var2 = defInfo2[i].GetValue(obj2);
+
+            if (var1 is int)
+            {
+                if ((int)var2 <= 0) continue;
+                if ((int)var2 < (int)var1) foundLackOfRessources = true;
+            }
+        }
+        return !foundLackOfRessources;
+    }
+
     public bool CheckRessources(Ressources r)
     {
         //Compare incoming ressources with available ressources and return true/false depending on whether the player has enough ressources.
@@ -281,7 +311,6 @@ public class GameManager : MonoBehaviour
                 defInfo1[i].SetValue(obj, (float)var1 + (float)var2);
             }
         }
-     
     }
     public void SubtractRessources(Ressources r, Ressources r2)
     {
@@ -392,7 +421,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ReloadScene() {
+    public void ReloadScene()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

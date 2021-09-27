@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96e3ab9adbc3dd49aacfb4a2b57e51f, type: 3}
   m_Name: Replace Oil with Bad Oil
   m_EditorClassIdentifier: 
+  showInPaper: 0
+  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  title: Oil Cataclysm
+  description: 
+  buttonText: 
+  thresholdCounter: 0
+  type: 2
   oldActions:
   - {fileID: 11400000, guid: c73380a01f7d6394bb4462001de7b1af, type: 2}
   - {fileID: 11400000, guid: d933f9ea056b579438893c13f704b405, type: 2}

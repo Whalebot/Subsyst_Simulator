@@ -71,6 +71,7 @@ public class AI : MonoBehaviour
         //If sustainable, check you can afford upkeep before trying to upgrade
         if (behaviour.sustainable)
         {
+        
             //Returns true if player can't afford upkeep
             if (CheckAutomaticUpkeep())
             {
@@ -78,29 +79,45 @@ public class AI : MonoBehaviour
                 MoveCursorToNextAction();
                 return;
             }
-        }
 
-        //If population is smaller than goal, prioritize food
-        if (GameManager.Instance.Population < behaviour.populationGoal)
-        {
-            if (GameManager.Instance.Food < GameManager.Instance.Population)
+            //If population is smaller than goal, prioritize food
+            if (GameManager.Instance.Population < behaviour.populationGoal)
             {
-                print("Lacking food");
-                Ressources productionCost = UpgradeManager.Instance.CheckCost(behaviour.preferredFoodProduction[0]);
-                if (GameManager.Instance.CheckRessources(productionCost))
+                if (GameManager.Instance.Food < GameManager.Instance.Population)
                 {
-                    nextAction = behaviour.preferredFoodProduction[0];
-                    MoveCursorToNextAction();
-                    return;
+                    print("Lacking food");
+                    Ressources productionCost = UpgradeManager.Instance.CheckCost(behaviour.preferredFoodProduction[0]);
+                    if (GameManager.Instance.CheckRessources(productionCost))
+                    {
+                        nextAction = behaviour.preferredFoodProduction[0];
+                        MoveCursorToNextAction();
+                        return;
+                    }
+                    else
+                    {
+                        FindProductionMethods(behaviour.preferredFoodProduction[0]);
+                        MoveCursorToNextAction();
+                        return;
+                    }
                 }
-                else
+            }
+
+            if (behaviour.maxPollution < GameManager.Instance.Pollution)
+            {
+                for (int j = 0; j < behaviour.preferredWasteProduction.Length; j++)
                 {
-                    FindProductionMethods(behaviour.preferredFoodProduction[0]);
-                    MoveCursorToNextAction();
-                    return;
+                    if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredWasteProduction[j]) && GameManager.Instance.CheckRessources(UpgradeManager.Instance.CheckCost(behaviour.preferredWasteProduction[j])))
+                    {
+                        MoveCursorToNextAction();
+                        nextAction = behaviour.preferredWasteProduction[j];
+                        print("Trying to clean up");
+                        break;
+                    }
                 }
             }
         }
+
+       
         if (foundAllUpgrades)
         {
             CheckAutomaticUpkeep();
@@ -295,9 +312,10 @@ public class AI : MonoBehaviour
 
                     return;
                 }
-                else {
+                else
+                {
                     print("Looking for shit to: " + tempAction);
-                    FindProductionMethodsNoLoop(tempAction); 
+                    FindProductionMethodsNoLoop(tempAction);
                 }
             }
         }

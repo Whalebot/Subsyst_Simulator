@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aae83ff58ee6254e8d55bbd725dcda3, type: 3}
+  m_Name: Cataclysm Insect Production (Industrial)
+  m_EditorClassIdentifier: 
+  title: Industrial Insect Production
+  description: Industrial Insect Production
+  icon: {fileID: -6724815555555351529, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  cost:
+    energy: 2
+    food: 0
+    waste: 0
+    approval: 0
+    population: 0
+    money: 0
+    pollution: 0
+    bees: 0
+    naturalCapital: 0
+  result:
+    energy: 0
+    food: 5
+    waste: 0
+    approval: 0
+    population: 0
+    money: 0
+    pollution: -1
+    bees: 0
+    naturalCapital: 0
+  costMultiplier: 1.5
+  dependantUpgrade: {fileID: 11400000, guid: 4bb461810768c5f408db14fa933f36a5, type: 2}
+  productionMethod: 1

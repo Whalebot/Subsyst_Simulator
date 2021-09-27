@@ -32,7 +32,7 @@ MonoBehaviour:
     approval: 0
     population: 0
     money: 0
-    pollution: 4
+    pollution: 2
     bees: 0
     naturalCapital: 0
   costMultiplier: 1.5

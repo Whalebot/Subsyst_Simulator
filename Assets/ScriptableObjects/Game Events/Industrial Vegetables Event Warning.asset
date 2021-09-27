@@ -24,4 +24,4 @@ MonoBehaviour:
   upgrade: {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
   threshold: 5
   RNG: 100
-  triggerEvent: {fileID: 11400000, guid: d3a2a460181d8bf40a3a2225449cd118, type: 2}
+  triggerEvent: {fileID: 11400000, guid: 8afeb3aa066c2d949a8c9bf26b2480f2, type: 2}

@@ -38,4 +38,4 @@ MonoBehaviour:
   costMultiplier: 1.5
   dependantUpgrade: {fileID: 0}
   upgradeLimit: 1
-  unlockedProduction: {fileID: 11400000, guid: a7ee2b3de4816504a9969a327383e4a8, type: 2}
+  unlockedProduction: {fileID: 11400000, guid: 84c9243d2a77f3d4a870098725fbe65d, type: 2}

@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96e3ab9adbc3dd49aacfb4a2b57e51f, type: 3}
   m_Name: Replace Biogas with Oil
   m_EditorClassIdentifier: 
+  showInPaper: 0
+  image: {fileID: -7349813049253646713, guid: 3d379100514ea40af8ab99aebc058e8f, type: 3}
+  title: Biogas
+  description: 
+  buttonText: 
+  thresholdCounter: 0
+  type: 2
   oldActions:
   - {fileID: 11400000, guid: e19ddb8e55c2121499b119e03dabe9c1, type: 2}
   - {fileID: 11400000, guid: d122cd4db2b4a00469397f6b727dc706, type: 2}
