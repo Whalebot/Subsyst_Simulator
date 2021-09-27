@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595b023ce6848764786ee100a98a3e4e, type: 3}
   m_Name: Industrial Oil Event Trigger
   m_EditorClassIdentifier: 
+  showInPaper: 0
   image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  title: Oil market crashed
+  title: Oil Spill
   description: The oil industry could not keep up with the demand and the prices
     have increased dramatically.
   buttonText: Continue
