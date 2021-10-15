@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class AICursor : MonoBehaviour
 {
     Image img;
+    public bool isVisible;
     public bool isClicking;
     public Sprite cursorGeneral;
     public Sprite cursorDrag;
@@ -15,11 +16,19 @@ public class AICursor : MonoBehaviour
     public Sprite cursorBlocked;
     public Sprite cursorIndustrial;
     public Sprite cursorIndustrialdown;
+
     // Start is called before the first frame update
     void Start()
     {
+
         img = GetComponent<Image>();
         // Cursor.visible = false;
+    }
+
+    private void FixedUpdate()
+    {
+        isVisible = AI.Instance.isAIActive && !GameManager.paused;
+        img.enabled = isVisible;
     }
 
     public void PerformClick()

@@ -15,7 +15,8 @@ MonoBehaviour:
   showInPaper: 0
   image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   title: Public Protests
-  description: Low approval
+  description: Citizens are gathering on the streets in protest due to lack of food
+    and high pollution.
   buttonText: Continue
   thresholdCounter: 0
   type: 1

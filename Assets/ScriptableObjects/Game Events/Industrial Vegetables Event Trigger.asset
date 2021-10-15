@@ -20,8 +20,8 @@ MonoBehaviour:
     soil.
   buttonText: Continue
   thresholdCounter: 0
-  type: 0
+  type: 1
   upgrade: {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
-  threshold: 5
-  RNG: 100
+  threshold: 6
+  RNG: 50
   triggerEvent: {fileID: 11400000, guid: 740f9f080e098034dba9776a94707754, type: 2}

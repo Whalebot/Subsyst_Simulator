@@ -15,7 +15,7 @@ MonoBehaviour:
   showInPaper: 0
   image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   title: Food Shortage
-  description: 
+  description: Lack of food makes citizens stop working and ruins approval ratings.
   buttonText: Continue
   thresholdCounter: 0
   type: 1

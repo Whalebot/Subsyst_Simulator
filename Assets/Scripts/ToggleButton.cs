@@ -29,7 +29,7 @@ public class ToggleButton : MonoBehaviour
     {
         sizeFitter = transform.parent.GetComponent<ContentSizeFitter>();
         sizeFitter2 = transform.GetComponent<ContentSizeFitter>();
-        layoutGroup.GetComponent<LayoutGroup>();
+        layoutGroup = GetComponent<LayoutGroup>();
     }
 
     private void OnEnable()

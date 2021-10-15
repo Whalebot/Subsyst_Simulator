@@ -7,8 +7,8 @@ public class ColorScript : MonoBehaviour
     Renderer rend;
     Material mat;
     public bool mixColors;
-    public int food;
-    public int energy;
+    public int meatValue;
+    public int vegetableValue;
     public int waste;
     public int pollution;
     public float ressourceRatioMod;
@@ -31,8 +31,8 @@ public class ColorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        food = gameManager.Food;
-        energy = gameManager.Energy;
+        meatValue = UpgradeManager.Instance.MeatUpgrades();
+        vegetableValue = UpgradeManager.Instance.VegetableUpgrades();
         waste = gameManager.Waste;
         pollution = gameManager.Pollution;
         CalculateMainColor();
@@ -41,18 +41,18 @@ public class ColorScript : MonoBehaviour
 
     void CalculateMainColor()
     {
-        float sum = food + energy + waste;
-        float foodRatio = (float)food / sum;
-        float energyRatio = (float)energy / sum;
+        float sum = Mathf.Clamp(meatValue + vegetableValue, 0.01F, 100000000);
+        float foodRatio = (float)meatValue / sum;
+        float energyRatio = (float)vegetableValue / sum;
         float wasteRatio = (float)waste / sum;
-        float ressourceRatio = Mathf.Clamp(sum / ressourceRatioMod, 0, 1);
+        float ressourceRatio = Mathf.Clamp(sum / ressourceRatioMod, 0.01F, 1);
         float pollutionRatio = Mathf.Clamp((float)pollution / 5000, 0, pollutionClamp);
 
         //print("Sum: " + sum + " Food Ratio: " + foodRatio);
 
         // mixedColor = ((foodRatio * foodColor) + (energyRatio * energyColor) + (wasteRatio * wasteColor));
         //mixedColor = ((foodRatio * foodColor) + (energyRatio * energyColor) + (wasteRatio * wasteColor)) * ((1 - pollutionRatio * pollutionMultiplier));
-        mixedColor = (mainColor * (1 - ressourceRatio)) + (((foodRatio * meatColor) + (energyRatio * vegetableColor) + (wasteRatio * pollutionColor)) * (ressourceRatio)) * (1 - pollutionRatio * pollutionMultiplier);
+        mixedColor = (mainColor * (1 - ressourceRatio)) + (((foodRatio * meatColor) + (energyRatio * vegetableColor)) * (ressourceRatio)) * (1 - pollutionRatio * pollutionMultiplier);
         if (mixColors)
         {
             mat.color = mixedColor;

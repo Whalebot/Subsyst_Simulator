@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showInPaper: 0
   image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  title: Oil market crashed
-  description: The oil industry could not keep up with the demand and the prices
-    have increased dramatically.
+  title: Algae Mutation
+  description: Algae growth has fallen dramatically.
   buttonText: Continue
   thresholdCounter: 0
   type: 1

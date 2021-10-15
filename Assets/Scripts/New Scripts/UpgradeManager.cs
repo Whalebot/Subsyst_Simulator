@@ -22,6 +22,9 @@ public class UpgradeManager : MonoBehaviour
     public delegate void ActionEvent(ActionSO a);
     public ActionEvent upgradeEvent;
 
+    public List<UpgradeSO> meatUpgrades;
+    public List<UpgradeSO> agricultureUpgrades;
+
     private void Awake()
     {
         Instance = this;
@@ -56,7 +59,23 @@ public class UpgradeManager : MonoBehaviour
     //        allUpgrades.Add(item);
     //    }
     //}
-
+    public int MeatUpgrades() {
+        int sum = 0;
+        foreach (var item in meatUpgrades)
+        {
+            sum += CheckUpgradeNumber(item);
+        }
+        return sum;
+    }
+    public int VegetableUpgrades()
+    {
+        int sum = 0;
+        foreach (var item in agricultureUpgrades)
+        {
+            sum += CheckUpgradeNumber(item);
+        }
+        return sum;
+    }
 
     public int CheckUpgradeNumber(UpgradeSO p)
     {

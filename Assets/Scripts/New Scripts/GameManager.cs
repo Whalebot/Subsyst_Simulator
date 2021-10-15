@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public static bool gameStart;
     public static bool paused;
+
     public bool disableGraphics;
     [TabGroup("Ressources")]
     [InlineProperty] public Ressources ressources;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     public delegate void GameEvent();
     public GameEvent updateGameState;
+    public GameEvent gameStartEvent;
 
     public int Energy
     {
@@ -136,6 +138,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         gameStart = true;
+        gameStartEvent?.Invoke();
         paused = false;
     }
 

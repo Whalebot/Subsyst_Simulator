@@ -15,7 +15,8 @@ MonoBehaviour:
   showInPaper: 1
   image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   title: Recycled mixed plastics
-  description: Don't mix plastics
+  description: The storage for recycled plastics can't keep up with the reclycing
+    speed, leading to huge land masses of plastic.
   buttonText: Continue
   thresholdCounter: 0
   type: 0

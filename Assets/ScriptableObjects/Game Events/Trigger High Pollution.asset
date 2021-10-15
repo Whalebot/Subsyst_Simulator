@@ -15,7 +15,8 @@ MonoBehaviour:
   showInPaper: 0
   image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   title: Loss of Natural Capital
-  description: Pollution is high
+  description: Vast amount of pollution has started to ruin the natural capital.
+    Damage is unrecoverable and will further harm the ecosystem.
   buttonText: Continue
   thresholdCounter: 0
   type: 1

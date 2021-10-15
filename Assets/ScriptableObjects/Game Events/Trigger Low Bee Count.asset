@@ -15,7 +15,8 @@ MonoBehaviour:
   showInPaper: 0
   image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   title: Bee Extinction
-  description: Bees die
+  description: The bees are going extinct with is crippling the entire ecosystem
+    and food production.
   buttonText: Continue
   thresholdCounter: 0
   type: 1

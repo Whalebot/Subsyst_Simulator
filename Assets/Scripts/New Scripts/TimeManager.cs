@@ -11,6 +11,7 @@ public class TimeManager : MonoBehaviour
     public delegate void TimeEvent();
     public TimeEvent advanceGameEvent;
     public TimeEvent advanceTimeEvent;
+    public static bool canSmallScale;
     public float gameUpdateFrequency;
     public int day = 1;
     public int time;
@@ -30,12 +31,14 @@ public class TimeManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        day = 1;
+        day = 1; 
+        canSmallScale = true;
         InitializeSlider();
         //GameManager.Instance.updateGameState += AdvanceTime;
     }
@@ -78,7 +81,9 @@ public class TimeManager : MonoBehaviour
             advanceGameEvent?.Invoke();
             SendHeatmapData();
         }
+        canSmallScale = true;
         advanceTimeEvent?.Invoke();
+
     }
 
     public void SendHeatmapData()

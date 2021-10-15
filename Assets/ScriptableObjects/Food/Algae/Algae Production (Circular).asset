@@ -28,7 +28,7 @@ MonoBehaviour:
   result:
     energy: 0
     food: 10
-    waste: -4
+    waste: 0
     approval: 0
     population: 0
     money: 0

@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showInPaper: 0
   image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  title: Climate Protest
-  description: 
+  title: Destruction of the ecosystem
+  description: The high pollution has started to destroy the local ecosystem, leading
+    to forest fires and death of local bees.
   buttonText: Continue
   thresholdCounter: 0
   type: 1

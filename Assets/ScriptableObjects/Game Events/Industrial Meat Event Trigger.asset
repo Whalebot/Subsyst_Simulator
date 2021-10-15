@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showInPaper: 0
   image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  title: Sick Farm Animals
-  description: Animals have started to grow sick due to living in too close quarters.
-    Further development of industrial meat may accelerate the spread.
+  title: Death of cattle
+  description: Cattle and poultry all around has started to die due to illness, greatly
+    reducing production yield.
   buttonText: Continue
   thresholdCounter: 0
   type: 0
   upgrade: {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
-  threshold: 5
-  RNG: 100
+  threshold: 6
+  RNG: 50
   triggerEvent: {fileID: 11400000, guid: ec12b1e582916734c9636be6884d1c6e, type: 2}

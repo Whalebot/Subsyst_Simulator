@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ActionSwitch : Interactable
 {
+    public bool isOn;
     public GameEventSO toggleOffEvent;
     public SwitchState state;
     public UpgradeSO requiredUpgrade;
@@ -74,11 +75,7 @@ public class ActionSwitch : Interactable
         deactiveObject.SetActive(false);
         if (action.GetType() == typeof(ProductionSO))
         {
-            FoodManager.Instance.RemoveAllAutomaticProduction((ProductionSO)action);
-            for (int i = 0; i < UpgradeManager.Instance.CheckUpgradeNumber(requiredUpgrade); i++)
-            {
-                FoodManager.Instance.AddAutomaticProduction((ProductionSO)action);
-            }
+            FoodManager.Instance.AddAutomaticProduction((ProductionSO)action);
         }
         else if (action.GetType() == typeof(EventActionSO))
         {
@@ -94,10 +91,7 @@ public class ActionSwitch : Interactable
         deactiveObject.SetActive(true);
         if (action.GetType() == typeof(ProductionSO))
         {
-            for (int i = 0; i < UpgradeManager.Instance.CheckUpgradeNumber(requiredUpgrade); i++)
-            {
-                FoodManager.Instance.RemoveAutomaticProduction((ProductionSO)action);
-            }
+            FoodManager.Instance.RemoveAutomaticProduction((ProductionSO)action);
         }
         else if (action.GetType() == typeof(EventActionSO))
         {

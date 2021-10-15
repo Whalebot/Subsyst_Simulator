@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showInPaper: 1
   image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  title: Weird algae metabolism
-  description: The heavy concentration of algae have led to new mutations. Scientist
-    are unsure of the long time effects.
+  title: Weird algae behaviour
+  description: The growth of indsustrially grown algae has fallen. Furtther development
+    might accelerate the deterioration.
   buttonText: Continue
   thresholdCounter: 0
   type: 0

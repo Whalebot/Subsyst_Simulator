@@ -13,7 +13,6 @@ public class AI : MonoBehaviour
     public bool showAIActions;
 
     [InlineEditor] public AIBehaviour behaviour;
-    public int upgradeGoalCount;
     public UpgradeSO upgradeGoal;
     public bool foundAllUpgrades;
     public ActionSO nextAction;
@@ -21,9 +20,9 @@ public class AI : MonoBehaviour
     public GameObject botCursor;
     public AICursor cursorScript;
     public Camera mainCam;
-    public bool turboAI;
     public int overshoot = 5;
     public int overshootCounter = 0;
+    public List<ActionSO> actionsToDisable;
     private void Awake()
     {
         Instance = this;
@@ -32,15 +31,13 @@ public class AI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        foreach (var item in bots)
+        {
+            item.upgradeStep = 0;
+
+        }
         TimeManager.Instance.advanceTimeEvent += CalculateNextAction;
         UpgradeManager.Instance.upgradeEvent += CheckUpgrade;
-    }
-
-
-    public void ToggleAI()
-    {
-        isAIActive = !isAIActive;
-        cursorScript.gameObject.SetActive(isAIActive);
     }
 
     public void SelectAI(int i)
@@ -52,8 +49,8 @@ public class AI : MonoBehaviour
         }
         behaviour = bots[i];
         isAIActive = true;
-        upgradeGoalCount = 0;
         FindNextUpgradeGoal();
+        DisableAllAutomaticProductions();
     }
 
     [Button]
@@ -61,17 +58,39 @@ public class AI : MonoBehaviour
     {
         if (!isAIActive) return;
 
+        if (actionsToDisable.Count > 0 && FoodManager.Instance.unlockedAutomaticProductionTypes.Count > 0)
+        {
+            DisableAllAutomaticProductions();
+            if (actionsToDisable.Count > 0)
+            {
+                nextAction = actionsToDisable[actionsToDisable.Count - 1];
+                MoveCursorToNextAction();
+                return;
+            }
+        }
+
+
         if (overshootCounter > 0)
         {
             overshootCounter--;
             MoveCursorToNextAction();
             return;
         }
-
+        if (!foundAllUpgrades)
+        {
+            Ressources temp = UpgradeManager.Instance.CheckCost(upgradeGoal);
+            //Check if AI can afford next upgrade, if yes, next action is buying the upgrade.
+            if (GameManager.Instance.CheckRessources(temp))
+            {
+                nextAction = upgradeGoal;
+                MoveCursorToNextAction();
+                return;
+            }
+        }
         //If sustainable, check you can afford upkeep before trying to upgrade
         if (behaviour.sustainable)
         {
-        
+
             //Returns true if player can't afford upkeep
             if (CheckAutomaticUpkeep())
             {
@@ -117,25 +136,22 @@ public class AI : MonoBehaviour
             }
         }
 
-       
+
         if (foundAllUpgrades)
         {
             CheckAutomaticUpkeep();
             MoveCursorToNextAction();
             return;
         }
-
         Ressources tempCost = UpgradeManager.Instance.CheckCost(upgradeGoal);
         //Check if AI can afford next upgrade, if yes, next action is buying the upgrade.
         if (GameManager.Instance.CheckRessources(tempCost))
         {
-            print("Can afford upgrade");
             nextAction = upgradeGoal;
         }
         //Check what ressources the AI is missing
         else
         {
-            print("Can't afford upgrade, look for shit");
             FindProductionMethods(upgradeGoal);
         }
 
@@ -220,7 +236,6 @@ public class AI : MonoBehaviour
 
                 if (GameManager.Instance.CheckRessources(productionCost))
                 {
-                    print("Can't afford upkeep, trying to: " + tempAction);
                     nextAction = tempAction;
                     if (tempAction.GetType() == typeof(ProductionSO)) overshootCounter = overshoot;
                     return true;
@@ -314,7 +329,6 @@ public class AI : MonoBehaviour
                 }
                 else
                 {
-                    print("Looking for shit to: " + tempAction);
                     FindProductionMethodsNoLoop(tempAction);
                 }
             }
@@ -413,6 +427,9 @@ public class AI : MonoBehaviour
             print("Bot is waiting");
             return;
         }
+
+
+
         Interactable temp = MenuManager.Instance.FindInteractable(nextAction);
         if (!showAIActions)
             temp.ExecuteAction();
@@ -422,6 +439,11 @@ public class AI : MonoBehaviour
                 StartCoroutine("MoveAICursorWorld", (MenuButton)temp);
             else
                 StartCoroutine("MoveAICursor", temp);
+        }
+
+        if (actionsToDisable.Count > 0)
+        {
+            DisableAllAutomaticProductions();
         }
     }
 
@@ -460,29 +482,63 @@ public class AI : MonoBehaviour
         ExecuteEvents.Execute(g, pointer, ExecuteEvents.pointerEnterHandler);
         ExecuteEvents.Execute(g, pointer, ExecuteEvents.pointerDownHandler);
 
-
-        yield return new WaitForSeconds(0.1F);
+        if (actionsToDisable.Count <= 0)
+        {
+            yield return new WaitForSeconds(0.1F);
+        }
         //print(g); g.GetComponent<Interactable>().ExecuteAction();
         ExecuteEvents.Execute(g, pointer, ExecuteEvents.submitHandler);
         ExecuteEvents.Execute(g, pointer, ExecuteEvents.pointerUpHandler);
         ExecuteEvents.Execute(g, pointer, ExecuteEvents.pointerExitHandler);
 
-
+        if (actionsToDisable.Count > 0)
+        {
+            DisableAllAutomaticProductions();
+        }
     }
 
     public void FindNextUpgradeGoal()
     {
-        if (foundAllUpgrades) return;
-        if (upgradeGoalCount >= behaviour.upgradeGoals.Length)
+        CheckUpgrades();
+    }
+
+    public void CheckUpgrades()
+    {
+        if (behaviour.upgradeStep >= behaviour.upgradeGoals.Length)
         {
             foundAllUpgrades = true;
             upgradeGoal = null;
             print("All Upgrades Found");
+            return;
+        }
+        else foundAllUpgrades = false;
+
+        int dupes = 0;
+        for (int i = 0; i < behaviour.upgradeStep + 1; i++)
+        {
+            if (behaviour.upgradeGoals[i] == behaviour.upgradeGoals[behaviour.upgradeStep]) dupes++;
+        }
+      
+        int upgradeNumber = UpgradeManager.Instance.CheckUpgradeNumber(behaviour.upgradeGoals[behaviour.upgradeStep]);
+        print(dupes + " " + upgradeNumber);
+        if (upgradeNumber >= dupes)
+        {
+            behaviour.upgradeStep++;
+            CheckUpgrades();
         }
         else
         {
-            upgradeGoal = behaviour.upgradeGoals[upgradeGoalCount];
-            upgradeGoalCount++;
+            upgradeGoal = behaviour.upgradeGoals[behaviour.upgradeStep];
+        }
+    }
+
+    public void DisableAllAutomaticProductions()
+    {
+        actionsToDisable.Clear();
+        foreach (var item in FoodManager.Instance.unlockedAutomaticProductionTypes)
+        {
+            actionsToDisable.Add(item);
+
         }
     }
 

@@ -9,6 +9,8 @@ public class CursorScript : MonoBehaviour
     Image img;
     RectTransform rect;
 
+    public bool disableNormalCursor;
+
     public bool foundInteractable;
     public Sprite cursorGeneral;
     public Sprite cursorDrag;
@@ -18,7 +20,7 @@ public class CursorScript : MonoBehaviour
     public Sprite cursorBlocked;
     public Sprite cursorIndustrial;
     public Sprite cursorIndustrialdown;
-
+    public AudioSource AS;
     private void Awake()
     {
         Instance = this;
@@ -29,7 +31,8 @@ public class CursorScript : MonoBehaviour
     {
         rect = GetComponent<RectTransform>();
         img = GetComponent<Image>();
-        // Cursor.visible = false;
+        AS = GetComponentInChildren<AudioSource>();
+        Cursor.visible = !disableNormalCursor;
     }
 
     // Update is called once per frame
@@ -38,14 +41,25 @@ public class CursorScript : MonoBehaviour
         rect.position = Input.mousePosition + offset * Screen.width / 1080;
         if (!foundInteractable)
         {
+            if (Input.GetMouseButtonDown(0)) {
+                ClickSound();
+            }
             if (Input.GetMouseButton(0))
+            {
                 img.sprite = cursorClickdown;
+            }
             else
                 img.sprite = cursorGeneral;
         }
     }
 
-    public void Hover() {
+    public void ClickSound()
+    {
+        AS.Play();
+    }
+
+    public void Hover()
+    {
         foundInteractable = true;
         img.sprite = cursorClickable;
     }

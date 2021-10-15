@@ -15,8 +15,8 @@ MonoBehaviour:
   showInPaper: 1
   image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   title: Instability in the Oil Industry
-  description: The oil industry has started to look stable. Further investment into
-    the industry might lead to a huge burst in the economy.
+  description: Too high demand of oil has led workers to become overworked. Experts
+    suggest that further development might lead to overwork and mistakes.
   buttonText: Continue
   thresholdCounter: 0
   type: 0

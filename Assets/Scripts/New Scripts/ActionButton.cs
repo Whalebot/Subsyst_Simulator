@@ -43,9 +43,17 @@ public class ActionButton : Interactable
             }
             if (UpgradeManager.Instance.CheckUpgradeNumber(a) >= a.upgradeLimit && state != ButtonState.UpgradeMaxed)
             {
-   
+
                 state = ButtonState.UpgradeMaxed;
                 TimeManager.Instance.advanceTimeEvent -= CheckRequirements;
+                DisableButton();
+                return;
+            }
+        }
+        else if (action.GetType() == typeof(ProductionSO))
+        {
+            if (!TimeManager.canSmallScale)
+            {
                 DisableButton();
                 return;
             }
@@ -55,14 +63,14 @@ public class ActionButton : Interactable
         {
             if (!UpgradeManager.Instance.obtainedUpgrades.Contains(requiredUpgrade))
             {
-                
+
                 state = ButtonState.RequiresUpgrade;
                 DisableButton();
                 return;
             }
         }
 
-        
+
 
         if (GameManager.Instance.CheckRessources(UpgradeManager.Instance.CheckCost(action)))
         {
@@ -89,6 +97,8 @@ public class ActionButton : Interactable
         else
         {
             FoodManager.Instance.ExecuteProduction((ProductionSO)action);
+            TimeManager.canSmallScale = false;
+            CheckRequirements();
         }
         //CheckRequirements();
     }
