@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UpgradeAnimation : MonoBehaviour
 {
+    public bool triggered;
     public UpgradeSO targetUpgrade;
     public Vector3 initialScale;
     public Vector3 finalScale;
@@ -32,7 +33,9 @@ public class UpgradeAnimation : MonoBehaviour
 
     public void Upgrade()
     {
+        if (!triggered) {
+            triggered = true;
         LeanTween.scale(gameObject, finalScale, speed).setDelay(delay).setEase(curve);
-
+        }
     }
 }

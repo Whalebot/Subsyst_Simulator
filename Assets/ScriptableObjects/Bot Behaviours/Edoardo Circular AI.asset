@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8895b9c39e3d06a49a8e95e758abf39d, type: 3}
-  m_Name: Circular AI
+  m_Name: Edoardo Circular AI
   m_EditorClassIdentifier: 
   upgradeStep: 21
   populationGoal: 20

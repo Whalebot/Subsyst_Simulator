@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class VisualizerManager : MonoBehaviour
 {
+    public int maxMoney;
+    public int maxPopulation;
+
     public int cattleUpgrades = 0;
     public UpgradeSO cattleUpgrade;
     public GameObject[] cattleGO;
@@ -12,13 +15,14 @@ public class VisualizerManager : MonoBehaviour
     public GameObject[] peopleGO;
     public GameObject[] populationGO;
     public GameObject[] natCapGO;
-    int maxMoney;
+
     public GameObject[] oilGO;
     public int oilUpgrades = 0;
     public UpgradeSO oilUpgrade;
     public GameObject[] wasteGO;
     public int wasteUpgrades = 0;
     public UpgradeSO wasteUpgrade;
+    public UpgradeAnimation[] populationAnimations;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +32,10 @@ public class VisualizerManager : MonoBehaviour
     // Update is called once per frame
     public void UpdateVisuals()
     {
+
+        if (GameManager.Instance.Money > maxMoney) maxMoney = GameManager.Instance.Money;
+        if (GameManager.Instance.Population > maxPopulation) maxPopulation = GameManager.Instance.Population;
+
         cattleUpgrades = UpgradeManager.Instance.CheckUpgradeNumber(cattleUpgrade);
         for (int i = 0; i < cattleUpgrades; i++)
         {
@@ -46,7 +54,7 @@ public class VisualizerManager : MonoBehaviour
 
             trashGO[i].GetComponentInChildren<Animator>().SetBool("isOn", i < GameManager.Instance.Pollution / 1000);
         }
-        if (GameManager.Instance.Money > maxMoney) maxMoney = GameManager.Instance.Money;
+
         for (int i = 0; i < populationGO.Length; i++)
         {
             if (populationGO.Length - 1 < i) return;
@@ -71,6 +79,15 @@ public class VisualizerManager : MonoBehaviour
             if (wasteGO.Length - 1 < i) return;
             wasteGO[i].GetComponentInChildren<Animator>().SetBool("isOn", true);
 
+        }
+
+        for (int i = 0; i < populationAnimations.Length; i++)
+        {
+            if (populationAnimations.Length - 1 < i) return;
+            if (10 * Mathf.Pow(5, i) < maxPopulation)
+            {
+                populationAnimations[i].Upgrade();
+            }
         }
     }
 }
