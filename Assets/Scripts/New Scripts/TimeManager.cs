@@ -80,6 +80,7 @@ public class TimeManager : MonoBehaviour
             time = 0;
             advanceGameEvent?.Invoke();
             SendHeatmapData();
+            print(Time.realtimeSinceStartup);
         }
         canSmallScale = true;
         advanceTimeEvent?.Invoke();
