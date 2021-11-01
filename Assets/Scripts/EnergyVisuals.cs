@@ -10,11 +10,16 @@ public class EnergyVisuals : MonoBehaviour
     public Material mat;
     public Material energyMat;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rend = GetComponent<Renderer>();
         mat = rend.material;
 
+    }
+
+    private void OnValidate()
+    {
+     
     }
 
     [Button]

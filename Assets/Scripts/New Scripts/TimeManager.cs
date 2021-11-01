@@ -37,7 +37,7 @@ public class TimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        day = 1; 
+        day = 1;
         canSmallScale = true;
         InitializeSlider();
         //GameManager.Instance.updateGameState += AdvanceTime;
@@ -45,16 +45,16 @@ public class TimeManager : MonoBehaviour
 
     public void InitializeSlider()
     {
-
+        framesPerTime = 60 - (int)timeSlider.value;
         timeSlider.value = 60 - framesPerTime;
-        timeText.text = 1 + (float)((timeSlider.value) / framesPerTime) + "x";
+        timeText.text = (1 + (float)(timeSlider.value / framesPerTime)) / 1.5F + "x";
     }
 
     public void SetGameSpeed()
     {
 
         framesPerTime = 60 - (int)timeSlider.value;
-        timeText.text = 1 + (float)((timeSlider.value) / framesPerTime) + "x";
+        timeText.text = (1 + (float)(timeSlider.value / framesPerTime)) / 1.5F + "x";
     }
 
     // Update is called once per frame
@@ -80,7 +80,7 @@ public class TimeManager : MonoBehaviour
             time = 0;
             advanceGameEvent?.Invoke();
             SendHeatmapData();
-            print(Time.realtimeSinceStartup);
+            //print(Time.realtimeSinceStartup);
         }
         canSmallScale = true;
         advanceTimeEvent?.Invoke();

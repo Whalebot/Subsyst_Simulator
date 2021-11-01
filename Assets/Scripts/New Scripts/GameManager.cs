@@ -64,8 +64,9 @@ public class GameManager : MonoBehaviour
         set
         {
 
-            ressources.approval = value;
-            if (value > Population) ressources.approval = Population;
+            ressources.approval = Mathf.Clamp( value, -Population , Population);
+
+            //if (value > Population) ressources.approval = Population;
         }
     }
     public int Population
@@ -88,6 +89,7 @@ public class GameManager : MonoBehaviour
         set
         {
             ressources.money = value;
+            if (ressources.money < 0) ressources.money = 0;
         }
     }
     public int Pollution
@@ -157,8 +159,7 @@ public class GameManager : MonoBehaviour
     {
         SetRessources(startRessources);
     }
-
-    public bool CheckMissingRessources(Ressources r)
+    public bool CheckHigherRessources(Ressources r)
     {
         //Compare incoming ressources with available ressources and return true/false depending on whether the player has enough ressources.
 
@@ -181,7 +182,32 @@ public class GameManager : MonoBehaviour
                 if ((int)var2 < (int)var1) foundLackOfRessources = true;
             }
         }
-        return !foundLackOfRessources;
+        return foundLackOfRessources;
+    }
+    public bool CheckMissingRessources(Ressources r)
+    {
+        //Compare incoming ressources with available ressources and return true/false depending on whether the player has enough ressources.
+
+        FieldInfo[] defInfo1 = ressources.GetType().GetFields();
+        FieldInfo[] defInfo2 = r.GetType().GetFields();
+
+        bool foundLackOfRessources = false;
+
+        for (int i = 0; i < defInfo1.Length; i++)
+        {
+            object obj = ressources;
+            object obj2 = r;
+
+            object var1 = defInfo1[i].GetValue(obj);
+            object var2 = defInfo2[i].GetValue(obj2);
+
+            if (var1 is int)
+            {
+                if ((int)var2 == 0) continue;
+                if ((int)var2 > (int)var1) foundLackOfRessources = true;
+            }
+        }
+        return foundLackOfRessources;
     }
 
     public bool CheckRessources(Ressources r)

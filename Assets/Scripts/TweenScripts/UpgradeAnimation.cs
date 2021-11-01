@@ -18,7 +18,7 @@ public class UpgradeAnimation : MonoBehaviour
         LeanTween.scale(gameObject, initialScale, 0f);
         UpgradeManager.Instance.upgradeEvent += CheckUpgrade;
 
-        if (targetUpgrade == null) print(gameObject);
+       // if (targetUpgrade == null) print(gameObject);
     }
 
 

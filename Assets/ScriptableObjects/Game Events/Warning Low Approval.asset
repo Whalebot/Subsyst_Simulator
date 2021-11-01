@@ -33,7 +33,7 @@ MonoBehaviour:
     energy: 0
     food: 0
     waste: 0
-    approval: 1
+    approval: -1
     population: 0
     money: 0
     pollution: 0

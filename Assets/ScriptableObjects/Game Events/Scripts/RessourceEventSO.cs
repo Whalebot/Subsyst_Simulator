@@ -12,8 +12,7 @@ public class RessourceEventSO : GameEventSO
     public GameEventSO triggerEvent;
     public override bool CheckRequirements()
     {
-
-        return GameManager.Instance.CheckRessources(positiveThresholds) && GameManager.Instance.CheckMissingRessources(negativeThresholds);
+        return GameManager.Instance.CheckHigherRessources(positiveThresholds) || GameManager.Instance.CheckMissingRessources(negativeThresholds);
     }
 
     public override void ExecuteEvent()
