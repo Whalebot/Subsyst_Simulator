@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ec5170d633c7d7a47814fa47c065806e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - oil: {fileID: 2100000, guid: 832a52662430d1346a31c1a4671b8b85, type: 2}
+  - bioGas: {fileID: 2100000, guid: bf0e28942f37219429efb04960f67fd7, type: 2}
+  - upgrade: {fileID: 11400000, guid: da39fc340be69f042993a9e148f09c19, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
