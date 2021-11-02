@@ -20,6 +20,7 @@ public class VisualizerManager : MonoBehaviour
     public int oilUpgrades = 0;
     public UpgradeSO oilUpgrade;
     public GameObject[] wasteGO;
+    public GameObject[] processedWasteGO;
     public int wasteUpgrades = 0;
     public UpgradeSO wasteUpgrade;
     public UpgradeAnimation[] populationAnimations;
@@ -80,6 +81,12 @@ public class VisualizerManager : MonoBehaviour
         {
             if (wasteGO.Length - 1 < i) break;
             wasteGO[i].GetComponentInChildren<Animator>().SetBool("isOn", true);
+
+        }
+        for (int i = 0; i < processedWasteGO.Length; i++)
+        {
+            if (processedWasteGO.Length - 1 < i) break;
+            processedWasteGO[i].GetComponentInChildren<Animator>().SetBool("isOn", 500 * Mathf.Pow(10, i) < GameManager.Instance.Waste);
 
         }
 

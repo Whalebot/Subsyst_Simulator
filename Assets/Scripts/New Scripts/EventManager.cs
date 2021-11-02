@@ -19,6 +19,8 @@ public class EventManager : MonoBehaviour
     public delegate void CataclysmEvent(GameEventSO p);
     public CataclysmEvent cataclysmTrigger;
 
+    public Animator protest;
+
     public List<GameEventSO> allGameEvents;
     public List<GameEventSO> pendingGameEvents;
     public List<GameEventSO> triggeredGameEvents;
