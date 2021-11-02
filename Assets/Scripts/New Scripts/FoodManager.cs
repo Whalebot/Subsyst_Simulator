@@ -20,7 +20,7 @@ public class FoodManager : BaseFacility
     // Start is called before the first frame update
     void Start()
     {
-        TimeManager.Instance.advanceTimeEvent+= UpdateUpkeep;
+        TimeManager.Instance.advanceTimeEvent += UpdateUpkeep;
         TimeManager.Instance.advanceGameEvent += AdvanceGameState;
     }
 
@@ -75,8 +75,10 @@ public class FoodManager : BaseFacility
         return upgradeNumber;
     }
 
-    public void ReplaceAction(ActionSO oldActions, ActionSO newActions) {
-        if (unlockedAutomaticProductionTypes.Contains((ProductionSO)oldActions)) {
+    public void ReplaceAction(ActionSO oldActions, ActionSO newActions)
+    {
+        if (unlockedAutomaticProductionTypes.Contains((ProductionSO)oldActions))
+        {
             unlockedAutomaticProductionTypes.Remove((ProductionSO)oldActions);
             unlockedAutomaticProductionTypes.Add((ProductionSO)newActions);
         }
@@ -109,7 +111,8 @@ public class FoodManager : BaseFacility
     //        return 
     //}
 
-    public Ressources Upkeep() {
+    public Ressources Upkeep()
+    {
         upkeep = new Ressources();
         income = new Ressources();
         foreach (var item in unlockedAutomaticProductionTypes)
@@ -119,12 +122,25 @@ public class FoodManager : BaseFacility
             GameManager.Instance.AddRessources(upkeep, cost);
             GameManager.Instance.AddRessources(income, result);
         }
+        income.money = GameManager.Instance.Population;
         GameManager.Instance.AddRessources(upkeep, EventManager.Instance.populationUpkeep);
 
         return upkeep;
     }
 
-    public void UpdateUpkeep() {
+    public bool CheckUpkeep()
+    {
+        bool[] missingRessources = GameManager.Instance.FindMissingRessources(upkeep, income);
+        bool foundMissing = false;
+        for (int i = 0; i < missingRessources.Length; i++)
+        {
+            if (missingRessources[i] && i != 6) foundMissing = true;
+        } 
+        return !foundMissing;
+    }
+
+    public void UpdateUpkeep()
+    {
         Upkeep();
     }
 

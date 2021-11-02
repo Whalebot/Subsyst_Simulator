@@ -59,7 +59,7 @@ public class MenuManager : MonoBehaviour
 
     public void ReplaceAction(ActionSO oldAction, ActionSO newAction)
     {
-        print(oldAction + " " + newAction);
+        //print(oldAction + " " + newAction);
         foreach (var item in interactables)
         {
             if (item.action == oldAction)
@@ -103,7 +103,10 @@ public class MenuManager : MonoBehaviour
                 temp = item;
             }
         }
-
+        if (temp == null) {
+            print(a);
+            return null;
+        }
         if (!temp.gameObject.activeInHierarchy)
         {
 

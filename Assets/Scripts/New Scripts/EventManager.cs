@@ -110,7 +110,7 @@ public class EventManager : MonoBehaviour
         if (tempFood >= 0)
         {
             //Player receives money for each fed person
-            gameManager.Money += gameManager.Population - (gameManager.Population - gameManager.Approval);
+            //gameManager.Money += gameManager.Population - (gameManager.Population - gameManager.Approval);
             gameManager.Food -= gameManager.Population;
             gameManager.Pollution += gameManager.Population;
             gameManager.Approval = gameManager.Population;
@@ -124,11 +124,10 @@ public class EventManager : MonoBehaviour
         else
         {
             //Player receives money for each fed person
-            gameManager.Money += (tempFood + gameManager.Population - (gameManager.Population - gameManager.Approval));
+            //gameManager.Money += (tempFood + gameManager.Population - (gameManager.Population - gameManager.Approval));
             gameManager.Food = 0;
             //Unfed population loses approval
-            gameManager.Approval -= tempFood;
-
+            gameManager.Approval += tempFood;
             gameManager.Pollution += gameManager.Population;
             starvedPopulation?.Invoke();
             growthCounter--;
@@ -137,6 +136,8 @@ public class EventManager : MonoBehaviour
 
         if (growthCounter > growthThreshold) PopulationIncrease();
         else if (growthCounter < -growthThreshold) PopulationDecrease();
+
+        gameManager.Money += gameManager.Population;
     }
 
     //Updates the values for the upkeep that the events/population requires

@@ -12,7 +12,9 @@ public class VisualizerManager : MonoBehaviour
     public GameObject[] cattleGO;
     public GameObject[] foodGO;
     public GameObject[] trashGO;
+    public GameObject[] trashPileGO;
     public GameObject[] peopleGO;
+    public GameObject[] cataclysmPeopleGO;
     public GameObject[] populationGO;
     public GameObject[] natCapGO;
 
@@ -55,7 +57,13 @@ public class VisualizerManager : MonoBehaviour
         {
             if (trashGO.Length - 1 < i) break;
 
-            trashGO[i].GetComponentInChildren<Animator>().SetBool("isOn", i < GameManager.Instance.Pollution / 1000);
+            trashGO[i].GetComponentInChildren<Animator>().SetBool("isOn", 100 * Mathf.Pow(10, i) < GameManager.Instance.Pollution);
+        }
+        for (int i = 0; i < trashPileGO.Length; i++)
+        {
+            if (trashPileGO.Length - 1 < i) break;
+
+            trashPileGO[i].GetComponentInChildren<Animator>().SetBool("isCataclysm", 1000 * Mathf.Pow(10, i) < GameManager.Instance.Population);
         }
 
         for (int i = 0; i < populationGO.Length; i++)
@@ -69,7 +77,15 @@ public class VisualizerManager : MonoBehaviour
             if (peopleGO.Length - 1 < i) break;
 
             peopleGO[i].GetComponentInChildren<Animator>().SetBool("isOn", 10 * Mathf.Pow(10, i) < GameManager.Instance.Population);
+        }      
+
+        for (int i = 0; i < cataclysmPeopleGO.Length; i++)
+        {
+            if (cataclysmPeopleGO.Length - 1 < i) break;
+
+            cataclysmPeopleGO[i].SetActive(50 * Mathf.Pow(10, i) < GameManager.Instance.Population);
         }
+
         oilUpgrades = UpgradeManager.Instance.CheckUpgradeNumber(oilUpgrade);
         for (int i = 0; i < oilUpgrades; i++)
         {
@@ -106,6 +122,13 @@ public class VisualizerManager : MonoBehaviour
             {
                 if (!energyVisuals[i].isOn)
                     energyVisuals[i].EnergyMaterial();
+            }
+            else
+            {
+                if (energyVisuals[i].isOn) { 
+                    energyVisuals[i].BaseMaterial();
+                    print("pog");
+                }
             }
         }
     }
