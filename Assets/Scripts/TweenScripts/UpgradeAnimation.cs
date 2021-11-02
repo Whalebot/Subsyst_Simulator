@@ -6,6 +6,7 @@ public class UpgradeAnimation : MonoBehaviour
 {
     public bool triggered;
     public UpgradeSO targetUpgrade;
+    public UpgradeSO altUpgrade;
     public Vector3 initialScale;
     public Vector3 finalScale;
     public float speed = 0f;
@@ -14,28 +15,31 @@ public class UpgradeAnimation : MonoBehaviour
 
     public void Start()
     {
-        initialScale = new Vector3 (0f,0f,0f);
+        initialScale = new Vector3(0f, 0f, 0f);
         LeanTween.scale(gameObject, initialScale, 0f);
         UpgradeManager.Instance.upgradeEvent += CheckUpgrade;
 
-       // if (targetUpgrade == null) print(gameObject);
+        // if (targetUpgrade == null) print(gameObject);
     }
 
 
 
-    public void CheckUpgrade(ActionSO a) {
-        if (a == targetUpgrade) {
+    public void CheckUpgrade(ActionSO a)
+    {
+        if (a == targetUpgrade || a == altUpgrade && altUpgrade != null)
+        {
             UpgradeManager.Instance.upgradeEvent -= CheckUpgrade;
             Upgrade();
         }
-    
+
     }
 
     public void Upgrade()
     {
-        if (!triggered) {
+        if (!triggered)
+        {
             triggered = true;
-        LeanTween.scale(gameObject, finalScale, speed).setDelay(delay).setEase(curve);
+            LeanTween.scale(gameObject, finalScale, speed).setDelay(delay).setEase(curve);
         }
     }
 }

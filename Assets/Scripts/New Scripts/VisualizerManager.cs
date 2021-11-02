@@ -18,6 +18,8 @@ public class VisualizerManager : MonoBehaviour
     public GameObject[] populationGO;
     public GameObject[] natCapGO;
 
+    public GameObject[] statueParts;
+
     public GameObject[] oilGO;
     public int oilUpgrades = 0;
     public UpgradeSO oilUpgrade;
@@ -59,11 +61,15 @@ public class VisualizerManager : MonoBehaviour
 
             trashGO[i].GetComponentInChildren<Animator>().SetBool("isOn", 100 * Mathf.Pow(10, i) < GameManager.Instance.Pollution);
         }
+        for (int i = 0; i < statueParts.Length; i++)
+        {
+            statueParts[i].GetComponentInChildren<Animator>().SetBool("isOn", 0 < GameManager.Instance.Approval);
+        }
         for (int i = 0; i < trashPileGO.Length; i++)
         {
             if (trashPileGO.Length - 1 < i) break;
 
-            trashPileGO[i].GetComponentInChildren<Animator>().SetBool("isCataclysm", 1000 * Mathf.Pow(10, i) < GameManager.Instance.Population);
+            trashPileGO[i].GetComponentInChildren<Animator>().SetBool("isOn", 10 * Mathf.Pow(10, i) < GameManager.Instance.Pollution);
         }
 
         for (int i = 0; i < populationGO.Length; i++)
