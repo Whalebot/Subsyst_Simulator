@@ -21,6 +21,7 @@ MonoBehaviour:
   thresholdCounter: 0
   type: 0
   upgrade: {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
+  preventionUpgrade: {fileID: 11400000, guid: da39fc340be69f042993a9e148f09c19, type: 2}
   threshold: 5
   RNG: 100
   triggerEvent: {fileID: 11400000, guid: d3a2a460181d8bf40a3a2225449cd118, type: 2}

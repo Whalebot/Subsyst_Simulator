@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8895b9c39e3d06a49a8e95e758abf39d, type: 3}
   m_Name: Circular AI 1
   m_EditorClassIdentifier: 
-  upgradeStep: 44
+  upgradeStep: 0
   populationGoal: 100
   maxPollution: 2000
   sustainable: 1
@@ -20,13 +20,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}
   - {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}
   - {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}
-  - {fileID: 11400000, guid: a50f8bd97c79d014fb09dfc763502173, type: 2}
-  - {fileID: 11400000, guid: 31bccbdd6740b364fba4596e8d5a8797, type: 2}
-  - {fileID: 11400000, guid: 31bccbdd6740b364fba4596e8d5a8797, type: 2}
-  - {fileID: 11400000, guid: 31bccbdd6740b364fba4596e8d5a8797, type: 2}
-  - {fileID: 11400000, guid: 31bccbdd6740b364fba4596e8d5a8797, type: 2}
-  - {fileID: 11400000, guid: 31bccbdd6740b364fba4596e8d5a8797, type: 2}
-  - {fileID: 11400000, guid: 31bccbdd6740b364fba4596e8d5a8797, type: 2}
   - {fileID: 11400000, guid: 270710c48904ac94c8b6c935f3d36569, type: 2}
   - {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
   - {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}

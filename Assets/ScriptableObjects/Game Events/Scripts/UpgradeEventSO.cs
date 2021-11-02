@@ -8,13 +8,14 @@ using UnityEngine;
 public class UpgradeEventSO : GameEventSO
 {
     public UpgradeSO upgrade;
-
+    public UpgradeSO preventionUpgrade;
 
     public int threshold;
     public int RNG;
     public GameEventSO triggerEvent;
     public override bool CheckRequirements()
     {
+        if (UpgradeManager.Instance.obtainedUpgrades.Contains(preventionUpgrade)) return false;
         if (UpgradeManager.Instance.CheckUpgradeNumber(upgrade) > threshold + thresholdCounter)
         {
             int val = Random.Range(0, 100);

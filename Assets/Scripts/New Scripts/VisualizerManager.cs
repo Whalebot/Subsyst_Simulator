@@ -82,7 +82,7 @@ public class VisualizerManager : MonoBehaviour
         {
             if (cataclysmPeopleGO.Length - 1 < i) break;
 
-            cataclysmPeopleGO[i].SetActive(10 * Mathf.Pow(10, i) < GameManager.Instance.Population);
+            cataclysmPeopleGO[i].SetActive(50 * Mathf.Pow(10, i) < GameManager.Instance.Population);
         }
 
         oilUpgrades = UpgradeManager.Instance.CheckUpgradeNumber(oilUpgrade);

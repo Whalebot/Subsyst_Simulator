@@ -168,86 +168,88 @@ public class AI : MonoBehaviour
 
     public bool CheckAutomaticUpkeep()
     {
-        bool[] temp = GameManager.Instance.FindMissingRessources(FoodManager.Instance.Upkeep());
-        ActionSO tempAction = (ActionSO)ScriptableObject.CreateInstance("ActionSO");
-
-        for (int i = 0; i < 9; i++)
+      //  if (FoodManager.Instance.CheckUpkeep())
         {
-            bool found = false;
-            if (!temp[i]) continue;
-            switch (i)
-            {
-                case 0:
-                    print("Missing Energy for upkeep");
-                    for (int j = 0; j < behaviour.preferredEnergyProduction.Length; j++)
-                    {
-                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredEnergyProduction[j]))
-                        {
-                            found = true;
-                            tempAction = behaviour.preferredEnergyProduction[j];
-                            break;
-                        }
-                    }
-                    break;
-                case 1:
-                    print("Missing Food for upkeep");
-                    for (int j = 0; j < behaviour.preferredFoodProduction.Length; j++)
-                    {
-                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredFoodProduction[j]))
-                        {
-                            found = true;
-                            tempAction = behaviour.preferredFoodProduction[j];
-                            break;
-                        }
-                    }
-                    break;
-                case 2:
-                    print("Missing Waste for upkeep");
-                    for (int j = 0; j < behaviour.preferredWasteProduction.Length; j++)
-                    {
-                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredWasteProduction[j]))
-                        {
-                            found = true;
-                            tempAction = behaviour.preferredWasteProduction[j];
-                            break;
-                        }
-                    }
-                    break;
-                case 5:
-                    print("Missing Money for upkeep");
-                    for (int j = 0; j < behaviour.preferredMoneyProduction.Length; j++)
-                    {
-                        if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredMoneyProduction[j]))
-                        {
-                            found = true;
-                            tempAction = behaviour.preferredMoneyProduction[j];
-                            break;
-                        }
-                    }
-                    break;
+            bool[] temp = GameManager.Instance.FindMissingRessources(FoodManager.Instance.Upkeep());
+            ActionSO tempAction = (ActionSO)ScriptableObject.CreateInstance("ActionSO");
 
-                default:
-                    print("Missing something for upkeep");
-                    break;
-            }
-            if (found)
+            for (int i = 0; i < 9; i++)
             {
-                Ressources productionCost = UpgradeManager.Instance.CheckCost(tempAction);
-
-                if (GameManager.Instance.CheckRessources(productionCost))
+                bool found = false;
+                if (!temp[i]) continue;
+                switch (i)
                 {
-                    nextAction = tempAction;
-                    if (tempAction.GetType() == typeof(ProductionSO)) overshootCounter = overshoot;
-                    return true;
+                    case 0:
+                        print("Missing Energy for upkeep");
+                        for (int j = 0; j < behaviour.preferredEnergyProduction.Length; j++)
+                        {
+                            if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredEnergyProduction[j]))
+                            {
+                                found = true;
+                                tempAction = behaviour.preferredEnergyProduction[j];
+                                break;
+                            }
+                        }
+                        break;
+                    case 1:
+                        print("Missing Food for upkeep");
+                        for (int j = 0; j < behaviour.preferredFoodProduction.Length; j++)
+                        {
+                            if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredFoodProduction[j]))
+                            {
+                                found = true;
+                                tempAction = behaviour.preferredFoodProduction[j];
+                                break;
+                            }
+                        }
+                        break;
+                    case 2:
+                        print("Missing Waste for upkeep");
+                        for (int j = 0; j < behaviour.preferredWasteProduction.Length; j++)
+                        {
+                            if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredWasteProduction[j]))
+                            {
+                                found = true;
+                                tempAction = behaviour.preferredWasteProduction[j];
+                                break;
+                            }
+                        }
+                        break;
+                    case 5:
+                        print("Missing Money for upkeep");
+                        for (int j = 0; j < behaviour.preferredMoneyProduction.Length; j++)
+                        {
+                            if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredMoneyProduction[j]))
+                            {
+                                found = true;
+                                tempAction = behaviour.preferredMoneyProduction[j];
+                                break;
+                            }
+                        }
+                        break;
+
+                    default:
+                        print("Missing something for upkeep");
+                        break;
                 }
-                else
+                if (found)
                 {
-                    FindProductionMethodsNoLoop(tempAction);
-                    return true;
+                    Ressources productionCost = UpgradeManager.Instance.CheckCost(tempAction);
+
+                    if (GameManager.Instance.CheckRessources(productionCost))
+                    {
+                        nextAction = tempAction;
+                        if (tempAction.GetType() == typeof(ProductionSO)) overshootCounter = overshoot;
+                        return true;
+                    }
+                    else
+                    {
+                        FindProductionMethodsNoLoop(tempAction);
+                        return true;
+                    }
                 }
             }
         }
-        // print("Can afford upkeep");
         return false;
     }
 
@@ -518,7 +520,7 @@ public class AI : MonoBehaviour
         {
             if (behaviour.upgradeGoals[i] == behaviour.upgradeGoals[behaviour.upgradeStep]) dupes++;
         }
-      
+
         int upgradeNumber = UpgradeManager.Instance.CheckUpgradeNumber(behaviour.upgradeGoals[behaviour.upgradeStep]);
         print(dupes + " " + upgradeNumber);
         if (upgradeNumber >= dupes)

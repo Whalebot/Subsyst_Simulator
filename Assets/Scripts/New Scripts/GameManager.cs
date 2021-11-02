@@ -258,6 +258,31 @@ public class GameManager : MonoBehaviour
         }
         return canAffordRessource;
     }
+
+    public bool[] FindMissingRessources(Ressources r , Ressources r2)
+    {
+        bool[] canAffordRessource = new bool[10];
+        //Compare incoming ressources with available ressources and return true/false depending on whether the player has enough ressources.
+
+        FieldInfo[] defInfo1 = r2.GetType().GetFields();
+        FieldInfo[] defInfo2 = r.GetType().GetFields();
+
+        for (int i = 0; i < defInfo1.Length; i++)
+        {
+            object obj = r2;
+            object obj2 = r;
+
+            object var1 = defInfo1[i].GetValue(obj);
+            object var2 = defInfo2[i].GetValue(obj2);
+
+            if (var1 is int)
+            {
+                if ((int)var2 > (int)var1) canAffordRessource[i] = true;
+            }
+        }
+        return canAffordRessource;
+    }
+
     public void SubtractRessources(Ressources r)
     {
         FieldInfo[] defInfo1 = ressources.GetType().GetFields();
