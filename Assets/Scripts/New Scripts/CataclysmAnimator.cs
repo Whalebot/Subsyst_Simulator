@@ -11,9 +11,16 @@ public class CataclysmAnimator : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         EventManager.Instance.cataclysmTrigger += TriggerEvent;
+        TimeManager.Instance.advanceGameEvent += ExecuteFrame;
+    }
+
+    void ExecuteFrame() { 
     }
 
     void TriggerEvent(GameEventSO p) {
-        if (p == cataclysm) anim.SetBool("isCataclysm", true);
+        if (p == cataclysm || EventManager.Instance.triggeredGameEvents.Contains(cataclysm)) {
+            print("z");
+            anim.SetBool("isCataclysm", true); 
+        }
     }
 }

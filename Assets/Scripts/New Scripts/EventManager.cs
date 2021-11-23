@@ -63,9 +63,6 @@ public class EventManager : MonoBehaviour
                 {
                     NewsManager.Instance.ActivateNotification();
                     NewsManager.Instance.SpawnNews(item);
-                }
-                else if(item.type != GameEventSO.EventType.DoNotShow)
-                {
                     eventDescription.gameObject.SetActive(true);
                     eventDescription.DisplayEvent(item);
                     gameManager.PauseGame();
@@ -80,6 +77,7 @@ public class EventManager : MonoBehaviour
             //gameManager.PauseGame();
             if (cataclysmTrigger != null) cataclysmTrigger.Invoke(item);
             item.ExecuteEvent();
+            triggeredGameEvents.Add(item);
             if (Telemetry.Instance.sendTelemetry)
                 StartCoroutine(Telemetry.Instance.PostEvent(item));
         }
@@ -87,7 +85,7 @@ public class EventManager : MonoBehaviour
         //If requirements fullfilled, execute stuff
         if (gameManager.Pollution > 5000)
         {
-            gameManager.NaturalCapital -= gameManager.Pollution/5000;
+            gameManager.NaturalCapital -= gameManager.Pollution / 5000;
         }
 
         if (gameManager.NaturalCapital < 1000)
@@ -97,7 +95,7 @@ public class EventManager : MonoBehaviour
 
         if (gameManager.Bees < 500)
         {
-            gameManager.Food = gameManager.Food/2;
+            gameManager.Food = gameManager.Food / 2;
         }
     }
 

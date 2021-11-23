@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Warning Low Bee Count
   m_EditorClassIdentifier: 
   showInPaper: 1
-  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  image: {fileID: 21300000, guid: 2164dbc4578eb8346aed904e012f6e81, type: 3}
   title: Bee Extinction
   description: Scientist say local bees are on the verge of extinction, losing them
     would destroy the whole food production sector.

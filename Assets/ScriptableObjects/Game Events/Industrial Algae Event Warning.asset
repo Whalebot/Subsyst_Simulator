@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: Industrial Algae Event Warning
   m_EditorClassIdentifier: 
   showInPaper: 1
-  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  image: {fileID: 21300000, guid: 160fe1e350fe7ca42b271cb4d311bbbc, type: 3}
   title: Weird algae behaviour
-  description: The growth of indsustrially grown algae has fallen. Furtther development
-    might accelerate the deterioration.
+  description: Production of algae at risk. Industrialization of algae production
+    lead to unstable alge behaviors that may affect food chains.
   buttonText: Continue
   thresholdCounter: 0
   type: 0
   upgrade: {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
+  preventionUpgrade: {fileID: 0}
   threshold: 5
   RNG: 100
   triggerEvent: {fileID: 11400000, guid: e7864e882e2b8f04c80a91f9f971262c, type: 2}

@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595b023ce6848764786ee100a98a3e4e, type: 3}
   m_Name: Industrial Insects Event Trigger
   m_EditorClassIdentifier: 
-  showInPaper: 0
-  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  showInPaper: 1
+  image: {fileID: 21300000, guid: 7fa5ba44adab0174ab186b587647e375, type: 3}
   title: Insect exodus
-  description: The industrially grown insects are out of control and farmers can't
-    control them, leading to massive loss in production.
+  description: 'Farmers can''t control insects anymore. Massive scapes to the environment
+    amid fears of loss in production. '
   buttonText: Continue
   thresholdCounter: 0
   type: 1
   upgrade: {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
+  preventionUpgrade: {fileID: 0}
   threshold: 6
   RNG: 50
   triggerEvent: {fileID: 11400000, guid: 287823639b3b0a942b75f2954518b25c, type: 2}

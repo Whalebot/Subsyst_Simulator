@@ -20,22 +20,43 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (GameManager.gameStart)
         {
-            StartCoroutine(SimulateClick(foodButton));
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                if (GameManager.Instance.disableGraphics)
+                    GameManager.Instance.EnableGraphics();
+                else GameManager.Instance.DisableGraphics();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                UIManager.Instance.ToggleUI();
+                //if (UIManager.Instance.uiEnabled)
+                //{
+                //    UIManager.Instance.DisableUI();
+                //}
+                //else UIManager.Instance.EnableUI();
+            }
+
+
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                StartCoroutine(SimulateClick(foodButton));
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                StartCoroutine(SimulateClick(energyButton));
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                StartCoroutine(SimulateClick(wasteButton));
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                // print("Click");
+            }
         }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            StartCoroutine(SimulateClick(energyButton));
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            StartCoroutine(SimulateClick(wasteButton));
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
-            print("Click");
-        }
+
     }
 
 

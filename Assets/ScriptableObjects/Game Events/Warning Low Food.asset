@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Warning Low Food
   m_EditorClassIdentifier: 
   showInPaper: 1
-  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  image: {fileID: 21300000, guid: b1a7d2fc2bf53de4394449236a9c6dde, type: 3}
   title: Food Shortage
   description: Lack of food makes citizens stop working and ruins approval ratings.
   buttonText: Continue

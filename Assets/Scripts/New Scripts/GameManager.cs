@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public static bool paused;
 
     public bool disableGraphics;
+    public GameObject[] gameVisuals;
     [TabGroup("Ressources")]
     [InlineProperty] public Ressources ressources;
     [TabGroup("Start Ressources")]
@@ -20,6 +21,25 @@ public class GameManager : MonoBehaviour
     public delegate void GameEvent();
     public GameEvent updateGameState;
     public GameEvent gameStartEvent;
+
+    [Button]
+    public void DisableGraphics() {
+        disableGraphics = true;
+        foreach (var item in gameVisuals)
+        {
+            item.SetActive(false);
+        }
+    }
+    [Button]
+    public void EnableGraphics() {
+        disableGraphics = false;
+        foreach (var item in gameVisuals)
+        {
+            item.SetActive(true);
+        }
+        UpgradeManager.Instance.upgradeEvent?.Invoke(null);
+        EventManager.Instance.cataclysmTrigger.Invoke(null);
+    }
 
     public int Energy
     {

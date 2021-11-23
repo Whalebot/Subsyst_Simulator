@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Warning High Pollution
   m_EditorClassIdentifier: 
   showInPaper: 1
-  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  title: Loss of Natural Capital
-  description: Vast amount of pollution has started to ruin the natural capital.
-    Damage is unrecoverable and will further harm the ecosystem.
+  image: {fileID: 21300000, guid: 03cd2d97f3714b84ead366dfd47e4e6b, type: 3}
+  title: Weather changes dramatically
+  description: Vast amount of pollution has started to ruin the environment. Damage
+    is unrecoverable and will further harm the ecosystem.
   buttonText: Continue
   thresholdCounter: 0
   type: 1

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance { get; private set; }
     GameManager gameManager;
     [FoldoutGroup("Feedback Text")] public GameObject populationGrowthWindow;
     [FoldoutGroup("Feedback Text")] public TextMeshProUGUI oldPopulationText;
@@ -29,13 +30,24 @@ public class UIManager : MonoBehaviour
 
     [FoldoutGroup("Text Components")] public TextMeshProUGUI dayText;
 
-
+    public Canvas canvas1;
+    public Canvas canvas2;
+    public Canvas canvas3;
+    public Canvas canvas4;
+    public bool uiEnabled;
+    public enum UIMode { Default, TopOnly, BottomOnly, None }
+    public UIMode uiMode;
 
     public Image foodFill;
     public Image energyFill;
     public Image wasteFill;
 
     Ressources oldRessources;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +60,58 @@ public class UIManager : MonoBehaviour
         gameManager.SetRessources(gameManager.ressources, oldRessources);
         UpdateText();
     }
+
+    public void ToggleUI()
+    {
+        if (uiMode == UIMode.None)
+            uiMode = UIMode.Default;
+        else
+            uiMode = uiMode + 1;
+
+        switch (uiMode)
+        {
+            case UIMode.Default:
+                canvas1.enabled = true;
+                canvas2.enabled = true;
+                canvas3.enabled = true;
+                canvas4.enabled = true;
+                break;
+            case UIMode.TopOnly:
+                canvas1.enabled = true;
+                canvas2.enabled = false;
+                canvas3.enabled = true;
+                canvas4.enabled = true;
+                break;
+            case UIMode.BottomOnly:
+                canvas1.enabled = false;
+                canvas2.enabled = true;
+                canvas3.enabled = true;
+                canvas4.enabled = true;
+                break;
+            case UIMode.None:
+                canvas1.enabled = false;
+                canvas2.enabled = false;
+                canvas3.enabled = false;
+                canvas4.enabled = false;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void DisableUI()
+    {
+        uiEnabled = false;
+        canvas1.enabled = false;
+        canvas2.enabled = false;
+    }
+    public void EnableUI()
+    {
+        uiEnabled = true;
+        canvas1.enabled = true;
+        canvas2.enabled = true;
+    }
+
 
     void UpdateText()
     {
@@ -75,7 +139,8 @@ public class UIManager : MonoBehaviour
 
     }
 
-    IEnumerator DisplayGrowth() {
+    IEnumerator DisplayGrowth()
+    {
         populationGrowthWindow.SetActive(true);
         oldPopulationText.text = "" + oldRessources.population;
         newPopulationText.text = "" + gameManager.Population;

@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Industrial Oil Event Warning
   m_EditorClassIdentifier: 
   showInPaper: 1
-  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  title: Instability in the Oil Industry
-  description: Too high demand of oil has led workers to become overworked. Experts
-    suggest that further development might lead to overwork and mistakes.
+  image: {fileID: 21300000, guid: a79f0298513ea02428a5985dcddd331e, type: 3}
+  title: 'Dangerous levels of oil dependency '
+  description: 'Oil dependecdency linked to increase in desasters. Experts suggest
+    that further demand on oil might lead to increse in leaks, accidentes,  and environmental
+    disasters. '
   buttonText: Continue
   thresholdCounter: 0
   type: 0

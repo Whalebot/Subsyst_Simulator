@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595b023ce6848764786ee100a98a3e4e, type: 3}
   m_Name: Industrial Meat Event Trigger
   m_EditorClassIdentifier: 
-  showInPaper: 0
-  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  showInPaper: 1
+  image: {fileID: 21300000, guid: 2a772cc863c8de24d951b0277e92bdb2, type: 3}
   title: Death of cattle
-  description: Cattle and poultry all around has started to die due to illness, greatly
-    reducing production yield.
+  description: Largest cull in history. Millions of cattle and poultry culled due
+    to illness, major blow to animal protein production.
   buttonText: Continue
-  thresholdCounter: 0
+  thresholdCounter: 1
   type: 0
   upgrade: {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
+  preventionUpgrade: {fileID: 0}
   threshold: 6
   RNG: 50
   triggerEvent: {fileID: 11400000, guid: ec12b1e582916734c9636be6884d1c6e, type: 2}

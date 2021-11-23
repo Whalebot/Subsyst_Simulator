@@ -36,12 +36,96 @@ public class VisualizerManager : MonoBehaviour
         GameManager.Instance.updateGameState += UpdateVisuals;
     }
 
+    public void DisableEverything()
+    {
+        for (int i = 0; i < cattleGO.Length - 1; i++)
+        {
+            if (cattleGO[i].gameObject.activeInHierarchy) break;
+            cattleGO[i].GetComponentInChildren<Animator>().SetBool("isOn", false);
+        }
+        for (int i = 0; i < foodGO.Length; i++)
+        {
+            if (foodGO.Length - 1 < i) break;
+
+            foodGO[i].SetActive(false);
+        }
+        for (int i = 0; i < trashGO.Length; i++)
+        {
+            if (trashGO.Length - 1 < i) break;
+
+            trashGO[i].GetComponentInChildren<Animator>().SetBool("isOn", false);
+        }
+        for (int i = 0; i < statueParts.Length; i++)
+        {
+            statueParts[i].GetComponentInChildren<Animator>().SetBool("isOn", false);
+        }
+        for (int i = 0; i < trashPileGO.Length; i++)
+        {
+            if (trashPileGO.Length - 1 < i) break;
+
+            trashPileGO[i].GetComponentInChildren<Animator>().SetBool("isOn", false);
+        }
+
+        for (int i = 0; i < populationGO.Length; i++)
+        {
+            if (populationGO.Length - 1 < i) break;
+
+            populationGO[i].GetComponentInChildren<Animator>().SetBool("isOn", false);
+        }
+        for (int i = 0; i < peopleGO.Length; i++)
+        {
+            if (peopleGO.Length - 1 < i) break;
+
+            peopleGO[i].GetComponentInChildren<Animator>().SetBool("isOn", false);
+        }
+        protestAnim.SetBool("isCataclysm", false);
+        for (int i = 0; i < cataclysmPeopleGO.Length; i++)
+        {
+            if (cataclysmPeopleGO.Length - 1 < i) break;
+
+            cataclysmPeopleGO[i].SetActive(false);
+        }
+
+        for (int i = 0; i < oilGO.Length - 1; i++)
+        {
+            if (oilGO.Length - 1 < i) break;
+            oilGO[i].GetComponentInChildren<Animator>().SetBool("isOn", false);
+        }
+
+        for (int i = 0; i < wasteGO.Length - 1; i++)
+        {
+            if (wasteGO.Length - 1 < i) break;
+            wasteGO[i].GetComponentInChildren<Animator>().SetBool("isOn", false);
+
+        }
+        for (int i = 0; i < processedWasteGO.Length; i++)
+        {
+            if (processedWasteGO.Length - 1 < i) break;
+            processedWasteGO[i].GetComponentInChildren<Animator>().SetBool("isOn", false);
+
+        }
+        for (int i = 0; i < energyVisuals.Length; i++)
+        {
+            if (energyVisuals[i].isOn)
+            {
+                energyVisuals[i].BaseMaterial();
+            }
+        }
+    }
+
     // Update is called once per frame
     public void UpdateVisuals()
     {
 
         if (GameManager.Instance.Money > maxMoney) maxMoney = GameManager.Instance.Money;
         if (GameManager.Instance.Population > maxPopulation) maxPopulation = GameManager.Instance.Population;
+
+        if (GameManager.Instance.disableGraphics)
+        {
+            DisableEverything();
+            return;
+
+        }
 
         cattleUpgrades = UpgradeManager.Instance.CheckUpgradeNumber(cattleUpgrade);
         for (int i = 0; i < cattleUpgrades; i++)
@@ -87,9 +171,7 @@ public class VisualizerManager : MonoBehaviour
         protestAnim.SetBool("isCataclysm", GameManager.Instance.Pollution > 10000 && GameManager.Instance.Pollution > GameManager.Instance.Population * 3);
         for (int i = 0; i < cataclysmPeopleGO.Length; i++)
         {
-            if (cataclysmPeopleGO.Length - 1 < i) break;
-
-            cataclysmPeopleGO[i].SetActive(50 * Mathf.Pow(10, i) < GameManager.Instance.Population);
+         //   cataclysmPeopleGO[i].SetActive(50 * Mathf.Pow(10, i) < GameManager.Instance.Population);
         }
 
         oilUpgrades = UpgradeManager.Instance.CheckUpgradeNumber(oilUpgrade);
@@ -131,9 +213,10 @@ public class VisualizerManager : MonoBehaviour
             }
             else
             {
-                if (energyVisuals[i].isOn) { 
+                if (energyVisuals[i].isOn)
+                {
                     energyVisuals[i].BaseMaterial();
-                    print("pog");
+                   // print("pog");
                 }
             }
         }

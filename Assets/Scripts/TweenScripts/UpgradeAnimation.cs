@@ -26,6 +26,7 @@ public class UpgradeAnimation : MonoBehaviour
 
     public void CheckUpgrade(ActionSO a)
     {
+        if (targetUpgrade == null && altUpgrade == null) return;
         if (a == targetUpgrade || a == altUpgrade && altUpgrade != null)
         {
             UpgradeManager.Instance.upgradeEvent -= CheckUpgrade;

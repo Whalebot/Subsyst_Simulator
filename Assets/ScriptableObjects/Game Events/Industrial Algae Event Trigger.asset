@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595b023ce6848764786ee100a98a3e4e, type: 3}
   m_Name: Industrial Algae Event Trigger
   m_EditorClassIdentifier: 
-  showInPaper: 0
-  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  title: Algae Mutation
-  description: Algae growth has fallen dramatically.
+  showInPaper: 1
+  image: {fileID: 21300000, guid: d052fc705eee9734a89c2d3b6cd0fc92, type: 3}
+  title: Algae altered metabolism
+  description: Over industrialization of alge production casues changes in algae
+    metablosims. Algae growth falls dramatically triggering massive lack of food.
   buttonText: Continue
   thresholdCounter: 0
   type: 1
   upgrade: {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
+  preventionUpgrade: {fileID: 0}
   threshold: 6
   RNG: 50
   triggerEvent: {fileID: 11400000, guid: b51866df07d5af74ba5274e129d97c3c, type: 2}

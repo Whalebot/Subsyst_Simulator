@@ -11,6 +11,13 @@ public class FoodManager : BaseFacility
     public List<ProductionSO> unlockedAutomaticProductionTypes;
     public Ressources upkeep;
     public Ressources income;
+    public delegate void ProductionEvent(ProductionSO productionSO);
+    public ProductionEvent productionEvent;
+
+    public delegate void RessourceEvent();
+    public RessourceEvent moneyEnergyEvent;
+    public RessourceEvent wasteEnergyEvent;
+    public RessourceEvent energyFoodEvent;
 
     private void Awake()
     {
@@ -33,13 +40,57 @@ public class FoodManager : BaseFacility
         Ressources tempCost = UpgradeManager.Instance.CheckCost(p);
         if (!GameManager.Instance.CheckRessources(tempCost))
         {
-            print("ERROR: BUTTON SHOULD BE UNAVAILABLE, Can't afford production " + p.name);
+            //   print("ERROR: BUTTON SHOULD BE UNAVAILABLE, Can't afford production " + p.name);
             return;
         }
+
         GameManager.Instance.SubtractRessources(tempCost);
         Ressources tempResult = UpgradeManager.Instance.CheckResult(p);
         GameManager.Instance.AddRessources(tempResult);
         GameManager.Instance.updateGameState?.Invoke();
+        productionEvent?.Invoke(p);
+        CheckRessourceTypes(tempCost, tempResult);
+    }
+
+    public void CheckRessourceTypes(Ressources costs, Ressources results)
+    {
+        bool costsFood = costs.food > 0;
+        bool costsEnergy = costs.energy > 0;
+        bool costsWaste = costs.waste > 0;
+        bool costsMoney = costs.money > 0;
+
+        bool givesFood = results.food > 0;
+        bool givesEnergy = results.energy > 0;
+        bool givesWaste = results.waste > 0;
+        bool givesMoney = results.money > 0;
+
+        if (costsFood)
+        {
+            if (givesFood) { }
+            if (givesEnergy) { }
+            if (givesWaste) { }
+            if (givesMoney) { }
+        }
+        if (costsEnergy)
+        {
+            if (givesFood) { energyFoodEvent?.Invoke(); }
+            if (givesEnergy) { }
+            if (givesWaste) { }
+            if (givesMoney) { }
+        }
+        if (costsWaste) {
+            if (givesFood) { }
+            if (givesEnergy) { wasteEnergyEvent?.Invoke(); }
+            if (givesWaste) { }
+            if (givesMoney) { }
+        }
+        if (costsMoney)
+        {
+            if (givesFood) { }
+            if (givesEnergy) { moneyEnergyEvent?.Invoke(); }
+            if (givesWaste) { }
+            if (givesMoney) { }
+        }
     }
 
     //Does not update game state
@@ -48,12 +99,14 @@ public class FoodManager : BaseFacility
         Ressources tempCost = UpgradeManager.Instance.CheckCost(p);
         if (!GameManager.Instance.CheckRessources(tempCost))
         {
-            print("ERROR: AUTOMATION SHOULD BE UNAVAILABLE, Can't afford production " + p.name);
+            // print("ERROR: AUTOMATION SHOULD BE UNAVAILABLE, Can't afford production " + p.name);
             return;
         }
+        productionEvent?.Invoke(p);
         GameManager.Instance.SubtractRessources(tempCost);
         Ressources tempResult = UpgradeManager.Instance.CheckResult(p);
         GameManager.Instance.AddRessources(tempResult);
+        CheckRessourceTypes(tempCost, tempResult);
     }
 
     public void AddAutomaticProduction(ProductionSO p)
@@ -135,7 +188,7 @@ public class FoodManager : BaseFacility
         for (int i = 0; i < missingRessources.Length; i++)
         {
             if (missingRessources[i] && i != 6) foundMissing = true;
-        } 
+        }
         return !foundMissing;
     }
 

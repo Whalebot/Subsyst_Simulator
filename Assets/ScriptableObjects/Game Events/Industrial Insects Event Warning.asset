@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: Industrial Insects Event Warning
   m_EditorClassIdentifier: 
   showInPaper: 1
-  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  image: {fileID: 21300000, guid: fedcb7e1a67939c49b91b37b3ba08e03, type: 3}
   title: Insects are taking over
-  description: Industrialized insect production has grown rapidly. Scientists are
-    worried there might be unforeseen consequences to letting them grow this rapidly.
+  description: Insect production out of control. Scientists warn there might be unforeseen
+    consequences to the fast industrialization of insect production.
   buttonText: Continue
   thresholdCounter: 0
   type: 0
   upgrade: {fileID: 11400000, guid: 4bb461810768c5f408db14fa933f36a5, type: 2}
+  preventionUpgrade: {fileID: 0}
   threshold: 5
   RNG: 100
   triggerEvent: {fileID: 11400000, guid: 62cb17c22f6e5c1449a61561b02b1cfa, type: 2}

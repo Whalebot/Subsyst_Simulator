@@ -35,6 +35,7 @@ public class ColorScript : MonoBehaviour
         vegetableValue = UpgradeManager.Instance.VegetableUpgrades();
         waste = gameManager.Waste;
         pollution = gameManager.Pollution;
+        mixColors = !gameManager.disableGraphics;
         CalculateMainColor();
 
     }

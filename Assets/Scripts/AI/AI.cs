@@ -180,7 +180,7 @@ public class AI : MonoBehaviour
                 switch (i)
                 {
                     case 0:
-                        print("Missing Energy for upkeep");
+                     //   print("Missing Energy for upkeep");
                         for (int j = 0; j < behaviour.preferredEnergyProduction.Length; j++)
                         {
                             if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredEnergyProduction[j]))
@@ -192,7 +192,7 @@ public class AI : MonoBehaviour
                         }
                         break;
                     case 1:
-                        print("Missing Food for upkeep");
+                     //   print("Missing Food for upkeep");
                         for (int j = 0; j < behaviour.preferredFoodProduction.Length; j++)
                         {
                             if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredFoodProduction[j]))
@@ -204,7 +204,7 @@ public class AI : MonoBehaviour
                         }
                         break;
                     case 2:
-                        print("Missing Waste for upkeep");
+                     //   print("Missing Waste for upkeep");
                         for (int j = 0; j < behaviour.preferredWasteProduction.Length; j++)
                         {
                             if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredWasteProduction[j]))
@@ -216,7 +216,7 @@ public class AI : MonoBehaviour
                         }
                         break;
                     case 5:
-                        print("Missing Money for upkeep");
+                      //  print("Missing Money for upkeep");
                         for (int j = 0; j < behaviour.preferredMoneyProduction.Length; j++)
                         {
                             if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredMoneyProduction[j]))
@@ -229,7 +229,7 @@ public class AI : MonoBehaviour
                         break;
 
                     default:
-                        print("Missing something for upkeep");
+                      //  print("Missing something for upkeep");
                         break;
                 }
                 if (found)
@@ -304,7 +304,7 @@ public class AI : MonoBehaviour
                 case 5:
                     for (int j = 0; j < behaviour.preferredMoneyProduction.Length; j++)
                     {
-                        print("Looking for money");
+                       // print("Looking for money");
                         if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredMoneyProduction[j]))
                         {
                             found = true;
@@ -315,13 +315,13 @@ public class AI : MonoBehaviour
                     break;
 
                 default:
-                    print("Missing something for production");
+                    //print("Missing something for production");
                     break;
             }
             if (found)
             {
                 Ressources productionCost = UpgradeManager.Instance.CheckCost(tempAction);
-                print("Found missing production: " + tempAction);
+              //  print("Found missing production: " + tempAction);
                 if (GameManager.Instance.CheckRessources(productionCost))
                 {
                     nextAction = tempAction;
@@ -396,7 +396,7 @@ public class AI : MonoBehaviour
                     break;
 
                 default:
-                    print("Missing something for production");
+                 //   print("Missing something for production");
                     break;
             }
 
@@ -417,7 +417,7 @@ public class AI : MonoBehaviour
         if (missing)
         {
             nextAction = null;
-            print("Wait");
+          //  print("Wait");
         }
     }
 
@@ -426,7 +426,7 @@ public class AI : MonoBehaviour
     {
         if (nextAction == null)
         {
-            print("Bot is waiting");
+           // print("Bot is waiting");
             return;
         }
 
@@ -522,7 +522,7 @@ public class AI : MonoBehaviour
         }
 
         int upgradeNumber = UpgradeManager.Instance.CheckUpgradeNumber(behaviour.upgradeGoals[behaviour.upgradeStep]);
-        print(dupes + " " + upgradeNumber);
+       // print(dupes + " " + upgradeNumber);
         if (upgradeNumber >= dupes)
         {
             behaviour.upgradeStep++;

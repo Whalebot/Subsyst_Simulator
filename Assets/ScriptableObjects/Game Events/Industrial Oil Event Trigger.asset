@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595b023ce6848764786ee100a98a3e4e, type: 3}
   m_Name: Industrial Oil Event Trigger
   m_EditorClassIdentifier: 
-  showInPaper: 0
-  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  showInPaper: 1
+  image: {fileID: 21300000, guid: f5a3cc0e14f99dd4aab54fd5cf9fb80a, type: 3}
   title: Oil Spill
-  description: Spilled oil into the oceans have increased the prices of oil.
+  description: Consequences of oil leaks cost millions more to taxpayers. Cleaning
+    up after industries leaks have increased both taxes and soaring prices of oil.
   buttonText: Continue
   thresholdCounter: 0
   type: 1

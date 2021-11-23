@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Sirenix.OdinInspector;
 
 public class GameEventSO : ScriptableObject
 {
     public bool showInPaper;
+    [PreviewField]
     public Sprite image;
     public string title;
     public string description;

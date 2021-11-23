@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595b023ce6848764786ee100a98a3e4e, type: 3}
   m_Name: Industrial Vegetables Event Trigger
   m_EditorClassIdentifier: 
-  showInPaper: 0
-  image: {fileID: 4951438001866773748, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  title: The soil is dying
-  description: Scientists have found that the local soil has rapidly been degraded
-    due to overfarming. Further agriculture might do unrecoverable damage to the
-    soil.
+  showInPaper: 1
+  image: {fileID: 21300000, guid: 3f69bca96a35a0947a0cfa51f18983de, type: 3}
+  title: Soil Degredation
+  description: Agriculture no longer possible. Unrecoverable damage to the soil has
+    yielded most farm lands barrend and sterlie.
   buttonText: Continue
   thresholdCounter: 0
   type: 1
   upgrade: {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
+  preventionUpgrade: {fileID: 0}
   threshold: 6
   RNG: 50
   triggerEvent: {fileID: 11400000, guid: 740f9f080e098034dba9776a94707754, type: 2}
