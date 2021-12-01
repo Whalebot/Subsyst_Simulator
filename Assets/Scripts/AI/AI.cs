@@ -9,6 +9,7 @@ public class AI : MonoBehaviour
 {
     public static AI Instance;
     public bool isAIActive;
+    public bool showCursor;
 
     public bool showAIActions;
 
@@ -23,6 +24,7 @@ public class AI : MonoBehaviour
     public int overshoot = 5;
     public int overshootCounter = 0;
     public List<ActionSO> actionsToDisable;
+    public GameObject botSelectionScreen;
     private void Awake()
     {
         Instance = this;
@@ -31,6 +33,7 @@ public class AI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        botSelectionScreen.SetActive(true);
         foreach (var item in bots)
         {
             item.upgradeStep = 0;
@@ -422,6 +425,35 @@ public class AI : MonoBehaviour
     }
 
     [Button]
+    public void MoveCursorToNextObject(Interactable temp)
+    {
+        if (!showAIActions)
+            temp.ExecuteAction();
+        else
+        {
+            //if (temp.GetType() == typeof(MenuButton))
+            //    StartCoroutine("MoveAICursorWorld", (MenuButton)temp);
+            //else
+                StartCoroutine("MoveAICursorNoClick", temp);
+        }
+    }
+
+
+    [Button]
+    public void ClickObject(Interactable temp)
+    {
+        if (!showAIActions)
+            temp.ExecuteAction();
+        else
+        {
+            //if (temp.GetType() == typeof(MenuButton))
+            //    StartCoroutine("MoveAICursorWorld", (MenuButton)temp);
+            //else
+            StartCoroutine("MoveAICursor", temp);
+        }
+    }
+
+    [Button]
     public void MoveCursorToNextAction()
     {
         if (nextAction == null)
@@ -446,6 +478,17 @@ public class AI : MonoBehaviour
         if (actionsToDisable.Count > 0)
         {
             DisableAllAutomaticProductions();
+        }
+    }
+
+    IEnumerator MoveAICursorNoClick(Interactable t)
+    {
+        float distance = Vector2.Distance(botCursor.transform.position, t.transform.position);
+        LeanTween.move(botCursor.gameObject, t.transform.position, (TimeManager.Instance.framesPerTime / 240F));
+        while (distance > 2)
+        {
+            distance = Vector2.Distance(botCursor.transform.position, t.transform.position);
+            yield return null;
         }
     }
 

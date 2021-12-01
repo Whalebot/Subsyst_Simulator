@@ -10,5 +10,7 @@ public class FoodTabButton : Interactable
         base.ExecuteAction();
         MenuManager.Instance.CloseFoodTabs();
         setActiveTarget.SetActive(true);
+        InputManager.Instance.FindInteractablesInObject(transform.parent.parent.gameObject);
+        InputManager.Instance.activeInteractable = this;
     }
 }

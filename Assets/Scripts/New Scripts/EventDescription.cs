@@ -22,4 +22,12 @@ public class EventDescription : MonoBehaviour
         buttonText.text = SO.buttonText;
 
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            GameManager.Instance.ResumeGame();
+            gameObject.SetActive(false);
+        }
+    }
 }

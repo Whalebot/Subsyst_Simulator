@@ -8,6 +8,7 @@ public class CameraManager : MonoBehaviour
 {
     public bool mouseButtonHeld;
     public CinemachineVirtualCamera overviewCam;
+    public Camera cam2;
     public Vector3 mouseDelta;
     Vector3 relativeMovement;
     public float cameraSpeedX = 1;
@@ -46,6 +47,7 @@ public class CameraManager : MonoBehaviour
         camSize += -Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
         camSize = Mathf.Clamp(camSize, minZoom, maxZoom);
         overviewCam.m_Lens.OrthographicSize = camSize;
+        cam2.orthographicSize = camSize;
 
     }
 }

@@ -84,6 +84,7 @@ public class TimeManager : MonoBehaviour
         }
         canSmallScale = true;
         advanceTimeEvent?.Invoke();
+        GameManager.Instance.updateGameState?.Invoke();
 
     }
 

@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
         }
         UpgradeManager.Instance.upgradeEvent?.Invoke(null);
         EventManager.Instance.cataclysmTrigger.Invoke(null);
+        updateGameState?.Invoke();
     }
 
     public int Energy
@@ -157,11 +158,17 @@ public class GameManager : MonoBehaviour
         SetStartRessources();
     }
 
+    private void Start()
+    {
+        
+    }
+
     public void StartGame()
     {
         gameStart = true;
         gameStartEvent?.Invoke();
         paused = false;
+        EnableGraphics();
     }
 
     public void PauseGame()
@@ -172,6 +179,7 @@ public class GameManager : MonoBehaviour
     public void ResumeGame()
     {
         paused = false;
+        EnableGraphics();
     }
 
     [Button]

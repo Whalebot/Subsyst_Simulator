@@ -49,6 +49,12 @@ public class EventManager : MonoBehaviour
         timeManager.advanceTimeEvent += UpdateUpkeep;
     }
 
+    public void ShowEvent(GameEventSO item)
+    {
+        eventDescription.gameObject.SetActive(true);
+        eventDescription.DisplayEvent(item);
+        gameManager.PauseGame();
+    }
 
     public void CheckGameEvents()
     {
@@ -65,7 +71,7 @@ public class EventManager : MonoBehaviour
                     NewsManager.Instance.SpawnNews(item);
                     eventDescription.gameObject.SetActive(true);
                     eventDescription.DisplayEvent(item);
-                    gameManager.PauseGame();
+              
                 }
                 eventQueue.Add(item);
             }
@@ -74,8 +80,9 @@ public class EventManager : MonoBehaviour
         foreach (var item in eventQueue)
         {
             pendingGameEvents.Remove(item);
-            //gameManager.PauseGame();
+     
             if (cataclysmTrigger != null) cataclysmTrigger.Invoke(item);
+            gameManager.PauseGame();
             item.ExecuteEvent();
             triggeredGameEvents.Add(item);
             if (Telemetry.Instance.sendTelemetry)

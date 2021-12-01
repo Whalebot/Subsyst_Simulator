@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2797203998367294128}
   - component: {fileID: 2797203998367294129}
   - component: {fileID: 2797203998367294135}
+  - component: {fileID: -3552425651438441163}
   m_Layer: 6
   m_Name: Line Object
   m_TagString: Untagged
@@ -99,3 +100,21 @@ MonoBehaviour:
   speed: 30
   distanceTravelled: 0
   length: 0
+--- !u!114 &-3552425651438441163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2797203998367294132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []

@@ -5,12 +5,13 @@ using Sirenix.OdinInspector;
 using PathCreation;
 public class LineSpawner : MonoBehaviour
 {
+    public bool cost;
     public RessourceType type;
     public bool population;
     public bool reverse;
 
     float maxSize = 20;
-    float minSize = 5;
+    float minSize = 1;
     public GameObject prefab;
     public List<ProductionSO> affectedProductions;
     // Start is called before the first frame update
@@ -34,7 +35,7 @@ public class LineSpawner : MonoBehaviour
         GameObject GO = Instantiate(prefab, transform);
         GO.GetComponent<FollowPath>().pathCreator = GetComponent<PathCreator>();
         GO.GetComponent<FollowPath>().reversePath = reverse;
-        float size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(GameManager.Instance.Population) + 5), minSize, maxSize);
+        float size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(GameManager.Instance.Population) * 2 + minSize), minSize, maxSize);
 
         GO.transform.localScale = Vector3.one * size;
     }
@@ -48,26 +49,61 @@ public class LineSpawner : MonoBehaviour
             GameObject GO = Instantiate(prefab, transform);
             GO.GetComponent<FollowPath>().pathCreator = GetComponent<PathCreator>();
             GO.GetComponent<FollowPath>().reversePath = reverse;
+
+            Ressources val;
+
             float size = 10;
-            switch (type)
+            if (cost)
             {
-                case RessourceType.Food:
-                    size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(so.result.food) + 5), minSize, maxSize);
-                    break;
-                case RessourceType.Energy:
-                    size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(so.cost.energy) + 5), minSize, maxSize);
-                    break;
-                case RessourceType.Waste:
-                    size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(so.result.waste) + 5), minSize, maxSize);
-                    break;
-                case RessourceType.Money:
-                    size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(so.result.money) + 5), minSize, maxSize);
-                    break;
-                case RessourceType.Pollution:
-                    size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(so.result.pollution) + 5), minSize, maxSize);
-                    break;
-                default:
-                    break;
+                val = UpgradeManager.Instance.CheckCost(so);
+
+                switch (type)
+                {
+                    case RessourceType.Food:
+
+                        size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(val.food) + minSize), minSize, maxSize);
+                        break;
+                    case RessourceType.Energy:
+                        size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(val.energy) + minSize), minSize, maxSize);
+                        break;
+                    case RessourceType.Waste:
+                        size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(val.waste) + minSize), minSize, maxSize);
+                        break;
+                    case RessourceType.Money:
+                        size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(val.money) + minSize), minSize, maxSize);
+                        break;
+                    case RessourceType.Pollution:
+                        size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(val.pollution) + minSize), minSize, maxSize);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            else
+            {
+                val = UpgradeManager.Instance.CheckResult(so);
+
+                switch (type)
+                {
+                    case RessourceType.Food:
+                        size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(val.food) + minSize), minSize, maxSize);
+                        break;
+                    case RessourceType.Energy:
+                        size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(val.energy) + minSize), minSize, maxSize);
+                        break;
+                    case RessourceType.Waste:
+                        size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(val.waste) + minSize), minSize, maxSize);
+                        break;
+                    case RessourceType.Money:
+                        size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(val.money) + minSize), minSize, maxSize);
+                        break;
+                    case RessourceType.Pollution:
+                        size = Mathf.Clamp(Mathf.Floor(Mathf.Log10(val.pollution) + minSize), minSize, maxSize);
+                        break;
+                    default:
+                        break;
+                }
             }
 
             GO.transform.localScale = Vector3.one * size;

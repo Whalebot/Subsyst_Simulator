@@ -103,6 +103,7 @@ public class FoodManager : BaseFacility
             return;
         }
         productionEvent?.Invoke(p);
+        print(p);
         GameManager.Instance.SubtractRessources(tempCost);
         Ressources tempResult = UpgradeManager.Instance.CheckResult(p);
         GameManager.Instance.AddRessources(tempResult);

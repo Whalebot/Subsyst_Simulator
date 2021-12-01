@@ -171,7 +171,7 @@ public class VisualizerManager : MonoBehaviour
         protestAnim.SetBool("isCataclysm", GameManager.Instance.Pollution > 10000 && GameManager.Instance.Pollution > GameManager.Instance.Population * 3);
         for (int i = 0; i < cataclysmPeopleGO.Length; i++)
         {
-         //   cataclysmPeopleGO[i].SetActive(50 * Mathf.Pow(10, i) < GameManager.Instance.Population);
+            cataclysmPeopleGO[i].SetActive(!(10 * Mathf.Pow(10, i) > GameManager.Instance.Population));
         }
 
         oilUpgrades = UpgradeManager.Instance.CheckUpgradeNumber(oilUpgrade);
@@ -216,7 +216,7 @@ public class VisualizerManager : MonoBehaviour
                 if (energyVisuals[i].isOn)
                 {
                     energyVisuals[i].BaseMaterial();
-                   // print("pog");
+                    // print("pog");
                 }
             }
         }

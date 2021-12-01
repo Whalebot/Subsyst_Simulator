@@ -27,7 +27,7 @@ public class AICursor : MonoBehaviour
 
     private void FixedUpdate()
     {
-        isVisible = AI.Instance.isAIActive && !GameManager.paused;
+        isVisible = AI.Instance.isAIActive && !GameManager.paused || AI.Instance.showCursor && !GameManager.paused;
         img.enabled = isVisible;
     }
 
