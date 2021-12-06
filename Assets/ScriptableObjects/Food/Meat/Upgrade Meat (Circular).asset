@@ -27,7 +27,7 @@ MonoBehaviour:
     naturalCapital: 0
   result:
     energy: 0
-    food: 1
+    food: 0
     waste: 0
     approval: 0
     population: 0

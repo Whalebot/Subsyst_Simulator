@@ -42,6 +42,14 @@ public class UIManager : MonoBehaviour
     public Image energyFill;
     public Image wasteFill;
 
+    Color foodColor;
+    Color energyColor;
+    Color wasteColor;
+    public Color positiveColor;
+    public Color negativeColor;
+
+
+
     Ressources oldRessources;
 
     private void Awake()
@@ -56,6 +64,11 @@ public class UIManager : MonoBehaviour
         TimeManager.Instance.advanceGameEvent += UpdateText;
         gameManager.updateGameState += UpdateText;
         EventManager.Instance.populationGrowth += DisplayPopulationGrowth;
+
+        foodColor = foodFill.color;
+        energyColor = energyFill.color;
+        wasteColor = wasteFill.color;
+
         oldRessources = new Ressources();
         gameManager.SetRessources(gameManager.ressources, oldRessources);
         UpdateText();
@@ -153,9 +166,33 @@ public class UIManager : MonoBehaviour
     void CompareUpdatedRessources()
     {
         UpdateFill();
-        if (oldRessources.energy != gameManager.Energy) FeedbackNumbers(energyText.transform, gameManager.Energy - oldRessources.energy);
-        if (oldRessources.food != gameManager.Food) FeedbackNumbers(foodText.transform, gameManager.Food - oldRessources.food);
-        if (oldRessources.waste != gameManager.Waste) FeedbackNumbers(wasteText.transform, gameManager.Waste - oldRessources.waste);
+        if (oldRessources.energy != gameManager.Energy)
+        {
+            if (oldRessources.energy > gameManager.Energy)
+                StartCoroutine(FlashRed(energyFill));
+            else
+                StartCoroutine(FlashWhite(energyFill));
+
+            FeedbackNumbers(energyText.transform, gameManager.Energy - oldRessources.energy);
+        }
+        if (oldRessources.food != gameManager.Food)
+        {
+            if (oldRessources.food > gameManager.Food)
+                StartCoroutine(FlashRed(foodFill));
+            else
+                StartCoroutine(FlashWhite(foodFill));
+     
+            FeedbackNumbers(foodText.transform, gameManager.Food - oldRessources.food);
+        }
+        if (oldRessources.waste != gameManager.Waste)
+        {
+            if (oldRessources.waste > gameManager.Waste)
+                StartCoroutine(FlashRed(wasteFill));
+            else
+                StartCoroutine(FlashWhite(wasteFill));
+            FeedbackNumbers(wasteText.transform, gameManager.Waste - oldRessources.waste);
+        }
+
         if (oldRessources.naturalCapital != gameManager.NaturalCapital) FeedbackNumbers(naturalCapitalText.transform, gameManager.NaturalCapital - oldRessources.naturalCapital);
         if (oldRessources.approval != gameManager.Approval) FeedbackNumbers(approvalText.transform, gameManager.Approval - oldRessources.approval);
         if (oldRessources.population != gameManager.Population) FeedbackNumbers(populationText.transform, gameManager.Population - oldRessources.population);
@@ -165,6 +202,24 @@ public class UIManager : MonoBehaviour
 
         //Save current ressources as old ressources for next check
         gameManager.SetRessources(gameManager.ressources, oldRessources);
+    }
+
+    IEnumerator FlashWhite(Image img)
+    {
+        img.color = positiveColor;
+        yield return new WaitForSeconds(0.3f);
+        foodFill.color = foodColor;
+        energyFill.color = energyColor;
+        wasteFill.color = wasteColor;
+    }
+
+    IEnumerator FlashRed(Image img)
+    {
+        img.color = negativeColor;
+        yield return new WaitForSeconds(0.3f);
+        foodFill.color = foodColor;
+        energyFill.color = energyColor;
+        wasteFill.color = wasteColor;
     }
 
     public void UpdateFill()

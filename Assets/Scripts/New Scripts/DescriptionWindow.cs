@@ -18,6 +18,7 @@ public class DescriptionWindow : MonoBehaviour
     [FoldoutGroup("Gameobject Components")] public GameObject resultEnergy;
     [FoldoutGroup("Gameobject Components")] public GameObject resultWaste;
     [FoldoutGroup("Gameobject Components")] public GameObject resultPollution;
+    [FoldoutGroup("Gameobject Components")] public GameObject outcome;
 
     [FoldoutGroup("Gameobject Components")] public Image iconImage;
     [FoldoutGroup("Text Components")] public TextMeshProUGUI titleText;
@@ -73,6 +74,8 @@ public class DescriptionWindow : MonoBehaviour
         resultWaste.SetActive(action.result.waste != 0);
         resultPollution.SetActive(action.result.pollution != 0);
 
+        outcome.SetActive(action.result.money != 0 || action.result.food != 0 || action.result.waste != 0 || action.result.energy != 0 || action.result.pollution != 0);
+
         Ressources temp = UpgradeManager.Instance.CheckCost(action);
         costMoneyText.text = "" + temp.money;
         costFoodText.text = "" + temp.food;
@@ -109,6 +112,8 @@ public class DescriptionWindow : MonoBehaviour
         resultEnergy.SetActive(action.result.energy != 0);
         resultWaste.SetActive(action.result.waste != 0);
         resultPollution.SetActive(action.result.pollution != 0);
+
+        outcome.SetActive(action.result.money != 0 || action.result.food != 0 || action.result.waste != 0 || action.result.energy != 0 || action.result.pollution != 0);
 
         Ressources temp = UpgradeManager.Instance.CheckCost(action);
         costMoneyText.text = "" + temp.money;
