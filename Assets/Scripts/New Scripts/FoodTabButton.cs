@@ -13,4 +13,16 @@ public class FoodTabButton : Interactable
         InputManager.Instance.FindInteractablesInObject(transform.parent.parent.gameObject);
         InputManager.Instance.activeInteractable = this;
     }
+
+    public override void Selected()
+    {
+        base.Selected();
+        CursorScript.Instance.SetDescription(gameObject.name);
+    }
+
+    public override void Deselected()
+    {
+        base.Deselected();
+        CursorScript.Instance.ResetDescription();
+    }
 }

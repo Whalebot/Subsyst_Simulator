@@ -169,27 +169,27 @@ public class UIManager : MonoBehaviour
         if (oldRessources.energy != gameManager.Energy)
         {
             if (oldRessources.energy > gameManager.Energy)
-                StartCoroutine(FlashRed(energyFill));
+                StartCoroutine(FlashRed(energyFill, energyColor));
             else
-                StartCoroutine(FlashWhite(energyFill));
+                StartCoroutine(FlashWhite(energyFill, energyColor));
 
             FeedbackNumbers(energyText.transform, gameManager.Energy - oldRessources.energy);
         }
         if (oldRessources.food != gameManager.Food)
         {
             if (oldRessources.food > gameManager.Food)
-                StartCoroutine(FlashRed(foodFill));
+                StartCoroutine(FlashRed(foodFill, foodColor));
             else
-                StartCoroutine(FlashWhite(foodFill));
-     
+                StartCoroutine(FlashWhite(foodFill, foodColor));
+
             FeedbackNumbers(foodText.transform, gameManager.Food - oldRessources.food);
         }
         if (oldRessources.waste != gameManager.Waste)
         {
             if (oldRessources.waste > gameManager.Waste)
-                StartCoroutine(FlashRed(wasteFill));
+                StartCoroutine(FlashRed(wasteFill, wasteColor));
             else
-                StartCoroutine(FlashWhite(wasteFill));
+                StartCoroutine(FlashWhite(wasteFill, wasteColor));
             FeedbackNumbers(wasteText.transform, gameManager.Waste - oldRessources.waste);
         }
 
@@ -204,18 +204,18 @@ public class UIManager : MonoBehaviour
         gameManager.SetRessources(gameManager.ressources, oldRessources);
     }
 
-    IEnumerator FlashWhite(Image img)
+    IEnumerator FlashWhite(Image img, Color c)
     {
-        img.color = positiveColor;
+        img.color = (positiveColor + c) / 2;
         yield return new WaitForSeconds(0.3f);
         foodFill.color = foodColor;
         energyFill.color = energyColor;
         wasteFill.color = wasteColor;
     }
 
-    IEnumerator FlashRed(Image img)
+    IEnumerator FlashRed(Image img, Color c)
     {
-        img.color = negativeColor;
+        img.color = (negativeColor + c) / 2;
         yield return new WaitForSeconds(0.3f);
         foodFill.color = foodColor;
         energyFill.color = energyColor;

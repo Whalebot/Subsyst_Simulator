@@ -12,6 +12,7 @@ public class TimeManager : MonoBehaviour
     public TimeEvent advanceGameEvent;
     public TimeEvent advanceTimeEvent;
     public static bool canSmallScale;
+    public static bool isStarted;
     public float gameUpdateFrequency;
     public int day = 1;
     public int time;
@@ -37,6 +38,7 @@ public class TimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isStarted = false;
         day = 1;
         canSmallScale = true;
         InitializeSlider();
@@ -61,6 +63,7 @@ public class TimeManager : MonoBehaviour
     void FixedUpdate()
     {
         if (GameManager.paused) return;
+        if (!isStarted) return;
         //Waits framesPerTime amount of frames before advancing the the game time
         frameCounter++;
         if (frameCounter >= framesPerTime)

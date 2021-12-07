@@ -41,7 +41,8 @@ public class InputManager : MonoBehaviour
 
         currentInteractables = new Interactable[0];
         currentInteractables = GO.GetComponentsInChildren<Interactable>();
-        activeInteractable = currentInteractables[0];
+        if (currentInteractables.Length > 0)
+            activeInteractable = currentInteractables[0];
     }
 
     [Button]

@@ -15,6 +15,7 @@ public class MenuButton : Interactable
             isActive = false;
             setActiveTarget.SetActive(false);
             InputManager.Instance.ResetInteractables();
+
         }
         else {
             MenuManager.Instance.CloseAllTabs();
@@ -23,5 +24,17 @@ public class MenuButton : Interactable
             InputManager.Instance.FindInteractablesInObject(setActiveTarget);
         }
 
+    }
+
+    public override void Selected()
+    {
+        base.Selected();
+        CursorScript.Instance.SetDescription(gameObject.name);
+    }
+
+    public override void Deselected()
+    {
+        base.Deselected();
+            CursorScript.Instance.ResetDescription();
     }
 }

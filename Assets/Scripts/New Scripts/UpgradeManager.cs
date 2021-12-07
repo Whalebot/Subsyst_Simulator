@@ -134,6 +134,7 @@ public class UpgradeManager : MonoBehaviour
     {
 
         Ressources tempCost = CheckCost(p);
+        TimeManager.isStarted = true;
         if (!GameManager.Instance.CheckRessources(tempCost))
         {
             print("ERROR: BUTTON SHOULD BE UNAVAILABLE, Can't afford upgrade " + p.name);

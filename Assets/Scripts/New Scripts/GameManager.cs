@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public static bool gameStart;
     public static bool paused;
-
+    public enum GameMode { Default, Autoplay, MakeyMakey, Tutorial }
+    public GameMode gameMode;
     public bool disableGraphics;
     public GameObject[] gameVisuals;
     [TabGroup("Ressources")]
@@ -23,7 +24,8 @@ public class GameManager : MonoBehaviour
     public GameEvent gameStartEvent;
 
     [Button]
-    public void DisableGraphics() {
+    public void DisableGraphics()
+    {
         disableGraphics = true;
         foreach (var item in gameVisuals)
         {
@@ -31,7 +33,8 @@ public class GameManager : MonoBehaviour
         }
     }
     [Button]
-    public void EnableGraphics() {
+    public void EnableGraphics()
+    {
         disableGraphics = false;
         foreach (var item in gameVisuals)
         {
@@ -85,7 +88,7 @@ public class GameManager : MonoBehaviour
         set
         {
 
-            ressources.approval = Mathf.Clamp( value, -Population , Population);
+            ressources.approval = Mathf.Clamp(value, -Population, Population);
 
             //if (value > Population) ressources.approval = Population;
         }
@@ -160,7 +163,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        
+
     }
 
     public void StartGame()
@@ -287,7 +290,7 @@ public class GameManager : MonoBehaviour
         return canAffordRessource;
     }
 
-    public bool[] FindMissingRessources(Ressources r , Ressources r2)
+    public bool[] FindMissingRessources(Ressources r, Ressources r2)
     {
         bool[] canAffordRessource = new bool[10];
         //Compare incoming ressources with available ressources and return true/false depending on whether the player has enough ressources.

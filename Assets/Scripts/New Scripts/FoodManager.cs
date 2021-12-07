@@ -49,6 +49,7 @@ public class FoodManager : BaseFacility
         GameManager.Instance.AddRessources(tempResult);
         GameManager.Instance.updateGameState?.Invoke();
         productionEvent?.Invoke(p);
+        TimeManager.isStarted = true;
         CheckRessourceTypes(tempCost, tempResult);
     }
 

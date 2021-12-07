@@ -6020,7 +6020,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button (3)
+      value: Algae
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -6156,7 +6156,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button (3)
+      value: Algae
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -6453,7 +6453,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button (2)
+      value: Insects
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -6604,7 +6604,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button
+      value: Meat
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -7244,7 +7244,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button (1)
+      value: Vegetables
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -8471,7 +8471,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button (3)
+      value: Algae
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -9240,7 +9240,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button (2)
+      value: Insects
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -9391,7 +9391,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button
+      value: Meat
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -9863,7 +9863,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button (2)
+      value: Insects
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -10004,7 +10004,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button
+      value: Meat
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -10155,7 +10155,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button (1)
+      value: Vegetables
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -10460,7 +10460,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button (2)
+      value: Insects
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -10611,7 +10611,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button (1)
+      value: Vegetables
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -10747,7 +10747,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button (1)
+      value: Vegetables
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -11034,7 +11034,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button
+      value: Meat
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}
@@ -11185,7 +11185,7 @@ PrefabInstance:
     - target: {fileID: 8326261631825546740, guid: e699091767699504ba562df87b60c063,
         type: 3}
       propertyPath: m_Name
-      value: Tab Button (3)
+      value: Algae
       objectReference: {fileID: 0}
     - target: {fileID: 9104774672743791634, guid: e699091767699504ba562df87b60c063,
         type: 3}

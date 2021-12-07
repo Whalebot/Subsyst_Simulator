@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class CursorScript : MonoBehaviour
 {
     public static CursorScript Instance { get; private set; }
@@ -21,6 +22,9 @@ public class CursorScript : MonoBehaviour
     public Sprite cursorIndustrial;
     public Sprite cursorIndustrialdown;
     public AudioSource AS;
+
+    public GameObject descriptionGO;
+    public TextMeshProUGUI descriptionText;
     private void Awake()
     {
         Instance = this;
@@ -51,6 +55,14 @@ public class CursorScript : MonoBehaviour
             else
                 img.sprite = cursorGeneral;
         }
+    }
+
+    public void SetDescription(string s) {
+        descriptionGO.SetActive(true);
+        descriptionText.text = s;
+    }
+    public void ResetDescription() {
+        descriptionGO.SetActive(false);
     }
 
     public void ClickSound()
