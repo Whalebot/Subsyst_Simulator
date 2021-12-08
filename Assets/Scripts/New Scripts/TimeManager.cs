@@ -63,7 +63,7 @@ public class TimeManager : MonoBehaviour
     void FixedUpdate()
     {
         if (GameManager.paused) return;
-        if (!isStarted) return;
+       // if (!isStarted) return;
         //Waits framesPerTime amount of frames before advancing the the game time
         frameCounter++;
         if (frameCounter >= framesPerTime)

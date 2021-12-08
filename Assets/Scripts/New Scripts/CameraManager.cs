@@ -18,6 +18,8 @@ public class CameraManager : MonoBehaviour
     public float camSize = 120F;
     public float minZoom, maxZoom;
     public GameObject startCam;
+    public GameObject introObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class CameraManager : MonoBehaviour
     }
 
     public void StartGameCamera() {
+        introObject.SetActive(true);
         startCam.SetActive(false);
     }
 

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Composting
   description: Clean pollution with composting which aids food production.
-  icon: {fileID: 0}
+  icon: {fileID: 2074514824800363442, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   cost:
     energy: 20
     food: 0

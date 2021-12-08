@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aae83ff58ee6254e8d55bbd725dcda3, type: 3}
   m_Name: Waste Production (Upcycling)
   m_EditorClassIdentifier: 
-  title: 
-  description: 
-  icon: {fileID: 0}
+  title: Upcycling
+  description: Bring new value to recycled waste to increase its value.
+  icon: {fileID: 2074514824800363442, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   cost:
     energy: 60
     food: 0
