@@ -17,7 +17,7 @@ public class NewsDescription : MonoBehaviour
     }
 
     public void SetValues(GameEventSO so) {
-        headline.text = so.title;
+        headline.text = so.title + " Day " + TimeManager.Instance.day;
         description.text = so.description;
         //  image.color = Color.red;
         image.color = Color.white;

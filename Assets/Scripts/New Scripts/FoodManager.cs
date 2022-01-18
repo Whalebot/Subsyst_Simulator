@@ -49,7 +49,8 @@ public class FoodManager : BaseFacility
         GameManager.Instance.AddRessources(tempResult);
         GameManager.Instance.updateGameState?.Invoke();
         productionEvent?.Invoke(p);
-        TimeManager.isStarted = true;
+        if (!TutorialScript.Instance.inTutorial)
+            TimeManager.isStarted = true;
         CheckRessourceTypes(tempCost, tempResult);
     }
 
@@ -79,7 +80,8 @@ public class FoodManager : BaseFacility
             if (givesWaste) { }
             if (givesMoney) { }
         }
-        if (costsWaste) {
+        if (costsWaste)
+        {
             if (givesFood) { }
             if (givesEnergy) { wasteEnergyEvent?.Invoke(); }
             if (givesWaste) { }

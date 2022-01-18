@@ -7,6 +7,7 @@ using TMPro;
 public class ActionButton : Interactable
 {
     public ButtonState state;
+    public bool techButton;
     public UpgradeSO requiredUpgrade;
     public GameObject lockObject;
     public GameObject maxObject;
@@ -52,7 +53,7 @@ public class ActionButton : Interactable
         }
         else if (action.GetType() == typeof(ProductionSO))
         {
-            if (!TimeManager.canSmallScale)
+            if (!TimeManager.canSmallScale && !TutorialScript.Instance.inTutorial)
             {
                 DisableButton();
                 return;
@@ -88,11 +89,17 @@ public class ActionButton : Interactable
 
     public override void ExecuteAction()
     {
+        base.ExecuteAction();
+        if (!canPress) return;
+
+
+
         if (action != null && Telemetry.Instance.sendTelemetry) Telemetry.Instance.StartCoroutine(Telemetry.Instance.Post(action));
         if (action.GetType() == typeof(UpgradeSO))
         {
             //UpgradeSO a = (UpgradeSO)action;
             UpgradeManager.Instance.UnlockUpgrade((UpgradeSO)action);
+            if (techButton) gameObject.SetActive(false);
         }
         else
         {

@@ -9,15 +9,18 @@ public class MenuButton : Interactable
     public override void ExecuteAction()
     {
         base.ExecuteAction();
+        if (!canPress) return;
 
-        if (setActiveTarget.activeInHierarchy) {
+        if (setActiveTarget.activeInHierarchy)
+        {
             MenuManager.Instance.CloseAllTabs();
             isActive = false;
             setActiveTarget.SetActive(false);
             InputManager.Instance.ResetInteractables();
 
         }
-        else {
+        else
+        {
             MenuManager.Instance.CloseAllTabs();
             isActive = true;
             setActiveTarget.SetActive(true);
@@ -35,6 +38,6 @@ public class MenuButton : Interactable
     public override void Deselected()
     {
         base.Deselected();
-            CursorScript.Instance.ResetDescription();
+        CursorScript.Instance.ResetDescription();
     }
 }
