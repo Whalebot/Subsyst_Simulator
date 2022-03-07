@@ -94,7 +94,7 @@ public class UpgradeManager : MonoBehaviour
         for (int i = 0; i < upgradeNumber; i++)
         {
             if (upgradeScaling == UpgradeScaling.Multiplication)
-                GameManager.Instance.MultiplyRessources(temp, p.costMultiplier);
+                GameManager.Instance.MultiplyRessources(temp, 1);
             else GameManager.Instance.AddRessources(temp, p.cost);
         }
         return temp;
@@ -107,7 +107,7 @@ public class UpgradeManager : MonoBehaviour
         for (int i = 0; i < upgradeNumber; i++)
         {
             if (upgradeScaling == UpgradeScaling.Multiplication)
-                GameManager.Instance.MultiplyRessources(temp, p.costMultiplier);
+                GameManager.Instance.MultiplyRessources(temp, 1);
             else GameManager.Instance.AddRessources(temp, p.result);
         }
         return temp;
@@ -148,6 +148,17 @@ public class UpgradeManager : MonoBehaviour
 
         upgradeEvent?.Invoke(p);
         GameManager.Instance.AddRessources(tempResult);
+        GameManager.Instance.updateGameState?.Invoke();
+    }
+
+    //Does not update game state
+    public void FreeUpgrade(UpgradeSO p)
+    {
+        if (!TutorialScript.Instance.inTutorial)
+            TimeManager.isStarted = true;
+
+        obtainedUpgrades.Add(p);
+        upgradeEvent?.Invoke(p);
         GameManager.Instance.updateGameState?.Invoke();
     }
 }

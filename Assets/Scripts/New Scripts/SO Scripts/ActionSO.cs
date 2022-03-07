@@ -14,7 +14,6 @@ public class ActionSO : ScriptableObject
  
     [Header("Result")]
     [InlineProperty] public Ressources result;
-    public float costMultiplier = 1.5F;
     public UpgradeSO dependantUpgrade;
 
 }

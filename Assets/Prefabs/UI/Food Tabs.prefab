@@ -1748,6 +1748,7 @@ RectTransform:
   - {fileID: 4709924849731474719}
   - {fileID: 4410659751407496222}
   - {fileID: 2513654765581723534}
+  - {fileID: 4461763214205475916}
   m_Father: {fileID: 1589282117654418452}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7290,6 +7291,11 @@ PrefabInstance:
       propertyPath: m_text
       value: Animal-Crop Agroecology
       objectReference: {fileID: 0}
+    - target: {fileID: 402495617868916544, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 402495617868916545, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
         type: 3}
       propertyPath: action
@@ -10753,8 +10759,7 @@ PrefabInstance:
         type: 3}
       propertyPath: action
       value: 
-      objectReference: {fileID: 11400000, guid: de5c8fb0e88e2ab4aac092a0d2b6049a,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4518779744705924676, guid: b8054b41c9128b0479fddf3a1d25abb0,
         type: 3}
       propertyPath: requiredUpgrade
@@ -11084,6 +11089,59 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4030989529604977304, guid: e699091767699504ba562df87b60c063,
     type: 3}
   m_PrefabInstance: {fileID: 5845236281423010313}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6110760729928916966
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1589282116898676986}
+    m_Modifications:
+    - target: {fileID: 6988782652643684140, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: action
+      value: 
+      objectReference: {fileID: 11400000, guid: 19873dd71c6c3784497966b197784579,
+        type: 2}
+    - target: {fileID: 6988782652643684140, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: toggleOffEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 5fa6777ad5b56fb45956a771c694ac9f,
+        type: 2}
+    - target: {fileID: 6988782652643684140, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: requiredUpgrade
+      value: 
+      objectReference: {fileID: 11400000, guid: 850dcac1398fdc042bd0dd9161f4fd14,
+        type: 2}
+    - target: {fileID: 7576908904031749034, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576908904031749034, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00007306026
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576908904031749034, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7576908904031749034, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9dacf4f83480a2d49b332165b9c19924, type: 3}
+--- !u!224 &4461763214205475916 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7576908904031749034, guid: 9dacf4f83480a2d49b332165b9c19924,
+    type: 3}
+  m_PrefabInstance: {fileID: 6110760729928916966}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6272530245779239419
 PrefabInstance:

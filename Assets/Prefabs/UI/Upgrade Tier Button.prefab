@@ -211,7 +211,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action: {fileID: 11400000, guid: e926db89895fa6b439ab188365772c63, type: 2}
+  canPress: 0
   state: 0
+  techButton: 0
   requiredUpgrade: {fileID: 11400000, guid: 2f871fcc081219f4d824a32af0a02f21, type: 2}
   lockObject: {fileID: 7104605491434943520}
   maxObject: {fileID: 6631009384198011706}
@@ -499,18 +501,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6631009384198011706}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00011045106}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000110451045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8513117202884576716}
   m_Father: {fileID: 7104605489696620834}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 158.74501, y: 2.3000336}
-  m_SizeDelta: {x: 46.51, y: 76.8}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -23.59998, y: 1.085041}
+  m_SizeDelta: {x: 46.509995, y: 76.8}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6916659183408838287
 CanvasRenderer:
   m_ObjectHideFlags: 0

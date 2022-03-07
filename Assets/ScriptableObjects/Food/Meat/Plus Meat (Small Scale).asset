@@ -35,7 +35,6 @@ MonoBehaviour:
     pollution: 0
     bees: 0
     naturalCapital: 0
-  costMultiplier: 1.5
   dependantUpgrade: {fileID: 11400000}
-  upgradeLimit: 7
+  upgradeLimit: 3
   unlockedProduction: {fileID: 11400000, guid: de5c8fb0e88e2ab4aac092a0d2b6049a, type: 2}

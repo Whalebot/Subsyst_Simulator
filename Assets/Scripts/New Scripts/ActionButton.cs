@@ -71,8 +71,6 @@ public class ActionButton : Interactable
             }
         }
 
-
-
         if (GameManager.Instance.CheckRessources(UpgradeManager.Instance.CheckCost(action)))
         {
             if (!unlocked) UpgradeManager.Instance.UnlockAction(action);
@@ -97,7 +95,6 @@ public class ActionButton : Interactable
         if (action != null && Telemetry.Instance.sendTelemetry) Telemetry.Instance.StartCoroutine(Telemetry.Instance.Post(action));
         if (action.GetType() == typeof(UpgradeSO))
         {
-            //UpgradeSO a = (UpgradeSO)action;
             UpgradeManager.Instance.UnlockUpgrade((UpgradeSO)action);
             if (techButton) gameObject.SetActive(false);
         }
@@ -122,6 +119,13 @@ public class ActionButton : Interactable
         if (lockObject != null)
             lockObject.SetActive(false);
         button.interactable = true;
+        if (action.GetType() == typeof(UpgradeSO))
+        {
+            if (UpgradeManager.Instance.CheckUpgradeNumber((UpgradeSO)action) == 0 && action.dependantUpgrade != null)
+            {
+                UpgradeManager.Instance.FreeUpgrade((UpgradeSO)action);
+            }
+        }
     }
 
     public override void DisableButton()
