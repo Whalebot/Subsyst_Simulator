@@ -157,8 +157,9 @@ public class FoodManager : BaseFacility
         Ressources sumResult = new Ressources();
         foreach (var item in unlockedAutomaticProductionTypes)
         {
-            GameManager.Instance.AddRessources(sumCost, item.cost);
-            GameManager.Instance.AddRessources(sumResult, item.result);
+            int upgradeNumber = UpgradeManager.Instance.CheckUpgradeNumber(item);
+            GameManager.Instance.AddRessources(sumCost, item.upgradeLevels[upgradeNumber].cost);
+            GameManager.Instance.AddRessources(sumResult, item.upgradeLevels[upgradeNumber].result);
         }
         Ressources profit = new Ressources();
         GameManager.Instance.SubtractRessources(sumResult, sumCost);
@@ -179,7 +180,8 @@ public class FoodManager : BaseFacility
             GameManager.Instance.AddRessources(upkeep, cost);
             GameManager.Instance.AddRessources(income, result);
         }
-        income.money = GameManager.Instance.Population;
+       
+        income.money += GameManager.Instance.Population;
         GameManager.Instance.AddRessources(upkeep, EventManager.Instance.populationUpkeep);
 
         return upkeep;

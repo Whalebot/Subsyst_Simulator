@@ -15,26 +15,90 @@ MonoBehaviour:
   title: Industrial Algae Prodcution
   description: Industrial Algae Prodcution
   icon: {fileID: 2306574165339229938, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  cost:
-    energy: 4
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  result:
-    energy: 0
-    food: 2
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: -2
-    bees: 0
-    naturalCapital: 0
-  costMultiplier: 1.5
   dependantUpgrade: {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
-  productionMethod: 1
+  upgradeLimit: 3
+  upgradeLevels:
+  - upgradeCost: 0
+    cost:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 0
+    cost:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 0
+    cost:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 0
+    cost:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0

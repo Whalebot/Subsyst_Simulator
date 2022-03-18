@@ -140,6 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action: {fileID: 11400000, guid: 2f871fcc081219f4d824a32af0a02f21, type: 2}
   canPress: 0
+  buttonType: 1
   state: 0
   techButton: 0
   requiredUpgrade: {fileID: 0}

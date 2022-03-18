@@ -15,26 +15,90 @@ MonoBehaviour:
   title: Industrial Oil Production
   description: Mass produced oil drilling
   icon: {fileID: 21300000, guid: 2b3c20caf3fa1604fa92b9166d6711f5, type: 3}
-  cost:
-    energy: 0
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 2
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  result:
-    energy: 4
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 2
-    bees: 0
-    naturalCapital: 0
-  costMultiplier: 1.5
   dependantUpgrade: {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
-  productionMethod: 0
+  upgradeLimit: 3
+  upgradeLevels:
+  - upgradeCost: 0
+    cost:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 100
+    cost:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 10
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 20
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 10
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 1000
+    cost:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 100
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 200
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 100
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 10000
+    cost:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 1000
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 2000
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 1000
+      bees: 0
+      naturalCapital: 0

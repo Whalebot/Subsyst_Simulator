@@ -15,26 +15,90 @@ MonoBehaviour:
   title: Industrial Insect Production
   description: Industrial Insect Production
   icon: {fileID: -6724815555555351529, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  cost:
-    energy: 2
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  result:
-    energy: 0
-    food: 5
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: -1
-    bees: 0
-    naturalCapital: 0
-  costMultiplier: 1.5
-  dependantUpgrade: {fileID: 11400000, guid: 4bb461810768c5f408db14fa933f36a5, type: 2}
-  productionMethod: 1
+  dependantUpgrade: {fileID: 0}
+  upgradeLimit: 3
+  upgradeLevels:
+  - upgradeCost: 0
+    cost:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 100
+    cost:
+      energy: 10
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 30
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 5
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 1000
+    cost:
+      energy: 100
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 300
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 50
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 10000
+    cost:
+      energy: 1000
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 3000
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 500
+      bees: 0
+      naturalCapital: 0

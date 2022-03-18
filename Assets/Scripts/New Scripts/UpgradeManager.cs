@@ -16,14 +16,14 @@ public class UpgradeManager : MonoBehaviour
     public List<UpgradeSO> allUpgrades;
     public List<ProductionSO> allProduction;
     public List<ProductionSO> availableProduction;
-    public List<UpgradeSO> obtainedUpgrades;
+    public List<ActionSO> obtainedUpgrades;
     public List<ActionSO> unlockedActions;
 
     public delegate void ActionEvent(ActionSO a);
     public ActionEvent upgradeEvent;
 
-    public List<UpgradeSO> meatUpgrades;
-    public List<UpgradeSO> agricultureUpgrades;
+    public List<ActionSO> meatUpgrades;
+    public List<ActionSO> agricultureUpgrades;
 
     private void Awake()
     {
@@ -59,7 +59,8 @@ public class UpgradeManager : MonoBehaviour
     //        allUpgrades.Add(item);
     //    }
     //}
-    public int MeatUpgrades() {
+    public int MeatUpgrades()
+    {
         int sum = 0;
         foreach (var item in meatUpgrades)
         {
@@ -77,7 +78,7 @@ public class UpgradeManager : MonoBehaviour
         return sum;
     }
 
-    public int CheckUpgradeNumber(UpgradeSO p)
+    public int CheckUpgradeNumber(ActionSO p)
     {
         int upgradeNumber = 0;
         foreach (var item in obtainedUpgrades)
@@ -86,31 +87,36 @@ public class UpgradeManager : MonoBehaviour
         }
         return upgradeNumber;
     }
-    public Ressources CheckCost(ActionSO p)
+    public Ressources CheckCost(ProductionSO p)
     {
-        int upgradeNumber = CheckUpgradeNumber(p.dependantUpgrade);
-        Ressources temp = new Ressources();
-        GameManager.Instance.SetRessources(p.cost, temp);
-        for (int i = 0; i < upgradeNumber; i++)
-        {
-            if (upgradeScaling == UpgradeScaling.Multiplication)
-                GameManager.Instance.MultiplyRessources(temp, 1);
-            else GameManager.Instance.AddRessources(temp, p.cost);
-        }
-        return temp;
+          int upgradeNumber = CheckUpgradeNumber(p);
+       // print(p + " " + upgradeNumber);
+        return p.upgradeLevels[upgradeNumber].cost;
+        //Ressources temp = new Ressources();
+
+
+        //GameManager.Instance.SetRessources(p.upgradeLevels[upgradeNumber].cost, temp);
+        //for (int i = 0; i < upgradeNumber; i++)
+        //{
+        //    if (upgradeScaling == UpgradeScaling.Multiplication)
+        //        GameManager.Instance.MultiplyRessources(temp, 1);
+        //    else GameManager.Instance.AddRessources(temp, p.upgradeLevels[upgradeNumber].cost);
+        //}
+        //return temp;
     }
-    public Ressources CheckResult(ActionSO p)
+    public Ressources CheckResult(ProductionSO p)
     {
-        int upgradeNumber = CheckUpgradeNumber(p.dependantUpgrade);
-        Ressources temp = new Ressources();
-        GameManager.Instance.SetRessources(p.result, temp);
-        for (int i = 0; i < upgradeNumber; i++)
-        {
-            if (upgradeScaling == UpgradeScaling.Multiplication)
-                GameManager.Instance.MultiplyRessources(temp, 1);
-            else GameManager.Instance.AddRessources(temp, p.result);
-        }
-        return temp;
+        int upgradeNumber = CheckUpgradeNumber(p);
+        return p.upgradeLevels[upgradeNumber].result;
+        //Ressources temp = new Ressources();
+        //GameManager.Instance.SetRessources(p.upgradeLevels[upgradeNumber].result, temp);
+        //for (int i = 0; i < upgradeNumber; i++)
+        //{
+        //    if (upgradeScaling == UpgradeScaling.Multiplication)
+        //        GameManager.Instance.MultiplyRessources(temp, 1);
+        //    else GameManager.Instance.AddRessources(temp, p.upgradeLevels[upgradeNumber].result);
+        //}
+        //return temp;
     }
 
     public void UnlockAction(ActionSO p)
@@ -130,29 +136,35 @@ public class UpgradeManager : MonoBehaviour
     }
 
     //Does not update game state
-    public void UnlockUpgrade(UpgradeSO p)
+    public void UnlockUpgrade(ActionSO p)
     {
 
-        Ressources tempCost = CheckCost(p);
         if (!TutorialScript.Instance.inTutorial)
             TimeManager.isStarted = true;
-        if (!GameManager.Instance.CheckRessources(tempCost))
-        {
-            print("ERROR: BUTTON SHOULD BE UNAVAILABLE, Can't afford upgrade " + p.name);
-            return;
-        }
+        //if (!GameManager.Instance.CheckRessources(p))
+        //{
+        //    print("ERROR: BUTTON SHOULD BE UNAVAILABLE, Can't afford upgrade " + p.name);
+        //    return;
+        //}
 
         obtainedUpgrades.Add(p);
-        GameManager.Instance.SubtractRessources(tempCost);
-        Ressources tempResult = CheckResult(p);
 
+        if (p.GetType() == typeof(UpgradeSO))
+        {
+            UpgradeSO u = (UpgradeSO)p;
+            GameManager.Instance.Money -= u.price;
+        }
+        else if (p.GetType() == typeof(ProductionSO))
+        {
+            ProductionSO u = (ProductionSO)p;
+            GameManager.Instance.Money -= u.upgradeLevels[CheckUpgradeNumber(u)].upgradeCost;
+        }
         upgradeEvent?.Invoke(p);
-        GameManager.Instance.AddRessources(tempResult);
         GameManager.Instance.updateGameState?.Invoke();
     }
 
     //Does not update game state
-    public void FreeUpgrade(UpgradeSO p)
+    public void FreeUpgrade(ActionSO p)
     {
         if (!TutorialScript.Instance.inTutorial)
             TimeManager.isStarted = true;

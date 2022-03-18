@@ -15,27 +15,7 @@ MonoBehaviour:
   title: Circular Vegetable Upgrade
   description: Invest in the infrastructure for Circular Vegetable Production
   icon: {fileID: 2741983223664328557, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  cost:
-    energy: 0
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 580
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  result:
-    energy: 0
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  costMultiplier: 1.5
   dependantUpgrade: {fileID: 0}
+  price: 500
   upgradeLimit: 1
-  unlockedProduction: {fileID: 11400000, guid: 8b26a948233459345adaf68b26286a33, type: 2}
+  unlockedProduction: {fileID: 0}

@@ -15,26 +15,90 @@ MonoBehaviour:
   title: Upcycling
   description: Bring new value to recycled waste to increase its value.
   icon: {fileID: 2074514824800363442, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  cost:
-    energy: 60
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 60
-    bees: 0
-    naturalCapital: 0
-  result:
-    energy: 0
-    food: 0
-    waste: 90
-    approval: 0
-    population: 0
-    money: 240
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  costMultiplier: 1.5
   dependantUpgrade: {fileID: 11400000, guid: 2772cd411af7f644a8a405b755d71f9c, type: 2}
-  productionMethod: 1
+  upgradeLimit: 3
+  upgradeLevels:
+  - upgradeCost: 0
+    cost:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 1000
+    cost:
+      energy: 70
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 70
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 100
+      approval: 0
+      population: 0
+      money: 250
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 5000
+    cost:
+      energy: 350
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 350
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 5000
+      approval: 0
+      population: 0
+      money: 1250
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 10000
+    cost:
+      energy: 700
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 700
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 1000
+      approval: 0
+      population: 0
+      money: 2500
+      pollution: 0
+      bees: 0
+      naturalCapital: 0

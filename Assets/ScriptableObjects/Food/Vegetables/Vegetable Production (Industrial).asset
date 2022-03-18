@@ -15,26 +15,90 @@ MonoBehaviour:
   title: Industrial Vegetable Production
   description: Industrial Vegetable Production
   icon: {fileID: 2741983223664328557, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  cost:
-    energy: 2
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  result:
-    energy: 0
-    food: 12
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 4
-    bees: 0
-    naturalCapital: 0
-  costMultiplier: 1.5
-  dependantUpgrade: {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
-  productionMethod: 1
+  dependantUpgrade: {fileID: 0}
+  upgradeLimit: 3
+  upgradeLevels:
+  - upgradeCost: 0
+    cost:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 100
+    cost:
+      energy: 10
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 80
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 10
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 1000
+    cost:
+      energy: 100
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 800
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 100
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 10000
+    cost:
+      energy: 1000
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 8000
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 1000
+      bees: 0
+      naturalCapital: 0

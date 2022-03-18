@@ -1718,11 +1718,17 @@ PrefabInstance:
       propertyPath: m_text
       value: "\nRecycling \nUnits"
       objectReference: {fileID: 0}
+    - target: {fileID: 4518779744705924676, guid: b8054b41c9128b0479fddf3a1d25abb0,
+        type: 3}
+      propertyPath: requiredUpgrade
+      value: 
+      objectReference: {fileID: 11400000, guid: c4c3efee7729f3e4aa4cefd41c4fc193,
+        type: 2}
     - target: {fileID: 6494276173920234052, guid: b8054b41c9128b0479fddf3a1d25abb0,
         type: 3}
       propertyPath: action
       value: 
-      objectReference: {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c,
+      objectReference: {fileID: 11400000, guid: 84c9243d2a77f3d4a870098725fbe65d,
         type: 2}
     - target: {fileID: 6494276173920234052, guid: b8054b41c9128b0479fddf3a1d25abb0,
         type: 3}
@@ -1914,13 +1920,13 @@ PrefabInstance:
         type: 3}
       propertyPath: requiredUpgrade
       value: 
-      objectReference: {fileID: 11400000, guid: d21f26e5cf9d48946be239457138a976,
+      objectReference: {fileID: 11400000, guid: 00e1197f3676c804fb4d0cc898e15a34,
         type: 2}
     - target: {fileID: 6494276173920234052, guid: b8054b41c9128b0479fddf3a1d25abb0,
         type: 3}
       propertyPath: action
       value: 
-      objectReference: {fileID: 11400000, guid: d21f26e5cf9d48946be239457138a976,
+      objectReference: {fileID: 11400000, guid: a7ee2b3de4816504a9969a327383e4a8,
         type: 2}
     - target: {fileID: 6494276173920234052, guid: b8054b41c9128b0479fddf3a1d25abb0,
         type: 3}
@@ -2083,7 +2089,7 @@ PrefabInstance:
         type: 3}
       propertyPath: action
       value: 
-      objectReference: {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd,
+      objectReference: {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44,
         type: 2}
     - target: {fileID: 317652425929214461, guid: 110dcfab4213d9348888799a321550b5,
         type: 3}
@@ -2813,13 +2819,13 @@ PrefabInstance:
         type: 3}
       propertyPath: requiredUpgrade
       value: 
-      objectReference: {fileID: 11400000, guid: 2772cd411af7f644a8a405b755d71f9c,
+      objectReference: {fileID: 11400000, guid: 6202019a9dd7b4a45a8e6e39511187e4,
         type: 2}
     - target: {fileID: 6494276173920234052, guid: b8054b41c9128b0479fddf3a1d25abb0,
         type: 3}
       propertyPath: action
       value: 
-      objectReference: {fileID: 11400000, guid: 2772cd411af7f644a8a405b755d71f9c,
+      objectReference: {fileID: 11400000, guid: 30f6e09c9dfbcc342bf322fbf6be2813,
         type: 2}
     - target: {fileID: 6494276173920234052, guid: b8054b41c9128b0479fddf3a1d25abb0,
         type: 3}

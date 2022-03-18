@@ -15,26 +15,90 @@ MonoBehaviour:
   title: Small Scale Meat Production
   description: Small Scale Meat Production
   icon: {fileID: -2865678973810129570, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  cost:
-    energy: 2
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  result:
-    energy: 0
-    food: 6
-    waste: 0
-    approval: 0
-    population: 0
-    money: 2
-    pollution: 2
-    bees: 0
-    naturalCapital: 0
-  costMultiplier: 1.5
-  dependantUpgrade: {fileID: 11400000, guid: e926db89895fa6b439ab188365772c63, type: 2}
-  productionMethod: 0
+  dependantUpgrade: {fileID: 11400000, guid: 2f871fcc081219f4d824a32af0a02f21, type: 2}
+  upgradeLimit: 3
+  upgradeLevels:
+  - upgradeCost: 10
+    cost:
+      energy: 2
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 10
+      waste: 0
+      approval: 0
+      population: 0
+      money: 2
+      pollution: 1
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 100
+    cost:
+      energy: 20
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 100
+      waste: 0
+      approval: 0
+      population: 0
+      money: 20
+      pollution: 10
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 500
+    cost:
+      energy: 100
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 500
+      waste: 0
+      approval: 0
+      population: 0
+      money: 100
+      pollution: 50
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 1000
+    cost:
+      energy: 200
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 100
+      waste: 0
+      approval: 0
+      population: 0
+      money: 200
+      pollution: 100
+      bees: 0
+      naturalCapital: 0

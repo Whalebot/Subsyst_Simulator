@@ -84,6 +84,34 @@ public class MenuManager : MonoBehaviour
             upgradeDescriptionWindow.UpdateDescription((UpgradeSO)a);
         }
     }
+
+    public void DisplayDescriptionWindow(ActionButton a)
+    {
+        if (a == null) return;
+
+        if (a.buttonType == ActionButton.ButtonType.Upgrade)
+        {
+            if (a.action.GetType() == typeof(ProductionSO))
+            {
+                upgradeDescriptionWindow.gameObject.SetActive(true);
+                upgradeDescriptionWindow.UpdateDescription(a.action);
+            }
+            else if (a.action.GetType() == typeof(UpgradeSO))
+            {
+                upgradeDescriptionWindow.gameObject.SetActive(true);
+                upgradeDescriptionWindow.UpdateDescription(a.action);
+            }
+        }
+        else {
+            if (a.action.GetType() == typeof(ProductionSO))
+            {
+                productionDescriptionWindow.gameObject.SetActive(true);
+                productionDescriptionWindow.UpdateDescription((ProductionSO)a.action);
+            }
+        }
+
+    }
+
     public void HideDescriptionWindow()
     {
 
@@ -103,7 +131,8 @@ public class MenuManager : MonoBehaviour
                 temp = item;
             }
         }
-        if (temp == null) {
+        if (temp == null)
+        {
             print(a);
             return null;
         }

@@ -20,10 +20,12 @@ public class DescriptionWindow : MonoBehaviour
     [FoldoutGroup("Gameobject Components")] public GameObject resultWaste;
     [FoldoutGroup("Gameobject Components")] public GameObject resultPollution;
 
+    [FoldoutGroup("Gameobject Components")] public GameObject costs;
     [FoldoutGroup("Gameobject Components")] public GameObject outcome;
 
     [FoldoutGroup("Gameobject Components")] public Image iconImage;
     [FoldoutGroup("Text Components")] public TextMeshProUGUI titleText;
+    [FoldoutGroup("Text Components")] public TextMeshProUGUI priceText;
     [FoldoutGroup("Text Components")] public TextMeshProUGUI descriptionText;
     [FoldoutGroup("Text Components")] public TextMeshProUGUI costMoneyText;
     [FoldoutGroup("Text Components")] public TextMeshProUGUI costFoodText;
@@ -97,6 +99,9 @@ public class DescriptionWindow : MonoBehaviour
     public void UpdateDescription(ProductionSO p)
     {
         action = p;
+        int upgradeLevel = UpgradeManager.Instance.CheckUpgradeNumber(p);
+
+
         if (action.icon != null)
             iconImage.sprite = action.icon;
         else iconImage.gameObject.SetActive(false);
@@ -104,30 +109,28 @@ public class DescriptionWindow : MonoBehaviour
         titleText.text = action.title;
         descriptionText.text = action.description;
 
-        costMoney.SetActive(action.cost.money != 0);
-        costFood.SetActive(action.cost.food != 0);
-        costEnergy.SetActive(action.cost.energy != 0);
-        costWaste.SetActive(action.cost.waste != 0);
-        costPollution.SetActive(action.cost.pollution != 0);
+        costMoney.SetActive(p.upgradeLevels[upgradeLevel].cost.money != 0);
+        costFood.SetActive(p.upgradeLevels[upgradeLevel].cost.food != 0);
+        costEnergy.SetActive(p.upgradeLevels[upgradeLevel].cost.energy != 0);
+        costWaste.SetActive(p.upgradeLevels[upgradeLevel].cost.waste != 0);
+        costPollution.SetActive(p.upgradeLevels[upgradeLevel].cost.pollution != 0);
 
-        resultMoney.SetActive(action.result.money != 0);
-        resultFood.SetActive(action.result.food != 0);
-        resultEnergy.SetActive(action.result.energy != 0);
-        resultWaste.SetActive(action.result.waste != 0);
-        resultPollution.SetActive(action.result.pollution != 0);
+        resultMoney.SetActive(p.upgradeLevels[upgradeLevel].result.money != 0);
+        resultFood.SetActive(p.upgradeLevels[upgradeLevel].result.food != 0);
+        resultEnergy.SetActive(p.upgradeLevels[upgradeLevel].result.energy != 0);
+        resultWaste.SetActive(p.upgradeLevels[upgradeLevel].result.waste != 0);
+        resultPollution.SetActive(p.upgradeLevels[upgradeLevel].result.pollution != 0);
 
-        outcome.SetActive(action.result.money != 0 || action.result.food != 0 || action.result.waste != 0 || action.result.energy != 0 || action.result.pollution != 0);
+        costs.SetActive(true);
+        outcome.SetActive(p.upgradeLevels[upgradeLevel].result.money != 0 || p.upgradeLevels[upgradeLevel].result.food != 0 || p.upgradeLevels[upgradeLevel].result.waste != 0 || p.upgradeLevels[upgradeLevel].result.energy != 0 || p.upgradeLevels[upgradeLevel].result.pollution != 0);
 
-        Ressources temp = UpgradeManager.Instance.CheckCost(action);
-        costMoneyText.text = "" + temp.money;
-        costFoodText.text = "" + temp.food;
-        costEnergyText.text = "" + temp.energy;
-        costWasteText.text = "" + temp.waste;
-        costPollutionText.text = "" + temp.pollution;
+        costMoneyText.text = "" + p.upgradeLevels[upgradeLevel].cost.money;
+        costFoodText.text = "" + p.upgradeLevels[upgradeLevel].cost.food;
+        costEnergyText.text = "" + p.upgradeLevels[upgradeLevel].cost.energy;
+        costWasteText.text = "" + p.upgradeLevels[upgradeLevel].cost.waste;
+        costPollutionText.text = "" + p.upgradeLevels[upgradeLevel].cost.pollution;
 
-        bool[] missing = GameManager.Instance.FindMissingRessources(temp);
-        print(missing[5]);
-
+        bool[] missing = GameManager.Instance.FindMissingRessources(p.upgradeLevels[upgradeLevel].cost);
         if (missing[0]) costEnergyText.color = Color.red;
         else costEnergyText.color = defaultColor;
         if (missing[1]) costFoodText.color = Color.red;
@@ -139,75 +142,116 @@ public class DescriptionWindow : MonoBehaviour
         if (missing[6]) costPollutionText.color = Color.red;
         else costPollutionText.color = defaultColor;
 
-        Ressources tempResult = UpgradeManager.Instance.CheckResult(action);
-        resultMoneyText.text = "" + tempResult.money;
-        resultFoodText.text = "" + tempResult.food;
-        resultEnergyText.text = "" + tempResult.energy;
-        resultWasteText.text = "" + tempResult.waste;
-        resultPollutionText.text = "" + tempResult.pollution;
+
+        resultMoneyText.text = "" + p.upgradeLevels[upgradeLevel].result.money;
+        resultFoodText.text = "" + p.upgradeLevels[upgradeLevel].result.food;
+        resultEnergyText.text = "" + p.upgradeLevels[upgradeLevel].result.energy;
+        resultWasteText.text = "" + p.upgradeLevels[upgradeLevel].result.waste;
+        resultPollutionText.text = "" + p.upgradeLevels[upgradeLevel].result.pollution;
 
 
 
         StartCoroutine("SetDirty");
     }
 
-    public void UpdateDescription(UpgradeSO p)
+    public void UpdateDescription(ActionSO p)
     {
-        action = p;
-        if (action.icon != null)
-            iconImage.sprite = action.icon;
-        else iconImage.gameObject.SetActive(false);
+        if (p.GetType() == typeof(UpgradeSO))
+        {
+            UpgradeSO ps = (UpgradeSO)p;
 
-        titleText.text = action.title;
-        descriptionText.text = action.description;
+            action = ps;
+            if (action.icon != null)
+                iconImage.sprite = action.icon;
+            else iconImage.gameObject.SetActive(false);
 
-        costMoney.SetActive(action.cost.money != 0);
-        costFood.SetActive(action.cost.food != 0);
-        costEnergy.SetActive(action.cost.energy != 0);
-        costWaste.SetActive(action.cost.waste != 0);
-        costPollution.SetActive(action.cost.pollution != 0);
+            titleText.text = action.title;
+            descriptionText.text = action.description;
+            priceText.text = "" + ps.price;
+
+            if (ps.price > GameManager.Instance.Money) priceText.color = Color.red;
+            else priceText.color = defaultColor;
+
+            costMoney.SetActive(ps.price != 0);
+            costs.SetActive(false);
+            outcome.SetActive(false);
+            costMoneyText.text = "" + ps.price;
+
+            if (ps.price > GameManager.Instance.Money) costMoneyText.color = Color.red;
+            else costMoneyText.color = defaultColor;
 
 
+        }
+        else {
+            ProductionSO ps = (ProductionSO)p;
 
-        resultMoney.SetActive(action.result.money != 0);
-        resultFood.SetActive(action.result.food != 0);
-        resultEnergy.SetActive(action.result.energy != 0);
-        resultWaste.SetActive(action.result.waste != 0);
-        resultPollution.SetActive(action.result.pollution != 0);
+            action = ps;
+            if (action.icon != null)
+                iconImage.sprite = action.icon;
+            else iconImage.gameObject.SetActive(false);
 
-        outcome.SetActive(action.result.money != 0 || action.result.food != 0 || action.result.waste != 0 || action.result.energy != 0 || action.result.pollution != 0);
+            titleText.text = action.title;
+            descriptionText.text = action.description;
 
-        Ressources temp = UpgradeManager.Instance.CheckCost(action);
-        costMoneyText.text = "" + temp.money;
-        costFoodText.text = "" + temp.food;
-        costEnergyText.text = "" + temp.energy;
-        costWasteText.text = "" + temp.waste;
-        costPollutionText.text = "" + temp.pollution;
+            int upgradeLevel = UpgradeManager.Instance.CheckUpgradeNumber(ps);
 
-        bool[] missing = GameManager.Instance.FindMissingRessources(temp);
-        if (missing[0]) costEnergyText.color = Color.red;
-        else costEnergyText.color = defaultColor;
-        if (missing[1]) costFoodText.color = Color.red;
-        else costFoodText.color = defaultColor;
-        if (missing[2]) costWasteText.color = Color.red;
-        else costWasteText.color = defaultColor;
-        if (missing[5]) costMoneyText.color = Color.red;
-        else costMoneyText.color = defaultColor;
-        if (missing[6]) costPollutionText.color = Color.red;
-        else costPollutionText.color = defaultColor;
+         
+            priceText.text = "" + ps.upgradeLevels[upgradeLevel].upgradeCost;
+            if (ps.upgradeLevels[upgradeLevel].upgradeCost > GameManager.Instance.Money) priceText.color = Color.red;
+            else priceText.color = defaultColor;
 
-        Ressources tempResult = UpgradeManager.Instance.CheckResult(action);
-        resultMoneyText.text = "" + tempResult.money;
-        resultFoodText.text = "" + tempResult.food;
-        resultEnergyText.text = "" + tempResult.energy;
-        resultWasteText.text = "" + tempResult.waste;
-        resultPollutionText.text = "" + tempResult.pollution;
 
+            costMoney.SetActive(ps.upgradeLevels[upgradeLevel].cost.money != 0);
+            costFood.SetActive(ps.upgradeLevels[upgradeLevel].cost.food != 0);
+            costEnergy.SetActive(ps.upgradeLevels[upgradeLevel].cost.energy != 0);
+            costWaste.SetActive(ps.upgradeLevels[upgradeLevel].cost.waste != 0);
+            costPollution.SetActive(ps.upgradeLevels[upgradeLevel].cost.pollution != 0);
+
+            resultMoney.SetActive(ps.upgradeLevels[upgradeLevel].result.money != 0);
+            resultFood.SetActive(ps.upgradeLevels[upgradeLevel].result.food != 0);
+            resultEnergy.SetActive(ps.upgradeLevels[upgradeLevel].result.energy != 0);
+            resultWaste.SetActive(ps.upgradeLevels[upgradeLevel].result.waste != 0);
+            resultPollution.SetActive(ps.upgradeLevels[upgradeLevel].result.pollution != 0);
+
+            costs.SetActive(true);
+            outcome.SetActive(ps.upgradeLevels[upgradeLevel].result.money != 0 || ps.upgradeLevels[upgradeLevel].result.food != 0 || ps.upgradeLevels[upgradeLevel].result.waste != 0 || ps.upgradeLevels[upgradeLevel].result.energy != 0 || ps.upgradeLevels[upgradeLevel].result.pollution != 0);
+
+            costMoneyText.text = "" + ps.upgradeLevels[upgradeLevel].cost.money;
+            costFoodText.text = "" + ps.upgradeLevels[upgradeLevel].cost.food;
+            costEnergyText.text = "" + ps.upgradeLevels[upgradeLevel].cost.energy;
+            costWasteText.text = "" + ps.upgradeLevels[upgradeLevel].cost.waste;
+            costPollutionText.text = "" + ps.upgradeLevels[upgradeLevel].cost.pollution;
+
+            bool[] missing = GameManager.Instance.FindMissingRessources(ps.upgradeLevels[upgradeLevel].cost);
+            if (missing[0]) costEnergyText.color = Color.red;
+            else costEnergyText.color = defaultColor;
+            if (missing[1]) costFoodText.color = Color.red;
+            else costFoodText.color = defaultColor;
+            if (missing[2]) costWasteText.color = Color.red;
+            else costWasteText.color = defaultColor;
+            if (missing[5]) costMoneyText.color = Color.red;
+            else costMoneyText.color = defaultColor;
+            if (missing[6]) costPollutionText.color = Color.red;
+            else costPollutionText.color = defaultColor;
+
+
+            resultMoneyText.text = "" + ps.upgradeLevels[upgradeLevel].result.money;
+            resultFoodText.text = "" + ps.upgradeLevels[upgradeLevel].result.food;
+            resultEnergyText.text = "" + ps.upgradeLevels[upgradeLevel].result.energy;
+            resultWasteText.text = "" + ps.upgradeLevels[upgradeLevel].result.waste;
+            resultPollutionText.text = "" + ps.upgradeLevels[upgradeLevel].result.pollution;
+
+
+        }
         StartCoroutine("SetDirty");
     }
 
     IEnumerator SetDirty()
     {
+        sizeFitter.enabled = false;
+        yield return new WaitForEndOfFrame();
+        sizeFitter.enabled = true;
+        yield return new WaitForEndOfFrame();
         sizeFitter.enabled = false;
         yield return new WaitForEndOfFrame();
         sizeFitter.enabled = true;

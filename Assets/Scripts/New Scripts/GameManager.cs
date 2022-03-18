@@ -136,6 +136,7 @@ public class GameManager : MonoBehaviour
         set
         {
             ressources.bees = value;
+           // if (value > 1500) ressources.bees = 1500;
             if (value <= 0) ressources.bees = 0;
         }
     }
@@ -148,6 +149,7 @@ public class GameManager : MonoBehaviour
         set
         {
             ressources.naturalCapital = value;
+           // if (value > 1500) ressources.naturalCapital = 1500;
             if (value <= 0) ressources.naturalCapital = 0;
         }
     }
@@ -239,6 +241,25 @@ public class GameManager : MonoBehaviour
             }
         }
         return foundLackOfRessources;
+    }
+
+    public bool CheckRessources(ActionSO a)
+    {
+
+        if (a.GetType() == typeof(UpgradeSO))
+        {
+            UpgradeSO u = (UpgradeSO)a;
+           // print(u.price);
+            return u.price <= Money;
+        }
+        else if (a.GetType() == typeof(ProductionSO))
+        {
+            ProductionSO u = (ProductionSO)a;
+          //  print(u);
+            return CheckRessources(u.upgradeLevels[UpgradeManager.Instance.CheckUpgradeNumber(u)].cost);
+        }
+
+        return false;
     }
 
     public bool CheckRessources(Ressources r)

@@ -210,8 +210,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cec4a194ed8894fa654c6adf2af13d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action: {fileID: 11400000, guid: e926db89895fa6b439ab188365772c63, type: 2}
+  action: {fileID: 0}
   canPress: 0
+  buttonType: 1
   state: 0
   techButton: 0
   requiredUpgrade: {fileID: 11400000, guid: 2f871fcc081219f4d824a32af0a02f21, type: 2}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-
+using Sirenix.OdinInspector;
 
 public class CameraManager : MonoBehaviour
 {
@@ -20,13 +20,19 @@ public class CameraManager : MonoBehaviour
     public GameObject startCam;
     public GameObject introObject;
 
+    [Space]
+    public GameObject cinematicCamera;
+    public float cinematicDuration;
+    public Transform cinematicTarget;
+
     // Start is called before the first frame update
     void Start()
     {
         GameManager.Instance.gameStartEvent += StartGameCamera;
     }
 
-    public void StartGameCamera() {
+    public void StartGameCamera()
+    {
         introObject.SetActive(true);
         startCam.SetActive(false);
     }
@@ -35,6 +41,7 @@ public class CameraManager : MonoBehaviour
     {
         if (!GameManager.gameStart) return;
         if (Input.GetMouseButtonDown(0)) { mouseButtonHeld = !CursorScript.Instance.foundInteractable; }
+        if (Input.GetKeyDown(KeyCode.Space)) { SetCinematicCamera(cinematicTarget); }
         if (Input.GetMouseButtonUp(0)) mouseButtonHeld = false;
 
         if (mouseButtonHeld)
@@ -51,6 +58,20 @@ public class CameraManager : MonoBehaviour
         camSize = Mathf.Clamp(camSize, minZoom, maxZoom);
         overviewCam.m_Lens.OrthographicSize = camSize;
         cam2.orthographicSize = camSize;
+
+    }
+
+    public void SetCinematicCamera(Transform t)
+    {
+        print(t);
+        StartCoroutine(TurnOffCinematicCamera());
+    }
+
+    IEnumerator TurnOffCinematicCamera()
+    {
+        cinematicCamera.SetActive(true);
+        yield return new WaitForSeconds(cinematicDuration);
+        cinematicCamera.SetActive(false);
 
     }
 }

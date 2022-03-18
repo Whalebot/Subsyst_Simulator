@@ -15,26 +15,90 @@ MonoBehaviour:
   title: Small Scale Vegetable Production
   description: Small Scale Vegetable Production
   icon: {fileID: 2741983223664328557, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  cost:
-    energy: 4
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  result:
-    energy: 0
-    food: 4
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 2
-    bees: 0
-    naturalCapital: 0
-  costMultiplier: 1.5
-  dependantUpgrade: {fileID: 11400000, guid: b28642e74d24660438115bc8f8a5b6ac, type: 2}
-  productionMethod: 0
+  dependantUpgrade: {fileID: 0}
+  upgradeLimit: 3
+  upgradeLevels:
+  - upgradeCost: 10
+    cost:
+      energy: 2
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 7
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 1
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 100
+    cost:
+      energy: 20
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 70
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 10
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 500
+    cost:
+      energy: 100
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 350
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 50
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 1000
+    cost:
+      energy: 200
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 700
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 100
+      bees: 0
+      naturalCapital: 0

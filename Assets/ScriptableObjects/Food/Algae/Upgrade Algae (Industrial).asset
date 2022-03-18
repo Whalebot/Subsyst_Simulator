@@ -15,27 +15,7 @@ MonoBehaviour:
   title: Industrial Algae Upgrade
   description: Invest in the infrastructure for Industrial Algae Production
   icon: {fileID: 8668581585100221883, guid: 3d379100514ea40af8ab99aebc058e8f, type: 3}
-  cost:
-    energy: 0
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 95
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  result:
-    energy: 0
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  costMultiplier: 1.5
   dependantUpgrade: {fileID: 0}
+  price: 100
   upgradeLimit: 1
   unlockedProduction: {fileID: 11400000, guid: ba54b8a4aeb57484a87b622671da571d, type: 2}

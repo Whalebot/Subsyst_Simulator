@@ -6,6 +6,8 @@ using TMPro;
 
 public class ActionButton : Interactable
 {
+    public ButtonType buttonType;
+    public enum ButtonType { Production, Upgrade }
     public ButtonState state;
     public bool techButton;
     public UpgradeSO requiredUpgrade;
@@ -34,24 +36,42 @@ public class ActionButton : Interactable
         if (state == ButtonState.UpgradeMaxed) return;
         Ressources tempRessources = new Ressources();
 
-        if (action.GetType() == typeof(UpgradeSO))
+        //Check if fully upgraded, disable button if it is
+        if (buttonType == ButtonType.Upgrade)
         {
-
-            UpgradeSO a = (UpgradeSO)action;
-            if (upgradeLevel != null)
+            if (action.GetType() == typeof(UpgradeSO))
             {
-                upgradeLevel.text = "" + UpgradeManager.Instance.CheckUpgradeNumber(a);
+                UpgradeSO a = (UpgradeSO)action;
+                if (upgradeLevel != null)
+                {
+                    upgradeLevel.text = "" + UpgradeManager.Instance.CheckUpgradeNumber(a);
+                }
+                if (UpgradeManager.Instance.CheckUpgradeNumber(a) >= a.upgradeLimit && state != ButtonState.UpgradeMaxed)
+                {
+
+                    state = ButtonState.UpgradeMaxed;
+                    TimeManager.Instance.advanceTimeEvent -= CheckRequirements;
+                    DisableButton();
+                    return;
+                }
             }
-            if (UpgradeManager.Instance.CheckUpgradeNumber(a) >= a.upgradeLimit && state != ButtonState.UpgradeMaxed)
+            if (action.GetType() == typeof(ProductionSO))
             {
-
-                state = ButtonState.UpgradeMaxed;
-                TimeManager.Instance.advanceTimeEvent -= CheckRequirements;
-                DisableButton();
-                return;
+                ProductionSO a = (ProductionSO)action;
+                if (upgradeLevel != null)
+                {
+                    upgradeLevel.text = "" + UpgradeManager.Instance.CheckUpgradeNumber(a);
+                }
+                if (UpgradeManager.Instance.CheckUpgradeNumber(a) >= a.upgradeLimit && state != ButtonState.UpgradeMaxed)
+                {
+                    state = ButtonState.UpgradeMaxed;
+                    TimeManager.Instance.advanceTimeEvent -= CheckRequirements;
+                    DisableButton();
+                    return;
+                }
             }
         }
-        else if (action.GetType() == typeof(ProductionSO))
+        else if (buttonType == ButtonType.Production)
         {
             if (!TimeManager.canSmallScale && !TutorialScript.Instance.inTutorial)
             {
@@ -59,30 +79,58 @@ public class ActionButton : Interactable
                 return;
             }
         }
-
+        //Check if it needs upgrade
         if (requiredUpgrade != null)
         {
             if (!UpgradeManager.Instance.obtainedUpgrades.Contains(requiredUpgrade))
             {
-
                 state = ButtonState.RequiresUpgrade;
                 DisableButton();
                 return;
             }
         }
 
-        if (GameManager.Instance.CheckRessources(UpgradeManager.Instance.CheckCost(action)))
+
+        //Check ressources
+        if (buttonType == ButtonType.Upgrade && action.GetType() == typeof(ProductionSO))
         {
-            if (!unlocked) UpgradeManager.Instance.UnlockAction(action);
-            unlocked = true;
-            state = ButtonState.CanPress;
-            ActivateButton();
+            if (UpgradeManager.Instance.CheckUpgradeNumber(action) == 0)
+            {
+                UpgradeManager.Instance.FreeUpgrade(action);
+                ActivateButton();
+            }
+
+
+            ProductionSO a = (ProductionSO)action;
+        //    print(action + " " + UpgradeManager.Instance.CheckUpgradeNumber(a) + " " + a.upgradeLevels[UpgradeManager.Instance.CheckUpgradeNumber(a)].upgradeCost);
+            if (a.upgradeLevels[UpgradeManager.Instance.CheckUpgradeNumber(a)].upgradeCost > GameManager.Instance.Money)
+            {
+                state = ButtonState.MissingRessources;
+                DisableButton();
+                return;
+            }
+            else
+            {
+                state = ButtonState.CanPress;
+                ActivateButton();
+            }
         }
         else
         {
-            state = ButtonState.MissingRessources;
-            DisableButton();
+            if (GameManager.Instance.CheckRessources(action))
+            {
+                if (!unlocked) UpgradeManager.Instance.UnlockAction(action);
+                unlocked = true;
+                state = ButtonState.CanPress;
+                ActivateButton();
+            }
+            else
+            {
+                state = ButtonState.MissingRessources;
+                DisableButton();
+            }
         }
+
     }
 
     public override void ExecuteAction()
@@ -93,9 +141,9 @@ public class ActionButton : Interactable
 
 
         if (action != null && Telemetry.Instance.sendTelemetry) Telemetry.Instance.StartCoroutine(Telemetry.Instance.Post(action));
-        if (action.GetType() == typeof(UpgradeSO))
+        if (buttonType == ButtonType.Upgrade)
         {
-            UpgradeManager.Instance.UnlockUpgrade((UpgradeSO)action);
+            UpgradeManager.Instance.UnlockUpgrade(action);
             if (techButton) gameObject.SetActive(false);
         }
         else
@@ -109,7 +157,11 @@ public class ActionButton : Interactable
 
     public override void Selected()
     {
-        base.Selected();
+       // base.Selected();
+
+        MenuManager.Instance.DisplayDescriptionWindow(this);
+        CursorScript.Instance.Hover();
+
         if (state != ButtonState.CanPress) CursorScript.Instance.BlockCursor();
 
     }
@@ -119,13 +171,6 @@ public class ActionButton : Interactable
         if (lockObject != null)
             lockObject.SetActive(false);
         button.interactable = true;
-        if (action.GetType() == typeof(UpgradeSO))
-        {
-            if (UpgradeManager.Instance.CheckUpgradeNumber((UpgradeSO)action) == 0 && action.dependantUpgrade != null)
-            {
-                UpgradeManager.Instance.FreeUpgrade((UpgradeSO)action);
-            }
-        }
     }
 
     public override void DisableButton()

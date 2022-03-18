@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595b023ce6848764786ee100a98a3e4e, type: 3}
+  m_Name: CO2 Reduction Agreement
+  m_EditorClassIdentifier: 
+  showInPaper: 1
+  image: {fileID: -8311611579731980990, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  title: CO2 Reduction Agreement
+  description: Babidi Bubidi
+  buttonText: Continue
+  thresholdCounter: 0
+  type: 1
+  upgrade: {fileID: 11400000, guid: da39fc340be69f042993a9e148f09c19, type: 2}
+  preventionUpgrade: {fileID: 0}
+  threshold: 0
+  RNG: 1000
+  triggerEvent: {fileID: 11400000, guid: 7e97c430e4cd9a84388298bbc4a8fdc3, type: 2}

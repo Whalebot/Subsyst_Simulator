@@ -15,26 +15,90 @@ MonoBehaviour:
   title: Garbage Collection
   description: Collect waste using garbage trucks.
   icon: {fileID: 2074514824800363442, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  cost:
-    energy: 1
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 2
-    bees: 0
-    naturalCapital: 0
-  result:
-    energy: 0
-    food: 0
-    waste: 2
-    approval: 0
-    population: 0
-    money: 2
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  costMultiplier: 1.5
   dependantUpgrade: {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}
-  productionMethod: 0
+  upgradeLimit: 3
+  upgradeLevels:
+  - upgradeCost: 20
+    cost:
+      energy: 1
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 5
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 5
+      approval: 0
+      population: 0
+      money: 5
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 100
+    cost:
+      energy: 5
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 25
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 25
+      approval: 0
+      population: 0
+      money: 25
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 500
+    cost:
+      energy: 25
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 125
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 125
+      approval: 0
+      population: 0
+      money: 125
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
+  - upgradeCost: 1000
+    cost:
+      energy: 50
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 250
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 250
+      approval: 0
+      population: 0
+      money: 250
+      pollution: 0
+      bees: 0
+      naturalCapital: 0

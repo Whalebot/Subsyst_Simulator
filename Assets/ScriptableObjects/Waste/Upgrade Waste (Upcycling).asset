@@ -15,27 +15,7 @@ MonoBehaviour:
   title: Upcycling
   description: Unlock upcycling department
   icon: {fileID: 2074514824800363442, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  cost:
-    energy: 0
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 1000
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  result:
-    energy: 0
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  costMultiplier: 1.5
   dependantUpgrade: {fileID: 0}
+  price: 1000
   upgradeLimit: 1
   unlockedProduction: {fileID: 11400000, guid: 30f6e09c9dfbcc342bf322fbf6be2813, type: 2}

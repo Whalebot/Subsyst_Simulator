@@ -15,27 +15,7 @@ MonoBehaviour:
   title: Small Scale Algae Upgrade
   description: Invest in the infrastructure for to improve Small Scale Algae Production
   icon: {fileID: 8668581585100221883, guid: 3d379100514ea40af8ab99aebc058e8f, type: 3}
-  cost:
-    energy: 0
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 35
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  result:
-    energy: 0
-    food: 0
-    waste: 0
-    approval: 0
-    population: 0
-    money: 0
-    pollution: 0
-    bees: 0
-    naturalCapital: 0
-  costMultiplier: 1.5
   dependantUpgrade: {fileID: 0}
+  price: 10
   upgradeLimit: 1
-  unlockedProduction: {fileID: 11400000, guid: 316af645dee37474993939813a36e0f5, type: 2}
+  unlockedProduction: {fileID: 0}
