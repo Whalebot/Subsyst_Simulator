@@ -17,6 +17,7 @@ MonoBehaviour:
   title: Clean Air
   description: Babbidi
   buttonText: Bubbidi
+  cameraTarget: 4
   thresholdCounter: 0
   type: 1
   reward:

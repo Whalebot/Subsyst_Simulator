@@ -15,6 +15,7 @@ MonoBehaviour:
   title: Industrial Vegetable Upgrade
   description: Invest in the infrastructure for Circular Vegetable Production
   icon: {fileID: 2741983223664328557, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  cameraTarget: 1
   dependantUpgrade: {fileID: 0}
   price: 100
   upgradeLimit: 1

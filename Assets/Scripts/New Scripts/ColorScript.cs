@@ -20,13 +20,18 @@ public class ColorScript : MonoBehaviour
     public GameManager gameManager;
     public float pollutionMultiplier;
     public float pollutionClamp;
+    public float lerpValue = 0.5F;
     // Start is called before the first frame update
     void Start()
     {
 
         rend = GetComponent<Renderer>();
-        mat = rend.material;
+        mat = rend.material; 
+
+
+
     }
+
 
     // Update is called once per frame
     void Update()
@@ -56,9 +61,10 @@ public class ColorScript : MonoBehaviour
         mixedColor = (mainColor * (1 - ressourceRatio)) + (((foodRatio * meatColor) + (energyRatio * vegetableColor)) * (ressourceRatio)) * (1 - pollutionRatio * pollutionMultiplier);
         if (mixColors)
         {
-            mat.color = mixedColor;
+          
+            mat.color = Color.Lerp(mat.color, mixedColor, lerpValue);
         }
-        else mat.color = mainColor;
+        else mat.color = Color.Lerp(mat.color, mainColor, lerpValue);
     }
 
     private void OnValidate()

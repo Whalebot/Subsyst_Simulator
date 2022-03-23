@@ -15,6 +15,7 @@ MonoBehaviour:
   title: Industrial Insect Production
   description: Industrial Insect Production
   icon: {fileID: -6724815555555351529, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  cameraTarget: 1
   dependantUpgrade: {fileID: 0}
   upgradeLimit: 3
   upgradeLevels:

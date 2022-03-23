@@ -13,6 +13,14 @@ public class EnvironmentAnimator : MonoBehaviour
         UpgradeManager.Instance.upgradeEvent += CheckUpgrade;
     }
 
+    private void Update()
+    {
+        if (GameManager.paused && !GameManager.pauseAnimations)
+            anim.speed = 0;
+
+        else anim.speed = 1;
+    }
+
     // Start is called before the first frame update
     public void CheckUpgrade(ActionSO a)
     {
@@ -24,7 +32,8 @@ public class EnvironmentAnimator : MonoBehaviour
 
     }
 
-    void Upgrade() {
+    void Upgrade()
+    {
         UpgradeManager.Instance.upgradeEvent -= CheckUpgrade;
         anim.SetBool("isOn", true);
     }

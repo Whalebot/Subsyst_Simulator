@@ -15,7 +15,8 @@ MonoBehaviour:
   title: Smallscale Biogas Production
   description: Locally produced biogas using waste
   icon: {fileID: 21300000, guid: 2b3c20caf3fa1604fa92b9166d6711f5, type: 3}
-  dependantUpgrade: {fileID: 11400000, guid: b719df8d0daccfe44b888ec4f5cc9dc9, type: 2}
+  cameraTarget: 2
+  dependantUpgrade: {fileID: 0}
   upgradeLimit: 3
   upgradeLevels:
   - upgradeCost: 0

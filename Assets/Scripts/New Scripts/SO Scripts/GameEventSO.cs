@@ -11,7 +11,11 @@ public class GameEventSO : ScriptableObject
     public string title;
     public string description;
     public string buttonText;
+
+    public CameraTargets cameraTarget;
+
     public int thresholdCounter = 0;
+    
     public EventType type;
     public enum EventType { AddToPending, ExecuteInstantly, DoNotShow}
     // Start is called before the first frame update

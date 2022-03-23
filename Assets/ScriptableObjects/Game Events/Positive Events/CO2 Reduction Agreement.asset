@@ -17,6 +17,7 @@ MonoBehaviour:
   title: CO2 Reduction Agreement
   description: Babidi Bubidi
   buttonText: Continue
+  cameraTarget: 4
   thresholdCounter: 0
   type: 1
   upgrade: {fileID: 11400000, guid: da39fc340be69f042993a9e148f09c19, type: 2}

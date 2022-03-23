@@ -15,6 +15,7 @@ MonoBehaviour:
   title: Industrial Algae Prodcution
   description: Industrial Algae Prodcution
   icon: {fileID: 2306574165339229938, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  cameraTarget: 1
   dependantUpgrade: {fileID: 0}
   upgradeLimit: 3
   upgradeLevels:

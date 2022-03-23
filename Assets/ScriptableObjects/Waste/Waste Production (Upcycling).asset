@@ -15,7 +15,8 @@ MonoBehaviour:
   title: Upcycling
   description: Bring new value to recycled waste to increase its value.
   icon: {fileID: 2074514824800363442, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  dependantUpgrade: {fileID: 11400000, guid: 2772cd411af7f644a8a405b755d71f9c, type: 2}
+  cameraTarget: 3
+  dependantUpgrade: {fileID: 0}
   upgradeLimit: 3
   upgradeLevels:
   - upgradeCost: 0

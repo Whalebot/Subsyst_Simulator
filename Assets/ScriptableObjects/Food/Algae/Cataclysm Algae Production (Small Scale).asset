@@ -15,7 +15,8 @@ MonoBehaviour:
   title: Small Scale Algae Production
   description: The city is harvesting locally grown algae.
   icon: {fileID: 2306574165339229938, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  dependantUpgrade: {fileID: 11400000, guid: 491b7c58fb430a148a28e80b667b7ff7, type: 2}
+  cameraTarget: 1
+  dependantUpgrade: {fileID: 0}
   upgradeLimit: 3
   upgradeLevels:
   - upgradeCost: 0

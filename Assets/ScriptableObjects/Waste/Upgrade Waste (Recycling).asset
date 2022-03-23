@@ -15,6 +15,7 @@ MonoBehaviour:
   title: Recycling
   description: Unlock recycling units
   icon: {fileID: 2074514824800363442, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  cameraTarget: 3
   dependantUpgrade: {fileID: 0}
   price: 100
   upgradeLimit: 1

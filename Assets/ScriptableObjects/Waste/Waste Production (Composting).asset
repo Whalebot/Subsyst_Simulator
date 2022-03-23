@@ -15,7 +15,8 @@ MonoBehaviour:
   title: Composting
   description: Clean pollution with composting which aids food production.
   icon: {fileID: 2074514824800363442, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  dependantUpgrade: {fileID: 11400000, guid: d21f26e5cf9d48946be239457138a976, type: 2}
+  cameraTarget: 3
+  dependantUpgrade: {fileID: 0}
   upgradeLimit: 3
   upgradeLevels:
   - upgradeCost: 0

@@ -17,10 +17,11 @@ MonoBehaviour:
   title: More Nature AND Sustainable Food
   description: Babidi Bubidi
   buttonText: Continue
+  cameraTarget: 4
   thresholdCounter: 0
-  type: 1
+  type: 0
   upgrade: {fileID: 11400000, guid: d7ff885891fdb2844ae5bf791e30b3eb, type: 2}
   preventionUpgrade: {fileID: 0}
   threshold: 0
   RNG: 1000
-  triggerEvent: {fileID: 0}
+  triggerEvent: {fileID: 11400000, guid: 6bb90abae071ed54daabda8e42f2506e, type: 2}

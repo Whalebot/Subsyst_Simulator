@@ -25,6 +25,9 @@ public class UpgradeManager : MonoBehaviour
     public List<ActionSO> meatUpgrades;
     public List<ActionSO> agricultureUpgrades;
 
+    int meatValue = 0;
+    int vegetableValue = 0;
+    public GameEventSO sustainableFoodEvent;
     private void Awake()
     {
         Instance = this;
@@ -33,7 +36,17 @@ public class UpgradeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EventManager.Instance.cataclysmTrigger += TriggerEvent;
+    }
 
+
+    void TriggerEvent(GameEventSO p)
+    {
+        if (p == sustainableFoodEvent)
+        {
+            meatValue = MeatUpgrades();
+            vegetableValue = VegetableUpgrades();
+        }
     }
 
     //[Button]
@@ -66,6 +79,7 @@ public class UpgradeManager : MonoBehaviour
         {
             sum += CheckUpgradeNumber(item);
         }
+        sum -= meatValue;
         return sum;
     }
     public int VegetableUpgrades()
@@ -75,6 +89,7 @@ public class UpgradeManager : MonoBehaviour
         {
             sum += CheckUpgradeNumber(item);
         }
+        sum -= vegetableValue;
         return sum;
     }
 
@@ -89,8 +104,8 @@ public class UpgradeManager : MonoBehaviour
     }
     public Ressources CheckCost(ProductionSO p)
     {
-          int upgradeNumber = CheckUpgradeNumber(p);
-       // print(p + " " + upgradeNumber);
+        int upgradeNumber = CheckUpgradeNumber(p);
+        // print(p + " " + upgradeNumber);
         return p.upgradeLevels[upgradeNumber].cost;
         //Ressources temp = new Ressources();
 
@@ -149,6 +164,7 @@ public class UpgradeManager : MonoBehaviour
 
         obtainedUpgrades.Add(p);
 
+
         if (p.GetType() == typeof(UpgradeSO))
         {
             UpgradeSO u = (UpgradeSO)p;
@@ -161,6 +177,10 @@ public class UpgradeManager : MonoBehaviour
         }
         upgradeEvent?.Invoke(p);
         GameManager.Instance.updateGameState?.Invoke();
+
+
+        //if (p.cameraTarget != null)
+        CameraManager.Instance.SetCinematicCamera(p.cameraTarget);
     }
 
     //Does not update game state

@@ -15,6 +15,7 @@ MonoBehaviour:
   title: Industrial Meat Upgrade
   description: Invest in the infrastructure for Industrial Meat Production
   icon: {fileID: -2865678973810129570, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  cameraTarget: 1
   dependantUpgrade: {fileID: 0}
   price: 100
   upgradeLimit: 1

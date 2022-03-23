@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
     public Canvas canvas2;
     public Canvas canvas3;
     public Canvas canvas4;
+    public Canvas worldSpaceCanvas;
     public bool uiEnabled;
     public enum UIMode { Default, TopOnly, BottomOnly, None }
     public UIMode uiMode;
@@ -55,6 +56,11 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Update()
+    {
+       // worldSpaceCanvas.enabled = !GameManager.paused;
     }
 
     // Start is called before the first frame update

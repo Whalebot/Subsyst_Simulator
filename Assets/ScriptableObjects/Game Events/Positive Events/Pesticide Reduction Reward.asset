@@ -17,6 +17,7 @@ MonoBehaviour:
   title: 
   description: 
   buttonText: 
+  cameraTarget: 4
   thresholdCounter: 0
   type: 1
   reward:

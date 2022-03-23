@@ -44,6 +44,7 @@ public class EventManager : MonoBehaviour
     [TabGroup("Trust in Government")] public GameEventSO trustInGovernmentEvent;
     [TabGroup("Trust in Government")] public GameEventSO foodProtest;
     [TabGroup("Trust in Government")] public GameEventSO climateProtest;
+    [TabGroup("Trust in Government")] public GameObject trustVisuals;
 
 
     [TabGroup("Clear Air")] public bool clearAirTriggered;
@@ -120,14 +121,7 @@ public class EventManager : MonoBehaviour
 
         foreach (var item in eventQueue)
         {
-            pendingGameEvents.Remove(item);
-
-            if (cataclysmTrigger != null) cataclysmTrigger.Invoke(item);
-            gameManager.PauseGame();
-            item.ExecuteEvent();
-            triggeredGameEvents.Add(item);
-            if (Telemetry.Instance.sendTelemetry)
-                StartCoroutine(Telemetry.Instance.PostEvent(item));
+            TriggerEvent(item);
         }
 
         //If requirements fullfilled, execute stuff
@@ -145,6 +139,21 @@ public class EventManager : MonoBehaviour
         {
             gameManager.Food = gameManager.Food / 2;
         }
+    }
+
+    [Button]
+    public void TriggerEvent(GameEventSO item) {
+        pendingGameEvents.Remove(item);
+
+        if (cataclysmTrigger != null) cataclysmTrigger.Invoke(item);
+        gameManager.PauseGame();
+        item.ExecuteEvent();
+        triggeredGameEvents.Add(item);
+
+         CameraManager.Instance.SetCameraTarget(item.cameraTarget);
+
+        if (Telemetry.Instance.sendTelemetry)
+            StartCoroutine(Telemetry.Instance.PostEvent(item));
     }
 
     public void FeedPopulation()
@@ -235,10 +244,12 @@ public class EventManager : MonoBehaviour
     }
     void TrustInGovernmentEvent()
     {
+        trustInGovernmentCounter++;
         if (trustInGovernmentCounter >= trustInGovernmentThreshold && !trustInGovernmentTriggered)
         {
             pendingGameEvents.Add(trustInGovernmentEvent);
             trustInGovernmentTriggered = true;
+            trustVisuals.SetActive(true);
         }
     }
 

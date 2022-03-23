@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public static bool gameStart;
     public static bool paused;
+    public static bool pauseAnimations;
     public enum GameMode { Default, Autoplay, MakeyMakey, Tutorial }
     public GameMode gameMode;
     public bool disableGraphics;
@@ -174,15 +175,24 @@ public class GameManager : MonoBehaviour
         gameStartEvent?.Invoke();
         paused = false;
         EnableGraphics();
+       // Time.timeScale = 1;
     }
 
     public void PauseGame()
     {
         paused = true;
+        //Time.timeScale = 0;
     }
 
     public void ResumeGame()
     {
+        paused = false;
+        EnableGraphics();
+        CameraManager.Instance.SetCinematicCamera();
+        //Time.timeScale = 1;
+    }
+
+    public void Unpause() {
         paused = false;
         EnableGraphics();
     }

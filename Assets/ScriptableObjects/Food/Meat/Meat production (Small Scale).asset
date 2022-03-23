@@ -15,6 +15,7 @@ MonoBehaviour:
   title: Small Scale Meat Production
   description: Small Scale Meat Production
   icon: {fileID: -2865678973810129570, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  cameraTarget: 1
   dependantUpgrade: {fileID: 11400000, guid: 2f871fcc081219f4d824a32af0a02f21, type: 2}
   upgradeLimit: 3
   upgradeLevels:

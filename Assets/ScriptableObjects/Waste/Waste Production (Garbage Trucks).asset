@@ -15,7 +15,8 @@ MonoBehaviour:
   title: Garbage Collection
   description: Collect waste using garbage trucks.
   icon: {fileID: 2074514824800363442, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  dependantUpgrade: {fileID: 11400000, guid: 0523548466e7b0b459fd20d0a0d9edbd, type: 2}
+  cameraTarget: 3
+  dependantUpgrade: {fileID: 0}
   upgradeLimit: 3
   upgradeLevels:
   - upgradeCost: 20

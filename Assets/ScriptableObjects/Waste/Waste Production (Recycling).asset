@@ -15,7 +15,8 @@ MonoBehaviour:
   title: Recycling
   description: Recycle to turn pollution into recycled waste.
   icon: {fileID: 2074514824800363442, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  dependantUpgrade: {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
+  cameraTarget: 3
+  dependantUpgrade: {fileID: 0}
   upgradeLimit: 3
   upgradeLevels:
   - upgradeCost: 0

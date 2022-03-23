@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showInPaper: 1
   image: {fileID: 21300000, guid: 8bc9fbeb1425d5f49b02788eb2626914, type: 3}
-  title: Zero Hunger Day
+  title: Trust in Government
   description: Babbidi
   buttonText: Bubbidi
+  cameraTarget: 5
   thresholdCounter: 0
   type: 1
   reward:

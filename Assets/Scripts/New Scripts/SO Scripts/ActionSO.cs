@@ -8,7 +8,7 @@ public class ActionSO : ScriptableObject
     public string title;
     public string description;
     public Sprite icon;
-
+    public CameraTargets cameraTarget;
     public UpgradeSO dependantUpgrade;
 
 }
