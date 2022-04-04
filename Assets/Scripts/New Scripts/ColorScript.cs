@@ -26,7 +26,7 @@ public class ColorScript : MonoBehaviour
     {
 
         rend = GetComponent<Renderer>();
-        mat = rend.material; 
+        mat = rend.material;
 
 
 
@@ -47,6 +47,7 @@ public class ColorScript : MonoBehaviour
 
     void CalculateMainColor()
     {
+        if (GameManager.paused) return;
         float sum = Mathf.Clamp(meatValue + vegetableValue, 0.01F, 100000000);
         float foodRatio = (float)meatValue / sum;
         float energyRatio = (float)vegetableValue / sum;
@@ -61,7 +62,7 @@ public class ColorScript : MonoBehaviour
         mixedColor = (mainColor * (1 - ressourceRatio)) + (((foodRatio * meatColor) + (energyRatio * vegetableColor)) * (ressourceRatio)) * (1 - pollutionRatio * pollutionMultiplier);
         if (mixColors)
         {
-          
+
             mat.color = Color.Lerp(mat.color, mixedColor, lerpValue);
         }
         else mat.color = Color.Lerp(mat.color, mainColor, lerpValue);

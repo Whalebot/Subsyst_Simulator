@@ -20,7 +20,7 @@ MonoBehaviour:
   buttonText: Continue
   cameraTarget: 1
   thresholdCounter: 1
-  type: 0
+  type: 1
   upgrade: {fileID: 11400000, guid: a8a8793fa596b694e86c3beef538b4a2, type: 2}
   preventionUpgrade: {fileID: 11400000, guid: 850dcac1398fdc042bd0dd9161f4fd14, type: 2}
   threshold: 1

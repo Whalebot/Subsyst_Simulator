@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeStep: 0
   populationGoal: 1000
   maxPollution: 5000
-  sustainable: 1
+  sustainable: 0
   upgradeGoals:
   - {fileID: 11400000, guid: f773bbdc1fca40f40b2c2ac04429f643, type: 2}
   - {fileID: 11400000, guid: 3183e04d06678a74fa089cf67352704b, type: 2}

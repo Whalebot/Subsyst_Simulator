@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8895b9c39e3d06a49a8e95e758abf39d, type: 3}
   m_Name: Circular AI
   m_EditorClassIdentifier: 
-  upgradeStep: 4
+  upgradeStep: 0
   populationGoal: 100
   maxPollution: 2000
-  sustainable: 1
+  sustainable: 0
   upgradeGoals:
   - {fileID: 11400000, guid: 270710c48904ac94c8b6c935f3d36569, type: 2}
   - {fileID: 11400000, guid: ba54b8a4aeb57484a87b622671da571d, type: 2}

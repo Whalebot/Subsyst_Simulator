@@ -76,7 +76,13 @@ public class MenuManager : MonoBehaviour
                 item.action = newAction;
             }
         }
-
+        foreach (var item in toggles)
+        {
+            if (item.action == oldAction)
+            {
+                item.action = newAction;
+            }
+        }
     }
 
     public void DisplayDescriptionWindow(ActionSO a)

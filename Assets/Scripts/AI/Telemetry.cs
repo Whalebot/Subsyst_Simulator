@@ -69,7 +69,7 @@ public class Telemetry : MonoBehaviour
         if(institutionName != null)
         form.AddField("entry.1183520150", institutionName);
         form.AddField("entry.92589871", guid.ToString());
-        form.AddField("entry.1657388280", action.name.ToString());
+        form.AddField("entry.1657388280", action.name.ToString() + " Lvl " + UpgradeManager.Instance.CheckUpgradeNumber(action));
         form.AddField("entry.1999334966", FormatTime(Time.time));
         if (AI.Instance.isAIActive)
             form.AddField("entry.1351457628", AI.Instance.behaviour.name.ToString());

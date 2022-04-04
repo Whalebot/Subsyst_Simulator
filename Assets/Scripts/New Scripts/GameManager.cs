@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
         set
         {
             ressources.bees = value;
-           // if (value > 1500) ressources.bees = 1500;
+            // if (value > 1500) ressources.bees = 1500;
             if (value <= 0) ressources.bees = 0;
         }
     }
@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
         set
         {
             ressources.naturalCapital = value;
-           // if (value > 1500) ressources.naturalCapital = 1500;
+            // if (value > 1500) ressources.naturalCapital = 1500;
             if (value <= 0) ressources.naturalCapital = 0;
         }
     }
@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour
         gameStartEvent?.Invoke();
         paused = false;
         EnableGraphics();
-       // Time.timeScale = 1;
+        // Time.timeScale = 1;
     }
 
     public void PauseGame()
@@ -192,7 +192,8 @@ public class GameManager : MonoBehaviour
         //Time.timeScale = 1;
     }
 
-    public void Unpause() {
+    public void Unpause()
+    {
         paused = false;
         EnableGraphics();
     }
@@ -259,13 +260,13 @@ public class GameManager : MonoBehaviour
         if (a.GetType() == typeof(UpgradeSO))
         {
             UpgradeSO u = (UpgradeSO)a;
-           // print(u.price);
+            // print(u.price);
             return u.price <= Money;
         }
         else if (a.GetType() == typeof(ProductionSO))
         {
             ProductionSO u = (ProductionSO)a;
-          //  print(u);
+            //  print(u);
             return CheckRessources(u.upgradeLevels[UpgradeManager.Instance.CheckUpgradeNumber(u)].cost);
         }
 
@@ -284,8 +285,8 @@ public class GameManager : MonoBehaviour
         else if (a.GetType() == typeof(ProductionSO))
         {
             ProductionSO u = (ProductionSO)a;
-            print(u.upgradeLevels[UpgradeManager.Instance.CheckUpgradeNumber(u) + 1].cost);
-            return CheckRessources(u.upgradeLevels[UpgradeManager.Instance.CheckUpgradeNumber(u)+1].cost);
+            //print(u.upgradeLevels[UpgradeManager.Instance.CheckUpgradeNumber(u) + 1].cost);
+            return u.upgradeLevels[UpgradeManager.Instance.CheckUpgradeNumber(u) + 1].upgradeCost <= Money;
         }
 
         return false;

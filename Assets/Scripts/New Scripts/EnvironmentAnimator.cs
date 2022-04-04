@@ -54,6 +54,46 @@ public class EnvironmentAnimator : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        if (UpgradeManager.Instance == null) return;
+        if (UpgradeManager.Instance.obtainedUpgrades.Contains(targetUpgrade) && targetUpgrade != null)
+        {
+            Upgrade();
+            return;
+        }
+
+
+
+        if (productionUpgrade != null)
+        {
+            bool foundAction = UpgradeManager.Instance.obtainedUpgrades.Contains(productionUpgrade);
+            ActionSO temp = productionUpgrade;
+
+            if (!foundAction)
+            {
+                foreach (var item in MenuManager.Instance.substitutes)
+                {
+                    if (productionUpgrade == item.mainItem)
+                        foreach (var sub in item.substitutes)
+                        {
+                            if (UpgradeManager.Instance.obtainedUpgrades.Contains(sub))
+                            {
+                                foundAction = true;
+                                temp = sub;
+                            }
+                        }
+                }
+            }
+
+            if (foundAction && productionUpgrade != null && level <= UpgradeManager.Instance.CheckUpgradeNumber(temp))
+            {
+                Upgrade();
+            }
+        }
+
+    }
+
     void Upgrade()
     {
         UpgradeManager.Instance.upgradeEvent -= CheckUpgrade;

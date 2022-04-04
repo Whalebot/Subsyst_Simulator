@@ -213,7 +213,6 @@ public class UpgradeManager : MonoBehaviour
         {
             if (item == oldActions)
             {
-                print("z");
                 tempList.Add((ProductionSO)item);
             }
         }

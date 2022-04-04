@@ -17,11 +17,16 @@ MonoBehaviour:
   title: 
   description: 
   buttonText: 
+  cameraTarget: 0
   thresholdCounter: 0
   type: 0
   oldActions:
   - {fileID: 11400000, guid: 5ee79915d47a3df45968998d87c80345, type: 2}
   - {fileID: 11400000, guid: 7b29c56dbe9e3de49836cdefb4694607, type: 2}
+  - {fileID: 11400000, guid: 49ef423ae01695e46b27ebea53f9d00d, type: 2}
+  - {fileID: 11400000, guid: f8ba14e05e62602458652e81f590db6e, type: 2}
   newActions:
+  - {fileID: 11400000, guid: 9327950d971846f479ebcb94b446d4be, type: 2}
+  - {fileID: 11400000, guid: 3da58b2730bf1f24c819b94bf829c146, type: 2}
   - {fileID: 11400000, guid: 9327950d971846f479ebcb94b446d4be, type: 2}
   - {fileID: 11400000, guid: 3da58b2730bf1f24c819b94bf829c146, type: 2}

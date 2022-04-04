@@ -15,22 +15,21 @@ MonoBehaviour:
   upgradeStep: 0
   populationGoal: 10
   maxPollution: 5000
-  sustainable: 1
+  sustainable: 0
   upgradeGoals:
   - {fileID: 11400000, guid: 27df7f4d92b8af642a5c2b534d5e7f9f, type: 2}
-  - {fileID: 11400000, guid: 3183e04d06678a74fa089cf67352704b, type: 2}
   - {fileID: 11400000, guid: a8a8793fa596b694e86c3beef538b4a2, type: 2}
+  - {fileID: 11400000, guid: 3183e04d06678a74fa089cf67352704b, type: 2}
+  - {fileID: 11400000, guid: d933f9ea056b579438893c13f704b405, type: 2}
   - {fileID: 11400000, guid: a8a8793fa596b694e86c3beef538b4a2, type: 2}
   - {fileID: 11400000, guid: d933f9ea056b579438893c13f704b405, type: 2}
   - {fileID: 11400000, guid: 2f871fcc081219f4d824a32af0a02f21, type: 2}
-  - {fileID: 11400000, guid: 7e58ff45a29fd3c448d485882d315ede, type: 2}
   - {fileID: 11400000, guid: 7e58ff45a29fd3c448d485882d315ede, type: 2}
   - {fileID: 11400000, guid: 6202019a9dd7b4a45a8e6e39511187e4, type: 2}
   - {fileID: 11400000, guid: a8a8793fa596b694e86c3beef538b4a2, type: 2}
   - {fileID: 11400000, guid: d933f9ea056b579438893c13f704b405, type: 2}
   - {fileID: 11400000, guid: 30f6e09c9dfbcc342bf322fbf6be2813, type: 2}
   - {fileID: 11400000, guid: 30f6e09c9dfbcc342bf322fbf6be2813, type: 2}
-  - {fileID: 11400000, guid: d933f9ea056b579438893c13f704b405, type: 2}
   - {fileID: 11400000, guid: 30f6e09c9dfbcc342bf322fbf6be2813, type: 2}
   - {fileID: 11400000, guid: 00e1197f3676c804fb4d0cc898e15a34, type: 2}
   - {fileID: 11400000, guid: a7ee2b3de4816504a9969a327383e4a8, type: 2}
@@ -39,10 +38,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}
   - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}
   - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}
-  - {fileID: 11400000, guid: f7ed384e695f1e24fa25ba5009428e62, type: 2}
-  - {fileID: 11400000, guid: c73380a01f7d6394bb4462001de7b1af, type: 2}
-  - {fileID: 11400000, guid: c73380a01f7d6394bb4462001de7b1af, type: 2}
-  - {fileID: 11400000, guid: c73380a01f7d6394bb4462001de7b1af, type: 2}
   preferredMoneyProduction:
   - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}
   preferredFoodProduction:

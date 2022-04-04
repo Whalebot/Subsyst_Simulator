@@ -16,6 +16,7 @@ public class EventRewardSO : GameEventSO
     public override void ExecuteEvent()
     {
         base.ExecuteEvent();
+        EventManager.Instance.cataclysmTrigger.Invoke(this);
         GameManager.Instance.AddRessources(reward);
     }
 }
