@@ -11962,6 +11962,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetUpgrade: {fileID: 11400000, guid: 2f871fcc081219f4d824a32af0a02f21, type: 2}
+  productionUpgrade: {fileID: 0}
+  level: 0
 --- !u!1 &3342534604616730949
 GameObject:
   m_ObjectHideFlags: 0
