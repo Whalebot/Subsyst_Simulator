@@ -7372,7 +7372,7 @@ PrefabInstance:
     - target: {fileID: 402495616829985635, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
         type: 3}
       propertyPath: m_text
-      value: Animal-Crop Agroecology
+      value: Circular Meat Production
       objectReference: {fileID: 0}
     - target: {fileID: 402495617868916544, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
         type: 3}
@@ -8840,7 +8840,7 @@ PrefabInstance:
       propertyPath: m_text
       value: '
 
-        Organic Fertilizer'
+        Artificial Fertilizer'
       objectReference: {fileID: 0}
     - target: {fileID: 4518779744705924676, guid: b8054b41c9128b0479fddf3a1d25abb0,
         type: 3}
@@ -9146,7 +9146,7 @@ PrefabInstance:
     - target: {fileID: 402495616829985635, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
         type: 3}
       propertyPath: m_text
-      value: Insect-Crop Agroecology
+      value: Circular Insect Production
       objectReference: {fileID: 0}
     - target: {fileID: 402495617868916545, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
         type: 3}
@@ -9314,7 +9314,7 @@ PrefabInstance:
     - target: {fileID: 402495616829985635, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
         type: 3}
       propertyPath: m_text
-      value: Algae Flocculation
+      value: Circular Algae Production
       objectReference: {fileID: 0}
     - target: {fileID: 402495617868916545, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
         type: 3}
@@ -9806,7 +9806,7 @@ PrefabInstance:
     - target: {fileID: 402495616829985635, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
         type: 3}
       propertyPath: m_text
-      value: Insect-crop Agroecology
+      value: Circular Vegetable Production
       objectReference: {fileID: 0}
     - target: {fileID: 402495617868916545, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
         type: 3}

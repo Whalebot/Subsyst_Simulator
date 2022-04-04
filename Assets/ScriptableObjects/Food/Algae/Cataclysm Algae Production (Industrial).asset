@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cataclysm Algae Production (Industrial)
   m_EditorClassIdentifier: 
   title: Industrial Algae Prodcution
-  description: Industrial Algae Prodcution
+  description: Industrial Algae Production
   icon: {fileID: 2306574165339229938, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   cameraTarget: 8
   dependantUpgrade: {fileID: 0}

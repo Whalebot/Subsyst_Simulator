@@ -5,7 +5,9 @@ using Sirenix.OdinInspector;
 
 public class ActionSO : ScriptableObject
 {
+    [TextArea]
     public string title;
+    [TextArea(10,40)]
     public string description;
     public Sprite icon;
     public CameraTargets cameraTarget;

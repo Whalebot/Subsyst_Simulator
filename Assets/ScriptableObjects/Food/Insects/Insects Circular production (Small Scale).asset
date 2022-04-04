@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aae83ff58ee6254e8d55bbd725dcda3, type: 3}
   m_Name: Insects Circular production (Small Scale)
   m_EditorClassIdentifier: 
-  title: Small Scale Meat Production
+  title: Circular Small Scale Meat Production
   description: Small Scale Meat Production
   icon: {fileID: -2865678973810129570, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   cameraTarget: 9
