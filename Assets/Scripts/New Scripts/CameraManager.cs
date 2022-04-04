@@ -31,6 +31,14 @@ public class CameraManager : MonoBehaviour
     [TabGroup("Cinematic Camera")] public Transform wasteTarget;
     [TabGroup("Cinematic Camera")] public Transform populationTarget;
     [TabGroup("Cinematic Camera")] public Transform townTarget;
+    [TabGroup("Cinematic Camera")] public Transform lighthouseTarget;
+    [TabGroup("Cinematic Camera")] public Transform vegetableTarget;
+    [TabGroup("Cinematic Camera")] public Transform algaeTarget;
+    [TabGroup("Cinematic Camera")] public Transform insectTarget;
+    [TabGroup("Cinematic Camera")] public Transform treeTarget;
+    [TabGroup("Cinematic Camera")] public Transform oilTarget;
+    [TabGroup("Cinematic Camera")] public Transform natureTarget;
+    [TabGroup("Cinematic Camera")] public Transform islandTarget;
 
     private void Awake()
     {
@@ -54,7 +62,7 @@ public class CameraManager : MonoBehaviour
     {
         if (!GameManager.gameStart) return;
         if (Input.GetMouseButtonDown(0)) { mouseButtonHeld = !CursorScript.Instance.foundInteractable; }
-        if (Input.GetKeyDown(KeyCode.Space)) { SetCinematicCamera(cinematicTarget); }
+        //if (Input.GetKeyDown(KeyCode.Space)) { SetCinematicCamera(cinematicTarget); }
         if (Input.GetMouseButtonUp(0)) mouseButtonHeld = false;
 
         if (mouseButtonHeld)
@@ -76,19 +84,22 @@ public class CameraManager : MonoBehaviour
 
     public void SetCinematicCamera(Transform t)
     {
+        StopAllCoroutines();
         cinematicTarget = t;
         StartCoroutine(TurnOffCinematicCamera());
     }
 
     public void SetCinematicCamera(CameraTargets t)
     {
+        StopAllCoroutines();
         SetCameraTarget(t);
         StartCoroutine(TurnOffCinematicCamera());
     }
 
     public void SetCinematicCamera()
     {
-
+        StopAllCoroutines ();
+        GameManager.Instance.Unpause();
         if (cinematicTarget != null)
             StartCoroutine(TurnOffCinematicCamera());
     }
@@ -138,10 +149,42 @@ public class CameraManager : MonoBehaviour
                 cinematicCamera.m_Lens.OrthographicSize = 35;
                 cinematicTarget = townTarget;
                 break;
+            case CameraTargets.Lighthouse:
+                cinematicCamera.m_Lens.OrthographicSize = 50;
+                cinematicTarget = lighthouseTarget;
+                break;
+            case CameraTargets.Vegetables:
+                cinematicCamera.m_Lens.OrthographicSize = 50;
+                cinematicTarget = vegetableTarget;
+                break;
+            case CameraTargets.Algae:
+                cinematicCamera.m_Lens.OrthographicSize = 50;
+                cinematicTarget = algaeTarget;
+                break;
+            case CameraTargets.Insects:
+                cinematicCamera.m_Lens.OrthographicSize = 50;
+                cinematicTarget = insectTarget;
+                break;
+            case CameraTargets.Trees:
+                cinematicCamera.m_Lens.OrthographicSize = 50;
+                cinematicTarget = treeTarget;
+                break;
+            case CameraTargets.Oil:
+                cinematicCamera.m_Lens.OrthographicSize = 50;
+                cinematicTarget = oilTarget;
+                break;
+            case CameraTargets.Nature:
+                cinematicCamera.m_Lens.OrthographicSize = 50;
+                cinematicTarget = natureTarget;
+                break;
+            case CameraTargets.Island:
+                cinematicCamera.m_Lens.OrthographicSize = 50;
+                cinematicTarget = islandTarget;
+                break;
             default:
                 break;
         }
     }
 }
 
-public enum CameraTargets { None, Food, Energy, Waste, Population, Town }
+public enum CameraTargets { None, Food, Energy, Waste, Population, Town, Lighthouse ,Vegetables, Algae, Insects , Trees, Oil, Nature, Island }

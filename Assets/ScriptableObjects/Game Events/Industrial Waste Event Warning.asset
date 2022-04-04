@@ -18,10 +18,10 @@ MonoBehaviour:
   description: The storage for recycled plastics can't keep up with the reclycing
     speed, leading to huge land masses of plastic polution.
   buttonText: Continue
+  cameraTarget: 0
   thresholdCounter: 0
   type: 0
-  upgrade: {fileID: 11400000, guid: 94c5b62d4152c364381f4ceb95f6a05c, type: 2}
+  upgrade: {fileID: 0}
   preventionUpgrade: {fileID: 0}
-  threshold: 5
-  RNG: 100
-  triggerEvent: {fileID: 11400000, guid: d3a2a460181d8bf40a3a2225449cd118, type: 2}
+  threshold: 1
+  triggerEvent: {fileID: 0}

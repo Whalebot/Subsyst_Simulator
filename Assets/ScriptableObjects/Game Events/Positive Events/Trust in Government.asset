@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Trust in Government
   m_EditorClassIdentifier: 
   showInPaper: 1
-  image: {fileID: 21300000, guid: 8bc9fbeb1425d5f49b02788eb2626914, type: 3}
+  image: {fileID: 21300000, guid: a294c902723a4334ea64b62b93d9bb1b, type: 3}
   title: Trust in Government
-  description: Babbidi
-  buttonText: Bubbidi
+  description: Latest polls are showing a rise in trust in institutions and democracy
+    among the population.
+  buttonText: Continue
   cameraTarget: 5
   thresholdCounter: 0
   type: 1

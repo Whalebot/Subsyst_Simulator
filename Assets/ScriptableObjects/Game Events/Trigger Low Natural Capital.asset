@@ -18,6 +18,7 @@ MonoBehaviour:
   description: The high pollution has started to destroy the local ecosystem, leading
     to forest fires and death of local bees.
   buttonText: Continue
+  cameraTarget: 13
   thresholdCounter: 0
   type: 1
   positiveThresholds:

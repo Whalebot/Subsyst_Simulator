@@ -139,6 +139,21 @@ public class FoodManager : BaseFacility
             unlockedAutomaticProductionTypes.Remove((ProductionSO)oldActions);
             unlockedAutomaticProductionTypes.Add((ProductionSO)newActions);
         }
+
+        //List<ProductionSO> tempList = new List<ProductionSO>();
+        //foreach (var item in unlockedAutomaticProductionTypes)
+        //{
+        //    if (unlockedAutomaticProductionTypes.Contains((ProductionSO)oldActions))
+        //    {
+        //        tempList.Add((ProductionSO)newActions);
+
+        //    }
+        //}
+        //foreach (var item in tempList)
+        //{
+        //    unlockedAutomaticProductionTypes.Remove((ProductionSO)oldActions);
+        //    unlockedAutomaticProductionTypes.Add((ProductionSO)newActions);
+        //}
     }
 
     public void RemoveAllAutomaticProduction(ProductionSO p)

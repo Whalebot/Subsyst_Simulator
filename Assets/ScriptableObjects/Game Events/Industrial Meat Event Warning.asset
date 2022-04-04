@@ -18,10 +18,10 @@ MonoBehaviour:
   description: Animals grow sick in farms due to living conditions. Industrial farming
     of meat accelerates the spread of diseases in our food.
   buttonText: Continue
+  cameraTarget: 0
   thresholdCounter: 0
   type: 0
-  upgrade: {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
-  preventionUpgrade: {fileID: 0}
-  threshold: 5
-  RNG: 100
+  upgrade: {fileID: 11400000, guid: a8a8793fa596b694e86c3beef538b4a2, type: 2}
+  preventionUpgrade: {fileID: 11400000, guid: 850dcac1398fdc042bd0dd9161f4fd14, type: 2}
+  threshold: 1
   triggerEvent: {fileID: 11400000, guid: b1fa2f30088b93449958324ef2681b6b, type: 2}

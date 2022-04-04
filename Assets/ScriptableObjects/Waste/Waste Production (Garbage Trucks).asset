@@ -17,8 +17,29 @@ MonoBehaviour:
   icon: {fileID: 2074514824800363442, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   cameraTarget: 3
   dependantUpgrade: {fileID: 0}
-  upgradeLimit: 3
+  upgradeLimit: 4
   upgradeLevels:
+  - upgradeCost: 20
+    cost:
+      energy: 1
+      food: 0
+      waste: 0
+      approval: 0
+      population: 0
+      money: 0
+      pollution: 5
+      bees: 0
+      naturalCapital: 0
+    result:
+      energy: 0
+      food: 0
+      waste: 5
+      approval: 0
+      population: 0
+      money: 5
+      pollution: 0
+      bees: 0
+      naturalCapital: 0
   - upgradeCost: 20
     cost:
       energy: 1

@@ -2333,6 +2333,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action: {fileID: 0}
   canPress: 0
+  requiresUpgrade: 0
+  upItem: {fileID: 0}
+  downItem: {fileID: 0}
+  leftItem: {fileID: 0}
+  rightItem: {fileID: 0}
 --- !u!1 &1589282117654418455
 GameObject:
   m_ObjectHideFlags: 0
@@ -7291,6 +7296,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2494600423731612443}
     m_Modifications:
+    - target: {fileID: 2109835066357429507, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: m_text
+      value: 'Circularity: Inactive'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109835067090362248, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: m_text
+      value: 'Circularity: Active'
+      objectReference: {fileID: 0}
     - target: {fileID: 6988782652643684140, guid: 9dacf4f83480a2d49b332165b9c19924,
         type: 3}
       propertyPath: action
@@ -8182,6 +8197,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5464229458345288542, guid: 1833c9447b329e744ac388e90f2bdb74,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464229458345288542, guid: 1833c9447b329e744ac388e90f2bdb74,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00011045106
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464229458345288542, guid: 1833c9447b329e744ac388e90f2bdb74,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -102.969925
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464229458345288542, guid: 1833c9447b329e744ac388e90f2bdb74,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.90000916
+      objectReference: {fileID: 0}
     - target: {fileID: 7529183028070206469, guid: 1833c9447b329e744ac388e90f2bdb74,
         type: 3}
       propertyPath: m_IsActive
@@ -8212,6 +8247,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3007174500252284027}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4739661839923689597 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7529183028070206470, guid: 1833c9447b329e744ac388e90f2bdb74,
+    type: 3}
+  m_PrefabInstance: {fileID: 3007174500252284027}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cec4a194ed8894fa654c6adf2af13d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3062942290727496784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10881,6 +10928,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2598699453922378619}
     m_Modifications:
+    - target: {fileID: 2109835066357429507, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: m_text
+      value: 'Circularity: Inactive'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109835067090362248, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: m_text
+      value: 'Circularity: Active'
+      objectReference: {fileID: 0}
     - target: {fileID: 6988782652643684140, guid: 9dacf4f83480a2d49b332165b9c19924,
         type: 3}
       propertyPath: action
@@ -11250,6 +11307,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1589282116898676986}
     m_Modifications:
+    - target: {fileID: 2109835066357429507, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: m_text
+      value: 'Circularity: Inactive'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109835067090362248, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: m_text
+      value: 'Circularity: Active'
+      objectReference: {fileID: 0}
     - target: {fileID: 6988782652643684140, guid: 9dacf4f83480a2d49b332165b9c19924,
         type: 3}
       propertyPath: state
@@ -11459,6 +11526,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5812863810246628563}
     m_Modifications:
+    - target: {fileID: 2109835066357429507, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: m_text
+      value: 'Circularity: Inactive'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2109835067090362248, guid: 9dacf4f83480a2d49b332165b9c19924,
+        type: 3}
+      propertyPath: m_text
+      value: 'Circularity: Active'
+      objectReference: {fileID: 0}
     - target: {fileID: 6988782652643684140, guid: 9dacf4f83480a2d49b332165b9c19924,
         type: 3}
       propertyPath: action
@@ -12271,6 +12348,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7e58ff45a29fd3c448d485882d315ede,
         type: 2}
+    - target: {fileID: 317652425929214461, guid: 110dcfab4213d9348888799a321550b5,
+        type: 3}
+      propertyPath: upItem
+      value: 
+      objectReference: {fileID: 4739661839923689597}
     - target: {fileID: 317652425929214461, guid: 110dcfab4213d9348888799a321550b5,
         type: 3}
       propertyPath: buttonType

@@ -12,7 +12,7 @@ public class AIBehaviour : ScriptableObject
     public int populationGoal;
     public int maxPollution;
     public bool sustainable;
-    public UpgradeSO[] upgradeGoals;
+    public ActionSO[] upgradeGoals;
     public ActionSO[] preferredMoneyProduction;
     public ActionSO[] preferredFoodProduction;
     public ActionSO[] preferredEnergyProduction;

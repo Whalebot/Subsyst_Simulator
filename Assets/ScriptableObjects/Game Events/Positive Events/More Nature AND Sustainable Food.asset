@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: More Nature AND Sustainable Food
   m_EditorClassIdentifier: 
   showInPaper: 1
-  image: {fileID: -8311611579731980990, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  image: {fileID: 21300000, guid: 6ef55400c825b204c8825723fdbca049, type: 3}
   title: More Nature AND Sustainable Food
-  description: Babidi Bubidi
+  description: The growing market for algea production is giving rise to new businesses
+    and start-ups.
   buttonText: Continue
   cameraTarget: 4
   thresholdCounter: 0

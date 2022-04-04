@@ -22,6 +22,7 @@ public class ReplaceUpgradeEventSO : GameEventSO
         {
             MenuManager.Instance.ReplaceAction(oldActions[i], newActions[i]);
             FoodManager.Instance.ReplaceAction(oldActions[i], newActions[i]);
+            UpgradeManager.Instance.ReplaceAction(oldActions[i], newActions[i]);
         }
       
     }

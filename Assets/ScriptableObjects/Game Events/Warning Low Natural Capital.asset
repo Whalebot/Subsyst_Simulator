@@ -18,6 +18,7 @@ MonoBehaviour:
   description: Vast amount of pollution has started to ruin the natural capital.
     Damage is unrecoverable and will further harm the ecosystem.
   buttonText: Continue
+  cameraTarget: 10
   thresholdCounter: 0
   type: 1
   positiveThresholds:

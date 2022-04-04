@@ -182,7 +182,8 @@ public class DescriptionWindow : MonoBehaviour
 
 
         }
-        else {
+        else
+        {
             ProductionSO ps = (ProductionSO)p;
 
             action = ps;
@@ -193,9 +194,9 @@ public class DescriptionWindow : MonoBehaviour
             titleText.text = action.title;
             descriptionText.text = action.description;
 
-            int upgradeLevel = UpgradeManager.Instance.CheckUpgradeNumber(ps);
+            int upgradeLevel = UpgradeManager.Instance.CheckUpgradeNumber(ps) + 1;
+            if (upgradeLevel >= ps.upgradeLevels.Length) upgradeLevel = upgradeLevel - 1;
 
-         
             priceText.text = "" + ps.upgradeLevels[upgradeLevel].upgradeCost;
             if (ps.upgradeLevels[upgradeLevel].upgradeCost > GameManager.Instance.Money) priceText.color = Color.red;
             else priceText.color = defaultColor;

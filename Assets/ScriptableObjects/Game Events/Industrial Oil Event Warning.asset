@@ -19,10 +19,10 @@ MonoBehaviour:
     that further demand on oil might lead to increse in leaks, accidentes,  and environmental
     disasters. '
   buttonText: Continue
+  cameraTarget: 0
   thresholdCounter: 0
   type: 0
-  upgrade: {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
+  upgrade: {fileID: 11400000, guid: d933f9ea056b579438893c13f704b405, type: 2}
   preventionUpgrade: {fileID: 11400000, guid: da39fc340be69f042993a9e148f09c19, type: 2}
-  threshold: 5
-  RNG: 100
+  threshold: 1
   triggerEvent: {fileID: 11400000, guid: d3a2a460181d8bf40a3a2225449cd118, type: 2}

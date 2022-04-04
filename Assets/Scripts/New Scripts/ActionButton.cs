@@ -20,6 +20,7 @@ public class ActionButton : Interactable
     void Awake()
     {
         button = GetComponent<Button>();
+        if (requiredUpgrade != null) requiresUpgrade = true;
     }
 
     private void Start()
@@ -84,12 +85,13 @@ public class ActionButton : Interactable
         {
             if (!UpgradeManager.Instance.obtainedUpgrades.Contains(requiredUpgrade))
             {
+                requiresUpgrade = true;
                 state = ButtonState.RequiresUpgrade;
                 DisableButton();
                 return;
             }
         }
-
+        requiresUpgrade = false;
 
         //Check ressources
         if (buttonType == ButtonType.Upgrade && action.GetType() == typeof(ProductionSO))
@@ -102,8 +104,8 @@ public class ActionButton : Interactable
 
 
             ProductionSO a = (ProductionSO)action;
-        //    print(action + " " + UpgradeManager.Instance.CheckUpgradeNumber(a) + " " + a.upgradeLevels[UpgradeManager.Instance.CheckUpgradeNumber(a)].upgradeCost);
-            if (a.upgradeLevels[UpgradeManager.Instance.CheckUpgradeNumber(a)].upgradeCost > GameManager.Instance.Money)
+            //    print(action + " " + UpgradeManager.Instance.CheckUpgradeNumber(a) + " " + a.upgradeLevels[UpgradeManager.Instance.CheckUpgradeNumber(a)].upgradeCost);
+            if (a.upgradeLevels[UpgradeManager.Instance.CheckUpgradeNumber(a) + 1].upgradeCost > GameManager.Instance.Money)
             {
                 state = ButtonState.MissingRessources;
                 DisableButton();
@@ -157,7 +159,7 @@ public class ActionButton : Interactable
 
     public override void Selected()
     {
-       // base.Selected();
+        // base.Selected();
 
         MenuManager.Instance.DisplayDescriptionWindow(this);
         CursorScript.Instance.Hover();

@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: CO2 Reduction Agreement
   m_EditorClassIdentifier: 
   showInPaper: 1
-  image: {fileID: -8311611579731980990, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
+  image: {fileID: 21300000, guid: b79e01ccad8843248a7b65bab8eeda4d, type: 3}
   title: CO2 Reduction Agreement
-  description: Babidi Bubidi
+  description: Developments within the application of biogas for energy production
+    was the last push for reach a CO2 agreement. Today it was signed by the municipality
+    together with the businesses to reduce CO2 emissions.
   buttonText: Continue
   cameraTarget: 4
   thresholdCounter: 0

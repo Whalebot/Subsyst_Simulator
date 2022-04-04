@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Sirenix.OdinInspector;
 
 public class Interactable : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class Interactable : MonoBehaviour
     public delegate void InteractableEvent(Interactable i);
     public InteractableEvent executeEvent;
     public bool canPress;
+    public bool requiresUpgrade;
+    [FoldoutGroup("Navigation")] public Interactable upItem;
+    [FoldoutGroup("Navigation")] public Interactable downItem;
+    [FoldoutGroup("Navigation")] public Interactable leftItem;
+    [FoldoutGroup("Navigation")] public Interactable rightItem;
     private void Awake()
     {
         button = GetComponent<Button>();

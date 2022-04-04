@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Zero Hunger Day
   m_EditorClassIdentifier: 
   showInPaper: 1
-  image: {fileID: 21300000, guid: 8bc9fbeb1425d5f49b02788eb2626914, type: 3}
+  image: {fileID: 21300000, guid: ffaf73d0b0b0b8d48a2ded3fb0fbe984, type: 3}
   title: Zero Hunger Day
-  description: Babbidi
-  buttonText: Bubbidi
+  description: Today is a holiday as we are celebrating Zero-Hunger day. There has
+    been an amazing progress in tackling hunger in the city and securing the population
+    with food.
+  buttonText: Continue
   cameraTarget: 4
   thresholdCounter: 0
   type: 1

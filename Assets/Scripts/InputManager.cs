@@ -14,7 +14,10 @@ public class InputManager : MonoBehaviour
     public GameObject wasteButton;
     public GameObject lines;
     public Interactable activeInteractable;
-    public Interactable[] currentInteractables;
+    public List<Interactable> interactableList;
+
+    public GameObject lastGO;
+
     public float positionLimitX;
     public float positionLimitY;
     private void Awake()
@@ -25,32 +28,80 @@ public class InputManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        interactableList = new List<Interactable>();
+        UpgradeManager.Instance.upgradeEvent += SearchObjects;
+    }
 
+    void SearchObjects(ActionSO so)
+    {
+        if (lastGO != null)
+            FindInteractablesInObject();
     }
 
     [Button]
     public void ResetInteractables()
     {
 
-        currentInteractables = new Interactable[0];
+        interactableList.Clear();
     }
 
     [Button]
-    public void FindInteractablesInObject(GameObject GO)
+    public void FindInteractablesInObject()
     {
 
-        currentInteractables = new Interactable[0];
-        currentInteractables = GO.GetComponentsInChildren<Interactable>();
-        if (currentInteractables.Length > 0)
-            activeInteractable = currentInteractables[0];
+        ResetInteractables();
+
+        lastGO.GetComponentsInChildren(interactableList);
+        List<Interactable> removeList = new List<Interactable>();
+        foreach (var item in interactableList)
+        {
+            if (item.requiresUpgrade) removeList.Add(item);
+            //  interactableList.Remove(item);
+        }
+        foreach (var item in removeList)
+        {
+            interactableList.Remove(item);
+        }
+
+        if (activeInteractable != null)
+        {
+            FindNearestObject();
+        }
+        else if (interactableList.Count > 0)
+            activeInteractable = interactableList[0];
+    }
+
+    [Button]
+    public void FindInteractablesInObjectTab(GameObject GO)
+    {
+
+        ResetInteractables();
+        //currentInteractables = 
+        lastGO = GO;
+        GO.GetComponentsInChildren(interactableList);
+        List<Interactable> removeList = new List<Interactable>();
+        foreach (var item in interactableList)
+        {
+            if (item.requiresUpgrade) removeList.Add(item);
+            //  interactableList.Remove(item);
+        }
+        foreach (var item in removeList)
+        {
+            interactableList.Remove(item);
+        }
+
+
+        if (interactableList.Count > 0)
+            activeInteractable = interactableList[0];
     }
 
     [Button]
     void FindNearestObject()
     {
+        DeselectActive();
         Interactable closestInteractable = activeInteractable;
         float closestDistance = 0;
-        foreach (var item in currentInteractables)
+        foreach (var item in interactableList)
         {
             if (item != activeInteractable)
             {
@@ -64,26 +115,28 @@ public class InputManager : MonoBehaviour
             }
         }
         activeInteractable = closestInteractable;
+        SelectActive();
     }
 
     [Button]
     void FindNearestObjectUp()
     {
+        DeselectActive();
         Interactable closestInteractable = activeInteractable;
         float closestDistance = 0;
         float closestDistanceX = 0;
-        foreach (var item in currentInteractables)
+        foreach (var item in interactableList)
         {
             if (item != activeInteractable)
             {
 
-                float tempDist = item.transform.position.y - activeInteractable.transform.position.y;
+                float tempDistY = item.transform.position.y - activeInteractable.transform.position.y;
                 float tempDistX = item.transform.position.x - activeInteractable.transform.position.x;
-                if (tempDist > 0)
+                if (tempDistY > 0 && Mathf.Abs(tempDistX) < positionLimitX)
                 {
-                    if (closestDistance == 0 || tempDist < closestDistance && Mathf.Abs(tempDistX) < positionLimitX || tempDist > 0 && Mathf.Abs(tempDistX) < closestDistanceX)
+                    if (closestDistance == 0 || Mathf.Abs(tempDistY) <= closestDistance)
                     {
-                        closestDistance = tempDist;
+                        closestDistance = tempDistY;
                         closestDistanceX = Mathf.Abs(tempDistX);
                         closestInteractable = item;
                     }
@@ -96,9 +149,11 @@ public class InputManager : MonoBehaviour
     [Button]
     void FindNearestObjectDown()
     {
+        DeselectActive();
         Interactable closestInteractable = activeInteractable;
         float closestDistance = 0;
-        foreach (var item in currentInteractables)
+        float closestDistance2 = 0;
+        foreach (var item in interactableList)
         {
             if (item != activeInteractable)
             {
@@ -106,10 +161,14 @@ public class InputManager : MonoBehaviour
                 float tempDistY = item.transform.position.y - activeInteractable.transform.position.y;
                 float tempDistX = item.transform.position.x - activeInteractable.transform.position.x;
                 if (tempDistY < 0 && Mathf.Abs(tempDistX) < positionLimitX)
-                    if (closestDistance == 0 || Mathf.Abs(tempDistY) < closestDistance)
+                    if (closestDistance == 0 || Mathf.Abs(tempDistY) <= closestDistance)
                     {
-                        closestDistance = tempDistY;
-                        closestInteractable = item;
+                        //  if (Mathf.Abs(tempDistY) <= closestDistance2 || closestDistance2 == 0)
+                        {
+                            closestDistance = tempDistY;
+                            closestDistance2 = tempDistX;
+                            closestInteractable = item;
+                        }
                     }
             }
         }
@@ -120,9 +179,11 @@ public class InputManager : MonoBehaviour
     [Button]
     void FindNearestObjectRight()
     {
+        DeselectActive();
         Interactable closestInteractable = activeInteractable;
         float closestDistance = 0;
-        foreach (var item in currentInteractables)
+        float closestDistance2 = 0;
+        foreach (var item in interactableList)
         {
             if (item != activeInteractable)
             {
@@ -131,9 +192,10 @@ public class InputManager : MonoBehaviour
                 float tempDistY = item.transform.position.y - activeInteractable.transform.position.y;
                 if (tempDistX > 0 && Mathf.Abs(tempDistY) < positionLimitY)
                 {
-                    if (closestDistance == 0 || Mathf.Abs(tempDistX) < closestDistance)
+                    if (closestDistance == 0 && closestDistance2 == 0 || Mathf.Abs(tempDistX) < closestDistance)
                     {
                         closestDistance = Mathf.Abs(tempDistX);
+                        closestDistance2 = Mathf.Abs(tempDistY);
                         closestInteractable = item;
                     }
                 }
@@ -147,9 +209,11 @@ public class InputManager : MonoBehaviour
     [Button]
     void FindNearestObjectLeft()
     {
+        DeselectActive();
         Interactable closestInteractable = activeInteractable;
         float closestDistance = 0;
-        foreach (var item in currentInteractables)
+        float closestDistance2 = 0;
+        foreach (var item in interactableList)
         {
             if (item != activeInteractable)
             {
@@ -158,9 +222,10 @@ public class InputManager : MonoBehaviour
                 float tempDistY = item.transform.position.y - activeInteractable.transform.position.y;
                 if (tempDistX < 0 && Mathf.Abs(tempDistY) < positionLimitY)
                 {
-                    if (closestDistance == 0 || Mathf.Abs(tempDistX) < closestDistance)
+                    if (closestDistance == 0 && closestDistance2 == 0 || Mathf.Abs(tempDistX) < closestDistance)
                     {
                         closestDistance = Mathf.Abs(tempDistX);
+                        closestDistance2 = Mathf.Abs(tempDistY);
                         closestInteractable = item;
                     }
                 }
@@ -171,9 +236,20 @@ public class InputManager : MonoBehaviour
 
     }
 
+    void DeselectActive()
+    {
+        AI.Instance.MoveCursorToNextObject(activeInteractable);
+        var pointer = new PointerEventData(EventSystem.current);
+        ExecuteEvents.Execute(activeInteractable.gameObject, pointer, ExecuteEvents.pointerExitHandler);
+
+    }
+
     void SelectActive()
     {
         AI.Instance.MoveCursorToNextObject(activeInteractable);
+        var pointer = new PointerEventData(EventSystem.current);
+        ExecuteEvents.Execute(activeInteractable.gameObject, pointer, ExecuteEvents.pointerEnterHandler);
+
     }
 
     void ClickActive()
@@ -240,7 +316,10 @@ public class InputManager : MonoBehaviour
             {
                 ClickActive();
             }
-
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                AI.Instance.showCursor = !AI.Instance.showCursor;
+            }
         }
 
     }

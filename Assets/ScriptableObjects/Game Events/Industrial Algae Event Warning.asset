@@ -18,10 +18,10 @@ MonoBehaviour:
   description: Production of algae at risk. Industrialization of algae production
     lead to unstable alge behaviors that may affect food chains.
   buttonText: Continue
+  cameraTarget: 0
   thresholdCounter: 0
   type: 0
-  upgrade: {fileID: 11400000, guid: 877539d06cb984644af0fa0c268f9913, type: 2}
-  preventionUpgrade: {fileID: 0}
-  threshold: 5
-  RNG: 100
+  upgrade: {fileID: 11400000, guid: ba54b8a4aeb57484a87b622671da571d, type: 2}
+  preventionUpgrade: {fileID: 11400000, guid: d7ff885891fdb2844ae5bf791e30b3eb, type: 2}
+  threshold: 1
   triggerEvent: {fileID: 11400000, guid: e7864e882e2b8f04c80a91f9f971262c, type: 2}

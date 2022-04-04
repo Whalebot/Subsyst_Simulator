@@ -14,7 +14,7 @@ public class AI : MonoBehaviour
     public bool showAIActions;
 
     [InlineEditor] public AIBehaviour behaviour;
-    public UpgradeSO upgradeGoal;
+    public ActionSO upgradeGoal;
     public bool foundAllUpgrades;
     public ActionSO nextAction;
     public AIBehaviour[] bots;
@@ -84,13 +84,32 @@ public class AI : MonoBehaviour
 
             //Ressources temp = UpgradeManager.Instance.CheckCost(upgradeGoal);
             //Check if AI can afford next upgrade, if yes, next action is buying the upgrade.
-            if (GameManager.Instance.Money >= upgradeGoal.price)
+            if (upgradeGoal.GetType() == typeof(UpgradeSO))
             {
-                nextAction = upgradeGoal;
-                MoveCursorToNextAction();
-                return;
+                UpgradeSO temp = (UpgradeSO)upgradeGoal;
+                if (GameManager.Instance.Money >= temp.price)
+                {
+                    nextAction = upgradeGoal;
+                    MoveCursorToNextAction();
+                    return;
+                }
+            }
+
+            else if (upgradeGoal.GetType() == typeof(ProductionSO))
+            {
+                ProductionSO temp = (ProductionSO)upgradeGoal;
+                int level = UpgradeManager.Instance.CheckUpgradeNumber(upgradeGoal);
+
+                if (GameManager.Instance.Money >= temp.upgradeLevels[level + 1].upgradeCost)
+                {
+                    nextAction = upgradeGoal;
+                    MoveCursorToNextAction();
+                    return;
+                }
             }
         }
+
+
         //If sustainable, check you can afford upkeep before trying to upgrade
         if (behaviour.sustainable)
         {
@@ -147,7 +166,7 @@ public class AI : MonoBehaviour
             return;
         }
         //Check if AI can afford next upgrade, if yes, next action is buying the upgrade.
-        if (GameManager.Instance.CheckRessources(upgradeGoal))
+        if (GameManager.Instance.CheckUpgrade(upgradeGoal))
         {
             nextAction = upgradeGoal;
         }
@@ -162,10 +181,18 @@ public class AI : MonoBehaviour
 
     void CheckUpgrade(ActionSO a)
     {
-        //if (upgradeGoal == (UpgradeSO)a)
-        //{
-        //    FindNextUpgradeGoal();
-        //}
+        foreach (var item in MenuManager.Instance.substitutes)
+        {
+            foreach (var sub in item.substitutes)
+            {
+                if (upgradeGoal == a || sub == a)
+                {
+                    FindNextUpgradeGoal();
+                }
+            }
+        }
+
+
     }
 
     public bool CheckAutomaticUpkeep()
@@ -260,79 +287,42 @@ public class AI : MonoBehaviour
         if (a.GetType() == typeof(ProductionSO))
         {
             ProductionSO p = (ProductionSO)a;
-            Ressources tempCost = UpgradeManager.Instance.CheckCost(p);
-            bool[] temp = GameManager.Instance.FindMissingRessources(tempCost);
 
             ActionSO tempAction = (ActionSO)ScriptableObject.CreateInstance("ActionSO");
-            for (int i = 0; i < 9; i++)
+
+            bool found = false;
+            for (int j = 0; j < behaviour.preferredMoneyProduction.Length; j++)
             {
-                bool found = false;
-                if (!temp[i]) continue;
-                switch (i)
+                if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredMoneyProduction[j]))
                 {
-                    case 0:
-                        for (int j = 0; j < behaviour.preferredEnergyProduction.Length; j++)
-                        {
-                            if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredEnergyProduction[j]))
-                            {
-                                found = true;
-                                tempAction = behaviour.preferredEnergyProduction[j];
-                                break;
-                            }
-                        }
-                        break;
-                    case 1:
-                        for (int j = 0; j < behaviour.preferredFoodProduction.Length; j++)
-                        {
-                            if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredFoodProduction[j]))
-                            {
-                                found = true;
-                                tempAction = behaviour.preferredFoodProduction[j];
-                                break;
-                            }
-                        }
-                        break;
-                    case 2:
-                        for (int j = 0; j < behaviour.preferredWasteProduction.Length; j++)
-                        {
-                            if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredWasteProduction[j]))
-                            {
-                                found = true;
-                                tempAction = behaviour.preferredWasteProduction[j];
-                                break;
-                            }
-                        }
-                        break;
-                    case 5:
-                        for (int j = 0; j < behaviour.preferredMoneyProduction.Length; j++)
-                        {
-                            if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredMoneyProduction[j]))
-                            {
-                                found = true;
-                                tempAction = behaviour.preferredMoneyProduction[j];
-                                break;
-                            }
-                        }
-                        break;
-
-                    default:
-                        //   print("Missing something for production");
-                        break;
+                    found = true;
+                    tempAction = behaviour.preferredMoneyProduction[j];
+                    break;
                 }
-
-                if (found)
+            }
+            if (found)
+            {
+                if (GameManager.Instance.CheckRessources(tempAction))
                 {
-                    if (GameManager.Instance.CheckRessources(tempAction))
-                    {
-                        nextAction = tempAction;
-                        if (tempAction.GetType() == typeof(ProductionSO)) overshootCounter = overshoot;
+                    nextAction = tempAction;
+                    if (tempAction.GetType() == typeof(ProductionSO)) overshootCounter = overshoot;
 
-                        return;
-                    }
-                    else
-                    {
-                        FindProductionMethodsNoLoop(tempAction);
-                    }
+                    return;
+                }
+                else
+                {
+                    FindProductionMethodsNoLoop(tempAction);
+                }
+            }
+        }
+        else
+        {
+            for (int j = 0; j < behaviour.preferredMoneyProduction.Length; j++)
+            {
+                if (UpgradeManager.Instance.unlockedActions.Contains(behaviour.preferredMoneyProduction[j]))
+                {
+                    nextAction = behaviour.preferredMoneyProduction[j];
+                    break;
                 }
             }
         }
@@ -471,14 +461,27 @@ public class AI : MonoBehaviour
     {
         if (nextAction == null)
         {
-            // print("Bot is waiting");
+            print("No next action");
             return;
         }
 
 
+        Interactable temp;
 
-        Interactable temp = MenuManager.Instance.FindInteractable(nextAction);
-        if (!showAIActions)
+
+        if (actionsToDisable.Count > 0)
+        {
+            temp = MenuManager.Instance.FindToggle(nextAction);
+        }
+        else if (nextAction == upgradeGoal) temp = MenuManager.Instance.FindInteractable(nextAction);
+        else
+        {
+            temp = MenuManager.Instance.FindProduction(nextAction);
+        }
+
+        if (temp == null) return;
+
+        if (!showAIActions || TimeManager.Instance.framesPerTime < 8)
             temp.ExecuteAction();
         else
         {
@@ -562,6 +565,7 @@ public class AI : MonoBehaviour
 
     public void CheckUpgrades()
     {
+        if (behaviour == null) return;
         if (behaviour.upgradeStep >= behaviour.upgradeGoals.Length)
         {
             foundAllUpgrades = true;

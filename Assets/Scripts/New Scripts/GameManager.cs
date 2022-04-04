@@ -272,6 +272,25 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
+    public bool CheckUpgrade(ActionSO a)
+    {
+
+        if (a.GetType() == typeof(UpgradeSO))
+        {
+            UpgradeSO u = (UpgradeSO)a;
+            // print(u.price);
+            return u.price <= Money;
+        }
+        else if (a.GetType() == typeof(ProductionSO))
+        {
+            ProductionSO u = (ProductionSO)a;
+            print(u.upgradeLevels[UpgradeManager.Instance.CheckUpgradeNumber(u) + 1].cost);
+            return CheckRessources(u.upgradeLevels[UpgradeManager.Instance.CheckUpgradeNumber(u)+1].cost);
+        }
+
+        return false;
+    }
+
     public bool CheckRessources(Ressources r)
     {
         //Compare incoming ressources with available ressources and return true/false depending on whether the player has enough ressources.

@@ -18,10 +18,10 @@ MonoBehaviour:
   description: 'Farmers can''t control insects anymore. Massive scapes to the environment
     amid fears of loss in production. '
   buttonText: Continue
+  cameraTarget: 9
   thresholdCounter: 0
   type: 1
-  upgrade: {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
-  preventionUpgrade: {fileID: 0}
-  threshold: 6
-  RNG: 50
+  upgrade: {fileID: 11400000, guid: aa826cf98be882348a881ef0ec468a27, type: 2}
+  preventionUpgrade: {fileID: 11400000, guid: c2a55e0f99e19f84782ef562c548abf9, type: 2}
+  threshold: 1
   triggerEvent: {fileID: 11400000, guid: 287823639b3b0a942b75f2954518b25c, type: 2}

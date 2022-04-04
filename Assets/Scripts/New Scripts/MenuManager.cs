@@ -22,9 +22,11 @@ public class MenuManager : MonoBehaviour
     public FoodTabButton vegetableButton;
     public FoodTabButton insectButton;
     public FoodTabButton algaeButton;
-
+    public SubstituteItem[] substitutes;
     //    public List<Interactable> interactables;
+    public Interactable[] production;
     public Interactable[] interactables;
+    public Interactable[] toggles;
     public UpgradeManager upgradeManager;
     public DescriptionWindow productionDescriptionWindow;
     public DescriptionWindow upgradeDescriptionWindow;
@@ -38,6 +40,12 @@ public class MenuManager : MonoBehaviour
     [Button]
     public void FindAllInteractables()
     {
+        production = new Interactable[0];
+        production = (Interactable[])GameObject.FindObjectsOfType<ActionButton>(true);
+
+        toggles = new Interactable[0];
+        toggles = (Interactable[])GameObject.FindObjectsOfType<ActionSwitch>(true);
+
         interactables = new Interactable[0];
         interactables = (Interactable[])GameObject.FindObjectsOfType<Interactable>(true);
         foreach (var item in interactables)
@@ -48,7 +56,8 @@ public class MenuManager : MonoBehaviour
                 if (a.action.GetType() == typeof(ProductionSO))
                 {
                     if (item.GetComponent<ActionButton>().requiredUpgrade != null)
-                    { }
+                    {
+                    }
                     else
                         upgradeManager.UnlockAction(item.GetComponent<ActionButton>().action);
                 }
@@ -102,7 +111,8 @@ public class MenuManager : MonoBehaviour
                 upgradeDescriptionWindow.UpdateDescription(a.action);
             }
         }
-        else {
+        else
+        {
             if (a.action.GetType() == typeof(ProductionSO))
             {
                 productionDescriptionWindow.gameObject.SetActive(true);
@@ -119,6 +129,118 @@ public class MenuManager : MonoBehaviour
         upgradeDescriptionWindow.gameObject.SetActive(false);
 
     }
+    public Interactable CheckAlternativeProduction(ActionSO a)
+    {
+        for (int i = 0; i < substitutes.Length; i++)
+        {
+            if (substitutes[i].mainItem == a)
+            {
+                print("Found sub");
+                foreach (var item in substitutes[i].substitutes)
+                {
+                    foreach (var interactable in interactables)
+                    {
+                        if (item == interactable.action && interactable.GetType() != typeof(ActionSwitch)) return interactable;
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    public Interactable FindToggle(ActionSO a)
+    {
+        if (a == null) return null;
+        Interactable temp = null;
+
+        foreach (Interactable item in toggles)
+        {
+            if (item.action == a)
+            {
+                temp = item;
+            }
+        }
+        if (temp == null)
+        {
+            temp = CheckAlternativeProduction(a);
+
+            if (temp == null)
+            {
+                print(a + " cancer");
+                return null;
+            }
+        }
+        if (!temp.gameObject.activeInHierarchy)
+        {
+
+            if (temp.transform.IsChildOf(foodTab.transform))
+            {
+                if (!foodTab.activeInHierarchy)
+                {
+                    temp = foodButton;
+                }
+                else
+                {
+                    if (temp.transform.IsChildOf(meatTab.transform)) { temp = meatButton; }
+                    else if (temp.transform.IsChildOf(vegetableTab.transform)) { temp = vegetableButton; }
+                    else if (temp.transform.IsChildOf(insectTab.transform)) { temp = insectButton; }
+                    else if (temp.transform.IsChildOf(algaeTab.transform)) { temp = algaeButton; }
+                }
+            }
+            if (temp.transform.IsChildOf(wasteTab.transform)) { temp = wasteButton; }
+            if (temp.transform.IsChildOf(energyTab.transform)) { temp = energyButton; }
+        }
+
+        return temp;
+    }
+
+
+    public Interactable FindProduction(ActionSO a)
+    {
+        if (a == null) return null;
+        Interactable temp = null;
+
+        foreach (Interactable item in production)
+        {
+            if (item.action == a)
+            {
+                temp = item;
+            }
+        }
+        if (temp == null)
+        {
+            temp = CheckAlternativeProduction(a);
+
+            if (temp == null)
+            {
+                print(a + " cancer");
+                return null;
+            }
+        }
+        if (!temp.gameObject.activeInHierarchy)
+        {
+
+            if (temp.transform.IsChildOf(foodTab.transform))
+            {
+                if (!foodTab.activeInHierarchy)
+                {
+                    temp = foodButton;
+                }
+                else
+                {
+                    if (temp.transform.IsChildOf(meatTab.transform)) { temp = meatButton; }
+                    else if (temp.transform.IsChildOf(vegetableTab.transform)) { temp = vegetableButton; }
+                    else if (temp.transform.IsChildOf(insectTab.transform)) { temp = insectButton; }
+                    else if (temp.transform.IsChildOf(algaeTab.transform)) { temp = algaeButton; }
+                }
+            }
+            if (temp.transform.IsChildOf(wasteTab.transform)) { temp = wasteButton; }
+            if (temp.transform.IsChildOf(energyTab.transform)) { temp = energyButton; }
+        }
+
+        return temp;
+    }
+
     public Interactable FindInteractable(ActionSO a)
     {
         if (a == null) return null;
@@ -133,8 +255,13 @@ public class MenuManager : MonoBehaviour
         }
         if (temp == null)
         {
-            print(a);
-            return null;
+            temp = CheckAlternativeProduction(a);
+
+            if (temp == null)
+            {
+                print(a + " cancer");
+                return null;
+            }
         }
         if (!temp.gameObject.activeInHierarchy)
         {
@@ -176,4 +303,12 @@ public class MenuManager : MonoBehaviour
         wasteTab.SetActive(false);
         populationTab.SetActive(false);
     }
+}
+
+[System.Serializable]
+public class SubstituteItem
+{
+    public ActionSO mainItem;
+    public ActionSO[] substitutes;
+
 }

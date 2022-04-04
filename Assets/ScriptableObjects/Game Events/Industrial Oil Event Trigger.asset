@@ -18,10 +18,10 @@ MonoBehaviour:
   description: Consequences of oil leaks cost millions more to taxpayers. Cleaning
     up after industries leaks have increased both taxes and soaring prices of oil.
   buttonText: Continue
+  cameraTarget: 2
   thresholdCounter: 0
   type: 1
-  upgrade: {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
+  upgrade: {fileID: 11400000, guid: d933f9ea056b579438893c13f704b405, type: 2}
   preventionUpgrade: {fileID: 11400000, guid: da39fc340be69f042993a9e148f09c19, type: 2}
-  threshold: 6
-  RNG: 50
+  threshold: 1
   triggerEvent: {fileID: 11400000, guid: c4aa91f8b99d2364190e58e6a262c468, type: 2}

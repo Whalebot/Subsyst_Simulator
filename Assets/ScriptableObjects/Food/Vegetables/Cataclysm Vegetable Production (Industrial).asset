@@ -15,7 +15,7 @@ MonoBehaviour:
   title: Industrial Vegetable Production
   description: Industrial Vegetable Production
   icon: {fileID: 2741983223664328557, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
-  cameraTarget: 1
+  cameraTarget: 7
   dependantUpgrade: {fileID: 0}
   upgradeLimit: 3
   upgradeLevels:

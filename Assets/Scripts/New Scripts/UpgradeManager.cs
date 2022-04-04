@@ -96,10 +96,27 @@ public class UpgradeManager : MonoBehaviour
     public int CheckUpgradeNumber(ActionSO p)
     {
         int upgradeNumber = 0;
+        int altNumber = 0;
         foreach (var item in obtainedUpgrades)
         {
             if (item == p) upgradeNumber++;
+
+
+            foreach (var alt in MenuManager.Instance.substitutes)
+            {
+                if (p == alt.mainItem)
+                {
+
+                    foreach (var sub in alt.substitutes)
+                    {
+                        if (sub == item) altNumber++;
+                    }
+                }
+            }
         }
+
+        if (altNumber > upgradeNumber) upgradeNumber = altNumber;
+
         return upgradeNumber;
     }
     public Ressources CheckCost(ProductionSO p)
@@ -161,7 +178,7 @@ public class UpgradeManager : MonoBehaviour
         //    print("ERROR: BUTTON SHOULD BE UNAVAILABLE, Can't afford upgrade " + p.name);
         //    return;
         //}
-
+        print(p);
         obtainedUpgrades.Add(p);
 
 
@@ -183,12 +200,36 @@ public class UpgradeManager : MonoBehaviour
         CameraManager.Instance.SetCinematicCamera(p.cameraTarget);
     }
 
+    public void ReplaceAction(ActionSO oldActions, ActionSO newActions)
+    {
+        //if (obtainedUpgrades.Contains((ProductionSO)oldActions))
+        //{
+        //    obtainedUpgrades.Remove((ProductionSO)oldActions);
+        //    obtainedUpgrades.Add((ProductionSO)newActions);
+        //}
+
+        List<ProductionSO> tempList = new List<ProductionSO>();
+        foreach (var item in obtainedUpgrades)
+        {
+            if (item == oldActions)
+            {
+                print("z");
+                tempList.Add((ProductionSO)item);
+            }
+        }
+        foreach (var item in tempList)
+        {
+            obtainedUpgrades.Remove(item);
+            obtainedUpgrades.Add(newActions);
+        }
+    }
+
     //Does not update game state
     public void FreeUpgrade(ActionSO p)
     {
         if (!TutorialScript.Instance.inTutorial)
             TimeManager.isStarted = true;
-
+        print(p + " free");
         obtainedUpgrades.Add(p);
         upgradeEvent?.Invoke(p);
         GameManager.Instance.updateGameState?.Invoke();

@@ -16,6 +16,12 @@ public class ActionSwitch : Interactable
 
     // Start is called before the first frame update
 
+    private void Awake()
+    {
+        button = GetComponent<Button>();
+        if (requiredUpgrade != null) requiresUpgrade = true;
+    }
+
     public override void ActivateButton()
     {
         if (lockObject != null)
@@ -47,11 +53,13 @@ public class ActionSwitch : Interactable
     {
         if (!UpgradeManager.Instance.obtainedUpgrades.Contains(requiredUpgrade))
         {
+            requiresUpgrade = true;
             state = SwitchState.RequiresUpgrade;
             DisableButton();
             return;
         }
         else if (state == SwitchState.RequiresUpgrade) ActivateButton();
+        requiresUpgrade = false;
     }
 
     public override void ExecuteAction()

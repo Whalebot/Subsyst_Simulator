@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Clean Air
   m_EditorClassIdentifier: 
   showInPaper: 1
-  image: {fileID: 21300000, guid: 0db43ed7ff9404c46964c2e223da64f5, type: 3}
+  image: {fileID: 21300000, guid: 59da80482fbe1644280752e6af56e574, type: 3}
   title: Clean Air
-  description: Babbidi
-  buttonText: Bubbidi
+  description: 'Measures to decrease air pollution are paying off: the city can breath
+    in fresh air again and the smog is dissappearing.'
+  buttonText: Continue
   cameraTarget: 4
   thresholdCounter: 0
   type: 1

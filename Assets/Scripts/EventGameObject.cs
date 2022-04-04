@@ -24,8 +24,10 @@ public class EventGameObject : MonoBehaviour
     {
         if (p == gameEvent)
         {
+            if(activatedObject != null)
             activatedObject.SetActive(true);
-            deactivatedObject.SetActive(false);
+            if (deactivatedObject!= null)
+                deactivatedObject.SetActive(false);
         }
     }
 
@@ -33,8 +35,10 @@ public class EventGameObject : MonoBehaviour
     {
         if (p == resetEvent && resetEvent != null)
         {
-            activatedObject.SetActive(false);
-            deactivatedObject.SetActive(true);
+            if (activatedObject != null)
+                activatedObject.SetActive(false);
+            if (deactivatedObject != null)
+                deactivatedObject.SetActive(true);
         }
     }
 }

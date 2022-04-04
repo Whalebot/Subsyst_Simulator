@@ -17,6 +17,7 @@ MonoBehaviour:
   title: Climate change
   description: Environmental damage to the ecosystem is unrecoverable.
   buttonText: Continue
+  cameraTarget: 6
   thresholdCounter: 0
   type: 1
   positiveThresholds:

@@ -20,13 +20,11 @@ public class VisualizerManager : MonoBehaviour
 
     public GameObject[] statueParts;
     public Animator protestAnim;
-    public GameObject[] oilGO;
-    public int oilUpgrades = 0;
-    public UpgradeSO oilUpgrade;
+
     public GameObject[] wasteGO;
     public GameObject[] processedWasteGO;
     public int wasteUpgrades = 0;
-    public UpgradeSO wasteUpgrade;
+    public ActionSO wasteUpgrade;
     public UpgradeAnimation[] populationAnimations;
 
     public EnergyVisuals[] energyVisuals;
@@ -86,11 +84,7 @@ public class VisualizerManager : MonoBehaviour
             cataclysmPeopleGO[i].SetActive(false);
         }
 
-        for (int i = 0; i < oilGO.Length - 1; i++)
-        {
-            if (oilGO.Length - 1 < i) break;
-            oilGO[i].GetComponentInChildren<Animator>().SetBool("isOn", false);
-        }
+     
 
         for (int i = 0; i < wasteGO.Length - 1; i++)
         {
@@ -143,7 +137,7 @@ public class VisualizerManager : MonoBehaviour
         {
             if (trashGO.Length - 1 < i) break;
 
-            trashGO[i].GetComponentInChildren<Animator>().SetBool("isOn", 100 * Mathf.Pow(10, i) < GameManager.Instance.Pollution);
+            trashGO[i].GetComponentInChildren<Animator>().SetBool("isOn", 10 * Mathf.Pow(10, i) < GameManager.Instance.Pollution);
         }
         for (int i = 0; i < statueParts.Length; i++)
         {
@@ -160,7 +154,7 @@ public class VisualizerManager : MonoBehaviour
         {
             if (populationGO.Length - 1 < i) break;
 
-            populationGO[i].GetComponentInChildren<Animator>().SetBool("isOn", 100 * Mathf.Pow(10, i) < maxMoney);
+            populationGO[i].GetComponentInChildren<Animator>().SetBool("isOn", 10 * Mathf.Pow(10, i) < maxMoney);
         }
         for (int i = 0; i < peopleGO.Length; i++)
         {
@@ -174,12 +168,7 @@ public class VisualizerManager : MonoBehaviour
             cataclysmPeopleGO[i].SetActive(!(10 * Mathf.Pow(10, i) > GameManager.Instance.Population));
         }
 
-        oilUpgrades = UpgradeManager.Instance.CheckUpgradeNumber(oilUpgrade);
-        for (int i = 0; i < oilUpgrades; i++)
-        {
-            if (oilGO.Length - 1 < i) break;
-            oilGO[i].GetComponentInChildren<Animator>().SetBool("isOn", true);
-        }
+   
         wasteUpgrades = UpgradeManager.Instance.CheckUpgradeNumber(wasteUpgrade);
         for (int i = 0; i < wasteUpgrades; i++)
         {

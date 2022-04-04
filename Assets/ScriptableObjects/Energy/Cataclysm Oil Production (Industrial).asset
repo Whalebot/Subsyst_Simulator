@@ -40,66 +40,66 @@ MonoBehaviour:
       pollution: 0
       bees: 0
       naturalCapital: 0
-  - upgradeCost: 0
+  - upgradeCost: 100
     cost:
       energy: 0
       food: 0
       waste: 0
       approval: 0
       population: 0
-      money: 0
+      money: 10
       pollution: 0
       bees: 0
       naturalCapital: 0
     result:
-      energy: 0
+      energy: 10
       food: 0
       waste: 0
       approval: 0
       population: 0
       money: 0
-      pollution: 0
+      pollution: 10
       bees: 0
       naturalCapital: 0
-  - upgradeCost: 0
+  - upgradeCost: 1000
     cost:
       energy: 0
       food: 0
       waste: 0
       approval: 0
       population: 0
-      money: 0
+      money: 100
       pollution: 0
       bees: 0
       naturalCapital: 0
     result:
-      energy: 0
+      energy: 100
       food: 0
       waste: 0
       approval: 0
       population: 0
       money: 0
-      pollution: 0
+      pollution: 100
       bees: 0
       naturalCapital: 0
-  - upgradeCost: 0
+  - upgradeCost: 10000
     cost:
       energy: 0
       food: 0
       waste: 0
       approval: 0
       population: 0
-      money: 0
+      money: 1000
       pollution: 0
       bees: 0
       naturalCapital: 0
     result:
-      energy: 0
+      energy: 1000
       food: 0
       waste: 0
       approval: 0
       population: 0
       money: 0
-      pollution: 0
+      pollution: 1000
       bees: 0
       naturalCapital: 0

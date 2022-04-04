@@ -18,10 +18,10 @@ MonoBehaviour:
   description: Insect production out of control. Scientists warn there might be unforeseen
     consequences to the fast industrialization of insect production.
   buttonText: Continue
+  cameraTarget: 0
   thresholdCounter: 0
   type: 0
-  upgrade: {fileID: 11400000, guid: 4bb461810768c5f408db14fa933f36a5, type: 2}
-  preventionUpgrade: {fileID: 0}
-  threshold: 5
-  RNG: 100
+  upgrade: {fileID: 11400000, guid: aa826cf98be882348a881ef0ec468a27, type: 2}
+  preventionUpgrade: {fileID: 11400000, guid: c2a55e0f99e19f84782ef562c548abf9, type: 2}
+  threshold: 1
   triggerEvent: {fileID: 11400000, guid: 62cb17c22f6e5c1449a61561b02b1cfa, type: 2}

@@ -18,10 +18,10 @@ MonoBehaviour:
   description: Largest cull in history. Millions of cattle and poultry culled due
     to illness, major blow to animal protein production.
   buttonText: Continue
+  cameraTarget: 1
   thresholdCounter: 1
   type: 0
-  upgrade: {fileID: 11400000, guid: a1030fd25225e464ba0eb2bae4988907, type: 2}
-  preventionUpgrade: {fileID: 0}
-  threshold: 6
-  RNG: 50
+  upgrade: {fileID: 11400000, guid: a8a8793fa596b694e86c3beef538b4a2, type: 2}
+  preventionUpgrade: {fileID: 11400000, guid: 850dcac1398fdc042bd0dd9161f4fd14, type: 2}
+  threshold: 1
   triggerEvent: {fileID: 11400000, guid: ec12b1e582916734c9636be6884d1c6e, type: 2}

@@ -7,11 +7,10 @@ using UnityEngine;
 
 public class UpgradeEventSO : GameEventSO
 {
-    public UpgradeSO upgrade;
+    public ActionSO upgrade;
     public UpgradeSO preventionUpgrade;
 
     public int threshold;
-    public int RNG = 1000;
     public GameEventSO triggerEvent;
 
 

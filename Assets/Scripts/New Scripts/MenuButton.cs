@@ -24,7 +24,7 @@ public class MenuButton : Interactable
             MenuManager.Instance.CloseAllTabs();
             isActive = true;
             setActiveTarget.SetActive(true);
-            InputManager.Instance.FindInteractablesInObject(setActiveTarget);
+            InputManager.Instance.FindInteractablesInObjectTab(setActiveTarget);
         }
 
     }

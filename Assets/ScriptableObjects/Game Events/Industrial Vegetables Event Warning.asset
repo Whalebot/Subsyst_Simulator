@@ -19,10 +19,10 @@ MonoBehaviour:
     rapid degradation of national soil and increasing risk of permanent damange due
     to industrial agriculture. '
   buttonText: Continue
+  cameraTarget: 0
   thresholdCounter: 0
   type: 0
-  upgrade: {fileID: 11400000, guid: 6d8c0bca735eec341bafd5075aa7d5d4, type: 2}
-  preventionUpgrade: {fileID: 0}
-  threshold: 5
-  RNG: 100
+  upgrade: {fileID: 11400000, guid: 7b29c56dbe9e3de49836cdefb4694607, type: 2}
+  preventionUpgrade: {fileID: 11400000, guid: dccc33e0cb58c344aab6fd006c33d190, type: 2}
+  threshold: 1
   triggerEvent: {fileID: 11400000, guid: 8afeb3aa066c2d949a8c9bf26b2480f2, type: 2}

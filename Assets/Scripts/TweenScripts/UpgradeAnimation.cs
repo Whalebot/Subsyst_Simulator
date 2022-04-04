@@ -7,6 +7,8 @@ public class UpgradeAnimation : MonoBehaviour
     public bool triggered;
     public UpgradeSO targetUpgrade;
     public UpgradeSO altUpgrade;
+    public ProductionSO productionSO;
+    public int productionLevel;
     public Vector3 initialScale;
     public Vector3 finalScale;
     public float speed = 0f;
@@ -26,8 +28,8 @@ public class UpgradeAnimation : MonoBehaviour
 
     public void CheckUpgrade(ActionSO a)
     {
-        if (targetUpgrade == null && altUpgrade == null) return;
-        if (a == targetUpgrade || a == altUpgrade && altUpgrade != null)
+        if (targetUpgrade == null && altUpgrade == null && productionSO == null) return;
+        if (a == targetUpgrade && targetUpgrade != null || a == altUpgrade && altUpgrade != null || a == productionSO && productionSO != null && productionLevel <= UpgradeManager.Instance.CheckUpgradeNumber(productionSO))
         {
             UpgradeManager.Instance.upgradeEvent -= CheckUpgrade;
             Upgrade();

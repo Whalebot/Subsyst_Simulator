@@ -18,10 +18,10 @@ MonoBehaviour:
   description: Over industrialization of alge production casues changes in algae
     metablosims. Algae growth falls dramatically triggering massive lack of food.
   buttonText: Continue
-  thresholdCounter: 0
+  cameraTarget: 8
+  thresholdCounter: 1
   type: 1
-  upgrade: {fileID: 11400000, guid: ab667727a48ceb444a955199a59bcf41, type: 2}
-  preventionUpgrade: {fileID: 0}
-  threshold: 6
-  RNG: 50
+  upgrade: {fileID: 11400000, guid: ba54b8a4aeb57484a87b622671da571d, type: 2}
+  preventionUpgrade: {fileID: 11400000, guid: d7ff885891fdb2844ae5bf791e30b3eb, type: 2}
+  threshold: 1
   triggerEvent: {fileID: 11400000, guid: b51866df07d5af74ba5274e129d97c3c, type: 2}
