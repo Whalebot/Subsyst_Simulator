@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Warning Low Approval
   m_EditorClassIdentifier: 
   showInPaper: 1
-  image: {fileID: 21300000, guid: cbf920d5add65e34eb1cbb93fbb2a322, type: 3}
+  image: {fileID: 21300000, guid: d8df87724e4073b478d8106b87f3aaba, type: 3}
   title: Climate protest
   description: Citizens are gathering on the streets in protest due to lack of food
     and high pollution.
   buttonText: Continue
+  cameraTarget: 0
   thresholdCounter: 0
   type: 1
   positiveThresholds:

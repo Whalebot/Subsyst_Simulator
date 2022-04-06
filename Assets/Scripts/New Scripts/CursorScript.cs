@@ -23,6 +23,8 @@ public class CursorScript : MonoBehaviour
     public Sprite cursorIndustrialdown;
     public AudioSource AS;
 
+    public RectTransform aiCursor;
+
     public GameObject descriptionGO;
     public TextMeshProUGUI descriptionText;
     private void Awake()
@@ -42,26 +44,38 @@ public class CursorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rect.position = Input.mousePosition + offset * Screen.width / 1080;
-        if (!foundInteractable)
+        if (InputManager.Instance.makeyMakeyMode)
         {
-            if (Input.GetMouseButtonDown(0)) {
-                ClickSound();
-            }
-            if (Input.GetMouseButton(0))
+            rect.position = aiCursor.position;
+            img.enabled = false;
+        }
+        else
+        {
+            img.enabled = true;
+            rect.position = Input.mousePosition + offset * Screen.width / 1080;
+            if (!foundInteractable)
             {
-                img.sprite = cursorClickdown;
+                if (Input.GetMouseButtonDown(0))
+                {
+                    ClickSound();
+                }
+                if (Input.GetMouseButton(0))
+                {
+                    img.sprite = cursorClickdown;
+                }
+                else
+                    img.sprite = cursorGeneral;
             }
-            else
-                img.sprite = cursorGeneral;
         }
     }
 
-    public void SetDescription(string s) {
+    public void SetDescription(string s)
+    {
         descriptionGO.SetActive(true);
         descriptionText.text = s;
     }
-    public void ResetDescription() {
+    public void ResetDescription()
+    {
         descriptionGO.SetActive(false);
     }
 

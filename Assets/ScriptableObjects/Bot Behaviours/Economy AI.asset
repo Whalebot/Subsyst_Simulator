@@ -18,43 +18,20 @@ MonoBehaviour:
   sustainable: 0
   upgradeGoals:
   - {fileID: 11400000, guid: 27df7f4d92b8af642a5c2b534d5e7f9f, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: a8a8793fa596b694e86c3beef538b4a2, type: 2}
   - {fileID: 11400000, guid: 3183e04d06678a74fa089cf67352704b, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: d933f9ea056b579438893c13f704b405, type: 2}
+  - {fileID: 11400000, guid: 2f871fcc081219f4d824a32af0a02f21, type: 2}
+  - {fileID: 11400000, guid: f7ed384e695f1e24fa25ba5009428e62, type: 2}
+  - {fileID: 11400000, guid: a8a8793fa596b694e86c3beef538b4a2, type: 2}
+  - {fileID: 11400000, guid: d933f9ea056b579438893c13f704b405, type: 2}
+  - {fileID: 11400000, guid: a8a8793fa596b694e86c3beef538b4a2, type: 2}
+  - {fileID: 11400000, guid: d933f9ea056b579438893c13f704b405, type: 2}
   preferredMoneyProduction:
-  - {fileID: 0}
   - {fileID: 11400000, guid: 7e58ff45a29fd3c448d485882d315ede, type: 2}
   preferredFoodProduction:
-  - {fileID: 0}
   - {fileID: 11400000, guid: 7e58ff45a29fd3c448d485882d315ede, type: 2}
   preferredEnergyProduction:
-  - {fileID: 0}
   - {fileID: 11400000, guid: c73380a01f7d6394bb4462001de7b1af, type: 2}
   preferredWasteProduction:
   - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}

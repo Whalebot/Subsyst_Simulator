@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public static bool gameStart;
     public static bool paused;
     public static bool pauseAnimations;
-    public enum GameMode { Default, Autoplay, MakeyMakey, Tutorial }
+    public enum GameMode { Default, Autoplay, MakeyMakey, Tutorial, DataVisualization }
     public GameMode gameMode;
     public bool disableGraphics;
     public GameObject[] gameVisuals;
@@ -41,6 +41,10 @@ public class GameManager : MonoBehaviour
         {
             item.SetActive(true);
         }
+        UpdateGraphics();
+    }
+
+    void UpdateGraphics() {
         UpgradeManager.Instance.upgradeEvent?.Invoke(null);
         EventManager.Instance.cataclysmTrigger.Invoke(null);
         updateGameState?.Invoke();
@@ -166,7 +170,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
+        if (gameMode == GameMode.DataVisualization) {
+            DisableGraphics();
+        }
     }
 
     public void StartGame()
@@ -174,7 +180,7 @@ public class GameManager : MonoBehaviour
         gameStart = true;
         gameStartEvent?.Invoke();
         paused = false;
-        EnableGraphics();
+        UpdateGraphics();
         // Time.timeScale = 1;
     }
 
@@ -187,7 +193,7 @@ public class GameManager : MonoBehaviour
     public void ResumeGame()
     {
         paused = false;
-        EnableGraphics();
+        UpdateGraphics();
         CameraManager.Instance.SetCinematicCamera();
         //Time.timeScale = 1;
     }
@@ -195,7 +201,7 @@ public class GameManager : MonoBehaviour
     public void Unpause()
     {
         paused = false;
-        EnableGraphics();
+        UpdateGraphics();
     }
 
     [Button]
@@ -558,6 +564,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void AttractMode()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

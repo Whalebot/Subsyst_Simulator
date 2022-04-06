@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using TMPro;
+using System.IO;
+using Sirenix.OdinInspector;
 
 public class Telemetry : MonoBehaviour
 {
@@ -18,25 +20,46 @@ public class Telemetry : MonoBehaviour
     public TextMeshProUGUI institutionNameText;
     public bool sendTelemetry;
     public bool sendHeatmap = true;
+
+    public string testCSV;
+    public SavedData saveData;
     private void Awake()
     {
         Instance = this;
+        saveData = new SavedData();
+    }
+
+    [Button]
+    public void SaveData()
+    {
+        saveData.testCSV = testCSV;
+
+        string jsonData = JsonUtility.ToJson(saveData, true);
+        File.WriteAllText(Application.persistentDataPath + "/saveData.json", jsonData);
     }
 
     void Start()
     {
-
-        if (userName == null)
+        if (InputManager.Instance.makeyMakeyMode)
         {
-            nameWindow.SetActive(true);
+            userName = "Exhibition";
+            institutionName = "The Royal Danish Academy";
+            GameManager.Instance.StartGame();
         }
-        if (userName != "")
+        else
         {
-            userNameText.text = userName;
-        }
-        if (institutionName != "")
-        {
-            institutionNameText.text = institutionName;
+            if (userName == null)
+            {
+                nameWindow.SetActive(true);
+            }
+            if (userName != "")
+            {
+                userNameText.text = userName;
+            }
+            if (institutionName != "")
+            {
+                institutionNameText.text = institutionName;
+            }
         }
 
         guid = System.Guid.NewGuid();
@@ -61,15 +84,19 @@ public class Telemetry : MonoBehaviour
     }
     public IEnumerator Post(ActionSO action)
     {
+        //testCSV += userName + ",";
+        //testCSV += institutionName + ",";
+        //testCSV += "\n";
+
         float total_time = (float)(System.DateTime.Now - counter).TotalSeconds;
         //print(total_time.ToString());
         WWWForm form = new WWWForm();
-        if (userName!= null)
+        if (userName != null)
             form.AddField("entry.408889876", userName);
-        if(institutionName != null)
-        form.AddField("entry.1183520150", institutionName);
+        if (institutionName != null)
+            form.AddField("entry.1183520150", institutionName);
         form.AddField("entry.92589871", guid.ToString());
-        form.AddField("entry.1657388280", action.name.ToString() + " Lvl " + UpgradeManager.Instance.CheckUpgradeNumber(action));
+        form.AddField("entry.1657388280", action.name.ToString() + " Lvl " + (UpgradeManager.Instance.CheckUpgradeNumber(action) + 1));
         form.AddField("entry.1999334966", FormatTime(Time.time));
         if (AI.Instance.isAIActive)
             form.AddField("entry.1351457628", AI.Instance.behaviour.name.ToString());
@@ -187,4 +214,11 @@ public class Telemetry : MonoBehaviour
         int seconds = (int)time - 60 * minutes;
         return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+
+
+}
+[System.Serializable]
+public class SavedData
+{
+    public string testCSV;
 }

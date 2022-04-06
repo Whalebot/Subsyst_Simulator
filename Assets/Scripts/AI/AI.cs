@@ -33,7 +33,8 @@ public class AI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        botSelectionScreen.SetActive(true);
+        if (!InputManager.Instance.makeyMakeyMode)
+            botSelectionScreen.SetActive(true);
         foreach (var item in bots)
         {
             item.upgradeStep = 0;
@@ -41,6 +42,20 @@ public class AI : MonoBehaviour
         }
         TimeManager.Instance.advanceTimeEvent += CalculateNextAction;
         UpgradeManager.Instance.upgradeEvent += CheckUpgrade;
+    }
+
+    private void Update()
+    {
+        if (InputManager.Instance.makeyMakeyMode) showCursor = true;
+        else if (!isAIActive) showCursor = false;
+    }
+
+    public void AttractMode() {
+        int RNG = Random.Range(0, bots.Length);
+        behaviour = bots[RNG];
+        isAIActive = true;
+        FindNextUpgradeGoal();
+        DisableAllAutomaticProductions();
     }
 
     public void SelectAI(int i)

@@ -78,6 +78,15 @@ public class UIManager : MonoBehaviour
         oldRessources = new Ressources();
         gameManager.SetRessources(gameManager.ressources, oldRessources);
         UpdateText();
+        if (uiMode == UIMode.None)
+            NoneUI();
+    }
+
+    void NoneUI() {
+        canvas1.enabled = false;
+        canvas2.enabled = false;
+        canvas3.enabled = false;
+        canvas4.enabled = false;
     }
 
     public void ToggleUI()

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Waste Production (Upcycling)
   m_EditorClassIdentifier: 
   title: Upcycling
-  description: Bring new value to recycled waste to increase its value.
+  description: Bring new value to recycled waste.
   icon: {fileID: 2074514824800363442, guid: 09e2a133fb05c984b818fca226acb5fd, type: 3}
   cameraTarget: 3
   dependantUpgrade: {fileID: 0}

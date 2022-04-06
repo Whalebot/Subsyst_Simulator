@@ -363,6 +363,10 @@ MonoBehaviour:
   action: {fileID: 11400000, guid: a8a8793fa596b694e86c3beef538b4a2, type: 2}
   canPress: 0
   requiresUpgrade: 0
+  upItem: {fileID: 0}
+  downItem: {fileID: 0}
+  leftItem: {fileID: 0}
+  rightItem: {fileID: 0}
   buttonType: 0
   state: 0
   techButton: 0

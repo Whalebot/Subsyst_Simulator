@@ -26,8 +26,27 @@ public class EventDescription : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            GameManager.Instance.ResumeGame();
-            gameObject.SetActive(false);
+            CloseEventDescription();
         }
+    }
+
+    public void CloseEventDescription() {
+        GameManager.Instance.ResumeGame();
+        gameObject.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(AutoCloseDescription());
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
+    IEnumerator AutoCloseDescription() {
+        yield return new WaitForSeconds(5);
+        CloseEventDescription();
     }
 }

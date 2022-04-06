@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class InputManager : MonoBehaviour
 {
     public static InputManager Instance { get; private set; }
+    public bool makeyMakeyMode = false;
     public AICursor cursorScript;
     public GameObject foodButton;
     public GameObject energyButton;
@@ -17,6 +18,9 @@ public class InputManager : MonoBehaviour
     public List<Interactable> interactableList;
 
     public GameObject lastGO;
+
+    public float restartTime;
+    public float timer;
 
     public float positionLimitX;
     public float positionLimitY;
@@ -122,6 +126,13 @@ public class InputManager : MonoBehaviour
     void FindNearestObjectUp()
     {
         DeselectActive();
+
+        if (activeInteractable.upItem != null && activeInteractable.upItem.gameObject.activeInHierarchy)
+        {
+            activeInteractable = activeInteractable.upItem;
+            SelectActive();
+            return;
+        }
         Interactable closestInteractable = activeInteractable;
         float closestDistance = 0;
         float closestDistanceX = 0;
@@ -150,6 +161,14 @@ public class InputManager : MonoBehaviour
     void FindNearestObjectDown()
     {
         DeselectActive();
+
+        if (activeInteractable.downItem != null && activeInteractable.downItem.gameObject.activeInHierarchy)
+        {
+            activeInteractable = activeInteractable.downItem;
+            SelectActive();
+            return;
+        }
+
         Interactable closestInteractable = activeInteractable;
         float closestDistance = 0;
         float closestDistance2 = 0;
@@ -179,7 +198,15 @@ public class InputManager : MonoBehaviour
     [Button]
     void FindNearestObjectRight()
     {
+
+
         DeselectActive();
+        if (activeInteractable.rightItem != null && activeInteractable.rightItem.gameObject.activeInHierarchy)
+        {
+            activeInteractable = activeInteractable.rightItem;
+            SelectActive();
+            return;
+        }
         Interactable closestInteractable = activeInteractable;
         float closestDistance = 0;
         float closestDistance2 = 0;
@@ -190,7 +217,7 @@ public class InputManager : MonoBehaviour
 
                 float tempDistX = item.transform.position.x - activeInteractable.transform.position.x;
                 float tempDistY = item.transform.position.y - activeInteractable.transform.position.y;
-                if (tempDistX > 0 && Mathf.Abs(tempDistY) < positionLimitY)
+                if (tempDistX > 0 && Mathf.Abs(tempDistY) < positionLimitY && Mathf.Abs(tempDistX) > 1)
                 {
                     if (closestDistance == 0 && closestDistance2 == 0 || Mathf.Abs(tempDistX) < closestDistance)
                     {
@@ -210,6 +237,13 @@ public class InputManager : MonoBehaviour
     void FindNearestObjectLeft()
     {
         DeselectActive();
+
+        if (activeInteractable.leftItem != null && activeInteractable.leftItem.gameObject.activeInHierarchy)
+        {
+            activeInteractable = activeInteractable.leftItem;
+            SelectActive();
+            return;
+        }
         Interactable closestInteractable = activeInteractable;
         float closestDistance = 0;
         float closestDistance2 = 0;
@@ -220,7 +254,8 @@ public class InputManager : MonoBehaviour
 
                 float tempDistX = item.transform.position.x - activeInteractable.transform.position.x;
                 float tempDistY = item.transform.position.y - activeInteractable.transform.position.y;
-                if (tempDistX < 0 && Mathf.Abs(tempDistY) < positionLimitY)
+                print(item + " " + tempDistX);
+                if (tempDistX < 0 && Mathf.Abs(tempDistY) < positionLimitY && Mathf.Abs(tempDistX) > 1)
                 {
                     if (closestDistance == 0 && closestDistance2 == 0 || Mathf.Abs(tempDistX) < closestDistance)
                     {
@@ -246,6 +281,7 @@ public class InputManager : MonoBehaviour
 
     void SelectActive()
     {
+        if (!makeyMakeyMode) return;
         AI.Instance.MoveCursorToNextObject(activeInteractable);
         var pointer = new PointerEventData(EventSystem.current);
         ExecuteEvents.Execute(activeInteractable.gameObject, pointer, ExecuteEvents.pointerEnterHandler);
@@ -257,11 +293,19 @@ public class InputManager : MonoBehaviour
         AI.Instance.ClickObject(activeInteractable);
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
         if (GameManager.gameStart)
         {
+            timer -= Time.deltaTime;
+            //if (timer <= 0)
+            //{
+            //    GameManager.Instance.AttractMode();
+            //}
+
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 if (GameManager.Instance.disableGraphics)
@@ -316,9 +360,15 @@ public class InputManager : MonoBehaviour
             {
                 ClickActive();
             }
+            if (makeyMakeyMode)
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    GameManager.Instance.ReloadScene();
+                }
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                AI.Instance.showCursor = !AI.Instance.showCursor;
+
+                makeyMakeyMode = !makeyMakeyMode;
             }
         }
 
