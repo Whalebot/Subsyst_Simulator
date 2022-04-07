@@ -27,6 +27,29 @@ public class Telemetry : MonoBehaviour
     {
         Instance = this;
         saveData = new SavedData();
+        if (HasSaveData()) LoadData();
+        else
+        {
+            CreateSaveData();
+        }
+    }
+    public void CreateSaveData()
+    {
+        testCSV = "";
+        testCSV += "Timestamp,Name,Institution,ID,Realtime,Day,Action Name,Food,Energy,Waste,Pollution,Money,Population,Approval,Natural Capital, Bees,$";
+        SaveData();
+    }
+    public bool HasSaveData()
+    {
+        return File.Exists(Application.persistentDataPath + "/saveData.json");
+    }
+
+
+    [Button]
+    public void LoadData()
+    {
+        saveData = JsonUtility.FromJson<SavedData>(File.ReadAllText(Application.persistentDataPath + "/saveData.json"));
+        testCSV = saveData.testCSV;
     }
 
     [Button]
@@ -48,7 +71,7 @@ public class Telemetry : MonoBehaviour
         }
         else
         {
-            if (userName == null)
+            //if (userName == null)
             {
                 nameWindow.SetActive(true);
             }
@@ -69,9 +92,9 @@ public class Telemetry : MonoBehaviour
 
     }
 
-    private void OnApplicationQuit()
+    private void OnDisable()
     {
-        //StartCoroutine(Post());
+        SaveData();
     }
 
     public void SetName(string s)
@@ -84,93 +107,197 @@ public class Telemetry : MonoBehaviour
     }
     public IEnumerator Post(ActionSO action)
     {
-        //testCSV += userName + ",";
-        //testCSV += institutionName + ",";
-        //testCSV += "\n";
-
-        float total_time = (float)(System.DateTime.Now - counter).TotalSeconds;
-        //print(total_time.ToString());
-        WWWForm form = new WWWForm();
-        if (userName != null)
-            form.AddField("entry.408889876", userName);
-        if (institutionName != null)
-            form.AddField("entry.1183520150", institutionName);
-        form.AddField("entry.92589871", guid.ToString());
-        form.AddField("entry.1657388280", action.name.ToString() + " Lvl " + (UpgradeManager.Instance.CheckUpgradeNumber(action) + 1));
-        form.AddField("entry.1999334966", FormatTime(Time.time));
         if (AI.Instance.isAIActive)
-            form.AddField("entry.1351457628", AI.Instance.behaviour.name.ToString());
-
-        form.AddField("entry.1468488643", TimeManager.Instance.day.ToString());
-        form.AddField("entry.1511430617", GameManager.Instance.Food.ToString());
-        form.AddField("entry.1466101548", GameManager.Instance.Energy.ToString());
-        form.AddField("entry.163088709", GameManager.Instance.Waste.ToString());
-        form.AddField("entry.1142277469", GameManager.Instance.Pollution.ToString());
-        form.AddField("entry.47387135", GameManager.Instance.Population.ToString());
-        form.AddField("entry.229207896", GameManager.Instance.Money.ToString());
-        form.AddField("entry.1543673192", GameManager.Instance.Approval.ToString());
-        form.AddField("entry.601553515", GameManager.Instance.NaturalCapital.ToString());
-        form.AddField("entry.500562723", GameManager.Instance.Bees.ToString());
-
-
-
-
-        byte[] data = form.data;
-        counter = System.DateTime.Now;
-        UnityWebRequest www = UnityWebRequest.Post(urlstring, form);
-        yield return www.SendWebRequest();
-
-        if (www.result != UnityWebRequest.Result.Success)
         {
-            Debug.Log(www.error);
+            float total_time = (float)(System.DateTime.Now - counter).TotalSeconds;
+            testCSV += System.DateTime.Now.ToString() + ",";
+            testCSV += userName + ",";
+            testCSV += institutionName + ",";
+            testCSV += guid.ToString() + ",";
+            testCSV += FormatTime(Time.time) + ",";
+            testCSV += TimeManager.Instance.day.ToString() + ",";
+            testCSV += action.name.ToString() + ",";
+            testCSV += GameManager.Instance.Food.ToString() + ",";
+            testCSV += GameManager.Instance.Energy.ToString() + ",";
+            testCSV += GameManager.Instance.Waste.ToString() + ",";
+            testCSV += GameManager.Instance.Pollution.ToString() + ",";
+            testCSV += GameManager.Instance.Population.ToString() + ",";
+            testCSV += GameManager.Instance.Money.ToString() + ",";
+            testCSV += GameManager.Instance.Approval.ToString() + ",";
+            testCSV += GameManager.Instance.NaturalCapital.ToString() + ",";
+            testCSV += GameManager.Instance.Bees.ToString() + ",";
+            testCSV += "$";
+
+
+            //print(total_time.ToString());
+            WWWForm form = new WWWForm();
+            if (userName != null)
+                form.AddField("entry.408889876", userName);
+            if (institutionName != null)
+                form.AddField("entry.1183520150", institutionName);
+            form.AddField("entry.92589871", guid.ToString());
+            form.AddField("entry.1657388280", action.name.ToString());
+            form.AddField("entry.1999334966", FormatTime(Time.time));
+            if (AI.Instance.isAIActive)
+                form.AddField("entry.1351457628", AI.Instance.behaviour.name.ToString());
+
+            form.AddField("entry.1468488643", TimeManager.Instance.day.ToString());
+            form.AddField("entry.1511430617", GameManager.Instance.Food.ToString());
+            form.AddField("entry.1466101548", GameManager.Instance.Energy.ToString());
+            form.AddField("entry.163088709", GameManager.Instance.Waste.ToString());
+            form.AddField("entry.1142277469", GameManager.Instance.Pollution.ToString());
+            form.AddField("entry.47387135", GameManager.Instance.Population.ToString());
+            form.AddField("entry.229207896", GameManager.Instance.Money.ToString());
+            form.AddField("entry.1543673192", GameManager.Instance.Approval.ToString());
+            form.AddField("entry.601553515", GameManager.Instance.NaturalCapital.ToString());
+            form.AddField("entry.500562723", GameManager.Instance.Bees.ToString());
+
+
+
+
+            byte[] data = form.data;
+            counter = System.DateTime.Now;
+            UnityWebRequest www = UnityWebRequest.Post(urlstring, form);
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                //   Debug.Log("Form upload complete!");
+            }
         }
-        else
+    }
+    public IEnumerator Post(ActionSO action, int i)
+    {
+        if (!AI.Instance.isAIActive)
         {
-            //   Debug.Log("Form upload complete!");
+            float total_time = (float)(System.DateTime.Now - counter).TotalSeconds;
+            testCSV += System.DateTime.Now.ToString() + ",";
+            testCSV += userName + ",";
+            testCSV += institutionName + ",";
+            testCSV += guid.ToString() + ",";
+            testCSV += FormatTime(Time.time) + ",";
+            testCSV += TimeManager.Instance.day.ToString() + ",";
+            testCSV += action.name.ToString() + " Lvl " + i + 1 + ",";
+            testCSV += GameManager.Instance.Food.ToString() + ",";
+            testCSV += GameManager.Instance.Energy.ToString() + ",";
+            testCSV += GameManager.Instance.Waste.ToString() + ",";
+            testCSV += GameManager.Instance.Pollution.ToString() + ",";
+            testCSV += GameManager.Instance.Population.ToString() + ",";
+            testCSV += GameManager.Instance.Money.ToString() + ",";
+            testCSV += GameManager.Instance.Approval.ToString() + ",";
+            testCSV += GameManager.Instance.NaturalCapital.ToString() + ",";
+            testCSV += GameManager.Instance.Bees.ToString() + ",";
+            testCSV += "$";
+
+
+            //print(total_time.ToString());
+            WWWForm form = new WWWForm();
+            if (userName != null)
+                form.AddField("entry.408889876", userName);
+            if (institutionName != null)
+                form.AddField("entry.1183520150", institutionName);
+            form.AddField("entry.92589871", guid.ToString());
+            form.AddField("entry.1657388280", action.name.ToString() + " Lvl " + i + 1);
+            form.AddField("entry.1999334966", FormatTime(Time.time));
+            if (AI.Instance.isAIActive)
+                form.AddField("entry.1351457628", AI.Instance.behaviour.name.ToString());
+
+            form.AddField("entry.1468488643", TimeManager.Instance.day.ToString());
+            form.AddField("entry.1511430617", GameManager.Instance.Food.ToString());
+            form.AddField("entry.1466101548", GameManager.Instance.Energy.ToString());
+            form.AddField("entry.163088709", GameManager.Instance.Waste.ToString());
+            form.AddField("entry.1142277469", GameManager.Instance.Pollution.ToString());
+            form.AddField("entry.47387135", GameManager.Instance.Population.ToString());
+            form.AddField("entry.229207896", GameManager.Instance.Money.ToString());
+            form.AddField("entry.1543673192", GameManager.Instance.Approval.ToString());
+            form.AddField("entry.601553515", GameManager.Instance.NaturalCapital.ToString());
+            form.AddField("entry.500562723", GameManager.Instance.Bees.ToString());
+
+
+
+
+            byte[] data = form.data;
+            counter = System.DateTime.Now;
+            UnityWebRequest www = UnityWebRequest.Post(urlstring, form);
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                //   Debug.Log("Form upload complete!");
+            }
         }
     }
 
     public IEnumerator PostEvent(GameEventSO action)
     {
-        float total_time = (float)(System.DateTime.Now - counter).TotalSeconds;
-        //print(total_time.ToString());
-        WWWForm form = new WWWForm();
-        if (userName != null)
-            form.AddField("entry.408889876", userName);
-        if (institutionName != null)
-            form.AddField("entry.1183520150", institutionName);
-        form.AddField("entry.92589871", guid.ToString());
-        form.AddField("entry.1657388280", action.name.ToString());
-        form.AddField("entry.1999334966", FormatTime(Time.time));
-        if (AI.Instance.isAIActive)
-            form.AddField("entry.1351457628", AI.Instance.behaviour.name.ToString());
-
-        form.AddField("entry.1468488643", TimeManager.Instance.day.ToString());
-        form.AddField("entry.1511430617", GameManager.Instance.Food.ToString());
-        form.AddField("entry.1466101548", GameManager.Instance.Energy.ToString());
-        form.AddField("entry.163088709", GameManager.Instance.Waste.ToString());
-        form.AddField("entry.1142277469", GameManager.Instance.Pollution.ToString());
-        form.AddField("entry.47387135", GameManager.Instance.Population.ToString());
-        form.AddField("entry.229207896", GameManager.Instance.Money.ToString());
-        form.AddField("entry.1543673192", GameManager.Instance.Approval.ToString());
-        form.AddField("entry.601553515", GameManager.Instance.NaturalCapital.ToString());
-        form.AddField("entry.500562723", GameManager.Instance.Bees.ToString());
-
-
-
-
-        byte[] data = form.data;
-        counter = System.DateTime.Now;
-        UnityWebRequest www = UnityWebRequest.Post(urlstring, form);
-        yield return www.SendWebRequest();
-
-        if (www.result != UnityWebRequest.Result.Success)
+        if (!AI.Instance.isAIActive)
         {
-            Debug.Log(www.error);
-        }
-        else
-        {
-            //   Debug.Log("Form upload complete!");
+            testCSV += System.DateTime.Now.ToString() + ",";
+            testCSV += userName + ",";
+            testCSV += institutionName + ",";
+            testCSV += guid.ToString() + ",";
+            testCSV += FormatTime(Time.time) + ",";
+            testCSV += TimeManager.Instance.day.ToString() + ",";
+            testCSV += action.name.ToString() + ",";
+            testCSV += GameManager.Instance.Food.ToString() + ",";
+            testCSV += GameManager.Instance.Energy.ToString() + ",";
+            testCSV += GameManager.Instance.Waste.ToString() + ",";
+            testCSV += GameManager.Instance.Pollution.ToString() + ",";
+            testCSV += GameManager.Instance.Population.ToString() + ",";
+            testCSV += GameManager.Instance.Money.ToString() + ",";
+            testCSV += GameManager.Instance.Approval.ToString() + ",";
+            testCSV += GameManager.Instance.NaturalCapital.ToString() + ",";
+            testCSV += GameManager.Instance.Bees.ToString() + ",";
+            testCSV += "$";
+
+            float total_time = (float)(System.DateTime.Now - counter).TotalSeconds;
+            //print(total_time.ToString());
+            WWWForm form = new WWWForm();
+            if (userName != null)
+                form.AddField("entry.408889876", userName);
+            if (institutionName != null)
+                form.AddField("entry.1183520150", institutionName);
+            form.AddField("entry.92589871", guid.ToString());
+            form.AddField("entry.1657388280", action.name.ToString());
+            form.AddField("entry.1999334966", FormatTime(Time.time));
+            if (AI.Instance.isAIActive)
+                form.AddField("entry.1351457628", AI.Instance.behaviour.name.ToString());
+
+            form.AddField("entry.1468488643", TimeManager.Instance.day.ToString());
+            form.AddField("entry.1511430617", GameManager.Instance.Food.ToString());
+            form.AddField("entry.1466101548", GameManager.Instance.Energy.ToString());
+            form.AddField("entry.163088709", GameManager.Instance.Waste.ToString());
+            form.AddField("entry.1142277469", GameManager.Instance.Pollution.ToString());
+            form.AddField("entry.47387135", GameManager.Instance.Population.ToString());
+            form.AddField("entry.229207896", GameManager.Instance.Money.ToString());
+            form.AddField("entry.1543673192", GameManager.Instance.Approval.ToString());
+            form.AddField("entry.601553515", GameManager.Instance.NaturalCapital.ToString());
+            form.AddField("entry.500562723", GameManager.Instance.Bees.ToString());
+
+
+
+
+            byte[] data = form.data;
+            counter = System.DateTime.Now;
+            UnityWebRequest www = UnityWebRequest.Post(urlstring, form);
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                //   Debug.Log("Form upload complete!");
+            }
         }
     }
 

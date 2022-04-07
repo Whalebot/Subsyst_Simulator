@@ -18,8 +18,26 @@ MonoBehaviour:
   sustainable: 0
   upgradeGoals:
   - {fileID: 11400000, guid: f773bbdc1fca40f40b2c2ac04429f643, type: 2}
+  - {fileID: 11400000, guid: 7b29c56dbe9e3de49836cdefb4694607, type: 2}
   - {fileID: 11400000, guid: 3183e04d06678a74fa089cf67352704b, type: 2}
-  - {fileID: 11400000, guid: c4c3efee7729f3e4aa4cefd41c4fc193, type: 2}
+  - {fileID: 11400000, guid: d933f9ea056b579438893c13f704b405, type: 2}
+  - {fileID: 11400000, guid: 7b29c56dbe9e3de49836cdefb4694607, type: 2}
+  - {fileID: 11400000, guid: d933f9ea056b579438893c13f704b405, type: 2}
+  - {fileID: 11400000, guid: ca546211b8e55894284cd0f46617a5c9, type: 2}
+  - {fileID: 11400000, guid: 5ee79915d47a3df45968998d87c80345, type: 2}
+  - {fileID: 11400000, guid: 6202019a9dd7b4a45a8e6e39511187e4, type: 2}
+  - {fileID: 11400000, guid: 7b29c56dbe9e3de49836cdefb4694607, type: 2}
+  - {fileID: 11400000, guid: d933f9ea056b579438893c13f704b405, type: 2}
+  - {fileID: 11400000, guid: 30f6e09c9dfbcc342bf322fbf6be2813, type: 2}
+  - {fileID: 11400000, guid: 30f6e09c9dfbcc342bf322fbf6be2813, type: 2}
+  - {fileID: 11400000, guid: 30f6e09c9dfbcc342bf322fbf6be2813, type: 2}
+  - {fileID: 11400000, guid: 00e1197f3676c804fb4d0cc898e15a34, type: 2}
+  - {fileID: 11400000, guid: a7ee2b3de4816504a9969a327383e4a8, type: 2}
+  - {fileID: 11400000, guid: a7ee2b3de4816504a9969a327383e4a8, type: 2}
+  - {fileID: 11400000, guid: a7ee2b3de4816504a9969a327383e4a8, type: 2}
+  - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}
+  - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}
+  - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}
   preferredMoneyProduction:
   - {fileID: 11400000, guid: 758fab8e0fd4e454aa188adee9719c44, type: 2}
   preferredFoodProduction:

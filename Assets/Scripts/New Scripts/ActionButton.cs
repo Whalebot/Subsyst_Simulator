@@ -142,7 +142,13 @@ public class ActionButton : Interactable
 
 
 
-        if (action != null && Telemetry.Instance.sendTelemetry) Telemetry.Instance.StartCoroutine(Telemetry.Instance.Post(action));
+        if (action != null && Telemetry.Instance.sendTelemetry) {
+            if(buttonType == ButtonType.Upgrade)
+                Telemetry.Instance.StartCoroutine(Telemetry.Instance.Post(action, UpgradeManager.Instance.CheckUpgradeNumber(action)));
+            else
+            Telemetry.Instance.StartCoroutine(Telemetry.Instance.Post(action));
+        }
+        
         if (buttonType == ButtonType.Upgrade)
         {
             UpgradeManager.Instance.UnlockUpgrade(action);

@@ -19,9 +19,9 @@ MonoBehaviour:
   dependantUpgrade: {fileID: 0}
   upgradeLimit: 3
   upgradeLevels:
-  - upgradeCost: 0
+  - upgradeCost: 10
     cost:
-      energy: 0
+      energy: 2
       food: 0
       waste: 0
       approval: 0
@@ -32,17 +32,17 @@ MonoBehaviour:
       naturalCapital: 0
     result:
       energy: 0
-      food: 0
+      food: 6
       waste: 0
       approval: 0
       population: 0
       money: 0
-      pollution: 0
+      pollution: -2
       bees: 0
       naturalCapital: 0
-  - upgradeCost: 0
+  - upgradeCost: 100
     cost:
-      energy: 0
+      energy: 20
       food: 0
       waste: 0
       approval: 0
@@ -53,17 +53,17 @@ MonoBehaviour:
       naturalCapital: 0
     result:
       energy: 0
-      food: 0
+      food: 50
       waste: 0
       approval: 0
       population: 0
-      money: 0
+      money: 20
       pollution: 0
       bees: 0
       naturalCapital: 0
-  - upgradeCost: 0
+  - upgradeCost: 200
     cost:
-      energy: 0
+      energy: 100
       food: 0
       waste: 0
       approval: 0
@@ -74,17 +74,17 @@ MonoBehaviour:
       naturalCapital: 0
     result:
       energy: 0
-      food: 0
+      food: 250
       waste: 0
       approval: 0
       population: 0
-      money: 0
+      money: 100
       pollution: 0
       bees: 0
       naturalCapital: 0
-  - upgradeCost: 0
+  - upgradeCost: 1000
     cost:
-      energy: 0
+      energy: 200
       food: 0
       waste: 0
       approval: 0
@@ -95,11 +95,11 @@ MonoBehaviour:
       naturalCapital: 0
     result:
       energy: 0
-      food: 0
+      food: 500
       waste: 0
       approval: 0
       population: 0
       money: 0
-      pollution: 0
+      pollution: -200
       bees: 0
       naturalCapital: 0

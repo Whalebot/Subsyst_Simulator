@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public static bool gameStart;
     public static bool paused;
     public static bool pauseAnimations;
+    public static bool attractMode;
     public enum GameMode { Default, Autoplay, MakeyMakey, Tutorial, DataVisualization }
     public GameMode gameMode;
     public bool disableGraphics;
@@ -565,11 +566,23 @@ public class GameManager : MonoBehaviour
 
     public void ReloadScene()
     {
+        attractMode = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    [Button]
     public void AttractMode()
     {
+        attractMode = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void EndAttractMode() {
+        if (attractMode)
+        {
+            attractMode = false;
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }
 

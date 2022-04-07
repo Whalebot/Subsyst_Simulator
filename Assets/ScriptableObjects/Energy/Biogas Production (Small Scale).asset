@@ -40,7 +40,7 @@ MonoBehaviour:
       pollution: 0
       bees: 0
       naturalCapital: 0
-  - upgradeCost: 50
+  - upgradeCost: 100
     cost:
       energy: 0
       food: 0

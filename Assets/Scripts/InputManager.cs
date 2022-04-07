@@ -27,6 +27,7 @@ public class InputManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        timer = restartTime;
     }
 
     // Start is called before the first frame update
@@ -282,6 +283,9 @@ public class InputManager : MonoBehaviour
     void SelectActive()
     {
         if (!makeyMakeyMode) return;
+
+
+
         AI.Instance.MoveCursorToNextObject(activeInteractable);
         var pointer = new PointerEventData(EventSystem.current);
         ExecuteEvents.Execute(activeInteractable.gameObject, pointer, ExecuteEvents.pointerEnterHandler);
@@ -301,10 +305,10 @@ public class InputManager : MonoBehaviour
         if (GameManager.gameStart)
         {
             timer -= Time.deltaTime;
-            //if (timer <= 0)
-            //{
-            //    GameManager.Instance.AttractMode();
-            //}
+            if (timer <= 0 && makeyMakeyMode && !GameManager.attractMode)
+            {
+                GameManager.Instance.AttractMode();
+            }
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
@@ -343,22 +347,36 @@ public class InputManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 FindNearestObjectUp();
+                timer = restartTime;
+                GameManager.Instance.EndAttractMode();
+
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 FindNearestObjectRight();
+                timer = restartTime;
+                GameManager.Instance.EndAttractMode();
+
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 FindNearestObjectLeft();
+                timer = restartTime;
+                GameManager.Instance.EndAttractMode();
+
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 FindNearestObjectDown();
+                timer = restartTime;
+                GameManager.Instance.EndAttractMode();
+
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                ClickActive();
+                ClickActive(); timer = restartTime;
+                GameManager.Instance.EndAttractMode();
+
             }
             if (makeyMakeyMode)
                 if (Input.GetKeyDown(KeyCode.D))
@@ -377,6 +395,7 @@ public class InputManager : MonoBehaviour
 
     IEnumerator SimulateClick(GameObject g)
     {
+        
         if (cursorScript.gameObject.activeInHierarchy)
             cursorScript.PerformClick();
 

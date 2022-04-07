@@ -35,6 +35,7 @@ public class AI : MonoBehaviour
     {
         if (!InputManager.Instance.makeyMakeyMode)
             botSelectionScreen.SetActive(true);
+
         foreach (var item in bots)
         {
             item.upgradeStep = 0;
@@ -42,6 +43,8 @@ public class AI : MonoBehaviour
         }
         TimeManager.Instance.advanceTimeEvent += CalculateNextAction;
         UpgradeManager.Instance.upgradeEvent += CheckUpgrade;
+
+        if (GameManager.attractMode) AttractMode();
     }
 
     private void Update()
