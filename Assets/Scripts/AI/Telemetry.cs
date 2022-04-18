@@ -107,7 +107,7 @@ public class Telemetry : MonoBehaviour
     }
     public IEnumerator Post(ActionSO action)
     {
-        if (AI.Instance.isAIActive)
+      //  if (!AI.Instance.isAIActive)
         {
             float total_time = (float)(System.DateTime.Now - counter).TotalSeconds;
             testCSV += System.DateTime.Now.ToString() + ",";
@@ -172,7 +172,7 @@ public class Telemetry : MonoBehaviour
     }
     public IEnumerator Post(ActionSO action, int i)
     {
-        if (!AI.Instance.isAIActive)
+      //  if (!AI.Instance.isAIActive)
         {
             float total_time = (float)(System.DateTime.Now - counter).TotalSeconds;
             testCSV += System.DateTime.Now.ToString() + ",";
@@ -201,7 +201,7 @@ public class Telemetry : MonoBehaviour
             if (institutionName != null)
                 form.AddField("entry.1183520150", institutionName);
             form.AddField("entry.92589871", guid.ToString());
-            form.AddField("entry.1657388280", action.name.ToString() + " Lvl " + i + 1);
+            form.AddField("entry.1657388280", action.name.ToString() + " Lvl " + (i + 1));
             form.AddField("entry.1999334966", FormatTime(Time.time));
             if (AI.Instance.isAIActive)
                 form.AddField("entry.1351457628", AI.Instance.behaviour.name.ToString());
@@ -238,7 +238,7 @@ public class Telemetry : MonoBehaviour
 
     public IEnumerator PostEvent(GameEventSO action)
     {
-        if (!AI.Instance.isAIActive)
+      //  if (!AI.Instance.isAIActive)
         {
             testCSV += System.DateTime.Now.ToString() + ",";
             testCSV += userName + ",";

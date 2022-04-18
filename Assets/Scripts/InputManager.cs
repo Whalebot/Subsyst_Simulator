@@ -334,14 +334,20 @@ public class InputManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W))
             {
                 StartCoroutine(SimulateClick(foodButton));
+                timer = restartTime;
+                GameManager.Instance.EndAttractMode();
             }
             if (Input.GetKeyDown(KeyCode.A))
             {
                 StartCoroutine(SimulateClick(energyButton));
+                timer = restartTime;
+                GameManager.Instance.EndAttractMode();
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
                 StartCoroutine(SimulateClick(wasteButton));
+                timer = restartTime;
+                GameManager.Instance.EndAttractMode();
             }
 
             if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -374,14 +380,15 @@ public class InputManager : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                ClickActive(); timer = restartTime;
+                ClickActive(); 
+                timer = restartTime;
                 GameManager.Instance.EndAttractMode();
 
             }
             if (makeyMakeyMode)
                 if (Input.GetKeyDown(KeyCode.D))
                 {
-                    GameManager.Instance.ReloadScene();
+                   // GameManager.Instance.ReloadScene();
                 }
             if (Input.GetKeyDown(KeyCode.Tab))
             {
