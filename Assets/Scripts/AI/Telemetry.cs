@@ -107,7 +107,7 @@ public class Telemetry : MonoBehaviour
     }
     public IEnumerator Post(ActionSO action)
     {
-      //  if (!AI.Instance.isAIActive)
+       if (!AI.Instance.isAIActive)
         {
             float total_time = (float)(System.DateTime.Now - counter).TotalSeconds;
             testCSV += System.DateTime.Now.ToString() + ",";
@@ -172,7 +172,7 @@ public class Telemetry : MonoBehaviour
     }
     public IEnumerator Post(ActionSO action, int i)
     {
-      //  if (!AI.Instance.isAIActive)
+        if (!AI.Instance.isAIActive)
         {
             float total_time = (float)(System.DateTime.Now - counter).TotalSeconds;
             testCSV += System.DateTime.Now.ToString() + ",";
@@ -238,7 +238,7 @@ public class Telemetry : MonoBehaviour
 
     public IEnumerator PostEvent(GameEventSO action)
     {
-      //  if (!AI.Instance.isAIActive)
+        if (!AI.Instance.isAIActive)
         {
             testCSV += System.DateTime.Now.ToString() + ",";
             testCSV += userName + ",";

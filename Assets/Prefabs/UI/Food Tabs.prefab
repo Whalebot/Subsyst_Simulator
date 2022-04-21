@@ -7559,6 +7559,11 @@ PrefabInstance:
       propertyPath: m_text
       value: "Meat \nSuper-Processing"
       objectReference: {fileID: 0}
+    - target: {fileID: 6988199040829023476, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
+        type: 3}
+      propertyPath: upItem
+      value: 
+      objectReference: {fileID: 4739661839923689597}
     - target: {fileID: 6988199040829023477, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
         type: 3}
       propertyPath: m_IsActive
@@ -9536,6 +9541,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a50f8bd97c79d014fb09dfc763502173,
         type: 2}
+    - target: {fileID: 6988199040829023476, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
+        type: 3}
+      propertyPath: upItem
+      value: 
+      objectReference: {fileID: 4826954846298378596}
     - target: {fileID: 6988199041865683158, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
         type: 3}
       propertyPath: m_text
@@ -9740,6 +9750,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: de52ec9092cc7bc4d9b2e71ceeb7efa1,
         type: 2}
+    - target: {fileID: 6988199040829023476, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
+        type: 3}
+      propertyPath: upItem
+      value: 
+      objectReference: {fileID: 4826954846139421537}
     - target: {fileID: 6988199041865683158, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
         type: 3}
       propertyPath: m_text
@@ -10300,6 +10315,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: ca546211b8e55894284cd0f46617a5c9,
         type: 2}
+    - target: {fileID: 6988199040829023476, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
+        type: 3}
+      propertyPath: upItem
+      value: 
+      objectReference: {fileID: 4826954846091213446}
     - target: {fileID: 6988199041865683158, guid: 13ffa19e95e68d349ac7e0cac6490b1d,
         type: 3}
       propertyPath: m_text
